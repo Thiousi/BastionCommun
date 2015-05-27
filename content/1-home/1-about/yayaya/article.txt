@@ -1,0 +1,13 @@
+Title: yayaya
+
+----
+
+Date: 2012-12-12 22:33
+
+----
+
+Text: This is my new article
+
+----
+
+Tags: article, text, readable
