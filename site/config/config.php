@@ -25,6 +25,35 @@ Kirby Configuration
 
 By default you don't have to configure anything to
 make Kirby work. For more fine-grained configuration
-of the system, please check out http://getkirby.com/docs/advanced/options
+of the system, please check out assert_options(what)
 
 */
+
+c::set('roles', array(
+  array(
+    'id'      => 'admin',
+    'name'    => 'Admin',
+    'default' => true,
+    'panel'   => true
+  ),
+  array(
+    'id'      => 'editor',
+    'name'    => 'Editor',
+    'panel'   => true
+  ),
+  array(
+    'id'      => 'client',
+    'name'    => 'Client',
+    'panel'   => false
+  )
+));
+
+c::set('routes', array(
+  array(
+    'pattern' => 'logout',
+    'action'  => function() {
+      if($user = site()->user()) $user->logout();
+      go('home');
+    }
+  )
+));
