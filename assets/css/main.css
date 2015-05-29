@@ -107,7 +107,6 @@ body {
 	color : rgb(0, 190, 0);
 	font-size: 1.25rem;
 	line-height: 1.2em;
-	float: left;
 }
 nav {
 	margin-bottom: 2rem;
@@ -216,6 +215,7 @@ button, select{
 	display: table;
 	position: relative;
 	margin-right: 1em;
+	float: left;
 }
 .menu > li > a {
 }
@@ -240,6 +240,26 @@ button, select{
 	margin: auto;
 }
 #login-panel.shown{
+	display: block;
+}
+#panel{
+	display: none;
+	width: 80%;
+	height: 80%;
+	background: white;
+	border: 1px solid black;
+	z-index: 9999; 
+	padding: 1em;
+	right: auto;
+	left: auto;
+	position: fixed;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+#panel.shown{
 	display: block;
 }
 .button{
@@ -335,8 +355,8 @@ h1 a, h2 a, h3 a, h4 a {
 .main {
 	color: rgb(0, 190, 0)!important;
 	padding: 1rem;
-	margin-left: 50%;
 	min-width: 300px;
+	max-width: 1000px;
 	border: 1px solid;
 }
 .main hr {

@@ -10,6 +10,8 @@
 			<option value="list">Liste</option>
 			<option value="calendar">calendrier</option>
 		</select>
+        <button id="button">Settings</button>
+        <div id="panel">Settings</div>
 	<?php else: ?>
 		<button id="login" class="log">
 			<a href="<?php echo url('login') ?>">Login</a>
@@ -36,11 +38,12 @@
         addPage($_GET['hoey']);
     }
 ?>
-
+<!--
 <?php if($user = $site->user()): ?>
 <form method="get" action="<?php echo $page->url() ?>">
     <input class="input" type="text" name="hoey" value="">
     <input class="btn-submit" type="submit" value="Ajouter">
 </form>
+-->
 <?php endif ?>
 

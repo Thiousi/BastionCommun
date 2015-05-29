@@ -6,6 +6,7 @@ $(window).resize(function(){
 
 $(document).ready(function (){
 
+/*
 	// ARBRE MENU
 	$('ul.menu ul:first-of-type').find('span.space').each(function(){
 		var reverted = $(this).parent().children('span.space').length-($(this).index())
@@ -42,13 +43,17 @@ $(document).ready(function (){
 		 top:   e.pageY
 		});
 	});
-	
+
+*/
 
 
 
 	// LOGIN
 	$('#login').click(function() {
 		$('#login-panel').toggleClass('shown');
+	});
+	$('#button').click(function() {
+		$('#panel').toggleClass('shown');
 	});
 	
 });

@@ -37,13 +37,13 @@ c::set('roles', array(
     'panel'   => true
   ),
   array(
-    'id'      => 'editor',
-    'name'    => 'Editor',
-    'panel'   => true
+    'id'      => 'membre',
+    'name'    => 'Membre',
+    'panel'   => false
   ),
   array(
-    'id'      => 'client',
-    'name'    => 'Client',
+    'id'      => 'visiteur',
+    'name'    => 'Visiteur',
     'panel'   => false
   )
 ));

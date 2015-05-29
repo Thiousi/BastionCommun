@@ -18,17 +18,12 @@ if (isset($_GET['from']) && isset($_GET['to'])) {
 		<?php
 
 		function nested($element){ 
-			echo '<li data-depth="'.$element->depth().'">'.str_repeat('<span class="space" data-depth="'.$element->depth().'"></span>', max(0, $element->depth()-2));
-				echo "<span class='element' data-dir='{$element->diruri()}'><a class='title' href='{$element->url()}' >{$element->title()->html()}</a></span>";
-				echo '<ul>';
-					foreach($element->children() as $e):
-						nested($e);
-					endforeach;
-				echo '</ul>';
+			echo '<li>';
+				echo "<span class='element'><a class='title' href='{$element->url()}'>{$element->title()->html()}</a></span>";
 			echo '</li>';
 		};
 
-		foreach($pages->not('error', 'login') as $p){
+		foreach($pages->not('error', 'login', 'about') as $p){
 			nested($p);
 		}
 		?>
