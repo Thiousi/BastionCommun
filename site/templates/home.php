@@ -15,6 +15,9 @@
 
 			</form>
 		<?php endif;?> 
+
+		<?php snippet('users') ?>
+
 	</main>
 		<div>
 			<div onclick="">

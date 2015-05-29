@@ -44,6 +44,6 @@
     <input class="input" type="text" name="hoey" value="">
     <input class="btn-submit" type="submit" value="Ajouter">
 </form>
--->
 <?php endif ?>
 
+-->

@@ -13,7 +13,6 @@ if (isset($_GET['from']) && isset($_GET['to'])) {
 ?>
 <nav role="navigation">
 	
-
 	<ul class="menu cf">
 		<?php
 
@@ -24,7 +23,11 @@ if (isset($_GET['from']) && isset($_GET['to'])) {
 		};
 
 		foreach($pages->not('error', 'login', 'about') as $p){
-			nested($p);
+			if($p->title('private') && $user = $site->user()){
+				nested($p);
+			} else {
+				nested($p);
+			}
 		}
 		?>
 
@@ -33,7 +36,6 @@ if (isset($_GET['from']) && isset($_GET['to'])) {
 	<span class="warning">
 		<?php if ($error) { echo $error; } ?>
 	</span>
-
 
 </nav>
 
