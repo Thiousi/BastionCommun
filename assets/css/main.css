@@ -147,6 +147,21 @@ nav {
 	height: 800px;
 	overflow: hidden;
 }
+#welcome {
+	background-color: rgb(77,250,137);
+	position: absolute;
+	/* padding: 12px 10px; */
+	font-size: 28px;
+	margin: 0 auto;
+	width: 360px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	left: 50%;
+	margin-left: -180px;
+	top: 50%;
+	margin-top: -30px;
+}
 #interface{
 	float:right;
 	top: 2rem;

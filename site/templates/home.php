@@ -2,6 +2,7 @@
 
 	<div id="cover">
 		<?php if ($page->cover()->url() != "" ): ?>
+			<div id="welcome">BIENVENUE AU BASTION 14</div>
 			<figure id="cover-img">
 				<img src="<?php echo $page->image($cover)->url() ?>">
 			</figure>
