@@ -45,6 +45,18 @@ $(document).ready(function (){
 	});
 
 */
+  
+  
+  /* EDIT AD PAGE
+  ---------------------------------------------------------- */
+  // TEXT EDITOR
+  var editor = new MediumEditor('.editable', {
+    extensions: {
+      markdown: new MeMarkdown(function (md) {
+        $('#description-markdown').val(md);
+      })
+    }
+  });
 
 
 

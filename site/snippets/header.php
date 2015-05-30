@@ -10,15 +10,18 @@
   <meta name="keywords" content="<?php echo $site->keywords()->html() ?>">
 
 	<?php echo css(array(
-		'assets/css/main.css'
+		'assets/css/main.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/medium-editor/4.10.1/medium-editor.min.css" type="text/css'
 	)) ?>
 	<?php echo js(array(
 		'assets/js/jquery-1.11.2.min.js',
-		'assets/js/script.js'
+		'assets/js/script.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/medium-editor/4.10.1/medium-editor.min.js',
+    'assets/js/me-markdown.standalone.min.js'
 	)) ?>
 
 </head>
-<body>
+<body class="template-<?php echo $page->intendedTemplate() ?>">
 
   <header class="header cf" role="banner">
     <?php snippet('menu') ?>
