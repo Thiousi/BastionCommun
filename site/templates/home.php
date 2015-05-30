@@ -1,28 +1,36 @@
 <?php snippet('header') ?>
 
-	 <main class="main" role="main">
-		<h1><?php echo $page->title()->html() ?></h1>
+	<div id="cover">
+		<?php if ($page->cover()->url() != "" ): ?>
+			<div id="welcome">BIENVENUE AU BASTION 14</div>
+			<figure id="cover-img">
+				<img src="<?php echo $page->image($cover)->url() ?>">
+			</figure>
+		<?php endif ?>
+	</div>
+
+	<main class="main" role="main">
+
+	    <section id="prez">
+			<h1><?php echo $page->title()->html() ?></h1>
+	    	<?php echo $page->text()->kirbytext() ?>
+	    <section>
+
+		<section id="membres">
+			<h1>Membre</h1>
+			<?php snippet('users') ?>
+		</section>
+
+		<section id="actu">
+			<h1>Actualité</h1>
+
+		</section>
+
 		<?php if($user = $site->user() and $user->hasRole('admin')): ?>
 			This part of the page is only visible for clients with the role Admin
 		<?php endif ?>
-		<?php if($user = $site->user() and $user->hasRole('admin')):?>
-			<form autocomplete="off" class="form" method="post" action="/panel/app/controllers/api/pages/<?php echo kirby()->request()->path();?>">
 
-			<label class="label" for="form-field-title">Title</label>
-			<input autocomplete="on" class="input" id= "form-field-title" name="title" required="" type="title" value="<?php echo $page->title() ?>">
-
-			<input type="submit" value="Save">
-
-			</form>
-		<?php endif;?> 
-
-		<?php snippet('users') ?>
 
 	</main>
-		<div>
-			<div onclick="">
-			</div>
-			
-		</div>
 
 <?php snippet('footer') ?>

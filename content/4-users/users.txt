@@ -1,5 +1,5 @@
-Title: Utilisateurs
+Title: Membres
 
 ----
 
-Text: Liste de tous les utilisateurs :
+Text: Liste de tous les membres :

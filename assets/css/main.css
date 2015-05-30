@@ -35,7 +35,18 @@ Email:  support@getkirby.com
 	font-weight: 400;
 	src: url(../fonts/sourcesanspro-400-italic.woff) format('woff');
 }
+@font-face {
+    font-family: 'propcouriersansregular';
+    src: url(../fonts/propcouriersans-regular-webfont.eot);
+    src: url(../fonts/propcouriersans-regular-webfont.eot?#iefix) format('embedded-opentype'),
+         url(../fonts/propcouriersans-regular-webfont.woff2) format('woff2'),
+         url(../fonts/propcouriersans-regular-webfont.woff) format('woff'),
+         url(../fonts/propcouriersans-regular-webfont.ttf) format('truetype'),
+         url(../fonts/propcouriersans-regular-webfont.svg#propcouriersansregular) format('svg');
+    font-weight: normal;
+    font-style: normal;
 
+}
 
 /* Reset
 -------------------------------------------------- */
@@ -92,7 +103,7 @@ a:hover {
 -------------------------------------------------- */
 html {
 	height: 101%;
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: "propcouriersansregular", sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 }
@@ -100,7 +111,6 @@ body {
 	margin: 0 auto;
 	font-size: 1em;
 	line-height: 1.5em;
-	padding: 1.5rem;
 	background: #f5F5F5;
 	color: #222;
 }
@@ -109,15 +119,19 @@ body {
 /* Header
 -------------------------------------------------- */
 .header {
-	font-family: "Times New Roman", serif;
-	color : rgb(0, 190, 0);
+	font-family: "propcouriersansregular", serif;
+	color : black;
 	font-size: 1.25rem;
 	line-height: 1.2em;
 }
 nav {
 	margin-bottom: 2rem;
+	position: absolute;
+	width: 100%
 }
-
+.menu{
+	float: left;
+}
 .menu>li{
 	margin-left: .5rem;
 }
@@ -128,8 +142,33 @@ nav {
 .logo img {
 	width: 2em;
 }
-#interface{
+#prez{
+	height: 800px;
+}
+#cover{
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: -9999;
+	height: 800px;
+	overflow: hidden;
+}
+#welcome {
+	background-color: rgb(77,250,137);
 	position: absolute;
+	/* padding: 12px 10px; */
+	font-size: 28px;
+	margin: 0 auto;
+	width: 360px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	left: 50%;
+	margin-left: -180px;
+	top: 50%;
+	margin-top: -30px;
+}
+#interface{
 	float:right;
 	top: 2rem;
 	right:	2rem;
@@ -205,10 +244,10 @@ button, select{
 /* Navigation
 -------------------------------------------------- */
 .menu a {
-	color : rgb(0, 190, 0);
+	color : black;
 }
 .menu a:hover {
-	color: rgba(0, 190, 0, .5);
+	color: black;
 	text-decoration: none;
 }
 .menu .active {
@@ -308,7 +347,6 @@ li {
 
 @media screen and (min-width: 40em) {
 	body {
-		padding: 2rem;
 	}
 	.logo {
 		float: left;
@@ -359,11 +397,11 @@ h1 a, h2 a, h3 a, h4 a {
 /* Main
 -------------------------------------------------- */
 .main {
-	color: rgb(0, 190, 0)!important;
+	color: black;
 	padding: 1rem;
-	min-width: 300px;
-	max-width: 1000px;
-	border: 1px solid;
+	padding-top: 5rem;
+	max-width: 1220px;
+	margin: 0 auto;
 }
 .main hr {
 	margin: 3em 0;
@@ -407,7 +445,7 @@ h1 a, h2 a, h3 a, h4 a {
 	float: left;
 	list-style: none;
 	margin-right: 2em;
-	color: red;
+	color: #000;
 }
 .meta li b {
 	font-weight: 300;
