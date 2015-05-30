@@ -49,11 +49,12 @@
       <div id="informations"></div>
 
       <div id="description">
-        <div id="description-editor" class="editable"><?php echo page('annonces/'.$ad)->description()->kirbytext() ?></div>
+        <div id="description-editor"><?php echo page('annonces/'.$ad)->description()->kirbytext() ?></div>
         <textarea name="description" id="description-markdown" class="hidden"><?php echo page('annonces/'.$ad)->description()->html() ?></textarea>
       </div>
-      
-      <button type="submit" name="_submit">Submit</button>
+
+      <button class="submitButton" type="submit" name="_submit">Submit</button>
+      <div class="button editButton">Edit</div>      
       
     </form>
 

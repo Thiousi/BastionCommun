@@ -179,14 +179,37 @@ input{
 	padding-left: .25em;
 }
 button, select{
+	font-family: "propcouriersansregular";
 	font-size: 1rem;
-	padding: .5em .75em;
+	padding: .3em .75em;
+	line-height: 1.5em;
 	cursor: pointer;
 	border-radius: 0px;
 	background: #bbb;
 	-webkit-appearance: inherit;
 }
-
+.button{
+	font-size: 1rem;
+	padding: .3em .75em;
+	cursor: pointer;
+	border-radius: 0px;
+	background-color: rgb(77,250,137);
+	-webkit-appearance: inherit;
+	display: inline-block;
+}
+.submitButton{
+	display: none;
+	background-color: rgb(77,250,137);
+}
+.editButton{
+	background-color: rgb(77,250,137);
+}
+.cancelButton{
+	background-color: rgb(250, 77, 77);
+}
+.editable{
+	background: white;
+}
 #newpage.form{
 	width: 300px;
 	height: 150px;
@@ -209,32 +232,7 @@ button, select{
 #newpage .btn-submit{
 		float: right;
 }
-.menu>li>ul{
-	padding-left: 10px !important;
-}
-.menu>li>.element:first-child{
-	font-size: 1.25rem;
-	padding: 3px 10px;
-	border: 1px solid;
-	margin: 0;
-	display: inline-block;
-}
-.menu li > span.space{
-	width: 56px;
-	display: inline-block;
-}
-.menu>li>ul:before{
-	content: "│";
-}
-.menu>li>ul li > .element:before {
-    content: "├─ ";
-}
-.menu>li>ul li:last-child >.element:before {
-    content: "└─ ";
-}
-.menu>li>ul .bar:before{
-	content: "│" !important;
-}
+
 /* Sortable menu
 -------------------------------------------------- */
 .moving-element {
@@ -307,12 +305,7 @@ li {
 #panel.shown{
 	display: block;
 }
-.button{
-	padding:.25em .5em;
-	border: 1px solid black;
-	cursor: pointer;
-	margin-top: 1em;
-}
+
 .submenu {
 	position: absolute;
 	z-index: 1;
