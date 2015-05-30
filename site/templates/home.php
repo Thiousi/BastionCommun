@@ -24,4 +24,5 @@
 			</div>
 			
 		</div>
+
 <?php snippet('footer') ?>
