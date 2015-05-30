@@ -3,3 +3,7 @@ Title: Bastion Commun
 ----
 
 Text: Le bastion est blablabla
+
+----
+
+Cover: bastion14.jpg
