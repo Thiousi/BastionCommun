@@ -1,10 +1,10 @@
 <?php snippet('header') ?>
 
 	<div id="cover">
-		<?php if ($page->cover()->url() != "" ): ?>
+		<?php if ($page->cover() != "" ): ?>
 			<div id="welcome">BIENVENUE AU BASTION 14</div>
 			<figure id="cover-img">
-				<img src="<?php echo $page->image($cover)->url() ?>">
+				<img src="<?php echo $page->image($page->cover())->url() ?>">
 			</figure>
 		<?php endif ?>
 	</div>
