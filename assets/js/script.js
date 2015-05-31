@@ -34,8 +34,8 @@ $(document).ready(function (){
 	$('#login').click(function() {
 		$('#login-panel').toggleClass('shown');
 	});
-	$('#button').click(function() {
-		$('#panel').toggleClass('shown');
+	$('.panelButton').click(function() {
+		$(this).next('.panel').toggleClass('shown');
 	});
 	
 });

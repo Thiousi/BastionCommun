@@ -168,10 +168,36 @@ nav {
 	top: 50%;
 	margin-top: -30px;
 }
+
+/* ================== INTERFACE ================== */
+
+.panelButton {
+	cursor: pointer;
+	z-index: 99999999;
+	position: absolute;
+	top: 1rem;
+	right: .5rem;
+}
 #interface{
-	float:right;
-	top: 2rem;
-	right:	2rem;
+	float: right;
+	margin-top: 1rem;
+	margin-right: .5rem;
+}
+.panel{
+	display: none;
+	display: none;
+	width: 300px;
+	height: auto;
+	background: white;
+	padding: 1em;
+	right: auto;
+	left: auto;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.panel.shown{
+	display: block;
 }
 input{
 	font-size: 1em;
@@ -185,7 +211,6 @@ button, select{
 	line-height: 1.5em;
 	cursor: pointer;
 	border-radius: 0px;
-	background: #bbb;
 	-webkit-appearance: inherit;
 }
 .button{
@@ -261,49 +286,6 @@ li {
 	float: left;
 }
 .menu > li > a {
-}
-.menu .log{
-	float: right;
-}
-#login-panel{
-	display: none;
-	width: 300px;
-	height: 400px;
-	background: white;
-	border: 1px solid black;
-	z-index: 9999; 
-	padding: 1em;
-	right: auto;
-	left: auto;
-	position: absolute;
-	top:0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
-}
-#login-panel.shown{
-	display: block;
-}
-#panel{
-	display: none;
-	width: 80%;
-	height: 80%;
-	background: white;
-	border: 1px solid black;
-	z-index: 9999; 
-	padding: 1em;
-	right: auto;
-	left: auto;
-	position: fixed;
-	top:0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
-}
-#panel.shown{
-	display: block;
 }
 
 .submenu {
