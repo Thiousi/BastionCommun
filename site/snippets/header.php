@@ -15,6 +15,7 @@
 		'https://cdnjs.cloudflare.com/ajax/libs/medium-editor/4.10.2/css/themes/flat.min.css',
 		'assets/css/entypo.css',
 	)) ?>
+
 	<?php echo js(array(
 		'assets/js/jquery-1.11.2.min.js',
 		'assets/js/script.js',
