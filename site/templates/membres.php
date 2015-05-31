@@ -12,7 +12,7 @@
 
     <hr>
 
-    <?php snippet('users') ?>
+    <?php snippet('membres') ?>
 
   </main>
 

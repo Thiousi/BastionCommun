@@ -26,6 +26,8 @@
 </head>
 <body class="template-<?php echo $page->intendedTemplate() ?>">
 
+	<?php if(!$page->isHomePage() && !$site->user()) go('/') ?>
+
 	<header class="header cf" role="banner">
 		<?php snippet('menu') ?>
 	</header>
