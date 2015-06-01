@@ -67,6 +67,7 @@ $(document).ready(function (){
   
   // IMAGES UPLOAD
    $('#fileupload').fileupload({
+        url: '/BastionCommun/images/',
         dataType: 'json',
         done: function (e, data) {
             $.each(data.result.files, function (index, file) {
