@@ -1,0 +1,21 @@
+Title: Annonce 2
+
+----
+
+Description: test
+
+----
+
+Author: samuel
+
+----
+
+Date: 2015-06-01
+
+----
+
+Informations: 
+
+- 
+  key: Lieu
+  value: Strasbourg

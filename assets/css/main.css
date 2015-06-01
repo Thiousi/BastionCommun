@@ -449,17 +449,62 @@ h1 a, h2 a, h3 a, h4 a {
 	}
 }
 
-/* Edit Ad
+/* Annonce
 -------------------------------------------------- */
-main textarea, main input {
+.swiper-container {
   width: 100%;
-  border: 1px solid;
-  margin-bottom: 30px;
-}
-main textarea {
   height: 300px;
+  margin-left: auto;
+  margin-right: auto;
 }
-main input {
+.swiper-image {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+.gallery-top {
+  height: 400px;
+  width: 100%;
+}
+.gallery-thumbs {
+  height: 100px;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+.gallery-thumbs .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+.gallery-thumbs .swiper-slide-active {
+  opacity: 1;
+}
+
+/* File Upload */
+.fileinput-button {
+  position: relative;
+  overflow: hidden;
+}
+.fileinput-button input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  -ms-filter: 'alpha(opacity=0)';
+  font-size: 200px;
+  direction: ltr;
+  cursor: pointer;
+}
+
+/* Fixes for IE < 8 */
+@media screen\9 {
+  .fileinput-button input {
+    filter: alpha(opacity=0);
+    font-size: 100%;
+    height: 100%;
+  }
 }
 
 /* Next/Prev nav
