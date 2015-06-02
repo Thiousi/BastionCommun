@@ -1,5 +1,5 @@
 <?php
-	kirby()->routes(
+/*	kirby()->routes(
 		array(
 			array(
 				'pattern' => 'content/(:all)', 
@@ -43,5 +43,5 @@
 				}
 			)
 		)
-	);
+	);*/
 ?>

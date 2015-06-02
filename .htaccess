@@ -20,7 +20,7 @@ RewriteEngine on
 RewriteRule ^content/(.*)\.(txt|md|mdown)$ error [R=301,L]
 
 # firewall
-RewriteRule ^content/(.*)$ index.php [L]
+# RewriteRule ^content/(.*)$ index.php [L]
 
 # block all files in the site folder from being accessed directly
 RewriteRule ^site/(.*) error [R=301,L]
