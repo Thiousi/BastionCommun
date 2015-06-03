@@ -1,0 +1,36 @@
+Title: Exposition
+
+----
+
+Criteres: 
+
+- 
+  nom: Lieu
+  slug: lieu
+  type: text
+  values:
+- 
+  nom: Adresse
+  slug: adresse
+  type: map
+  values:
+- 
+  nom: Avec
+  slug: avec
+  type: text
+  values:
+- 
+  nom: Date de début
+  slug: debut
+  type: date
+  values:
+- 
+  nom: Date de fin
+  slug: fin
+  type: date
+  values:
+- 
+  nom: Horaires
+  slug: horaires
+  type: text
+  values:

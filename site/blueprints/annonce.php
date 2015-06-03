@@ -16,6 +16,13 @@ fields:
     label: Date
     type: dateAuto
     width: 1/4
+  categorie:
+    label: Catégorie
+    type: select
+    options: query
+    query:
+      page: categories
+      fetch: children
   informations:
     label: Informations
     type: structure

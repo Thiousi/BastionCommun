@@ -1,0 +1,13 @@
+Title: L'Annonce
+
+----
+
+Categorie: fournisseur
+
+----
+
+Informations: {"society_name":"","adresse":"","horaires":"","telephone":""}
+
+----
+
+Description: test

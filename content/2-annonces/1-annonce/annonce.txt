@@ -1,8 +1,8 @@
-Title: Annonce 2
+Title: À VENDRE : Mouton
 
 ----
 
-Description: test
+Description: J'ai à vendre un _petit mouton_. À venir récupérer sur **Place**.
 
 ----
 
@@ -16,6 +16,11 @@ Date: 2015-06-01
 
 Informations: 
 
-- 
-  key: Lieu
-  value: Strasbourg
+society_name: Mouton
+adresse: Brebis
+horaires: Bouc
+telephone: Chamois
+
+----
+
+Categorie: fournisseur

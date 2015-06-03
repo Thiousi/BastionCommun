@@ -1,0 +1,26 @@
+Title: Fournisseur
+
+----
+
+Criteres: 
+
+- 
+  nom: Nom de la société
+  slug: society_name
+  type: text
+  values:
+- 
+  nom: Adresse
+  slug: adresse
+  type: map
+  values:
+- 
+  nom: Horaires
+  slug: horaires
+  type: text
+  values:
+- 
+  nom: Numéro de téléphone
+  slug: telephone
+  type: text
+  values:

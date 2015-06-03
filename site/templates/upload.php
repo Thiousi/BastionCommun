@@ -12,4 +12,7 @@
 
 error_reporting(E_ALL | E_STRICT);
 require('UploadHandler.php');
-$upload_handler = new UploadHandler();
+$annonce = $_GET["annonce"];
+$dir = page('annonces/'.$annonce)->root() . '/';
+$options = array ('upload_dir' => $dir, 'image_versions' => array());
+$upload_handler = new UploadHandler($options);

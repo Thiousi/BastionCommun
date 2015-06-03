@@ -14,7 +14,6 @@
 		'https://cdnjs.cloudflare.com/ajax/libs/medium-editor/4.10.1/medium-editor.min.css',
 		'https://cdnjs.cloudflare.com/ajax/libs/medium-editor/4.10.2/css/themes/flat.min.css',
     '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
-    '//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css',
 		'assets/css/entypo.css',
     'https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.0.7/css/swiper.min.css'
 	)) ?>
@@ -27,7 +26,8 @@
 		'assets/js/me-markdown.standalone.min.js',
     'assets/js/jquery.ui.widget.js',
     'assets/js/jquery.iframe-transport.js',
-    'assets/js/jquery.fileupload.js'
+    'assets/js/jquery.fileupload.js',
+    'assets/js/smart-submit.js'
 	)) ?>
 
 </head>
