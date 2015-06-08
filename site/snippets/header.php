@@ -10,6 +10,7 @@
 	<meta name="keywords" content="<?php echo $site->keywords()->html() ?>">
 
 	<?php echo css(array(
+    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css',
 		'assets/css/main.css',
 		'https://cdnjs.cloudflare.com/ajax/libs/medium-editor/4.10.1/medium-editor.min.css',
 		'https://cdnjs.cloudflare.com/ajax/libs/medium-editor/4.10.2/css/themes/flat.min.css',
@@ -23,6 +24,7 @@
 		'assets/js/script.js',
 		'https://cdnjs.cloudflare.com/ajax/libs/medium-editor/4.10.1/medium-editor.min.js',
     'https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.0.7/js/swiper.jquery.min.js',
+    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js',
 		'assets/js/me-markdown.standalone.min.js',
     'assets/js/jquery.ui.widget.js',
     'assets/js/jquery.iframe-transport.js',

@@ -86,12 +86,12 @@
       <textarea id="hidden-description" name="_description"></textarea>
       <textarea name="uri"><?php echo $page->uri() ?></textarea>
     </div>
-    <button type="submit" name="submit" class="editOnly">Submit</button>
+    <button type="submit" name="submit" class="editOnly btn btn-primary">Submit</button>
   </form>
   
   <!-- VALIDATION BUTTON -->
   <div id="controlButtons" class="usersOnly">
-    <button class="button editButton viewOnly">Edit</button>
+    <button class="btn btn-primary button editButton viewOnly">Edit</button>
   </div>
   
   <!-- BOTTOM LINKS -->
