@@ -32,9 +32,6 @@ $(function(){
 			var response = $('#smart-submit-response');
 			response.html('');
 
-			// disable form
-			$(this).addClass('disabled');
-
 			// submit
 			$.ajax({
 				url: $(this).prop('action'),
@@ -44,8 +41,8 @@ $(function(){
 				success: function(data) {
 					if (data.success)
 					{
-						response.html('<div class="smart-submit-alert smart-submit-alert-success">'+data.success+'</div>');
-						$('#smart-submit').hide();
+						response.html('<div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+data.success+'</div>');
+            $('main').addClass('viewMode').removeClass('editMode');
 					}
 					else if (data.redirect)
 					{
@@ -54,11 +51,10 @@ $(function(){
 					else
 					{
 						response.html('<div class="smart-submit-alert smart-submit-alert-error">'+data.error+'</div>');
-						$('#smart-submit').removeClass('disabled');
 					}
-					$("html,body").animate({scrollTop: response.offset().top - 12}, 300);
 			  	}
 			});
+      
 			return false;
 		});
 

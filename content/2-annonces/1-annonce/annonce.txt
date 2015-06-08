@@ -1,8 +1,8 @@
-Title: À VENDRE : Mouton
+Title: À VENDRE : Le mouton
 
 ----
 
-Description: J'ai à vendre un _petit mouton_. À venir récupérer sur **Place**.
+Description: Un rapport confidentiel de l’IRSN révèle de graves dysfonctionnements de pièces importantes de l’EPR de Flamanville (Manche). Ce document, que Mediapart publie intégralement, pointe « de multiples modes de défaillances aux conséquences graves » sur les soupapes de sûreté. Ces nouvelles anomalies viennent s’ajouter aux défauts de fabrication de la cuve du réacteur.
 
 ----
 
@@ -16,11 +16,48 @@ Date: 2015-06-01
 
 Informations: 
 
-society_name: Mouton
-adresse: Brebis
-horaires: Bouc
-telephone: Chamois
+- 
+  key: lieu
+  value: Bled
+- 
+  key: adresse
+  value: Perdu
+- 
+  key: avec
+  value: 'Peu de monde<br>'
+- 
+  key: debut
+  value: 01.01.2012
+- 
+  key: fin
+  value: 12.12.2012
+- 
+  key: horaires
+  value: '10h - 18h'
 
 ----
 
-Categorie: fournisseur
+Categorie: categorie-1
+
+----
+
+Horaires: 
+
+- 
+  key: lieu
+  value: Strasbourg
+- 
+  key: adresse
+  value:
+- 
+  key: avec
+  value:
+- 
+  key: debut
+  value: '01.01.12'
+- 
+  key: fin
+  value:
+- 
+  key: horaires
+  value: '10h - 18h'

@@ -1,10 +1,10 @@
 
 
 
-<button id="profile">
-	Profile
-</button>
+<li>
+	<a href="#">Profile</a>
+</li>
 
-<button id="logout">
+<li>
 	<a href="<?php echo url('logout') ?>">Déconnection</a>
-</button>
+</li>

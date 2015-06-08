@@ -18,7 +18,11 @@ foreach(kirby()->request()->data() as $key=>$value) {
     $key=substr($key, 1);
     if ($key=="informations") {
       $value = json_decode($value);
-      $value = yaml::encode($value);
+      $structure = [];
+      foreach($value as $subkey => $value) {
+        $structure[] = array('key'=>$subkey, 'value'=>$value);
+      }
+      $value = yaml::encode($structure);
     }
     $request[$key]= $value;
   }

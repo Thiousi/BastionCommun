@@ -101,13 +101,15 @@ a:hover {
 
 /* Site
 -------------------------------------------------- */
+body, html {
+  font-size: 18px;
+  line-height: 24px;
+}
 html {
 	height: 101%;
 	font-family: "propcouriersansregular", sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
-  font-size: 18px;
-  line-height: 24px;
 }
 body {
 	margin: 0 auto;
@@ -164,6 +166,12 @@ h4 {
 h1 a, h2 a, h3 a, h4 a {
 	color: inherit;
 	border: 0 !important;
+}
+
+/* Forms
+-------------------------------------------------- */
+.dropdown-menu {
+  font-size: 1rem;
 }
 
 /* Header
@@ -334,11 +342,6 @@ input{
 }
 .editMode .viewOnly {
   display: none;
-}
-.fieldsGroup {
-  margin: 2rem 0;
-  padding: 2rem;
-  border: 1px solid #AAA;
 }
 
 /* Viewer */
