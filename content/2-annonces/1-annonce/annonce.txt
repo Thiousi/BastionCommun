@@ -18,13 +18,13 @@ Informations:
 
 - 
   key: lieu
-  value: Bled
+  value: Bleed
 - 
   key: adresse
-  value: Perdu
+  value: Perdue
 - 
   key: avec
-  value: 'Peu de monde'
+  value: Peu de monde
 - 
   key: debut
   value: 01.01.2012
@@ -38,5 +38,3 @@ Informations:
 ----
 
 Categorie: categorie-1
-
-----

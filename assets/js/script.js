@@ -7,11 +7,26 @@ $(window).resize(function(){
 $(document).ready(function (){
 
 	var editors=[];
+  
+  function inputsGroupToField(group, field) {
+    var fields = {};
+    group.find('.input').each(function(i) {
+      fields[$(this).attr("data-slug")] = $(this).val();
+    });
+    $( field ).val( JSON.stringify(fields) );
+  }
 
 	$('.editButton').click(function() {
     
     $('main').removeClass('viewMode').addClass('editMode');
     $(this).parent().find('.submitButton').show();
+    $(".inputsGroup .input").attr('readonly', false);
+    inputsGroupToField( $('.inputsGroup.active'), "#hidden-" + $('.inputsGroup.active').attr('data-populate') );
+    
+    $(".inputsGroup .input").on('input', function() {
+      var inputsGroup = $(this).parents('.inputsGroup');
+      inputsGroupToField( inputsGroup , "#hidden-" + inputsGroup.attr('data-populate') );
+    });
 
     $(".simpleEdit").each(function() {
       var field = $(this);
@@ -21,15 +36,7 @@ $(document).ready(function (){
         extensions: {
           markdown: new MeMarkdown(function (md) {
             var fieldToPopulate = field.attr('data-populate');
-            if (fieldToPopulate){ 
-              $("#hidden-" + fieldToPopulate).val(md);
-            } else {
-              var fields = {};
-              $('#informations .tab-pane.active .input').each(function(i) {
-                fields[$(this).attr("data-slug")] = $(this).html();
-              });
-              $( "#hidden-informations" ).val( JSON.stringify(fields) );
-            }
+            $("#hidden-" + fieldToPopulate).val(md);
           })
         }
       }));
@@ -95,11 +102,50 @@ $(document).ready(function (){
     }
   });
   
+  // GEOPICKER
+  function updateControls(addressComponents) {
+    $('#geopicker-street').val(addressComponents.addressLine1);
+    $('#geopicker-city').val(addressComponents.city);
+    //$('#us5-state').val(addressComponents.stateOrProvince);
+    $('#geopicker-zip').val(addressComponents.postalCode);
+    $('#geopicker-country').val(addressComponents.country);
+  }
+  $('#geopicker').locationpicker({
+    location: {latitude: 46.15242437752303, longitude: 2.7470703125},	
+    radius: 300,
+    enableAutocomplete: true,
+    //enableReverseGeocode: false,
+    inputBinding: {
+        latitudeInput: $('#geopicker-lat'),
+        longitudeInput: $('#geopicker-lon'),
+        locationNameInput: $('#geopicker-address')
+    },
+    onchanged: function (currentLocation, radius, isMarkerDropped) {
+        var addressComponents = $(this).locationpicker('map').location.addressComponents;
+        updateControls(addressComponents);
+    },
+    oninitialized: function(component) {
+        var addressComponents = $(component).locationpicker('map').location.addressComponents;
+        updateControls(addressComponents);
+    }
+  });
+  $('#modal-geopicker').on('shown.bs.modal', function (event) {
+    var button = $(event.relatedTarget) // Button that triggered the modal
+    var city = button.data('city') // Extract info from data-* attributes
+    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    var modal = $(this)
+    modal.find('#geopicker-address').val(city);
+    $('#geopicker').locationpicker('autosize');
+    var mapContext = $('#geopicker').locationpicker('map');
+    //$('#geopicker').locationpicker('location', {latitude: 36.15242437752303, longitude: 2.7470703125});
+  });
+  
   // AUTOCOMPLETE
   $('.autocomplete').each(function() {
     $(this).autocomplete({
       serviceUrl: '../smart-submit?handler=autocomplete',
-      params: { field: $(this).attr('data-field') }
+      params: { field: $(this).attr('data-slug') }
     });
   });
   

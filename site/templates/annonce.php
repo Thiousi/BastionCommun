@@ -94,10 +94,11 @@
             <?php 
             foreach (page('categories')->children() as $categorie) :
             $active = ( $currentCategorie == $categorie->uid() ) ?  'active' : '' ;
-            echo "<div role='tabpanel' class='tab-pane {$active}' id='cat-{$categorie->uid()}'>";
+            echo "<div role='tabpanel' class='tab-pane inputsGroup {$active}' id='cat-{$categorie->uid()}' data-populate='informations'>";
               echo "<table class='table table-bordered'>";
                 foreach ($categorie->criteres()->yaml() as $critere):
                   $informations = $page->informations()->yaml();
+                  $type = $critere['type'];
                   $meta = array();
                   foreach($informations as $information) {
                     $meta[ $information['key'] ] = $information['value'];
@@ -108,9 +109,12 @@
                   }
                   echo "<tr>";
                     echo "<td>{$critere['nom']}</td>";
-                    echo "<td class='input simpleEdit' data-slug='{$critere['slug']}'>";
-                    echo "<span data-container='body' data-toggle='popover' data-placement='top' data-content=''>{$value}</span>";
-                    echo "<div class='hidden popContent'><input type='text' class='autocomplete' data-field='lieu'/></div>";
+                    echo "<td>";
+                    if ($type == 'map') :
+                      echo "<button class='btn btn-default input' data-city='marseille' data-toggle='modal' data-target='#modal-geopicker' data-slug='{$critere['slug']}'><span class='glyphicon glyphicon-map-marker' aria-hidden='true'></span> {$value}</button>";
+                    else :
+                      echo "<input type='text' class='autocomplete form-control input' data-slug='{$critere['slug']}' value='{$value}' readonly/>";
+                    endif;
                     echo "</td>";
                   echo "</tr>";
                 endforeach;
@@ -143,4 +147,5 @@
   </div> <!-- /container-fluid -->
 
 </main>
+<?php snippet('modal-geopicker') ?>
 <?php snippet('footer') ?>

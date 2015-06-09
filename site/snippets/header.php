@@ -25,12 +25,14 @@
 		'https://cdnjs.cloudflare.com/ajax/libs/medium-editor/4.10.1/medium-editor.min.js',
     'https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.0.7/js/swiper.jquery.min.js',
     'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js',
+    'http://maps.google.com/maps/api/js?sensor=false&libraries=places',
 		'assets/js/me-markdown.standalone.min.js',
     'assets/js/jquery.ui.widget.js',
     'assets/js/jquery.iframe-transport.js',
     'assets/js/jquery.fileupload.js',
     'assets/js/smart-submit.js',
     'assets/js/jquery.autocomplete.min.js',
+    'assets/js/locationpicker.jquery.min.js',
 	)) ?>
 
 </head>
