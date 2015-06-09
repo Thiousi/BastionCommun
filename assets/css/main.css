@@ -226,6 +226,10 @@ nav {
 	top: 50%;
 	margin-top: -30px;
 }
+#signin {
+  margin: 1rem;
+  width: 10rem;
+}
 
 /* Panel
 -------------------------------------------------- */

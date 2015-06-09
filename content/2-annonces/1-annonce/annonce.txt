@@ -24,7 +24,7 @@ Informations:
   value: Perdu
 - 
   key: avec
-  value: 'Peu de monde<br>'
+  value: 'Peu de monde'
 - 
   key: debut
   value: 01.01.2012
@@ -40,24 +40,3 @@ Informations:
 Categorie: categorie-1
 
 ----
-
-Horaires: 
-
-- 
-  key: lieu
-  value: Strasbourg
-- 
-  key: adresse
-  value:
-- 
-  key: avec
-  value:
-- 
-  key: debut
-  value: '01.01.12'
-- 
-  key: fin
-  value:
-- 
-  key: horaires
-  value: '10h - 18h'

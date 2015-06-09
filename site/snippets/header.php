@@ -29,7 +29,8 @@
     'assets/js/jquery.ui.widget.js',
     'assets/js/jquery.iframe-transport.js',
     'assets/js/jquery.fileupload.js',
-    'assets/js/smart-submit.js'
+    'assets/js/smart-submit.js',
+    'assets/js/jquery.autocomplete.min.js',
 	)) ?>
 
 </head>

@@ -1,3 +1,25 @@
+<?php
+echo 'log';
+if(get('username')) {
+  echo 'login';
+  // fetch the user by username and run the 
+  // login method with the password
+  if($user = $site->user(get('username')) and $user->login(get('password'))) {
+    // redirect to the homepage 
+    // if the login was successful
+    go('/');
+  } else {
+    // make sure the alert is being 
+    // displayed in the template
+    $error = true;
+  }
+
+} else {
+  // nothing has been submitted
+  // nothing has gone wrong
+  $error = false;  
+}
+?>
 
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container-fluid">
@@ -31,36 +53,15 @@
              <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> <span class="caret"></span>
           </a>
           <ul class="dropdown-menu" role="menu">
-            <?php snippet('param') ?>
+            <?php if($user = $site->user()):
+              snippet('param');
+            else :
+              snippet('signin');
+            endif;
+            ?>
           </ul>
         </li>
       </ul>
-
-      <!--<div id="interface">
-      <?php if($user = $site->user()): ?>
-        <div id="paramButton" class="panelButton icon-cog"></div>
-        <div class="paramPanel panel">
-          <?php snippet('param') ?>
-        </div>
-      <?php else: ?>
-        <div id="loginButton" class="panelButton icon-key"></div>
-        <div class="loginPanel panel">
-          <form method="post">
-            <div>
-              <label for="username"><?php echo page('login')->username()->html() ?></label>
-              <input type="text" id="username" name="username">
-            </div>
-            <div>
-              <label for="password"><?php echo page('login')->password()->html() ?></label>
-              <input type="password" id="password" name="password">
-            </div>
-            <div>
-              <input class="button" type="submit" name="login" value="<?php echo page('login')->button()->html() ?>">
-            </div>
-          </form>
-        </div>
-      <?php endif ?>
-    -->
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

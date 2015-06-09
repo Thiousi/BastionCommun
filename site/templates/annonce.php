@@ -108,7 +108,10 @@
                   }
                   echo "<tr>";
                     echo "<td>{$critere['nom']}</td>";
-                    echo "<td class='input simpleEdit' data-slug='{$critere['slug']}'>{$value}</td>";
+                    echo "<td class='input simpleEdit' data-slug='{$critere['slug']}'>";
+                    echo "<span data-container='body' data-toggle='popover' data-placement='top' data-content=''>{$value}</span>";
+                    echo "<div class='hidden popContent'><input type='text' class='autocomplete' data-field='lieu'/></div>";
+                    echo "</td>";
                   echo "</tr>";
                 endforeach;
               echo "</table>";
