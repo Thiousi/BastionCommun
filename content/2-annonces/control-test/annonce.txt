@@ -1,0 +1,40 @@
+Title: Control Test
+
+----
+
+Author: samuel
+
+----
+
+Date: 2015-06-10
+
+----
+
+Categorie: categorie-1
+
+----
+
+Informations: 
+
+- 
+  key: lieu
+  value:
+- 
+  key: adresse
+  value: '{"latitude":"43.2949884","longitude":"5.394115899999974","street":"3 Rue Goudard","city":"Marseille","zip":"13005","country":"FR"}'
+- 
+  key: avec
+  value:
+- 
+  key: debut
+  value:
+- 
+  key: fin
+  value:
+- 
+  key: horaires
+  value:
+
+----
+
+Description: 

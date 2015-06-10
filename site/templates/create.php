@@ -1,28 +1,26 @@
 <?php
-$newPage;
 $message = 'Veuillez choisir un titre';
 if($site->user()):
-    if($title = get('title')) :
+  if($title = get('title')) :
 
-      try {
+    try {
 
-        $newPage = page('annonces')->children()->create($title, 'annonce', array(
-          'title' => $title,
-          'author'  => $site->user()->username(),
-          'date'  => date('Y-m-d'),
-          'description'  => 'This is my new article',
-        ));
+      $newPage = page('annonces')->children()->create($title, 'annonce', array(
+        'title' => $title,
+        'categorie' => get('categorie'),
+        'description' => get('description'),
+        'author'  => $site->user()->username(),
+        'date'  => date('Y-m-d'),
+      ));
 
-        $message = 'The new page has been created';
-        
-        print_r ($newPage->uri());
+      go( $newPage->uri() ); 
 
-      } catch(Exception $e) {
+    } catch(Exception $e) {
 
-        $message = $e->getMessage();
+      $message = $e->getMessage();
 
-      }
+    }
 
-    endif;  
-  endif;
-go( $newPage->uri() ); ?>
+  endif;  
+endif;
+?>

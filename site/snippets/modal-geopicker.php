@@ -37,7 +37,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-        <button type="button" class="btn btn-primary">ICI</button>
+        <button type="button" class="btn btn-primary" id="confirm-geolocation">ICI</button>
       </div>
     </div>
   </div>

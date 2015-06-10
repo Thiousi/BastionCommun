@@ -69,27 +69,21 @@ $(document).ready(function (){
     var fieldToPopulate = $(this).parents('.dropdown').attr('data-populate');
     var value = $(this).parent('li').attr('data-value');
     $("#hidden-" + fieldToPopulate).val(value);
-    console.log(value);
     $(this).parents('.dropdown').find(".current").html($(this).text());
   });
   $(".dropdown-menu li.active a").click();
 
   
   // GALLERY
-  var galleryTop = new Swiper('.gallery-top', {
-      nextButton: '.swiper-button-next',
-      prevButton: '.swiper-button-prev',
-      spaceBetween: 10,
+  var gallery = new Swiper('.swiper-container', {
+    pagination: '.swiper-pagination',
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    slidesPerView: 1,
+    paginationClickable: true,
+    spaceBetween: 30,
+    loop: true
   });
-  var galleryThumbs = new Swiper('.gallery-thumbs', {
-      spaceBetween: 10,
-      centeredSlides: true,
-      slidesPerView: 'auto',
-      touchRatio: 0.2,
-      slideToClickedSlide: true
-  });
-  galleryTop.params.control = galleryThumbs;
-  galleryThumbs.params.control = galleryTop;
   
   
   
@@ -97,7 +91,6 @@ $(document).ready(function (){
   $('[data-toggle="popover"]').popover({
     html : true, 
     content: function() {
-      console.log($(this).siblings('.popContent').html());
       return $(this).siblings('.popContent').html();
     }
   });
@@ -131,15 +124,34 @@ $(document).ready(function (){
   });
   $('#modal-geopicker').on('shown.bs.modal', function (event) {
     var button = $(event.relatedTarget) // Button that triggered the modal
-    var city = button.data('city') // Extract info from data-* attributes
-    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-    var modal = $(this)
-    modal.find('#geopicker-address').val(city);
+    var input = button.siblings('.input');
+    var location;
+    try {
+        var data = JSON.parse( input.val() );
+        if (data && typeof data === "object" && data !== null) {
+          location = data;
+        }
+    }
+    catch (e) { }
+    var modal = $(this);
     $('#geopicker').locationpicker('autosize');
-    var mapContext = $('#geopicker').locationpicker('map');
-    //$('#geopicker').locationpicker('location', {latitude: 36.15242437752303, longitude: 2.7470703125});
+    if(typeof location !== "undefined") {
+      var mapContext = $('#geopicker').locationpicker('map');
+      $('#geopicker').locationpicker('location', { latitude: location.latitude, longitude: location.longitude });
+      $('#geopicker-street').val(location.street);
+      $('#geopicker-city').val(location.city);
+      $('#geopicker-zip').val(location.zip);
+      $('#geopicker-country').val(location.country);
+    }
+    
+    $('#confirm-geolocation').off();
+    $('#confirm-geolocation').click(function() {
+      $('#modal-geopicker').modal('hide');
+      button.find('.name').text($('#geopicker-city').val() + ' (' + $('#geopicker-zip').val() + ')');
+      input.val( JSON.stringify({ latitude: $('#geopicker-lat').val(), longitude: $('#geopicker-lon').val(), street: $('#geopicker-street').val(), city: $('#geopicker-city').val(), zip: $('#geopicker-zip').val(), country: $('#geopicker-country').val() }) );
+    });
   });
+  
   
   // AUTOCOMPLETE
   $('.autocomplete').each(function() {
@@ -153,8 +165,11 @@ $(document).ready(function (){
   $('#fileupload').fileupload({
     dataType: 'json',
     done: function (e, data) {
+      $('#uploader-message').text('Images ajoutés : ');
       $.each(data.result.files, function (index, file) {
-        $('<p/>').text(file.name).appendTo('#files');
+        $('<p/>').text(file.name).appendTo('#files').addClass('label label-success');
+        console.log(data);
+        gallery.prependSlide('<figure class="swiper-slide" data-pageuri="' + $('#slider').data('pageuri') + '" data-filename="' + file.name + '"><div class="swiper-image" style="background-image:url(' + $('#slider').data('pageurl') + '/' + file.name + ')"></div></figure>');
       });
     },
     progressall: function (e, data) {
@@ -166,6 +181,22 @@ $(document).ready(function (){
     }
   }).prop('disabled', !$.support.fileInput)
     .parent().addClass($.support.fileInput ? undefined : 'disabled');
+  
+  // IMAGES DELETE
+  $('#swiper-button-delete').click(function() {
+    $.post('../smart-submit?handler=delete', 
+      {
+        file : $('.swiper-slide-active').data('filename'),
+        page : $('#slider').data('pageuri')
+      },
+      function() {
+        var i = gallery.activeIndex-1;
+        gallery.removeSlide(i);
+        gallery.update();
+      }
+    );
+
+  });
   
   // CATEGORIE SELECT
   $('#categorie-select').change(function() {

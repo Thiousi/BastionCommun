@@ -18,13 +18,13 @@ Informations:
 
 - 
   key: lieu
-  value: Bleed
+  value: Bastion 14
 - 
   key: adresse
-  value: Perdue
+  value: '{"latitude":"48.5912379","longitude":"7.717055699999946","street":"4-8 Rue du Bastion","city":"Strasbourg","zip":"67200","country":"FR"}'
 - 
   key: avec
-  value: Peu de monde
+  value: Gérard
 - 
   key: debut
   value: 01.01.2012
@@ -33,7 +33,7 @@ Informations:
   value: 12.12.2012
 - 
   key: horaires
-  value: '10h - 18h'
+  value: Tous les jours, de 10h à 18h
 
 ----
 

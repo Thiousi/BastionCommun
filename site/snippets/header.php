@@ -16,7 +16,8 @@
 		'https://cdnjs.cloudflare.com/ajax/libs/medium-editor/4.10.2/css/themes/flat.min.css',
     '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
 		'assets/css/entypo.css',
-    'https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.0.7/css/swiper.min.css'
+    'https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.0.7/css/swiper.min.css',
+    'assets/css/bootstrap-select.min.css'
 	)) ?>
 
 	<?php echo js(array(
@@ -33,6 +34,7 @@
     'assets/js/smart-submit.js',
     'assets/js/jquery.autocomplete.min.js',
     'assets/js/locationpicker.jquery.min.js',
+    'assets/js/bootstrap-select.min.js',
 	)) ?>
 
 </head>
