@@ -56,12 +56,20 @@ $(document).ready(function (){
   });
       
   $('.cancelButton').click(function() {
-    $('main').removeClass('editMode').addClass('viewMode');
-    //editors.forEach( function(editor){ editor.destroy() });
-    //$('.editable').html(savedContent);		
-    //$(this).parent().find('.submitButton').hide();
-    //$(this).toggleClass('cancelButton editButton').text('Edit').parent().find('#description-editor').removeClass('editable');
+    location.reload(); 
   });
+  $('.submitButton').click(function() {
+    $('main').removeClass('editMode').addClass('viewMode');
+    $(".inputsGroup .input").attr('readonly', true);
+    editors.forEach( function(editor){ editor.destroy() });
+  });
+  
+  
+  // Passer en mode édition si l'url le demande
+  if(window.location.hash.substring(1)=='edit') {
+    $('.editButton').click();
+    window.location.hash = '';
+  }
     
 	
   
@@ -85,15 +93,6 @@ $(document).ready(function (){
     loop: true
   });
   
-  
-  
-  // POPOVER
-  $('[data-toggle="popover"]').popover({
-    html : true, 
-    content: function() {
-      return $(this).siblings('.popContent').html();
-    }
-  });
   
   // GEOPICKER
   function updateControls(addressComponents) {

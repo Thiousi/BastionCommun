@@ -1,0 +1,38 @@
+Title: 48 maillots de bain
+
+----
+
+Author: samuel
+
+----
+
+Date: 20150628
+
+----
+
+Categorie: fournisseur
+
+----
+
+Informations: 
+
+- 
+  key: society_name
+  value: Plongeur
+- 
+  key: adresse
+  value: '{"latitude":"43.31322","longitude":"5.374469999999974","street":"341 Boulevard National","city":"Marseille","zip":"13003","country":"FR"}'
+- 
+  key: horaires
+  value: 10h-18h
+- 
+  key: telephone
+  value: 5567765
+
+----
+
+Description: 
+
+Je vend des maillot de bain _rouge_.
+
+> bonne baignade !

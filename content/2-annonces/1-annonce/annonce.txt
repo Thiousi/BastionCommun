@@ -17,24 +17,18 @@ Date: 2015-06-01
 Informations: 
 
 - 
-  key: lieu
-  value: Bastion 14
+  key: society_name
+  value:
 - 
   key: adresse
-  value: '{"latitude":"48.5912379","longitude":"7.717055699999946","street":"4-8 Rue du Bastion","city":"Strasbourg","zip":"67200","country":"FR"}'
-- 
-  key: avec
-  value: Gérard
-- 
-  key: debut
-  value: 01.01.2012
-- 
-  key: fin
-  value: 12.12.2012
+  value:
 - 
   key: horaires
-  value: Tous les jours, de 10h à 18h
+  value:
+- 
+  key: telephone
+  value:
 
 ----
 
-Categorie: categorie-1
+Categorie: fournisseur

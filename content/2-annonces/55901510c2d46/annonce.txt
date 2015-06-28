@@ -1,0 +1,40 @@
+Title: Titre
+
+----
+
+Author: samuel
+
+----
+
+Date: 20150628
+
+----
+
+Categorie: fournisseur
+
+----
+
+Informations: 
+
+- 
+  key: lieu
+  value: Paris
+- 
+  key: adresse
+  value:
+- 
+  key: avec
+  value:
+- 
+  key: debut
+  value:
+- 
+  key: fin
+  value:
+- 
+  key: horaires
+  value:
+
+----
+
+Description: 

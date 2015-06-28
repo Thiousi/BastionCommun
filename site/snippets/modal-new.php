@@ -1,5 +1,5 @@
 <!-- Name -->
-<div class="modal fade" id="modal-newname" tabindex="-1" role="dialog" aria-labelledby="New" aria-hidden="true">
+<div class="modal fade" id="modal-new" tabindex="-1" role="dialog" aria-labelledby="New" aria-hidden="true">
   <div class="modal-dialog">
     <form class="contact" name="contact" method="post" action="<?php echo page('create')->url() ?>">
       <div class="modal-content">

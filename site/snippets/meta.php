@@ -1,17 +1,18 @@
 <div role="tabpanel">
   <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
+  <ul class="nav nav-pills editOnly" role="tablist">
     <li role="presentation" class="dropdown btn-block active" data-populate="categorie">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-        Catégorie : <span class="current"></span> <span class="caret"></span>
+        Catégorie : <span class="current">—</span> <span class="caret"></span>
       </a>
       <ul class="dropdown-menu btn-block" role="menu" data-populate="categorie">
         <?php
         $currentCategorie = $page->categorie();
+        $currentCategorieTitle = page('categories/'.$currentCategorie)->title();
         foreach (page('categories')->children() as $categorie) :
           $active = ( $currentCategorie == $categorie->uid() ) ?  'class="active"' : '' ;
-          echo "<li role='presentation' {$active} data-value='{$categorie->uid()}'>";
-          echo "<a href='#cat-{$categorie->uid()}' role='tab' data-toggle='tabs'>{$categorie->title()}</a>";
+          echo "<li {$active} data-value='{$categorie->uid()}'>";
+          echo "<a href='#cat-{$categorie->uid()}' role='tab' data-toggle='tab'>{$categorie->title()}</a>";
           echo "</li>";
         endforeach;
         ?>
@@ -25,7 +26,9 @@
     foreach (page('categories')->children() as $categorie) :
       $active = ( $currentCategorie == $categorie->uid() ) ?  'active' : '' ;
       echo "<div role='tabpanel' class='tab-pane inputsGroup {$active}' id='cat-{$categorie->uid()}' data-populate='informations'>";
+        echo "<div class='catName viewOnly'><p>Catégorie : {$currentCategorieTitle}</p></div>";
         echo "<table class='table table-bordered'>";
+          
           foreach ($categorie->criteres()->yaml() as $critere):
             $informations = $page->informations()->yaml();
             $type = $critere['type'];

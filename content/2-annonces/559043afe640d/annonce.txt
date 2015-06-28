@@ -1,12 +1,4 @@
-Title: Paire de baffes
-
-----
-
-Categorie: fournisseur
-
-----
-
-Description: Paire de baffes 2x50W à vendre pas cher
+Title: Titre
 
 ----
 
@@ -14,7 +6,11 @@ Author: samuel
 
 ----
 
-Date: 2015-06-10
+Date: 20150628
+
+----
+
+Categorie: fournisseur
 
 ----
 
@@ -32,3 +28,7 @@ Informations:
 - 
   key: telephone
   value:
+
+----
+
+Description: 

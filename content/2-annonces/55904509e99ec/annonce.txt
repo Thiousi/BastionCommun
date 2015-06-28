@@ -1,4 +1,4 @@
-Title: Control Test
+Title: Visual Vision
 
 ----
 
@@ -6,7 +6,7 @@ Author: samuel
 
 ----
 
-Date: 2015-06-10
+Date: 20150628
 
 ----
 
@@ -21,7 +21,7 @@ Informations:
   value:
 - 
   key: adresse
-  value: '{"latitude":"43.2949884","longitude":"5.394115899999974","street":"3 Rue Goudard","city":"Marseille","zip":"13005","country":"FR"}'
+  value:
 - 
   key: avec
   value:

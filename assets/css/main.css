@@ -159,6 +159,29 @@ li {
 }
 .pac-container{z-index:2000 !important;}
 
+.dropdown-toggle .caret {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+}
+
+/* Medium editor
+-------------------------------------------------- */
+.medium-editor-placeholder::after {
+  color: #000 !important;
+}
+.editMode .simpleEdit, .editMode .fullEdit {
+  background-color: #FAFAFA;
+  border: 1px solid #EEE;
+  padding: 0px 0.5rem;
+}
+.editMode .fullEdit {
+  min-height: 4rem;
+  padding: .5rem;
+}
+.editMode .fullEdit.medium-editor-placeholder::after {
+  padding: .5rem;
+}
 
 /* Headings
 -------------------------------------------------- */
@@ -306,7 +329,6 @@ input{
 
 /* Project meta
 -------------------------------------------------- */
-
 .user-list img{
 	width: 50px;
 	display: inline-block;
@@ -358,12 +380,6 @@ input{
 .viewMode .editOnly {
   display: none;
 }
-.editMode .editOnly {
-  display: block;
-}
-.viewMode .viewOnly {
-  display: block;
-}
 .editMode .viewOnly {
   display: none;
 }
@@ -372,10 +388,10 @@ input{
 #viewer {
   background-color: #81D7FF;
   padding: 2rem 1rem;
+  position: relative;
 }
 .swiper-container {
   width: 100%;
-  height: 500px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -383,7 +399,7 @@ input{
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100%;
+  height: 500px;
 }
 .gallery-top {
   height: 400px;
@@ -413,17 +429,19 @@ input{
 /* File Upload */
 #uploadImages {
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 9999;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 999;
 }
 #progress {
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
   height: 5px;
-  margin: 0 15px;
+  bottom: -5px;
+  margin: 0;
+  border-radius: 0;
 }
 .fileinput-button {
   position: relative;
@@ -456,6 +474,12 @@ input{
     font-size: 100%;
     height: 100%;
   }
+}
+
+/* Buttons
+-------------------------------------------------- */
+controlButtons .button {
+  display: inline-block;
 }
 
 /* Next/Prev nav

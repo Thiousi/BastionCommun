@@ -3,3 +3,9 @@ Title: Petites annonces
 ----
 
 Criteres: 
+
+- 
+  nom: Prix
+  slug: prix
+  type: number
+  values:

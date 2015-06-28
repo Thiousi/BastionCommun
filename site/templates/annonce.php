@@ -35,8 +35,10 @@
             <textarea name="uri"><?php echo $page->uri() ?></textarea>
           </div>
           <div class="clearfix">&nbsp;</div>
-          <div class="editOnly"><button type="submit" name="submit" class="btn btn-success"><span class='glyphicon glyphicon-ok' aria-hidden='true'></span> Enregistrer</button></div>
-          <div class="viewOnly"><button class="btn btn-primary button editButton" data-toggle="button"><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>  Modifier</button></div>
+          <button type="submit" name="submit" class="btn btn-success submitButton editOnly"><span class='glyphicon glyphicon-ok' aria-hidden='true'></span> Enregistrer</button> 
+          <button type="submit" name="submit" class="btn btn-warning cancelButton editOnly"><span class='glyphicon glyphicon-remove' aria-hidden='true'></span> Annuler</button> 
+          <button class="btn btn-primary button editButton viewOnly" data-toggle="button"><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>  Modifier</button> 
+          <a href="<?php echo page('create')->url().'?delete='.$page->uid() ?>" class="btn btn-danger viewOnly"><span class='glyphicon glyphicon-trash' aria-hidden='true'></span>  Supprimer</a> 
         </form>
       </div>
     </div>
@@ -54,7 +56,7 @@
       
       <!-- MAIN TEXT -->
       <div id="description" class="col-xs-8">
-        <div id="field-description" class="fullEdit"><?php echo $page->description()->kirbytext() ?></div>
+        <div id="field-description" class="fullEdit" data-placeholder="Texte de l'annonce"><?php echo $page->description()->kirbytext() ?></div>
       </div>
       
       <!-- META -->
