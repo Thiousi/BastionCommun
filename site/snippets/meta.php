@@ -24,7 +24,9 @@
   <div class="tab-content">
     <?php 
     foreach (page('categories')->children() as $categorie) :
+
       $active = ( $currentCategorie == $categorie->uid() ) ?  'active' : '' ;
+
       echo "<div role='tabpanel' class='tab-pane inputsGroup {$active}' id='cat-{$categorie->uid()}' data-populate='informations'>";
         echo "<div class='catName viewOnly'><p>Catégorie : {$currentCategorieTitle}</p></div>";
         echo "<table class='table table-bordered'>";

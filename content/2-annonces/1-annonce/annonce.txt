@@ -18,16 +18,16 @@ Informations:
 
 - 
   key: society_name
-  value:
+  value: Hello
 - 
   key: adresse
-  value:
+  value: '{"latitude":"44.26947830478845","longitude":"2.26641845703125","street":"D85","city":"Pradinas","zip":"12240","country":"FR"}'
 - 
   key: horaires
-  value:
+  value: 10h-18h
 - 
   key: telephone
-  value:
+  value: 06747475857
 
 ----
 

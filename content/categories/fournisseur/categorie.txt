@@ -12,6 +12,7 @@ Criteres:
 - 
   nom: Adresse
   slug: adresse
+  important: on
   type: map
   values:
 - 
