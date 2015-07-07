@@ -211,4 +211,7 @@ $(document).ready(function (){
 	// search fields
 	$('.selectpicker').selectpicker();
 	
+
+
+	
 });

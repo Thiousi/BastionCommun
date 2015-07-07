@@ -39,9 +39,11 @@
 					<p>Posté par <?php echo $annonce->author() ?> le <?php echo $annonce->date('d/m/Y') ?></p>
 				</div>
 				<div class="media-left">
+					<?php if($image = $annonce->image()): ?>
 					<a href="<?php echo $annonce->url() ?>">
-						<img class="media-object" src="<?php echo thumb($annonce->image(), array('width' => 230, 'height' => 160, 'crop' => true))->url(); ?>" alt="<?php echo $annonce->title() ?>">
+						<img class="media-object" src="<?php echo thumb($image, array('width' => 230, 'height' => 160, 'crop' => true))->url(); ?>" alt="<?php echo $annonce->title() ?>">
 					</a>
+					<?php endif; ?>
 				</div>
 				<div class="media-body">
 					<?php $categorie = $annonce->categorie(); ?>
