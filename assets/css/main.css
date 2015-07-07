@@ -159,7 +159,7 @@ li {
 }
 .pac-container{z-index:2000 !important;}
 
-.dropdown-toggle .caret {
+.btn-block .dropdown-toggle .caret {
   position: absolute;
   right: 1rem;
   top: 50%;
@@ -288,27 +288,7 @@ nav {
 	margin-top: 1rem;
 	margin-right: .5rem;
 }
-.panel{
-	display: none;
-	display: none;
-	width: 300px;
-	height: auto;
-	background: white;
-	padding: 1em;
-	right: auto;
-	left: auto;
-	position: absolute;
-	top: 0;
-	right: 0;
-}
-.panel.shown{
-	display: block;
-}
-input{
-	font-size: 1rem;
-	line-height: 1.25rem;
-	padding-left: .25rem;
-}
+
 
 /* Sortable menu
 -------------------------------------------------- */

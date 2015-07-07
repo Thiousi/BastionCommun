@@ -203,6 +203,12 @@ $(document).ready(function (){
     $('#informations .fieldsGroup').removeClass('selected');
     $('#informations .fieldsGroup.categorie-'+categorie).addClass('selected');
   });
-  
+	
+	
+	/* ANNONCES
+	------------------------------------ */
+	
+	// search fields
+	$('.selectpicker').selectpicker();
 	
 });

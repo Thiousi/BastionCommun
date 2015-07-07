@@ -27,7 +27,7 @@ Informations:
   value: 10h-18h
 - 
   key: telephone
-  value: 06747475857
+  value: 6747475857
 
 ----
 
