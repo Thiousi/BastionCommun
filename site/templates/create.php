@@ -11,8 +11,16 @@ if($site->user()):
       $newPage = page('annonces')->children()->create($uid, 'annonce', array(
         'title' => 'Titre',
         'author' => $site->user()->username(),
-        'date' => date('Ymd')
+        'date' => date('Ymd'),
+				'categorie' => get('cat')
       ));
+			
+			if($userName = get('user')) :
+				$site->user($userName)->update(array(
+					'page' => $newPage->uri()
+				));
+			endif;
+			
       go( $newPage->uri().'#edit' );
       
     } catch(Exception $e) {

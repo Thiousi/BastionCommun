@@ -3,7 +3,7 @@
   <ul class="nav nav-pills editOnly" role="tablist">
     <li role="presentation" class="dropdown btn-block active" data-populate="categorie">
       <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
-        Catégorie : <span class="current">—</span> <span class="caret"></span>
+        <span class="current">—</span> <span class="caret"></span>
       </a>
       <ul class="dropdown-menu btn-block" role="menu" data-populate="categorie">
         <?php
@@ -28,7 +28,7 @@
       $active = ( $currentCategorie == $categorie->uid() ) ?  'active' : '' ;
 
       echo "<div role='tabpanel' class='tab-pane inputsGroup {$active}' id='cat-{$categorie->uid()}' data-populate='informations'>";
-        echo "<div class='catName viewOnly'><p>Catégorie : {$currentCategorieTitle}</p></div>";
+        echo "<div class='catName viewOnly'><p>{$currentCategorieTitle}</p></div>";
         echo "<table class='table table-bordered'>";
           
           foreach ($categorie->criteres()->yaml() as $critere):

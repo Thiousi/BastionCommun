@@ -1,0 +1,28 @@
+Title: Monique
+
+----
+
+Author: samuel
+
+----
+
+Date: 20150708
+
+----
+
+Categorie: artiste-resident
+
+----
+
+Informations: 
+
+- 
+  key: annees
+  value: 2015
+- 
+  key: pratique
+  value: Scrapbooking
+
+----
+
+Description: J'aime les fleurs

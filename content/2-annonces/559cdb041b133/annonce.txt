@@ -1,0 +1,34 @@
+Title: Samuel Rivers-Moore
+
+----
+
+Author: samuel
+
+----
+
+Date: 20150708
+
+----
+
+Categorie: artiste-resident
+
+----
+
+Informations: 
+
+- 
+  key: annees
+  value: 2015
+- 
+  key: pratique
+  value: Graphisme
+
+----
+
+Description: 
+
+Samuel Rivers-Moore
+
+Graphic design, art & else
+
+message@samuelriversmoore.net

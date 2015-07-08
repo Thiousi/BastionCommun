@@ -1,0 +1,18 @@
+Title: Artiste résident
+
+----
+
+Criteres: 
+
+- 
+  nom: Années de résidence
+  slug: annees
+  important: on
+  type: number
+  values:
+- 
+  nom: Pratique
+  slug: pratique
+  important: on
+  type: text
+  values:
