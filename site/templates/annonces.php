@@ -2,48 +2,55 @@
 
   <main class="main" role="main">
 		
-		<div class="panel panel-default">
-			<div class="panel-body">
+		<div class="cleafix">&nbsp;</div>
+		<div class="cleafix">&nbsp;</div>
+		
 				
-				<div class="container-fluid">
+		<div class="container-fluid">
+			
+			<div class="row">
+				<div class="col-xs-12">
+					<a href='<?php echo page('create')->url() ?>?create=1' id="btn-new" class='btn btn-default btn-lg' data-width='100%'>
+						<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span> 
+						<span class='name'> Publier une annonce</span>
+					</a>
+				</div>
+			</div>
+			
+			<div class="clearfix">&nbsp;</div>
+			
+			<form>
+				<div>
 					<div class="row">
-						<div class="col-xs-8">
-							
-							<form class="form-inline">
-								<div class="form-group">
-									<?php if ($query): ?>
-										<a href="<?php echo $page->url() ?>" role="button" class="btn btn-default" aria-label="Voir tout">
-											<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-										</a>
-									<?php endif ?>
-									<input type="text" name="q" value="<?php echo esc($query) ?>" class="form-control" aria-label="rechercher" id="search" placeholder="Rechercher">
-									<select class="selectpicker" name="cat" title="Catégorie">
-										<option value="">Toutes</option>
-										<?php foreach ( page('categories')->children() as $categorie ) : ?>
-											<option value="<?php echo $categorie->uid(); ?>" <?php e($categorie->uid() == $cat, "selected") ?>><?php echo $categorie->title(); ?></option>
-										<?php endforeach ?>
-									</select>
-								</div>
-								<input type="submit" class="btn btn-default" value="Go !" />
-							</form>
-							
+
+						<div class="col-xs-6 flexible">
+							<?php if ($query): ?>
+							<a href="<?php echo $page->url() ?>" role="button" class="btn btn-default btn-lg" aria-label="Voir tout">
+								<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+							</a>&nbsp;
+							<?php endif ?>
+							<input type="text" name="q" value="<?php echo esc($query) ?>" class="form-control btn-default input-lg" aria-label="rechercher" id="search" placeholder="Rechercher">
 						</div>
-						<div class="col-xs-4 text-right">
-							
-							<a href='<?php echo page('create')->url() ?>?create=1' class='btn btn-primary'>
-								<span class='glyphicon glyphicon-pencil' aria-hidden='true'></span> 
-								<span class='name'> Publier une annonce</span>
-							</a>
-							
+
+						<div class="col-xs-6 flexible">
+							<select class="selectpicker" data-style="btn-lg btn-default" data-width="100%" onchange="this.form.submit()" name="cat" title="Catégorie">
+								<option value="">Toutes</option>
+								<?php foreach ( page('categories')->children() as $categorie ) : ?>
+									<option value="<?php echo $categorie->uid(); ?>" <?php e($categorie->uid() == $cat, "selected") ?>><?php echo $categorie->title(); ?></option>
+								<?php endforeach ?>
+							</select>
+							<input type="submit" class="btn btn-default btn-lg hidden" value="Go !" />
 						</div>
+
 					</div>
 				</div>
 				
-				
-				
-				
-			</div>
+			</form>
+			
+			<div class="clearfix">&nbsp;</div>
+			
 		</div>
+		
 		<div id="liste-annonces" class="container-fluid">
 			<?php foreach($results as $annonce): ?>
 			<?php $author = "".$annonce->author(); ?>

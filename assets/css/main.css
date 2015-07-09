@@ -97,7 +97,9 @@ a:hover {
 .hidden {
   display: none;
 }
-
+.flexible {
+	display: flex;
+}
 
 /* Site
 -------------------------------------------------- */
@@ -166,6 +168,51 @@ li {
   top: 50%;
 }
 
+.btn-default {
+    color: #000;
+    background-color: transparent;
+    border-color: #000;
+}
+.btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover, .open > .dropdown-toggle.btn-default {
+    color: #000;
+    background-color: #FFF;
+    border-color: #000;
+}
+.form-control:focus {
+	border-color: #000;
+	outline: 0px none;
+	box-shadow: 2px 2px 0px rgba(0,0,0,1);
+	background-color: #FFF;
+}
+.btn-group.open .dropdown-toggle {
+  box-shadow: 2px 2px 0px rgba(0,0,0,1);
+}
+.btn-group.open .dropdown-toggle {
+   box-shadow: 2px 2px 0px #000;
+}
+.dropdown-menu {
+    margin: -1px 0px 0px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 0px rgb(0, 0, 0);
+    border: 1px solid;
+}
+.form-control {
+    color: #000;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid #000;
+}
+
+a {
+	transition: none;
+}
+
+/* Tables
+-------------------------------------------------- */
+.table-bordered > tbody > tr > td, .table-bordered > tbody > tr > th, .table-bordered > tfoot > tr > td, .table-bordered > tfoot > tr > th, .table-bordered > thead > tr > td, .table-bordered > thead > tr > th {
+    border: 1px solid #000;
+}
+
 /* Medium editor
 -------------------------------------------------- */
 .medium-editor-placeholder::after {
@@ -220,11 +267,9 @@ h1 a, h2 a, h3 a, h4 a {
 
 /* Header
 -------------------------------------------------- */
-.header {
-	font-family: "propcouriersansregular", serif;
-	color : black;
-	font-size: 1.25rem;
-	line-height: 1.2em;
+.navbar-default {
+    background-color: #FFF;
+    border-color: #000;
 }
 nav {
 	margin-bottom: 2rem;
@@ -249,11 +294,12 @@ nav {
 }
 #cover{
 	top: 0;
+	bottom: 0;
 	left: 0;
 	right: 0;
-	z-index: -9999;
-	height: 800px;
-	overflow: hidden;
+	position: fixed;
+	z-index: 9999;
+	background-color: white;
 }
 #welcome {
 	background-color: rgb(77,250,137);
@@ -360,6 +406,9 @@ nav {
 .template-annonces #liste-annonces .row {
 	margin-top: 1.5rem;
 }
+#btn-new {
+	width: 100%;
+}
 
 
 /* Annonce
@@ -375,14 +424,29 @@ nav {
 
 /* Viewer */
 #viewer {
-  background-color: #81D7FF;
-  padding: 2rem 1rem;
-  position: relative;
+    padding: 0 1rem;
+    position: relative;
+    border: 1px solid;
+    border-radius: 6px;
+    background-color: #fff;
+}
+.swiper-container-horizontal > .swiper-pagination {
+    bottom: .5rem;
+}
+.swiper-pagination-bullet {
+    background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+    opacity: 1;
+    border: 1px solid rgba(0,0,0,.7);
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #000 none repeat scroll 0% 0%;
 }
 .swiper-container {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+	padding: 2rem 0;
 }
 .swiper-image {
   background-size: contain;

@@ -31,7 +31,7 @@ if(get('username')) {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Bastion Commun</a>
+      <a class="navbar-brand" href="<?php echo $site->url() ?>">Bastion Commun</a>
     </div>
     
     <!-- Collect the nav links, forms, and other content for toggling -->

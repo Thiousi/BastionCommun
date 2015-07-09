@@ -16,8 +16,8 @@
         <?php endif ?>
       </div>
       <div class="swiper-pagination"></div>
-      <div class="swiper-button-next swiper-button-white"></div>
-      <div class="swiper-button-prev swiper-button-white"></div>
+      <div class="swiper-button-next swiper-button-black"></div>
+      <div class="swiper-button-prev swiper-button-black"></div>
       <div id="swiper-button-delete" class="btn btn-danger btn-xs editOnly">Supprimer l'image <i class="glyphicon glyphicon-remove"></i></div>
   </div>
   <!-- UPLOADER -->

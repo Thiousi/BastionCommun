@@ -2,7 +2,7 @@
 
 
 <li>
-	<a href="#">Profile</a>
+	<a href="<?php echo page('my-account')->url() ?>">Profil</a>
 </li>
 
 <li>

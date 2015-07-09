@@ -5,6 +5,10 @@ $(window).resize(function(){
 });
 
 $(document).ready(function (){
+	
+	/* HOME
+	-------------------------------------------- */
+	setTimeout(function(){ $('#cover').fadeOut(200) }, 2000);
 
 	var editors=[];
   
