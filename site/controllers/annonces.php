@@ -19,7 +19,7 @@ return function($site, $pages, $page) {
 
   return array(
     'query'   => $query,
-    'results' => $results, 
+    'results' => $results->sortBy('date', 'desc'), 
     'cat' => $cat
   );
 

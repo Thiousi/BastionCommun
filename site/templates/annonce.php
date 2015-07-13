@@ -13,16 +13,19 @@ $currentCategorieTitle = page('categories/'.$currentCategorie)->title();
 				<!-- NAME & DATE -->
 				<div id="meta">
 					<h4><small>
-						Posté par <?php echo $page->author() ?>
-						le <?php echo $page->date('d/m/Y') ?>
+						<a href="<?php echo page('annonces')->url() ?>">Annonces</a> > <a href="<?php echo page('annonces')->url() ?>?cat=<?php echo $currentCategorie ?>"><?php echo $currentCategorieTitle ?></a> > <?php echo $page->title() ?>
 					</small></h4>
 				</div>
 			</div>
 			<div class="col-xs-4 text-right">
 				<!-- VALIDATION BUTTON -->
-				<div id="controlButtons" class="usersOnly">
+				<div id="controlButtons" class="usersOnly pull-right">
 					<?php snippet('form-annonce', array('page' => $page)) ?>
 				</div>
+				<h4 class="pull-right"><small>
+					Posté par <?php echo $page->author() ?>
+					le <?php echo $page->date('d/m/Y') ?>
+				</small></h4>
 			</div>    
 		</div>
 

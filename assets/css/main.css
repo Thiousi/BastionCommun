@@ -115,7 +115,6 @@ html {
 }
 body {
 	margin: 0 auto;
-	background: #FDFF9C;
 	color: #222;
   font-family: "propcouriersansregular", sans-serif;
 }
@@ -132,7 +131,6 @@ li {
 	color: black;
 	padding: 1rem;
 	padding-top: 3rem;
-	max-width: 1220px;
 	margin: 0 auto;
 }
 .main hr {
@@ -169,38 +167,61 @@ li {
 }
 
 .btn-default {
-    color: #000;
-    background-color: transparent;
-    border-color: #000;
+	color: #000;
+	background-color: transparent;
+	border-color: #000;
+	border-radius: 0;
 }
 .btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover, .open > .dropdown-toggle.btn-default {
-    color: #000;
-    background-color: #FFF;
-    border-color: #000;
+	color: #000;
+	background-color: #FFF;
+	border-color: #000;
+	border-radius: 0;
 }
 .form-control:focus {
 	border-color: #000;
 	outline: 0px none;
 	box-shadow: 2px 2px 0px rgba(0,0,0,1);
 	background-color: #FFF;
+	border-radius: 0;
 }
 .btn-group.open .dropdown-toggle {
-  box-shadow: 2px 2px 0px rgba(0,0,0,1);
-}
-.btn-group.open .dropdown-toggle {
-   box-shadow: 2px 2px 0px #000;
+  box-shadow: 2px 2px 0px #000;
+	border-radius: 0;
 }
 .dropdown-menu {
-    margin: -1px 0px 0px;
-    border-radius: 4px;
-    box-shadow: 2px 2px 0px rgb(0, 0, 0);
-    border: 1px solid;
+	margin: -1px 0px 0px;
+	border-radius: 0;
+	box-shadow: 2px 2px 0px rgb(0, 0, 0);
+	border: 1px solid;
+	border-radius: 0;
 }
 .form-control {
-    color: #000;
+	color: #000;
+	background-color: transparent;
+	background-image: none;
+	border: 1px solid #000;
+	border-radius: 0;
+}
+.btn-primary {
+  background-color: transparent;
+	color: darkblue;
+}
+.btn-danger {
+    color: rgb(255, 72, 0);
+    border-color: rgb(255, 72, 0);
     background-color: transparent;
-    background-image: none;
-    border: 1px solid #000;
+}
+.btn-warning {
+    color: orange;
+    background-color: transparent;
+}
+.btn-success {
+    color: mediumseagreen;
+    background-color: transparent;
+}
+.btn-group-xs > .btn, .btn-xs {
+    border-radius: 0;
 }
 
 a {
@@ -406,6 +427,9 @@ nav {
 .template-annonces #liste-annonces .row {
 	margin-top: 1.5rem;
 }
+.template-annonces #liste-annonces .row img {
+	border: 1px solid;
+}
 #btn-new {
 	width: 100%;
 }
@@ -427,7 +451,7 @@ nav {
     padding: 0 1rem;
     position: relative;
     border: 1px solid;
-    border-radius: 6px;
+    border-radius: 0;
     background-color: #fff;
 }
 .swiper-container-horizontal > .swiper-pagination {
@@ -531,9 +555,11 @@ nav {
 
 /* Buttons
 -------------------------------------------------- */
-controlButtons .button {
+#controlButtons .button {
   display: inline-block;
 }
+#controlButtons {
+	margin-left: 1rem;
 
 /* Next/Prev nav
 -------------------------------------------------- */
