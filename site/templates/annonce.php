@@ -31,10 +31,14 @@ $currentCategorieTitle = page('categories/'.$currentCategorie)->title();
 
 		<div class="row">
 			<div class="col-xs-8">
+				
 				<!-- TITLE -->
 				<div id="title">
-					<h2 id="field-title" class="simpleEdit" data-populate="title">
-						<?php echo $page->title() ?>
+					
+					<h2 id="field-title">
+						<input id="toggle-public" checked data-toggle="toggle" data-on="Privé" data-off="Public" data-onstyle="default" data-size="" type="checkbox" data-populate="private" disabled>
+						<span class="simpleEdit" data-populate="title"><?php echo $page->title() ?></span>
+						
 					</h2>
 				</div>
 			</div>

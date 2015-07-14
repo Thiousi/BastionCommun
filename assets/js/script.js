@@ -25,11 +25,19 @@ $(document).ready(function (){
     $('main').removeClass('viewMode').addClass('editMode');
     $(this).parent().find('.submitButton').show();
     $(".inputsGroup .input").attr('readonly', false);
+		$('#toggle-public').bootstrapToggle('enable');
     inputsGroupToField( $('.inputsGroup.active'), "#hidden-" + $('.inputsGroup.active').attr('data-populate') );
+    $("input[type='checkbox']").each(function() {
+      $( "#hidden-" + $(this).attr('data-populate') ).val($(this).prop('checked'));
+    });
     
     $(".inputsGroup .input").on('input', function() {
       var inputsGroup = $(this).parents('.inputsGroup');
       inputsGroupToField( inputsGroup , "#hidden-" + inputsGroup.attr('data-populate') );
+    });
+    
+    $("input[type='checkbox']").change(function() {
+      $( "#hidden-" + $(this).attr('data-populate') ).val($(this).prop('checked'));
     });
 
     $(".simpleEdit").each(function() {
@@ -201,12 +209,18 @@ $(document).ready(function (){
 
   });
   
+  // TOOLTYPE
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+  
   // CATEGORIE SELECT
   $('#categorie-select').change(function() {
     var categorie = $(this).val();
     $('#informations .fieldsGroup').removeClass('selected');
     $('#informations .fieldsGroup.categorie-'+categorie).addClass('selected');
   });
+	
 	
 	
 	/* ANNONCES

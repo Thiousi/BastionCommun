@@ -80,7 +80,7 @@ a {
 	transition: color .3s, background .3s, border .3s;
 }
 a:hover {
-	color: red;
+	color: #00F;
 }
 
 
@@ -160,12 +160,20 @@ li {
 }
 .pac-container{z-index:2000 !important;}
 
+.btn {
+	border-radius: 0;
+}
+.btn.active, .btn:active {
+    box-shadow: none;
+}
 .btn-block .dropdown-toggle .caret {
   position: absolute;
   right: 1rem;
   top: 50%;
 }
-
+.btn-default[disabled] .btn-default {
+	border-color: #CCC;
+}
 .btn-default {
 	color: #000;
 	background-color: transparent;
@@ -239,12 +247,13 @@ a {
 .medium-editor-placeholder::after {
   color: #000 !important;
 }
-.editMode .simpleEdit, .editMode .fullEdit {
-  background-color: #FAFAFA;
-  border: 1px solid #EEE;
-  padding: 0px 0.5rem;
+.editMode .simpleEdit {
+	border-bottom: 1px dashed;
 }
 .editMode .fullEdit {
+	background: none;
+  border: 1px dashed #000;
+  padding: 0px 0.5rem;
   min-height: 4rem;
   padding: .5rem;
 }
@@ -424,8 +433,12 @@ nav {
 
 /* Annonces
 -------------------------------------------------- */
-.template-annonces #liste-annonces .row {
-	margin-top: 1.5rem;
+.template-annonces #liste-annonces .container-fluid {
+	padding: 3rem 0px;
+	border-bottom: 1px solid;
+}
+.template-annonces #liste-annonces .container-fluid:hover {
+	background-color: #FBFF4E;
 }
 .template-annonces #liste-annonces .row img {
 	border: 1px solid;

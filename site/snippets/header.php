@@ -12,6 +12,7 @@
 	<?php echo css(array(
     'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css',
 		'assets/css/bootstrap-select.min.css',
+		'assets/css/bootstrap-toggle.min.css',
 		'https://cdnjs.cloudflare.com/ajax/libs/medium-editor/4.10.1/medium-editor.min.css',
 		'https://cdnjs.cloudflare.com/ajax/libs/medium-editor/4.10.2/css/themes/flat.min.css',
     '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
@@ -35,6 +36,7 @@
     'assets/js/jquery.autocomplete.min.js',
     'assets/js/locationpicker.jquery.min.js',
     'assets/js/bootstrap-select.min.js',
+    'assets/js/bootstrap-toggle.min.js',
 	)) ?>
 
 </head>
