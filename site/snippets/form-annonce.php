@@ -10,6 +10,8 @@
 	<div id="hiddenForm" class="hidden">
 		titre
 		<textarea id="hidden-title" name="_title"></textarea>
+		private
+		<textarea id="hidden-private" name="_private"></textarea>
 		categorie
 		<textarea id="hidden-categorie" name="_categorie"></textarea>
 		informations

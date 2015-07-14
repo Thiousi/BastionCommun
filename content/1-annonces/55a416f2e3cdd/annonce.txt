@@ -1,4 +1,4 @@
-Title: Exposition au barrage Vauban
+Title: Bastion Commun
 
 ----
 
@@ -54,3 +54,7 @@ Avec : Fantine Andrès, Clothilde Anty, Marie-Anne Baccichet, Léa Barbazanges &
 **Ouverture tous les jours de 9h00 à 19h00**
 
 **Entrée Libre**
+
+----
+
+Private: false

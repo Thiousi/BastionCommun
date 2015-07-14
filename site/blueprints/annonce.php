@@ -20,13 +20,20 @@ fields:
     label: Catégorie
     type: select
     options: query
+    width: 1/4
     query:
       page: categories
       fetch: children
+  private:
+    label: Privé ?
+    type:  toggle
+    width: 1/4
+  description:
+    label: Description
+    type:  textarea
   informations:
     label: Informations
     type: structure
-    width: 1/2
     entry: {{ key }} {{ value }}
     fields:
       key:
@@ -35,6 +42,3 @@ fields:
       value:
         label: Contenu
         type: text
-  description:
-    label: Description
-    type:  textarea

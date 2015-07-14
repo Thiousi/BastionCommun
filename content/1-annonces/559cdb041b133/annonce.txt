@@ -32,3 +32,7 @@ Samuel Rivers-Moore
 Graphic design, art & else
 
 message@samuelriversmoore.net
+
+----
+
+Private: true
