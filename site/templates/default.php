@@ -1,12 +1,13 @@
 <?php snippet('header') ?>
 
   <main class="main" role="main">
-
-    <div class="text">
-      <h1><?php echo $page->title()->html() ?></h1>
-      <?php echo $page->text()->kirbytext() ?>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-10">
+          <?php echo page('home')->text()->kirbytext() ?>
+        </div>
+      </div>
     </div>
-
   </main>
 
 <?php snippet('footer') ?>

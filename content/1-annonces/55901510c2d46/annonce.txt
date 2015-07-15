@@ -17,24 +17,22 @@ Categorie: fournisseur
 Informations: 
 
 - 
-  key: lieu
-  value: Paris
+  key: society_name
+  value:
 - 
   key: adresse
   value:
 - 
-  key: avec
-  value:
-- 
-  key: debut
-  value:
-- 
-  key: fin
-  value:
-- 
   key: horaires
+  value:
+- 
+  key: telephone
   value:
 
 ----
 
 Description: 
+
+----
+
+Private: true

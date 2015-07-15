@@ -1,13 +1,5 @@
-Title: L'Annonce
+Title: AJAX
 
 ----
 
-Categorie: fournisseur
-
-----
-
-Informations: {"society_name":"","adresse":"","horaires":"","telephone":""}
-
-----
-
-Description: test
+Text: 

@@ -1,5 +1,4 @@
 <?php
-echo 'log';
 if(get('username')) {
   echo 'login';
   // fetch the user by username and run the 
@@ -7,17 +6,16 @@ if(get('username')) {
   if($user = $site->user(get('username')) and $user->login(get('password'))) {
     // redirect to the homepage 
     // if the login was successful
-    go('/');
+    //go('/');
   } else {
     // make sure the alert is being 
     // displayed in the template
     $error = true;
   }
 
-} else {
-  // nothing has been submitted
-  // nothing has gone wrong
-  $error = false;  
+} else if(get('logout')) {
+  if($user = site()->user()) $user->logout();
+  go($page->url());
 }
 ?>
 
@@ -38,13 +36,11 @@ if(get('username')) {
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <?php
-          if($user = $site->user()){
-            foreach($pages->visible()->not('error', 'login', 'about') as $p){
-              e($p->isAncestorOf( $page ), '<li class="active">', '<li>');
-                echo "<a href='{$p->url()}'>{$p->title()}</a>";
-              echo '</li>';
-            }
-          }
+        foreach($pages->visible()->not('error', 'login', 'about') as $p){
+          e($p->isAncestorOf( $page ), '<li class="active">', '<li>');
+            echo "<a href='{$p->url()}'>{$p->title()}</a>";
+          echo '</li>';
+        }
         ?>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -65,22 +61,6 @@ if(get('username')) {
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-<?php 
-	if ( kirby()->request()->body() and get('login') ) {
-		// fetch the user by username and run the 
-		// login method with the password
-		if($user = $site->user(get('username')) and $user->login(get('password'))) {
-			// redirect to the homepage 
-			// if the login was successful
-			go('/');
-		} else {
-			// make sure the alert is being 
-			// displayed in the template
-			$error = true;
-		}
-	}
-?>
 
 
 

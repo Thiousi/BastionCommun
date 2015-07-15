@@ -48,12 +48,4 @@ c::set('roles', array(
   )
 ));
 
-c::set('routes', array(
-  array(
-    'pattern' => 'logout',
-    'action'  => function() {
-      if($user = site()->user()) $user->logout();
-      go('home');
-    }
-  )
-));
+

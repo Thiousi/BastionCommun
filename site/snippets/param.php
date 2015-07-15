@@ -6,5 +6,5 @@
 </li>
 
 <li>
-	<a href="<?php echo url('logout') ?>">Déconnection</a>
+	<a href="<?php echo $page->url() ?>?logout=1">Déconnection</a>
 </li>

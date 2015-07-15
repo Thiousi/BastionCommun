@@ -20,7 +20,7 @@ $currentCategorieTitle = page('categories/'.$currentCategorie)->title();
 			<div class="col-xs-4 text-right">
 				<!-- VALIDATION BUTTON -->
 				<div id="controlButtons" class="usersOnly pull-right">
-					<?php snippet('form-annonce', array('page' => $page)) ?>
+					<?php snippet('annonce-editor', array('page' => $page)) ?>
 				</div>
 				<h4 class="pull-right"><small>
 					Posté par <?php echo $page->author() ?>

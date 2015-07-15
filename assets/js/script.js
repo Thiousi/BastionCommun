@@ -19,7 +19,16 @@ $(document).ready(function (){
     });
     $( field ).val( JSON.stringify(fields) );
   }
+  
+  $('#liste-annonces a').click(function(e) {
+    e.preventDefault();
+    var url = $(e.target).attr('href');
+    $('#column-annonce iframe', window.parent.document).attr('src', url);
+    
+  });
 
+  /*  Annonce
+  -------------------------------------------- */
 	$('.editButton').click(function() {
     
     $('main').removeClass('viewMode').addClass('editMode');
