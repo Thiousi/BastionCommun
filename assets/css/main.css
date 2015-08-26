@@ -127,13 +127,7 @@ p {
 li {
 	list-style: none;
 }
-.main {
-	color: black;
-	padding: 1rem;
-	padding-top: 3rem;
-	margin: 0 auto;
-}
-.main hr {
+hr {
 	margin: 3rem 0px;
 	height: 1px;
 	background: #000 none repeat scroll 0% 0%;
@@ -164,6 +158,10 @@ li {
   height: 100%;
   float: left;
   border-right: 1px solid;
+	overflow-x: hidden;
+	overflow-y: auto;
+	padding: 3rem 0;
+	position: relative;
 }
 #megabloc iframe {
   width: 100%;
@@ -244,6 +242,12 @@ li {
 	background-image: none;
 	border: 1px solid #000;
 	border-radius: 0;
+}
+.btn-info {
+	background-color: #eee;
+	border-color: transparent;
+	color: black;
+	margin-right: 1px;
 }
 .btn-primary {
   background-color: transparent;
@@ -467,20 +471,22 @@ nav {
 
 /* Annonces
 -------------------------------------------------- */
-.template-annonces #liste-annonces .container-fluid {
+#liste-annonces .container-fluid {
 	padding: 3rem 0px;
 	border-bottom: 1px solid;
 }
-.template-annonces #liste-annonces .container-fluid:hover {
+#liste-annonces .container-fluid:hover {
 	background-color: #FBFF4E;
 }
-.template-annonces #liste-annonces .row img {
+#liste-annonces .row img {
 	border: 1px solid;
 }
 #btn-new {
 	width: 100%;
 }
-
+#filters-buttons {
+	margin: 0.5em 0px;
+}
 
 /* Annonce
 -------------------------------------------------- */
@@ -591,6 +597,11 @@ nav {
   display: block;
 }
 
+/* Catégorie */
+.editMode .dropdown-toggle {
+	border-bottom: 1px dashed !important;
+}
+
 /* Fixes for IE < 8 */
 @media screen\9 {
   .fileinput-button input {
@@ -602,11 +613,12 @@ nav {
 
 /* Buttons
 -------------------------------------------------- */
-#controlButtons .button {
-  display: inline-block;
+.toolbox {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 }
-#controlButtons {
-	margin-left: 1rem;
 
 /* Next/Prev nav
 -------------------------------------------------- */

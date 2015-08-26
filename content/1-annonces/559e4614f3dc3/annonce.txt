@@ -10,14 +10,29 @@ Date: 20150709
 
 ----
 
-Categorie: petites-annonces
+Categorie: categorie-1
 
 ----
 
 Informations: 
 
 - 
-  key: prix
+  key: lieu
+  value:
+- 
+  key: adresse
+  value:
+- 
+  key: avec
+  value:
+- 
+  key: debut
+  value:
+- 
+  key: fin
+  value:
+- 
+  key: horaires
   value:
 
 ----
@@ -26,4 +41,4 @@ Description: Le Bastion 14 est une ancienne construction militaire faisant parti
 
 ----
 
-Private: false
+Private: true

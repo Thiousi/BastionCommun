@@ -35,4 +35,4 @@ Categorie: fournisseur
 
 ----
 
-Private: true
+Private: false

@@ -27,10 +27,11 @@
         </main>
       </div>
       <div id="column-annonces" class="column">
-        <iframe src="<?php echo page('annonces')->url() ?>"></iframe> 
+        <!--<iframe src="<?php echo page('annonces')->url() ?>"></iframe> -->
+				<?php snippet('annonces') ?>
       </div>
       <div id="column-annonce" class="column">
-        <iframe src=""></iframe> 
+        <?php snippet('annonce', array('page'=>page("annonces/55a416f2e3cdd"))) ?>
       </div>
     </div>
   </div>

@@ -10,7 +10,7 @@ Date: 20150713
 
 ----
 
-Categorie: categorie-1
+Categorie: fournisseur
 
 ----
 
@@ -18,13 +18,13 @@ Informations:
 
 - 
   key: lieu
-  value: Barrage Vauban
+  value:
 - 
   key: adresse
   value: '{"latitude":"48.579592","longitude":"7.737979999999993","street":"Place Hans Jean Arp","city":"Strasbourg","zip":"67000","country":"FR"}'
 - 
   key: avec
-  value: 'Fantine Andrès, Clothilde Anty, Marie-Anne Baccichet, Léa Barbazanges & Kévin Janneau, Virginie Bergeret, Alexia Bretaudeau, Vincent Broquaire, Mathilde Caylou, Vincent Chevillon, Clémence Choquet & Mickaël Gamio, Myriam Colin, Caroline de Grandpré, Ahmet Dogan, Camille Fischer, Caroline Gamon, Emmanuelle Giora, Lucie Guillemin, Joséphine Kaeppelin, Thomas Lasbouygues, Zahra Poonawala, Ingrid Rodewald, Letizia Romanini, Mélodie Seiwert, Capucine Vandebrouck & Gaëlle Cressent, Yiumsiri Vantanapindu, Gretel Weyer, Young hee Hong'
+  value:
 - 
   key: debut
   value:

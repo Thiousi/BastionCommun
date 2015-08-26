@@ -38,6 +38,11 @@
     'assets/js/bootstrap-select.min.js',
     'assets/js/bootstrap-toggle.min.js',
 	)) ?>
+	
+	<script>
+		var BASTION = {};
+		BASTION.smartSubmitUrl = "<?php echo page('smart-submit')->url() ?>";
+	</script>
 
 </head>
 <body class="template-<?php echo $page->intendedTemplate() ?>">

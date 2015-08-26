@@ -1,4 +1,4 @@
-Title: 48 maillots de bain
+Title: 48 maillauts de bain
 
 ----
 
@@ -10,7 +10,7 @@ Date: 20150628
 
 ----
 
-Categorie: fournisseur
+Categorie: categorie-1
 
 ----
 
