@@ -47,6 +47,17 @@ Email:  support@getkirby.com
     font-style: normal;
 
 }
+@font-face {
+    font-family: 'pressuru';
+    src: url(../fonts/pressuru-webfont.eot);
+    src: url(../fonts/pressuru-webfont.eot?#iefix) format('embedded-opentype'),
+         url(../fonts/pressuru-webfont.woff2) format('woff2'),
+         url(../fonts/pressuru-webfont.woff) format('woff'),
+         url(../fonts/pressuru-webfont.ttf) format('truetype'),
+         url(../fonts/pressuru-webfont.svg#pressururegular) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /* Reset
 -------------------------------------------------- */
@@ -191,6 +202,7 @@ hr {
 	background: rgb(77,250,137);
 	/*color: white;*/
 	position: relative;
+    z-index: 999999;
 }
 #arrow-slide-left {
 	position: absolute;
@@ -362,10 +374,16 @@ a {
 /* Headings
 -------------------------------------------------- */
 h1 {
-	font-size: 2em;
+	font-size: 6em;
 	line-height: 1.25em;
 	font-weight: 300;
 	margin: .5em 0;
+    font-family: pressuru;
+}
+h1.title{
+    text-transform: uppercase;
+    text-align: center;
+    color: #4285f4;
 }
 h2 {
 	line-height: 1.25em;
@@ -428,6 +446,7 @@ nav {
 	position: fixed;
 	z-index: 9999;
 	background-color: white;
+    display: none;
 }
 #welcome {
 	background-color: rgb(77,250,137);

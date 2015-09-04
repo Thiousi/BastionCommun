@@ -89,7 +89,9 @@ $(document).ready(function (){
 	
 	/* HOME
 	-------------------------------------------- */
-	setTimeout(function(){ $('#cover').fadeOut(200) }, 2000);
+
+    // To do : Loader ?
+	setTimeout(function(){ $('#cover').fadeOut(200) }, 0);
 
   /*  Annonce
   -------------------------------------------- */

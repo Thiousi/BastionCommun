@@ -65,6 +65,7 @@ if(get('username')) {
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-xs-10">
+              <h1 class="title"><?php echo page('home')->title() ?></h1>
 							<?php echo page('home')->text()->kirbytext() ?>
 						</div>
 					</div>
