@@ -1,4 +1,4 @@
-Title: Titre
+Title: Miaou
 
 ----
 
@@ -10,7 +10,7 @@ Date: 20150628
 
 ----
 
-Categorie: fournisseur
+Categorie: artiste-resident
 
 ----
 

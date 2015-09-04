@@ -4,7 +4,7 @@
 			<div class="col-xs-12">
 				<a href='<?php echo page('create')->url() ?>?create=1' id="btn-new" class='btn btn-info' data-width='100%'>
 					<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> 
-					<span class='name'> Ajouter</span>
+					<span class='name'> Déposer une annonce</span>
 				</a>
 			</div>
 		</div>

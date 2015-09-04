@@ -1,10 +1,91 @@
 
-
 $(window).resize(function(){
 	
 });
 
 $(document).ready(function (){
+	
+	$.fn.datepicker.dates['fr'] = {
+		days: ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+		daysShort: ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
+		daysMin: ["D", "L", "Ma", "Me", "J", "V", "S", "D"],
+		months: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+		monthsShort: ["Jan", "Fev", "Mar", "Avr", "Mai", "Jui", "Jul", "Aou", "Sep", "Oct", "Nov", "Dec"],
+		today: "Aujourd'hui",
+		weekStart: 1
+	};
+	
+	/* SMARTSUBMIT
+	------------------------------------ */
+	
+	// honeypot
+	smart_submit_honeypot = function() {
+		$(".smart-submit-honeypot").each(function() { 
+			$(this).attr("value", parseInt($(this).attr("value")) + 1);
+		});
+		setTimeout("smart_submit_honeypot()", 1000);
+	}
+	
+	// init
+	initSmartSubmit = function(form) {
+
+		//find response div
+		if (form.attr('data-response-div')) {
+			var responseDiv = $('#' + form.attr('data-response-div'));
+		} else {
+			var responseDiv = false;
+		}
+
+		// create honeypot
+		form.append('<input type="hidden" name="smart-submit-honeypot" class="smart-submit-honeypot" value="0">');
+
+		// start honeypot
+		smart_submit_honeypot(); 
+
+
+		// catch form submission
+		form.on('submit', function(e){
+
+			e.preventDefault();
+
+			// clear previous response
+			if (responseDiv) responseDiv.html('');
+
+			// submit
+			$.ajax({
+				url: $(this).prop('action'),
+				data: $(this).serialize(),
+				type: 'post',
+				success: function(data) {
+					if(data) {
+						if (responseDiv) {
+							if (form.attr('data-response-div') == 'annonce') {
+								loadAnnonce($('#annonce').attr('data-uri'));
+							} else {
+								responseDiv.html(data);
+							}
+						}
+
+					}
+					if (data.success)
+					{
+						$('main').addClass('viewMode').removeClass('editMode');
+					}
+					else if (data.redirect)
+					{
+						window.location = data.redirect;
+					}
+				}
+			});
+
+			return false;
+		});
+	}
+	
+		// detect form on page
+	$('form.smart-submit').each(function() {
+		initSmartSubmit($(this));
+	});
 	
 	/* HOME
 	-------------------------------------------- */
@@ -41,6 +122,7 @@ $(document).ready(function (){
 			$('main').removeClass('viewMode').addClass('editMode');
 			$(this).parent().find('.submitButton').show();
 			$(".inputsGroup .input").attr('readonly', false);
+			$("#informations").removeClass('readonly');
 			$('#toggle-public').bootstrapToggle('enable');
 			inputsGroupToField( $('.inputsGroup.active'), "#hidden-" + $('.inputsGroup.active').attr('data-populate') );
 			$("input[type='checkbox']").each(function() {
@@ -87,9 +169,11 @@ $(document).ready(function (){
 		});
 		/* submit */
 		$('.submitButton').click(function() {
-			$('main').removeClass('editMode').addClass('viewMode');
-			$(".inputsGroup .input").attr('readonly', true);
-			editors.forEach( function(editor){ editor.destroy() });
+			//$('main').removeClass('editMode').addClass('viewMode');
+			//$(".inputsGroup .input").attr('readonly', true);
+			//$("#informations").addClass('readonly');
+			//editors.forEach( function(editor){ editor.destroy() });
+			
 		});
 		
 		/***** tools *****/
@@ -101,6 +185,8 @@ $(document).ready(function (){
 			$(this).parents('.dropdown').find(".current").html($(this).text());
 		});
 		$(".dropdown-menu li.active a").click();
+		/* datepicker */
+		$('.datepicker').datepicker({ autoclose:true, weekStart:1, language:'fr' })
 		/* toggle */
 		$('#toggle-public').bootstrapToggle();
 	  /* gallery */
@@ -167,7 +253,7 @@ $(document).ready(function (){
 			$('#confirm-geolocation').off();
 			$('#confirm-geolocation').click(function() {
 				$('#modal-geopicker').modal('hide');
-				button.find('.name').text($('#geopicker-city').val() + ' (' + $('#geopicker-zip').val() + ')');
+				button.find('.name').text($('#geopicker-address').val());
 				input.val( JSON.stringify({ latitude: $('#geopicker-lat').val(), longitude: $('#geopicker-lon').val(), street: $('#geopicker-street').val(), city: $('#geopicker-city').val(), zip: $('#geopicker-zip').val(), country: $('#geopicker-country').val() }) );
 			});
 		});
@@ -227,11 +313,30 @@ $(document).ready(function (){
 			$('#informations .fieldsGroup').removeClass('selected');
 			$('#informations .fieldsGroup.categorie-'+categorie).addClass('selected');
 		});
+		
+		$('.column').perfectScrollbar('update');
+		
 	}
 	annonceUpdate();
 
 	/* ANNONCES
 	------------------------------------ */
+	
+	function loadAnnonce(uri) {
+		$('#megabloc-wrapper').animate({ scrollLeft : $(window).width() * 0.5 }, 300 );
+		$('#column-annonce').html('');
+		$.ajax({
+				url: BASTION.smartSubmitUrl + "?handler=view",
+				data: { uri : uri },
+				type: 'post',
+				success: function(data) {
+					if(data) {
+						$('#column-annonce').html(data);
+						annonceUpdate();
+					}
+				}
+			});
+	}
 	
 	// search fields
 	$('.selectpicker').selectpicker();
@@ -240,18 +345,61 @@ $(document).ready(function (){
 	
 	$(document).on('click', '#liste-annonces a.link-annonce', function(e){
 		e.preventDefault();
-		$('#column-annonce').html('');
-		$.ajax({
-				url: BASTION.smartSubmitUrl + "?handler=view",
-				data: { uri : $(e.target).attr('data-uri') },
-				type: 'post',
-				success: function(data) {
-					if(data) {
-						$('#column-annonce').html(data);
-						annonceUpdate();
-					}
-			  }
-			});
+		loadAnnonce($(e.target).attr('data-uri'));
+		
 	});
 	
+	/* SLIDE
+	------------------------------------ */
+	$( "#megabloc-wrapper" ).scrollLeft(1);
+	$( "#megabloc-wrapper" ).on("scroll", function() {
+  	if ( parseInt($("#megabloc-wrapper").scrollLeft()) > $(window).width() * 0.25 ) {
+			$("#arrow-slide-right").hide();
+			$("#arrow-slide-left").show();
+		} else {
+			$("#arrow-slide-right").show();
+			$("#arrow-slide-left").hide();
+		}
+	}, 50);
+	$("#arrow-slide-right").click(function() {
+		$( "#megabloc-wrapper" ).animate({ scrollLeft : $(window).width() * 0.5 }, 300 );
+	});
+	$("#arrow-slide-left").click(function() {
+		$( "#megabloc-wrapper" ).animate({ scrollLeft : 0 }, 300 );
+	});
+	
+	$('.column').perfectScrollbar();
+
 });
+
+
+/*!
+ * jquery.unevent.js 0.2
+ * https://github.com/yckart/jquery.unevent.js
+ *
+ * Copyright (c) 2013 Yannick Albert (http://yckart.com)
+ * Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php).
+ * 2013/07/26
+**/
+;(function ($) {
+    var on = $.fn.on, timer;
+    $.fn.on = function () {
+        var args = Array.apply(null, arguments);
+        var last = args[args.length - 1];
+
+        if (isNaN(last) || (last === 1 && args.pop())) return on.apply(this, args);
+
+        var delay = args.pop();
+        var fn = args.pop();
+
+        args.push(function () {
+            var self = this, params = arguments;
+            clearTimeout(timer);
+            timer = setTimeout(function () {
+                fn.apply(self, params);
+            }, delay);
+        });
+
+        return on.apply(this, args);
+    };
+}(this.jQuery || this.Zepto));

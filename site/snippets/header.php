@@ -10,6 +10,7 @@
 	<meta name="keywords" content="<?php echo $site->keywords()->html() ?>">
 
 	<?php echo css(array(
+		'assets/css/datepicker.css',
     'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css',
 		'assets/css/bootstrap-select.min.css',
 		'assets/css/bootstrap-toggle.min.css',
@@ -18,11 +19,13 @@
     '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css',
 		'assets/css/entypo.css',
     'https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.0.7/css/swiper.min.css',
-    'assets/css/main.css'
+    'assets/css/main.css',
+    'assets/css/perfect-scrollbar.css'
 	)) ?>
 
 	<?php echo js(array(
 		'assets/js/jquery-1.11.2.min.js',
+		'assets/js/smart-submit.js',
 		'assets/js/script.js',
 		'https://cdnjs.cloudflare.com/ajax/libs/medium-editor/4.10.1/medium-editor.min.js',
     'https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.0.7/js/swiper.jquery.min.js',
@@ -32,11 +35,12 @@
     'assets/js/jquery.ui.widget.js',
     'assets/js/jquery.iframe-transport.js',
     'assets/js/jquery.fileupload.js',
-    'assets/js/smart-submit.js',
     'assets/js/jquery.autocomplete.min.js',
     'assets/js/locationpicker.jquery.min.js',
     'assets/js/bootstrap-select.min.js',
     'assets/js/bootstrap-toggle.min.js',
+    'assets/js/perfect-scrollbar.jquery.min.js',
+		'assets/js/bootstrap-datepicker.js'
 	)) ?>
 	
 	<script>

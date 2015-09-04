@@ -3,16 +3,14 @@ $currentCategorie = $page->categorie();
 $currentCategorieTitle = page('categories/'.$currentCategorie)->title();
 ?>
 
-<main class="main viewMode" role="main">
+<main class="main viewMode" id="annonce" data-uri="<?php echo $page->uri() ?>" role="main">
   <div class="container-fluid">
 		
 		<!-- VALIDATION BUTTON -->
-		<div id="controlButtons" class="container-fluid toolbox usersOnly">
-			<div class="row">
-				<div class="col-xs-12">
-					<?php snippet('annonce-editor', array('page' => $page)) ?>
-				</div>    
-			</div>
+		<div id="controlButtons" class="row toolbox usersOnly">
+			<div class="col-xs-12">
+				<?php snippet('annonce-editor', array('page' => $page)) ?>
+			</div>    
 		</div>
 		
 		<div class="row">
@@ -78,7 +76,7 @@ $currentCategorieTitle = page('categories/'.$currentCategorie)->title();
       </div>
       
       <!-- META -->
-      <div id="informations" class="col-xs-4">  
+      <div id="informations" class="col-xs-4 readonly">  
         <?php snippet('meta', array('page' => $page)) ?>
       </div>
       

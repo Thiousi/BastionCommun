@@ -1,5 +1,5 @@
 <?php if ($site->user()): ?>
-<form action="<?php echo page('smart-submit')->url().'?handler=edit' ?>" method="post" class="smart-submit">
+<form action="<?php echo page('smart-submit')->url().'?handler=edit' ?>" data-response-div="annonce" method="post" class="smart-submit">
 	<div class="btn-group btn-group-justified" role="group">
 		<div class="btn-group editOnly" role="group">
 		<button type="submit" name="submit" class="btn btn-info submitButton"><span class='glyphicon glyphicon-ok' aria-hidden='true'></span> Enregistrer</button> 

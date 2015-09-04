@@ -138,7 +138,7 @@ hr {
 -------------------------------------------------- */
 #megabloc-wrapper {
   position: fixed;
-  top: 3rem;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -147,11 +147,19 @@ hr {
 }
 #megabloc {
   width: 150%;
-  top: 0;
-  left: 0;
+  top: 2.5rem;
+  left: 0%;
   bottom: 0;
-  top: 0;
   position: absolute;
+}
+#megabloc.right-view {
+	left: -50%;
+}
+#megabloc {
+	-webkit-transition: left 500ms ease;
+     -moz-transition: left 500ms ease;
+       -o-transition: left 500ms ease;
+          transition: left 500ms ease;
 }
 #megabloc>div {
   width: 33.333%;
@@ -159,8 +167,8 @@ hr {
   float: left;
   border-right: 1px solid;
 	overflow-x: hidden;
-	overflow-y: auto;
-	padding: 3rem 0;
+	overflow-y: hidden;
+	padding: .5rem 0;
 	position: relative;
 }
 #megabloc iframe {
@@ -171,11 +179,62 @@ hr {
   font-size: 1.5rem;
   line-height: 120%;
 }
+/* Headers */
+.columns-header {
+	width: 150%;
+}
+.column-header {
+	width: 33.33%;
+	float: left;
+	border-bottom: 1px solid;
+	text-align: center;
+	background: rgb(77,250,137);
+	/*color: white;*/
+	position: relative;
+}
+#arrow-slide-left {
+	position: absolute;
+	top: 0;
+	left: 1rem;
+	height: 2.5rem;
+	line-height: 2.3rem;
+	display: none;
+	cursor: pointer;
+}
+#arrow-slide-right {
+	position: absolute;
+	top: 0;
+	right: 1rem;
+	height: 2.5rem;
+	line-height: 2.3rem;
+	display: none;
+	cursor: pointer;
+}
+#connect-left {
+	position: absolute;
+	top: 0px;
+	line-height: 2.5rem;
+	left: 1rem;
+}
+#connect-right {
+	position: absolute;
+	top: 0px;
+	line-height: 2.5rem;
+	right: 1rem;
+}
+#connect-right a.dropdown-toggle, #connect-left	a.dropdown-toggle {
+	color: white;
+}
+#connect-right a.dropdown-toggle:hover, #connect-left	a.dropdown-toggle:hover {
+	text-decoration: none;
+}
+
 
 /* Forms
 -------------------------------------------------- */
 .form-control {
   font-size: inherit;
+	box-shadow: none;
 }
 .autocomplete-suggestions { border: 1px solid #999; background: #FFF; overflow: auto; }
 .autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
@@ -185,10 +244,10 @@ hr {
 .autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
 
 .form-control[readonly] {
-  background: none;
-  color: inherit;
-  border: none;
-  box-shadow: none;
+  background: none !important;
+  color: inherit !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 .pac-container{z-index:2000 !important;}
 
@@ -226,6 +285,7 @@ hr {
 	border-radius: 0;
 }
 .btn-group.open .dropdown-toggle {
+  box-shadow: 2px 2px 0px #000;
   box-shadow: 2px 2px 0px #000;
 	border-radius: 0;
 }
@@ -611,13 +671,75 @@ nav {
   }
 }
 
+/* meta */
+#informations .table-bordered {
+	border: none;
+	border-bottom: 1px solid #000;
+}
+#informations .table-bordered > tbody > tr > td > input {
+    padding: 0px;
+    margin: 0px;
+    line-height: 1rem;
+    height: 1.5rem;
+}
+#informations .table-bordered > tbody > tr > td {
+    float: left;
+    width: 100%;
+    border-bottom: 0px none;
+}
+#informations .table-bordered > tbody > tr > td:nth-child(even) {
+	border-top: 0;
+	padding-top: 0;
+}
+#informations .table-bordered > tbody > tr > td:nth-child(odd) {
+	text-decoration: underline;
+	padding-bottom: 0;
+}
+#informations .btn.btn-default {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	white-space: normal;
+	text-align: left;
+	font-size: inherit;
+	border-bottom: 1px dashed;
+}
+#informations.readonly .btn.btn-default {
+	border: 0;
+}
+#informations .form-control {
+	border: 0;
+	border-bottom: 1px dashed;
+}
+#informations .form-control:focus {
+	box-shadow: none;
+}
+#informations .meta-bloc {
+	display: none;
+}
+#informations .meta-bloc.active {
+	display: block;
+}
+.datepicker-dropdown::before {
+    border-bottom: 7px solid rgba(0, 0, 0, 1) !important;
+}
+.datepicker {
+	border-radius: 0;
+	padding: 5px;
+}
+.datepicker table tr td.active {
+	background: rgb(77,250,137) !important;
+	color: #000;
+	border-radius: 100%;
+}
+.datepicker td, .datepicker th {
+    line-height: 20px;
+}
+
 /* Buttons
 -------------------------------------------------- */
 .toolbox {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
 }
 
 /* Next/Prev nav
