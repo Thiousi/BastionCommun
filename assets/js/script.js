@@ -336,15 +336,14 @@ $(document).ready(function (){
 	------------------------------------ */
 	
 	function loadAnnonce(uri) {
-		$('#megabloc-wrapper').animate({ scrollLeft : $(window).width() * 0.5 }, 300 );
-		$('#column-annonce').html('');
+		$('#column-content').html('');
 		$.ajax({
 				url: BASTION.smartSubmitUrl + "?handler=view",
 				data: { uri : uri },
 				type: 'post',
 				success: function(data) {
 					if(data) {
-						$('#column-annonce').html(data);
+						$('#column-content').html(data);
 						annonceUpdate();
 					}
 				}
@@ -376,22 +375,6 @@ $(document).ready(function (){
 	
 	/* SLIDE
 	------------------------------------ */
-	$( "#megabloc-wrapper" ).scrollLeft(1);
-	$( "#megabloc-wrapper" ).on("scroll", function() {
-  	if ( parseInt($("#megabloc-wrapper").scrollLeft()) > $(window).width() * 0.25 ) {
-			$("#arrow-slide-right").hide();
-			$("#arrow-slide-left").show();
-		} else {
-			$("#arrow-slide-right").show();
-			$("#arrow-slide-left").hide();
-		}
-	}, 50);
-	$("#arrow-slide-right").click(function() {
-		$( "#megabloc-wrapper" ).animate({ scrollLeft : $(window).width() * 0.5 }, 300 );
-	});
-	$("#arrow-slide-left").click(function() {
-		$( "#megabloc-wrapper" ).animate({ scrollLeft : 0 }, 300 );
-	});
 	
 	$('.column').perfectScrollbar();
 

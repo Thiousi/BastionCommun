@@ -19,17 +19,6 @@ if(get('username')) {
   go($page->url());
 }
 ?>
-			<!--
-			<div id="column-home" class="column">
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col-xs-10">
-				  <h1 class="title"><?php echo page('home')->title() ?></h1>
-								<?php echo page('home')->text()->kirbytext() ?>
-							</div>
-						</div>
-					</div>
-			</div>-->
 
 	<div id="megabloc">
 		<div id="column-annonces" class="column">
@@ -54,8 +43,11 @@ if(get('username')) {
 			<?php snippet('annonces') ?>
 
 		</div>
-		<div id="column-annonce" class="column">
-		aaa
+		<div id="column-content" class="column">
+			<div class="col-xs-12">
+  				<h1 class="title"><?php echo page('home')->title() ?></h1>
+				<?php echo page('home')->text()->kirbytext() ?>
+			</div>
 		</div>
 	</div>
 

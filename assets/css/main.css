@@ -173,7 +173,6 @@ hr {
   /*border-right: 1px solid;*/
 	overflow-x: hidden;
 	overflow-y: hidden;
-	padding: 2rem 1rem;
 	position: relative;
 }
 #megabloc iframe {
@@ -183,9 +182,11 @@ hr {
 #column-annonces{
     width: 33.333%;
 }
-#column-annonce{
+#column-content{
     width: calc(100% - 33.333%);
+    padding: 2rem 1rem;
 }
+
 #column-home p {
   font-size: 1.5rem;
   line-height: 120%;
@@ -195,14 +196,13 @@ hr {
 	/*width: 150%;*/
 }
 .column-header {
-	width: 33.33%;
+	width: 100%;
 	float: left;
 	border-bottom: 1px solid;
 	text-align: center;
 	background: rgb(77,250,137);
 	/*color: white;*/
 	position: relative;
-    z-index: 999999;
 }
 #arrow-slide-left {
 	position: absolute;
