@@ -293,6 +293,9 @@ hr {
     left: 70px;
     right: 70px;
 }
+#controlButtons .btn{
+    background: white;
+}
 .right{
     float: right;
 }
@@ -655,6 +658,7 @@ nav {
 #btn-new {
     width: 100%;
     margin-bottom: .5rem;
+    background: #00C6EF;
 }
 #filters-buttons {
 	margin: 0.5em 0px;

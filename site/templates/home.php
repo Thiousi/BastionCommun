@@ -43,10 +43,20 @@ if(get('username')) {
 					<div class="container-fluid toolbox usersOnly">
 						<div class="row">
 							<div class="col-xs-12">
-								<button id="btn-new" class='btn btn-info' data-width='100%'>
+								<button id="btn-new" class='btn btn-lg' data-width='100%'>
 									<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> 
-									<span class='name'> Déposer une annonce</span>
+									<span class='name'> Nouvelle annonce</span>
 								</button>
+
+							<!--
+								<select id="btn-new" class="selectpicker btn btn-lg" data-style="btn-lg btn-default" data-width="100%" name="cat" title="Nouvelle annonce">
+									<?php foreach ( page('categories')->children() as $categorie ) : ?>
+										<option value="<?php echo $categorie->uid(); ?>" <?php e($categorie->uid() == $cat, "selected") ?>><?php echo $categorie->title(); ?></option>
+									<?php endforeach ?>
+								</select>
+								<input type="submit" class="btn btn-default btn-lg hidden" value="Go !" />
+							-->
+
 							</div>
 						</div>
 					</div>
