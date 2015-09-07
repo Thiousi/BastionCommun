@@ -210,7 +210,7 @@ $(document).ready(function (){
 		function updateSwiperVisibility(swiper) {
 			if (!swiper.slides.length) {
 				swiper.container.hide();
-			} else if (swiper.slides.length == 1) {
+			} else if (swiper.slides.length <= 3) {
 				swiper.container.show();
 				$('.swiper-pagination, .swiper-button-next, .swiper-button-prev').hide();
 			} else {
@@ -225,7 +225,8 @@ $(document).ready(function (){
 			slidesPerView: 1,
 			paginationClickable: true,
 			spaceBetween: 30,
-			loop: false,
+			loop: true,
+			grabCursor: true,
 			onInit: function (swiper) {
 				updateSwiperVisibility(swiper);
 			}
@@ -316,7 +317,7 @@ $(document).ready(function (){
 					gallery.prependSlide('<figure class="swiper-slide" data-pageuri="' + $('#slider').data('pageuri') + '" data-filename="' + file.name + '"><div class="swiper-image" style="background-image:url(' + $('#slider').data('pageurl') + '/' + file.name + ')"></div></figure>');
 					gallery.update();
 					updateSwiperVisibility(gallery);
-					setTimeout(function(){ gallery.slideTo(0); }, 100);
+					setTimeout(function(){ gallery.slideTo(1); }, 300);
 				});
 			},
 			progressall: function (e, data) {
@@ -338,7 +339,7 @@ $(document).ready(function (){
 					page : $('#slider').data('pageuri')
 				},
 				function() {
-					var i = gallery.activeIndex;
+					var i = gallery.activeIndex -1;
 					gallery.removeSlide(i);
 					gallery.update();
 					updateSwiperVisibility(gallery);
@@ -368,15 +369,16 @@ $(document).ready(function (){
 	------------------------------------ */
 	
 	function loadAnnonce(uri) {
-		$('#column-content').html('');
+		//$('#column-content').fadeOut(200, function() { $(this).html('') });
+		$('.annonce-mini').removeClass('active');
+		$('.annonce-mini[data-uri="'+uri+'"]').addClass('active');
 		$.ajax({
 				url: BASTION.smartSubmitUrl + "?handler=view",
 				data: { uri : uri },
 				type: 'post',
 				success: function(data) {
 					if(data) {
-						$('#column-content').html(data);
-						annonceUpdate();
+						$('#column-content').fadeIn(100, function() { $(this).html(data); annonceUpdate(); });
 					}
 				}
 			});

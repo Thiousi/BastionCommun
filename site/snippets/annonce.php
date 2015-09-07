@@ -6,12 +6,12 @@ $currentCategorieTitle = page('categories/'.$currentCategorie)->title();
 <main class="main viewMode" id="annonce" data-uri="<?php echo $page->uri() ?>" role="main">
 		
 <!-- VALIDATION BUTTON -->
-	<div id="controlButtons" class="row usersOnly">
-		<div class="text-left left">
+	<div id="controlButtons" class="usersOnly">
+		<div class="text-left pull-left">
 			<?php $page->private()->bool() ? $checked = "checked" : $checked = false ; ?>
-			<input id="toggle-public" <?php echo $checked ?> data-toggle="toggle" data-on="Privé" data-off="Public" data-onstyle="default" data-size="mini" type="checkbox" data-populate="private" disabled>
+			<input id="toggle-public" <?php echo $checked ?> data-toggle="toggle" data-on="Privé" data-off="Public" data-onstyle="default" data-size="large" type="checkbox" data-populate="private" disabled>
 		</div>
-		<div class="text-right right">
+		<div class="text-right pull-right">
 			<?php snippet('annonce-editor', array('page' => $page)) ?>
 		</div>
 	</div>			
