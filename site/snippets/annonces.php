@@ -1,15 +1,4 @@
-<?php if( $site->user() ): ?>
-	<div class="container-fluid toolbox usersOnly">
-		<div class="row">
-			<div class="col-xs-12">
-				<button id="btn-new" class='btn btn-info' data-width='100%'>
-					<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> 
-					<span class='name'> Déposer une annonce</span>
-				</button>
-			</div>
-		</div>
-	</div>
-<?php endif; ?>
+
 
 <div class="container-fluid">
 
@@ -43,6 +32,3 @@
 
 </div>
 
-<div id="liste-annonces" class="container-fluid">
-	<?php snippet('liste-annonces', array ('results'=>$results)); ?>
-</div>

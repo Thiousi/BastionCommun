@@ -20,6 +20,25 @@ Categorie: categorie-1
 
 Informations: 
 
+- 
+  key: lieu
+  value:
+- 
+  key: adresse
+  value:
+- 
+  key: avec
+  value:
+- 
+  key: debut
+  value:
+- 
+  key: fin
+  value:
+- 
+  key: horaires
+  value:
+
 ----
 
 Description: 
