@@ -1,4 +1,4 @@
-Title: jonhy
+Title: Graphigros
 
 ----
 
@@ -10,7 +10,7 @@ Date: 20150907
 
 ----
 
-Categorie: artiste-resident
+Categorie: fournisseur
 
 ----
 
@@ -21,10 +21,16 @@ Private: false
 Informations: 
 
 - 
-  key: annees
+  key: society_name
   value:
 - 
-  key: pratique
+  key: adresse
+  value:
+- 
+  key: horaires
+  value:
+- 
+  key: telephone
   value:
 
 ----

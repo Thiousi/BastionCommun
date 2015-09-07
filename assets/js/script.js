@@ -399,14 +399,17 @@ $(document).ready(function (){
 	});
 	
 	$(document).on('click', '#btn-new', function(e) {
+        var catval = $('#cat-select').val();
+        if (catval == ""){ catval = "petites-annonces"}
 		$.post(BASTION.smartSubmitUrl + "?handler=create", 
 				{
-					cat : $('#cat-select').val(),
+					cat : catval,
 				},
 				function(response) {
 					var uri = response.uri;
 					console.log(uri);
 					loadAnnonce(uri);
+                    $('.editButton').click();
 				}
 			);
 	});

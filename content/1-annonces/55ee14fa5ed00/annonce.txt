@@ -1,0 +1,38 @@
+Title: La maison du métal
+
+----
+
+Author: samuel
+
+----
+
+Date: 20150907
+
+----
+
+Categorie: fournisseur
+
+----
+
+Private: false
+
+----
+
+Informations: 
+
+- 
+  key: society_name
+  value: Métal-mania
+- 
+  key: adresse
+  value:
+- 
+  key: horaires
+  value:
+- 
+  key: telephone
+  value:
+
+----
+
+Description: Ici, métal en tout genre, toutes catégories, excellent rapport qualité prix.

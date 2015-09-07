@@ -23,11 +23,11 @@
 										<div class="user placeholder glyphicon glyphicon-user"></div>
 									<?php endif; ?>
 								</div>
-								<div class="col-xs-9">
-									<h3 class="media-heading"><a href="<?php echo $annonce->url() ?>" class="link-annonce" data-uri="<?php echo $annonce->uri() ?>"><?php echo $annonce->title() ?></a></h3>
+								<div class="small-content">
 									<?php if ($private=='false') : ?>
-										<span class="glyphicon glyphicon-pushpin" data-toggle="tooltip" data-placement="bottom" title="Public"></span>
+										<span class="glyphicon glyphicon-pushpin pushpin" data-toggle="tooltip" data-placement="bottom" title="Public"></span>
 									<?php endif; ?>
+									<h3 class="media-heading"><a href="<?php echo $annonce->url() ?>" class="link-annonce" data-uri="<?php echo $annonce->uri() ?>"><?php echo $annonce->title() ?></a></h3>
 									<p><?php echo $currentCategorieTitle?></p>
 									<!--<?php snippet('meta-mini', array( 'categorie' => $categorie, 'page'=>$annonce )) ?> -->
 								</div>
@@ -49,18 +49,13 @@
 										</a>
 									</div>
 								<?php endif; ?>
-								<div class="col-xs-12">
+								<div class="regular-content">
+									<div class="event-label"><p><?php echo $currentCategorieTitle; ?></p></div>
+									<?php if ($private=='false') : ?>
+										<span class="glyphicon glyphicon-pushpin pushpin" data-toggle="tooltip" data-placement="bottom" title="Public"></span>
+									<?php endif; ?>
 									<h3 class="media-heading"><a href="<?php echo $annonce->url() ?>" class="link-annonce" data-uri="<?php echo $annonce->uri() ?>"><?php echo $annonce->title() ?></a></h3>
 									<?php snippet('meta-mini', array( 'categorie' => $categorie, 'page'=>$annonce )) ?>
-								</div>
-								<div class="col-xs-12">
-									<p><?php echo $currentCategorieTitle; ?></p>
-								</div>
-								<div class="col-xs-12">
-									<p><small>Déposée par <?php echo $author->firstName()." ".$author->lastName() ?> le <?php echo $annonce->date('d/m/Y') ?></small> </p>
-									<?php if ($private=='false') : ?>
-										<p class="glyphicon glyphicon-pushpin" data-toggle="tooltip" data-placement="bottom" title="Public"></p>
-									<?php endif; ?>
 								</div>
 							</div>
 						</div>
@@ -72,25 +67,16 @@
 					<div class="col-xs-12 elem">
 						<div class="container-fluid annonce-mini" data-uri="<?php echo $annonce->uri() ?>">
 							<div class="row">
-								<div class="col-xs-12">
-									<?php if($image = $annonce->image()): ?>
-									<a href="<?php echo $annonce->url() ?>">
-										<img class="media-object" src="<?php echo thumb($image, array('width' => 280, 'height' => 210, 'crop' => true))->url(); ?>" alt="<?php echo $annonce->title() ?>">
-									</a>
-									<?php endif; ?>
+								<div class="avatar">
+									<div class="user placeholder glyphicon glyphicon-wrench"></div>
 								</div>
-								<div class="col-xs-12">
+								<div class="small-content">
+									<?php if ($private=='false') : ?>
+										<span class="glyphicon glyphicon-pushpin pushpin" data-toggle="tooltip" data-placement="bottom" title="Public"></span>
+									<?php endif; ?>
 									<h3 class="media-heading"><a href="<?php echo $annonce->url() ?>" class="link-annonce" data-uri="<?php echo $annonce->uri() ?>"><?php echo $annonce->title() ?></a></h3>
 									<?php snippet('meta-mini', array( 'categorie' => $categorie, 'page'=>$annonce )) ?>
-								</div>
-								<div class="col-xs-12">
 									<p><?php echo $currentCategorieTitle; ?></p>
-								</div>
-								<div class="col-xs-12">
-									<p><small>Déposée par <?php echo $author->firstName()." ".$author->lastName() ?> le <?php echo $annonce->date('d/m/Y') ?></small> </p>
-									<?php if ($private=='false') : ?>
-										<p class="glyphicon glyphicon-pushpin" data-toggle="tooltip" data-placement="bottom" title="Public"></p>
-									<?php endif; ?>
 								</div>
 							</div>
 						</div>
@@ -104,25 +90,14 @@
 					<div class="col-xs-12 elem">
 						<div class="container-fluid annonce-mini" data-uri="<?php echo $annonce->uri() ?>">
 							<div class="row">
-								<div class="col-xs-12">
+								<div class="regular-content">
+									<?php if ($private=='false') : ?>
+										<span class="glyphicon glyphicon-pushpin pushpin" data-toggle="tooltip" data-placement="bottom" title="Public"></span>
+									<?php endif; ?>
 									<h3 class="media-heading"><a href="<?php echo $annonce->url() ?>" class="link-annonce" data-uri="<?php echo $annonce->uri() ?>"><?php echo $annonce->title() ?></a></h3>
 									<?php snippet('meta-mini', array( 'categorie' => $categorie, 'page'=>$annonce )) ?>
-								</div>
-								<div class="col-xs-12">
 									<p><?php echo $currentCategorieTitle; ?></p>
-								</div>
-								<div class="col-xs-12">
-									<?php if($image = $annonce->image()): ?>
-									<a href="<?php echo $annonce->url() ?>">
-										<img class="media-object" src="<?php echo thumb($image, array('width' => 280, 'height' => 210, 'crop' => true))->url(); ?>" alt="<?php echo $annonce->title() ?>">
-									</a>
-									<?php endif; ?>
-								</div>
-								<div class="col-xs-12">
 									<p><small>Déposée par <?php echo $author->firstName()." ".$author->lastName() ?> le <?php echo $annonce->date('d/m/Y') ?></small> </p>
-									<?php if ($private=='false') : ?>
-										<p class="glyphicon glyphicon-pushpin" data-toggle="tooltip" data-placement="bottom" title="Public"></p>
-									<?php endif; ?>
 								</div>
 							</div>
 						</div>
