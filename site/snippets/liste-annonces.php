@@ -38,6 +38,7 @@
 
 
 			<?php elseif ($currentCategorieTitle == "Exposition") : ?>
+				aaa
 				<div class="row">
 					<div class="col-xs-12 elem">
 						<div class="container-fluid annonce-mini" data-uri="<?php echo $annonce->uri() ?>">
