@@ -57,3 +57,4 @@ foreach (page('categories')->children() as $categorie) :
 		echo "</table>";
 	echo "</div>";
 endforeach; ?>
+<p id="post-meta"><?php echo $page->author() ?> le <?php echo $page->date('d/m/Y') ?></small></h4></p>

@@ -315,7 +315,7 @@ hr {
 }
 .btn-default {
 	color: #000;
-	background-color: transparent;
+	background-color: #FFF;
 	border-color: #000;
 	border-radius: 0;
 }
@@ -351,40 +351,30 @@ hr {
 	border: 1px solid #000;
 	border-radius: 0;
 }
-.btn-info {
-	background-color: #eee;
-	border-color: transparent;
-	color: black;
-	margin-right: 1px;
+.btn-info, .btn-info:hover {
+	background-color: #3E40B9;
+	border: none;
+	color: white;
 }
-.btn-primary {
-  background-color: transparent;
-    color: darkblue;
-    border-color: black; 
+.btn-primary, .btn-primary:hover {
+  background-color: rgb(77,250,137);
+	color: #000;
+	border: none;
 }
-.btn-primary:hover {
-  background-color: transparent;
-    color: black;
-    background-color: #5CA6FF; 
-}
-.btn-danger {
-	background: transparent;
-	color: #FF3838;
-	border-color: black;
-}
-.btn-danger:hover {
-  background-color: #FF3838;
-	border-color: black;
-	color: black;
+.btn-danger, .btn-danger:hover {
+	background: #FF3838;
+	color: #000;
+	border: none;
 }
 .btn-warning {
-    color: orange;
-    background-color: transparent;
+	color: orange;
+	background-color: transparent;
+	border: none;
 }
 .btn-success {
 	background: transparent;
-	border-color: black;
-    color: #5cb85c;
+	border: none;;
+  color: #5cb85c;
 }
 .btn-success:hover {
 	background-color: rgb(77,250,137);
@@ -659,6 +649,11 @@ nav {
   display: none;
 }
 
+/* Titraille */
+#content-titraille {
+	margin-bottom: 2.3rem;
+}
+
 /* Viewer */
 #viewer {
     position: relative;
@@ -757,11 +752,14 @@ nav {
 }
 
 /* Description */
-#description a {
+#field-description {
+	margin-top: 2rem;
+}
+#field-description a {
 	text-decoration: underline;
 	transition: background .3s;
 }
-#description a:hover {
+#field-description a:hover {
 	color: black;
 	background: rgb(77,250,137)
 }
@@ -859,6 +857,13 @@ nav {
     line-height: 20px;
 }
 
+/* post meta
+-------------------------------------------------- */
+#post-meta {
+	font-size: 0.8rem;
+	border-top: 1px solid;
+	color: #888;
+}
 /* Buttons
 -------------------------------------------------- */
 .toolbox {

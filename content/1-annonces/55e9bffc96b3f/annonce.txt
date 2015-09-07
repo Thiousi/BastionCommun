@@ -19,8 +19,6 @@ Categorie: categorie-1
 ----
 
 Informations: 
-
-<<<<<<< HEAD
 - 
   key: debut
   value: 02.07.2015
@@ -40,8 +38,6 @@ Informations:
   key: avec
   value: 'Fantine Andrès, Clothilde Anty, Marie-Anne Baccichet, Léa Barbazanges, Virginie Bergeret, Alexia Bretaudeau, Vincent Broquaire, Mathilde Caylou, Vincent Chevillon, Clémence Choquet & Mickaël Gamio, Myriam Colin, Caroline De Grandpré, Ahmet Dogan, Camille Fischer, Emmanuelle Giora, Lucie Guillemin, Joséphine Kaeppelin, Thomas Lasbouygues, Zahra Poonawala, Ingrid Rodewald; Letizia Romanini, Mélody Seiwert, Capucine Vanderbrouck & Gaëlle Cressent, Yiumsiri Vantanapindu, Gretel Weger et Young Hee Hong'
 
-=======
->>>>>>> parent of 99668c9... yolo
 ----
 
 Description: 

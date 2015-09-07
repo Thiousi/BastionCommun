@@ -7,10 +7,10 @@
 
 	<div class="btn-group" role="group">
 		<div class="btn-group editOnly " role="group">
-			<button type="submit" name="submit" class="btn btn-lg btn-success submitButton"><span class='glyphicon glyphicon-ok' aria-hidden='true'></span> Enregistrer</button> 
+			<button type="submit" name="submit" class="btn btn-lg btn-primary submitButton"><span class='glyphicon glyphicon-ok' aria-hidden='true'></span> Enregistrer</button> 
 		</div>
 		<div class="btn-group editOnly" role="group">
-			<button type="button" name="Cancel" class="btn btn-lg btn-primary cancelButton"><span class='glyphicon glyphicon-remove' aria-hidden='true'></span> Annuler</button> 
+			<button type="button" name="Cancel" class="btn btn-lg btn-info cancelButton"><span class='glyphicon glyphicon-remove' aria-hidden='true'></span> Annuler</button> 
 		</div>
 		<div class="btn-group editOnly" role="group">
 			<button type="button" class="btn btn-lg btn-danger col-xs-12" data-toggle="modal" data-target="#modal-delete"><span class='glyphicon glyphicon-trash' aria-hidden='true'></button>	
