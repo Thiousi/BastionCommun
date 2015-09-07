@@ -98,21 +98,3 @@ $currentCategorieTitle = page('categories/'.$currentCategorie)->title();
   </div> <!-- /container-fluid -->
 
 </main>
-
-
-<!-- MODALS -->
-<div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-labelledby="delete">
-  <div class="modal-dialog">
-	<div class="modal-content">
-	  <div class="modal-body">
-		Voulez-vous vraiment supprimer cette annonce ?
-	  </div>
-	  <div class="modal-footer">
-		<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-		<a href="<?php echo page('create')->url().'?delete='.$page->uid() ?>" class="btn btn-danger"><span class='glyphicon glyphicon-trash' aria-hidden='true'></span>  Supprimer</a> 
-	  </div>
-	</div>
-  </div>
-</div>
-
-<?php snippet('modal-geopicker') ?>
