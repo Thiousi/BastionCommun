@@ -75,7 +75,7 @@
 										<span class="glyphicon glyphicon-pushpin pushpin" data-toggle="tooltip" data-placement="bottom" title="Public"></span>
 									<?php endif; ?>
 									<h3 class="media-heading"><a href="<?php echo $annonce->url() ?>" class="link-annonce" data-uri="<?php echo $annonce->uri() ?>"><?php echo $annonce->title() ?></a></h3>
-									<?php snippet('meta-mini', array( 'categorie' => $categorie, 'page'=>$annonce )) ?>
+									<!-- <?php snippet('meta-mini', array( 'categorie' => $categorie, 'page'=>$annonce )) ?> -->
 									<p><?php echo $currentCategorieTitle; ?></p>
 								</div>
 							</div>
