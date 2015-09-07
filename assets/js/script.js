@@ -167,7 +167,7 @@ $(document).ready(function (){
 		});
 		/* cancel */
 		$('.cancelButton').click(function() {
-			location.reload(); 
+			loadAnnonce($('#annonce').attr('data-uri'));
 		});
 		/* submit */
 		$('.submitButton').click(function() {
@@ -262,7 +262,7 @@ $(document).ready(function (){
 		// AUTOCOMPLETE
 		$('.autocomplete').each(function() {
 			$(this).autocomplete({
-				serviceUrl: '../smart-submit?handler=autocomplete',
+				serviceUrl: BASTION.smartSubmitUrl + "?handler=autocomplete",
 				params: { field: $(this).attr('data-slug') }
 			});
 		});
@@ -270,12 +270,23 @@ $(document).ready(function (){
 		// IMAGES UPLOAD
 		$('#fileupload').fileupload({
 			dataType: 'json',
+			add : function (e, data) {
+				$('#progress').fadeIn();
+				if (data.autoUpload || (data.autoUpload !== false &&
+								$(this).fileupload('option', 'autoUpload'))) {
+					data.process().done(function () {
+							data.submit();
+					});
+				}
+			},
 			done: function (e, data) {
 				$('#uploader-message').text('Images ajoutés : ');
+				$('#progress').fadeOut();
 				$.each(data.result.files, function (index, file) {
 					$('<p/>').text(file.name).appendTo('#files').addClass('label label-success');
-					console.log(data);
 					gallery.prependSlide('<figure class="swiper-slide" data-pageuri="' + $('#slider').data('pageuri') + '" data-filename="' + file.name + '"><div class="swiper-image" style="background-image:url(' + $('#slider').data('pageurl') + '/' + file.name + ')"></div></figure>');
+					gallery.update();
+					gallery.slideTo(1);
 				});
 			},
 			progressall: function (e, data) {
@@ -290,7 +301,7 @@ $(document).ready(function (){
 
 		// IMAGES DELETE
 		$('#swiper-button-delete').click(function() {
-			$.post('../smart-submit?handler=delete', 
+			$.post(BASTION.smartSubmitUrl + "?handler=delete", 
 				{
 					file : $('.swiper-slide-active').data('filename'),
 					page : $('#slider').data('pageuri')
@@ -348,7 +359,19 @@ $(document).ready(function (){
 	$(document).on('click', '#liste-annonces a.link-annonce', function(e){
 		e.preventDefault();
 		loadAnnonce($(e.target).attr('data-uri'));
-		
+	});
+	
+	$(document).on('click', '#btn-new', function(e) {
+		$.post(BASTION.smartSubmitUrl + "?handler=create", 
+				{
+					cat : $('#cat-select').val(),
+				},
+				function(response) {
+					var uri = response.uri;
+					console.log(uri);
+					loadAnnonce(uri);
+				}
+			);
 	});
 	
 	/* SLIDE

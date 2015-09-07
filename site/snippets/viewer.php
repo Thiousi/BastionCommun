@@ -18,19 +18,21 @@
       <div class="swiper-pagination"></div>
       <div class="swiper-button-next swiper-button-black"></div>
       <div class="swiper-button-prev swiper-button-black"></div>
-      <div id="swiper-button-delete" class="btn btn-danger btn-xs editOnly">Supprimer l'image <i class="glyphicon glyphicon-remove"></i></div>
   </div>
   <!-- UPLOADER -->
-  <div id="uploadImages" class="editOnly">
-    <span class="btn btn-success btn-xs fileinput-button">
+  <div id="uploadImages" class="editOnly btn-group">
+    <span class="btn btn-success btn-sm fileinput-button">
+			<div id="progress" class="progress editOnly">
+				<div class="progress-bar progress-bar-success"></div>
+			</div>
       <i class="glyphicon glyphicon-plus"></i>
-      <span>Ajouter des images</span>
+      <span>Envoyer des images</span>
       <input id="fileupload" type="file" name="files[]" value="Select files..." data-url="<?php echo page('upload')->url().'?annonce='.$page->uid() ?>" multiple>
+			
     </span>
+		<div id="swiper-button-delete" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i></div>
     <!--<div id="uploader-message"></div>
     <div id="files" class="files"></div>-->
   </div>
-  <div id="progress" class="progress editOnly">
-    <div class="progress-bar progress-bar-success"></div>
-  </div>
+  
 </div>

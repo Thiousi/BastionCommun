@@ -326,17 +326,28 @@ hr {
 	color: darkblue;
 }
 .btn-danger {
-    color: rgb(255, 72, 0);
-    border-color: rgb(255, 72, 0);
-    background-color: transparent;
+	background: transparent;
+	color: black;
+	border-color: black;
+}
+.btn-danger:hover {
+  background-color: #FF3838;
+	border-color: #FF3838;
+	color: white;
 }
 .btn-warning {
     color: orange;
     background-color: transparent;
 }
 .btn-success {
-    color: mediumseagreen;
-    background-color: transparent;
+	background: transparent;
+	color: black;
+	border-color: black;
+}
+.btn-success:hover {
+	background-color: rgb(77,250,137);
+	color: black;
+	
 }
 .btn-group-xs > .btn, .btn-xs {
     border-radius: 0;
@@ -629,32 +640,37 @@ nav {
 }
 
 #swiper-button-delete {
-  position: absolute;
-  right: 0px;
-  bottom: 0px;
-  z-index: 9999;
+
 }
 
 /* File Upload */
 #uploadImages {
-  position: absolute;
-  bottom: 2rem;
-  left: 2rem;
-  z-index: 999;
+	padding: 0;
+	margin-bottom: 1rem;
+	width: 100%;
 }
 #progress {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  bottom: -5px;
-  margin: 0;
-  border-radius: 0;
+	border-radius: 0px;
+	background-color: transparent;
+	box-shadow: none;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+.progress-bar-success {
+    background-color: rgb(77,250,137);
 }
 .fileinput-button {
   position: relative;
   overflow: hidden;
+}
+.fileinput-button span {
+	position: relative;
 }
 .fileinput-button input {
   position: absolute;

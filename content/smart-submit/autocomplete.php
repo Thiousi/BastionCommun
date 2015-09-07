@@ -17,12 +17,11 @@ if (get('query')):
             $array['suggestions'][] = $information['value'];
           endif;
         endif;
-        
       }
     endforeach;
   endforeach;
 endif;
-
+$array['suggestions'] = array_unique($array['suggestions']);
 echo json_encode($array);
 
 ?>

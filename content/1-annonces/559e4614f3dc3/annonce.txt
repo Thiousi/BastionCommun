@@ -18,7 +18,7 @@ Informations:
 
 - 
   key: lieu
-  value:
+  value: Bastion 14
 - 
   key: adresse
   value:

@@ -27,7 +27,7 @@ $currentCategorieTitle = page('categories/'.$currentCategorie)->title();
 			</div>
 			<div class="col-xs-4">
 				<div>
-					<h3 class="viewOnly"><?php echo $currentCategorieTitle ?></h3>
+					<h3 class="viewOnly text-right"><?php echo $currentCategorieTitle ?></h3>
 					<h3>
 						<ul class="editOnly" role="tablist">
 							<li role="presentation" class="dropdown btn-block active" data-populate="categorie">

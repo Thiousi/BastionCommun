@@ -42,12 +42,13 @@ foreach (page('categories')->children() as $categorie) :
 
 					<?php 
 					elseif ($type == 'date') : 
-						echo "<input type='text' class='datepicker form-control input' data-date-format='dd.mm.yyyy' data-slug='{$critere['slug']}' value='{$value}' readonly/>";
-						echo "<span>{$value}</span>";
+						echo "<input type='text' class='datepicker form-control input editOnly' data-date-format='dd.mm.yyyy' data-slug='{$critere['slug']}' value='{$value}' readonly/>";
+						echo "<span class='viewOnly'>{$value}</span>";
 						
 					// TEXT
 					else :
-						echo "<input type='text' class='autocomplete form-control input' data-slug='{$critere['slug']}' value='{$value}' readonly/>";
+						echo "<input type='text' class='autocomplete form-control input editOnly' data-slug='{$critere['slug']}' value='{$value}' readonly/>";
+						echo "<span class='viewOnly'>{$value}</span>";
 					endif;
 
 					echo "</td>";

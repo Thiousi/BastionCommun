@@ -72,11 +72,10 @@ if(get('username')) {
 				</div>
       </div>
       <div id="column-annonces" class="column">
-        <!--<iframe src="<?php echo page('annonces')->url() ?>"></iframe> -->
 				<?php snippet('annonces') ?>
       </div>
       <div id="column-annonce" class="column">
-        <?php snippet('annonce', array('page'=>page("annonces/55a416f2e3cdd"))) ?>
+        aaa
       </div>
     </div>
   </div>

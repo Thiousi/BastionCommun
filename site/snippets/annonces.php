@@ -2,10 +2,10 @@
 	<div class="container-fluid toolbox usersOnly">
 		<div class="row">
 			<div class="col-xs-12">
-				<a href='<?php echo page('create')->url() ?>?create=1' id="btn-new" class='btn btn-info' data-width='100%'>
+				<button id="btn-new" class='btn btn-info' data-width='100%'>
 					<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> 
 					<span class='name'> Déposer une annonce</span>
-				</a>
+				</button>
 			</div>
 		</div>
 	</div>
@@ -17,7 +17,7 @@
 		<div id="filters-buttons">
 			<div class="row">
 				<div class="col-xs-6 flexible">
-					<select class="selectpicker" data-style="btn-lg btn-default" data-width="100%" name="cat" title="Catégorie">
+					<select id="cat-select" class="selectpicker" data-style="btn-lg btn-default" data-width="100%" name="cat" title="Catégorie">
 						<option value="">Toutes</option>
 						<?php foreach ( page('categories')->children() as $categorie ) : ?>
 							<option value="<?php echo $categorie->uid(); ?>" <?php e($categorie->uid() == $cat, "selected") ?>><?php echo $categorie->title(); ?></option>

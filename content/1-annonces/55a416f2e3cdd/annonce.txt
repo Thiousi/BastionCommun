@@ -10,30 +10,24 @@ Date: 20150713
 
 ----
 
-Categorie: categorie-1
+Categorie: fournisseur
 
 ----
 
 Informations: 
 
 - 
-  key: lieu
-  value: Pont Vauban
+  key: society_name
+  value:
 - 
   key: adresse
-  value: '{"latitude":"48.58123870283558","longitude":"7.735920063476669","street":"1 Rue de Molsheim","city":"Strasbourg","zip":"67000","country":"FR"}'
-- 
-  key: avec
-  value: 'Fantine Andrès, Clothilde Anty, Marie-Anne Baccichet, Léa Barbazanges & Kévin Janneau, Virginie Bergeret, Alexia Bretaudeau, Vincent Broquaire, Mathilde Caylou, Vincent Chevillon, Clémence Choquet & Mickaël Gamio, Myriam Colin, Caroline de Grandpré, Ahmet Dogan, Camille Fischer, Caroline Gamon, Emmanuelle Giora, Lucie Guillemin, Joséphine Kaeppelin, Thomas Lasbouygues, Zahra Poonawala, Ingrid Rodewald, Letizia Romanini, Mélodie Seiwert, Capucine Vandebrouck & Gaëlle Cressent, Yiumsiri Vantanapindu, Gretel Weyer, Young hee Hong.'
-- 
-  key: debut
-  value: 26.07.2015
-- 
-  key: fin
-  value: 27.08.2015
+  value: '{"latitude":"48.5618129","longitude":"7.744512299999997","street":"4 Rue la Fayette","city":"Strasbourg","zip":"67100","country":"FR"}'
 - 
   key: horaires
   value: 10h-18h
+- 
+  key: telephone
+  value:
 
 ----
 
