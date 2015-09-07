@@ -19,7 +19,7 @@ $currentCategorieTitle = page('categories/'.$currentCategorie)->title();
 
   <div class="container-fluid">
 		<div class="row">
-			<div class="col-sm-8">				
+			<div class="col-sm-12">				
 				<!-- TITLE -->
 				<div id="title">
 					<h2 id="field-title">

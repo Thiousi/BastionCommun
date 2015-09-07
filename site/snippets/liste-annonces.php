@@ -11,7 +11,7 @@
 
 			if ($currentCategorieTitle == "Artiste résident") : ?>
 				<div class="row">
-					<div class="col-xs-12">
+					<div class="col-xs-12 elem">
 						<div class="container-fluid annonce-mini" data-uri="<?php echo $annonce->uri() ?>">
 							<div class="row">
 								<div class="avatar">
@@ -38,9 +38,8 @@
 
 
 			<?php elseif ($currentCategorieTitle == "Exposition") : ?>
-				aaa
 				<div class="row">
-					<div class="col-xs-12">
+					<div class="col-xs-12 elem">
 						<div class="container-fluid annonce-mini" data-uri="<?php echo $annonce->uri() ?>">
 							<div class="row">
 								<div class="col-xs-12 event-preview">
@@ -70,7 +69,7 @@
 
 			<?php elseif ($currentCategorieTitle == "Fournisseur") : ?>
 				<div class="row">
-					<div class="col-xs-12">
+					<div class="col-xs-12 elem">
 						<div class="container-fluid annonce-mini" data-uri="<?php echo $annonce->uri() ?>">
 							<div class="row">
 								<div class="col-xs-12">
@@ -102,7 +101,7 @@
 
 			<?php else : ?>
 				<div class="row">
-					<div class="col-xs-12">
+					<div class="col-xs-12 elem">
 						<div class="container-fluid annonce-mini" data-uri="<?php echo $annonce->uri() ?>">
 							<div class="row">
 								<div class="col-xs-12">

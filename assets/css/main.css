@@ -195,10 +195,16 @@ hr {
   height: 100%;
 }
 #column-annonces{
-    width: 33.333%;
+    max-width: 450px;
+    border-left: 1px solid;
+    background-color: #fff;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+#column-annonces .elem{
+    padding: 0;
 }
 #column-content{
-    width: calc(100% - 33.333%);
+    width: calc(100% - 450px);
     padding: 2rem 1rem;
 }
 
@@ -207,21 +213,18 @@ hr {
   line-height: 120%;
 }
 /* Headers */
-.columns-header {
-	/*width: 150%;*/
-}
+
 .column-header {
 	width: 100%;
 	float: left;
-	border-bottom: 1px solid;
 	text-align: center;
 	background: rgb(77,250,137);
-	/*color: white;*/
 	position: relative;
-<<<<<<< HEAD
-=======
-  z-index: 1000;
->>>>>>> origin/master
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.column-header h4{
+    font-size: 1.5rem;
 }
 #arrow-slide-left {
 	position: absolute;
@@ -243,7 +246,7 @@ hr {
 }
 #connect-left {
 	position: absolute;
-	top: 0px;
+	top: 15px;
 	line-height: 2.5rem;
 	left: 1rem;
 }
@@ -563,19 +566,18 @@ nav {
     width: 80px;
     height: 100%;
     float: left;
-    padding: 0;
     height: 90px;
     line-height: 120px;
     background-color: #eee;
-    border-right: 1px solid black;
     color: #666;
     overflow: hidden;
+    margin-left: 15px;
 }
+
 .event-preview{
     overflow: hidden;
-    height: 330px;
-    padding: 0;
-    border-bottom: 1px solid black;
+    height: 200px;
+    padding: 15px;
 }
 .event-preview img{
     width: 100%;
@@ -622,17 +624,17 @@ nav {
 /* Annonces
 -------------------------------------------------- */
 #liste-annonces .container-fluid {
-    border: 1px solid;
-    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 15px;
 }
 #liste-annonces .container-fluid:hover {
 	background-color: #FBFF4E;
 }
 #liste-annonces .row img {
-	/*border: 1px solid;*/
 }
 #btn-new {
-	width: 100%;
+    width: 100%;
+    margin-bottom: .5rem;
 }
 #filters-buttons {
 	margin: 0.5em 0px;
