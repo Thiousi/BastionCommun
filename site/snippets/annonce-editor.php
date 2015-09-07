@@ -2,16 +2,16 @@
 <form action="<?php echo page('smart-submit')->url().'?handler=edit' ?>" data-response-div="annonce" method="post" class="smart-submit">
 
 	<div class="viewOnly">
-		<button class="btn btn-success btn-lg button editButton" type="button"><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>  Modifier</button> 
+		<button class="btn btn-success button editButton" type="button"><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span>  Modifier</button> 
 	</div>
 
 	<div class="btn-group editOnly" role="group">
 
-			<button type="submit" name="submit" class="btn btn-lg btn-primary submitButton"><span class='glyphicon glyphicon-ok' aria-hidden='true'></span> Enregistrer</button> 
+			<button type="submit" name="submit" class="btn btn-success submitButton"><span class='glyphicon glyphicon-ok' aria-hidden='true'></span> Enregistrer</button> 
 
-			<button type="button" name="Cancel" class="btn btn-lg btn-info cancelButton"><span class='glyphicon glyphicon-remove' aria-hidden='true'></span> Annuler</button> 
+			<button type="button" name="Cancel" class="btn btn-info cancelButton"><span class='glyphicon glyphicon-remove' aria-hidden='true'></span> Annuler</button> 
 
-			<button type="button" class="btn btn-lg btn-danger col-xs-12" data-toggle="modal" data-target="#modal-delete"><span class='glyphicon glyphicon-trash' aria-hidden='true'></button>	
+			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete"><span class='glyphicon glyphicon-trash' aria-hidden='true'></button>	
 
 	</div>
 	

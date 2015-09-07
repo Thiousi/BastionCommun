@@ -343,17 +343,17 @@ hr {
 	border: 1px solid #000;
 	border-radius: 0;
 }
-.btn-info, .btn-info:hover {
-	background-color: rgb(255, 253, 92);
+.btn-info, .btn-info:hover, .btn-info:active, .btn-info:focus {
+	background-color: #D4D4D4;
 	color: rgba(0,0,0,.8);
 	border: 1px solid transparent;
 }
-.btn-primary, .btn-primary:hover {
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
   background-color: rgb(123, 185, 255);
 	border: 1px solid transparent;
 	color: rgb(0,0,0, .8);
 }
-.btn-danger, .btn-danger:hover {
+.btn-danger, .btn-danger:hover, .btn-danger:active, .btn-danger:focus {
 	background-color: rgb(255, 83, 83);
 	border: 1px solid rgb(255, 83, 83);
 	color: rgba(255, 255, 255, .8);

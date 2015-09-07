@@ -9,7 +9,7 @@ $currentCategorieTitle = page('categories/'.$currentCategorie)->title();
 	<div id="controlButtons" class="usersOnly">
 		<div class="text-left pull-left">
 			<?php $page->private()->bool() ? $checked = "checked" : $checked = false ; ?>
-			<input id="toggle-public" <?php echo $checked ?> data-toggle="toggle" data-on="Privé" data-off="Public" data-onstyle="default" data-size="large" type="checkbox" data-populate="private" disabled>
+			<input id="toggle-public" <?php echo $checked ?> data-toggle="toggle" data-on="Privé" data-off="Public" data-onstyle="default" type="checkbox" data-populate="private" disabled>
 		</div>
 		<div class="text-right pull-right">
 			<?php snippet('annonce-editor', array('page' => $page)) ?>
