@@ -344,33 +344,29 @@ hr {
 	border-radius: 0;
 }
 .btn-info, .btn-info:hover {
-	background-color: #3E40B9;
-	border: none;
-	color: white;
+	background-color: rgb(255, 253, 92);
+	color: rgba(0,0,0,.8);
+	border: 1px solid transparent;
 }
 .btn-primary, .btn-primary:hover {
-  background-color: rgb(77,250,137);
-	color: #000;
-	border: none;
+  background-color: rgb(123, 185, 255);
+	border: 1px solid transparent;
+	color: rgb(0,0,0, .8);
 }
 .btn-danger, .btn-danger:hover {
-	background: #FF3838;
-	color: #000;
-	border: none;
+	background-color: rgb(255, 83, 83);
+	border: 1px solid rgb(255, 83, 83);
+	color: rgba(255, 255, 255, .8);
 }
 .btn-warning {
 	color: orange;
 	background-color: transparent;
-	border: none;
+	border: 1px solid orange;
 }
-.btn-success {
-	background: transparent;
-	border: none;;
-  color: #5cb85c;
-}
-.btn-success:hover {
+.btn-success, .btn-success:hover {
 	background-color: rgb(77,250,137);
-	color: black;
+	border: 1px solid transparent;
+	color: rgba(0,0,0, .8);
 }
 .btn-group-xs > .btn, .btn-xs {
     border-radius: 0;
