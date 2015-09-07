@@ -207,7 +207,7 @@ hr {
 	background: rgb(77,250,137);
 	/*color: white;*/
 	position: relative;
-    z-index: 999999;
+  z-index: 1000;
 }
 #arrow-slide-left {
 	position: absolute;
@@ -461,7 +461,7 @@ nav {
 	left: 0;
 	right: 0;
 	position: fixed;
-	z-index: 9999;
+	z-index: 1000;
 	background-color: white;
     display: none;
 }
@@ -489,7 +489,7 @@ nav {
 -------------------------------------------------- */
 .panelButton {
 	cursor: pointer;
-	z-index: 99999999;
+	z-index: 1000;
 	position: absolute;
 	top: 1rem;
 	right: .5rem;
@@ -619,9 +619,7 @@ nav {
 
 /* Viewer */
 #viewer {
-    padding: 0 1rem;
     position: relative;
-    border: 1px solid;
     border-radius: 0;
     background-color: #fff;
 }
@@ -642,12 +640,16 @@ nav {
   margin-left: auto;
   margin-right: auto;
 	padding: 2rem 0;
+	border: 1px solid;
 }
 .swiper-image {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   height: 500px;
+}
+.swiper-button-next, .swiper-button-prev {
+    background-size: 20px 30px;
 }
 .gallery-top {
   height: 400px;
@@ -674,7 +676,7 @@ nav {
 /* File Upload */
 #uploadImages {
 	padding: 0;
-	margin-bottom: 1rem;
+	margin: 1rem 0;
 	width: 100%;
 }
 #progress {

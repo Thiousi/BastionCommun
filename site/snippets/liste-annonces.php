@@ -12,7 +12,7 @@
 			if ($currentCategorieTitle == "Artiste résident") : ?>
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="container-fluid">
+						<div class="container-fluid annonce-mini" data-uri="<?php echo $annonce->uri() ?>">
 							<div class="row">
 								<div class="avatar">
 									<?php if($image = $annonce->image()): ?>
@@ -40,7 +40,7 @@
 			<?php elseif ($currentCategorieTitle == "Exposition") : ?>
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="container-fluid">
+						<div class="container-fluid annonce-mini" data-uri="<?php echo $annonce->uri() ?>">
 							<div class="row">
 								<div class="col-xs-12 event-preview">
 									<?php if($image = $annonce->image()): ?>
@@ -70,7 +70,7 @@
 			<?php elseif ($currentCategorieTitle == "Fournisseur") : ?>
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="container-fluid">
+						<div class="container-fluid annonce-mini" data-uri="<?php echo $annonce->uri() ?>">
 							<div class="row">
 								<div class="col-xs-12">
 									<?php if($image = $annonce->image()): ?>
@@ -102,7 +102,7 @@
 			<?php else : ?>
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="container-fluid">
+						<div class="container-fluid annonce-mini" data-uri="<?php echo $annonce->uri() ?>">
 							<div class="row">
 								<div class="col-xs-12">
 									<h3 class="media-heading"><a href="<?php echo $annonce->url() ?>" class="link-annonce" data-uri="<?php echo $annonce->uri() ?>"><?php echo $annonce->title() ?></a></h3>

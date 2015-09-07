@@ -76,10 +76,14 @@ if(get('username')) {
 				<?php snippet('annonces') ?>
       </div>
       <div id="column-annonce" class="column">
-        aaa
+        
       </div>
     </div>
   </div>
+
+<!-- MODALS -->
+<?php snippet('modal-delete') ?>
+<?php snippet('modal-geopicker') ?>
 
   <?php if($user = $site->user() and $user->hasRole('admin')): ?>
 

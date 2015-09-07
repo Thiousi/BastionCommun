@@ -61,6 +61,7 @@ $(document).ready(function (){
 						if (responseDiv) {
 							if (form.attr('data-response-div') == 'annonce') {
 								loadAnnonce($('#annonce').attr('data-uri'));
+								reloadAnnoncesList();
 							} else {
 								responseDiv.html(data);
 							}
@@ -171,11 +172,22 @@ $(document).ready(function (){
 		});
 		/* submit */
 		$('.submitButton').click(function() {
-			//$('main').removeClass('editMode').addClass('viewMode');
-			//$(".inputsGroup .input").attr('readonly', true);
-			//$("#informations").addClass('readonly');
-			//editors.forEach( function(editor){ editor.destroy() });
 			
+		});
+		/* Delete */
+		$(document).on('click', '#button-delete-annonce', function(e) {
+			$.post(BASTION.smartSubmitUrl + "?handler=delete", 
+				{
+					type : 'page',
+					page : $('#annonce').attr('data-uri')
+				},
+				function(response) {
+					$('#annonce').html('');
+					$('#modal-delete').modal('hide');
+					reloadAnnoncesList();
+					$('#liste-annonces .annonce-mini').click();
+				}
+			);
 		});
 		
 		/***** tools *****/
@@ -192,6 +204,17 @@ $(document).ready(function (){
 		/* toggle */
 		$('#toggle-public').bootstrapToggle();
 	  /* gallery */
+		function updateSwiperVisibility(swiper) {
+			if (!swiper.slides.length) {
+				swiper.container.hide();
+			} else if (swiper.slides.length == 1) {
+				swiper.container.show();
+				$('.swiper-pagination, .swiper-button-next, .swiper-button-prev').hide();
+			} else {
+				swiper.container.show();
+				$('.swiper-pagination, .swiper-button-next, .swiper-button-prev').show();
+			}
+		}
 		var gallery = new Swiper('.swiper-container', {
 			pagination: '.swiper-pagination',
 			nextButton: '.swiper-button-next',
@@ -199,7 +222,10 @@ $(document).ready(function (){
 			slidesPerView: 1,
 			paginationClickable: true,
 			spaceBetween: 30,
-			loop: true
+			loop: false,
+			onInit: function (swiper) {
+				updateSwiperVisibility(swiper);
+			}
 		});
 		/* smart-submit */
 		initSmartSubmit($('#column-annonce .smart-submit'));
@@ -286,7 +312,8 @@ $(document).ready(function (){
 					$('<p/>').text(file.name).appendTo('#files').addClass('label label-success');
 					gallery.prependSlide('<figure class="swiper-slide" data-pageuri="' + $('#slider').data('pageuri') + '" data-filename="' + file.name + '"><div class="swiper-image" style="background-image:url(' + $('#slider').data('pageurl') + '/' + file.name + ')"></div></figure>');
 					gallery.update();
-					gallery.slideTo(1);
+					updateSwiperVisibility(gallery);
+					setTimeout(function(){ gallery.slideTo(0); }, 100);
 				});
 			},
 			progressall: function (e, data) {
@@ -303,13 +330,15 @@ $(document).ready(function (){
 		$('#swiper-button-delete').click(function() {
 			$.post(BASTION.smartSubmitUrl + "?handler=delete", 
 				{
+					type : 'file',
 					file : $('.swiper-slide-active').data('filename'),
 					page : $('#slider').data('pageuri')
 				},
 				function() {
-					var i = gallery.activeIndex-1;
+					var i = gallery.activeIndex;
 					gallery.removeSlide(i);
 					gallery.update();
+					updateSwiperVisibility(gallery);
 				}
 			);
 
@@ -350,15 +379,19 @@ $(document).ready(function (){
 				}
 			});
 	}
+	function reloadAnnoncesList() {
+		//$('#form-annonces input[type="submit"]').click()
+		$('#form-annonces').submit()
+	}
 	
 	// search fields
 	$('.selectpicker').selectpicker();
 	
 	$("#form-annonces select").change(function() { $(this.form).find('input[type="submit"]').click() });
 	
-	$(document).on('click', '#liste-annonces a.link-annonce', function(e){
+	$(document).on('click', '#liste-annonces .annonce-mini', function(e){
 		e.preventDefault();
-		loadAnnonce($(e.target).attr('data-uri'));
+		loadAnnonce($(this).attr('data-uri'));
 	});
 	
 	$(document).on('click', '#btn-new', function(e) {

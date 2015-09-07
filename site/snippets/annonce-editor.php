@@ -13,7 +13,7 @@
 			<button type="submit" name="submit" class="btn btn-primary cancelButton"><span class='glyphicon glyphicon-remove' aria-hidden='true'></span> Annuler</button> 
 		</div>
 	</div>
-	<button type="button" class=" editOnly btn btn-danger col-xs-12" data-toggle="modal" data-target="#modal-delete"><span class='glyphicon glyphicon-trash' aria-hidden='true'> Supprimer l'annonce</button>	
+	<button type="button" class="editOnly btn btn-danger col-xs-12" data-toggle="modal" data-target="#modal-delete"><span class='glyphicon glyphicon-trash' aria-hidden='true'></span> <span>Supprimer l'annonce</span></button>	
 	
 	<!-- HIDDEN FORM -->
 	<div id="hiddenForm" class="hidden">
