@@ -20,6 +20,31 @@ Categorie: categorie-1
 
 Informations: 
 
+- 
+  key: lieu
+  value: Barrage Vauban
+- 
+  key: adresse
+  value: '{"latitude":"46.9425669","longitude":"-2.178588999999988","street":"13 Rue des Sapeurs Pompiers","city":"Barbâtre","zip":"85630","country":"FR"}'
+- 
+  key: avec
+  value: 'Fantine Andrès, Clothilde Anty, Marie-Anne Baccichet, Léa Barbazanges, Virginie Bergeret, Alexia Bretaudeau, Vincent Broquaire, Mathilde Caylou, Vincent Chevillon, Clémence Choquet & Mickaël Gamio, Myriam Colin, Caroline De Grandpré, Ahmet Dogan, Camille Fischer, Emmanuelle Giora, Lucie Guillemin, Joséphine Kaeppelin, Thomas Lasbouygues, Zahra Poonawala, Ingrid Rodewald; Letizia Romanini, Mélody Seiwert, Capucine Vanderbrouck & Gaëlle Cressent, Yiumsiri Vantanapindu, Gretel Weger et Young Hee Hong'
+- 
+  key: debut
+  value: 02.07.2015
+- 
+  key: fin
+  value: 13.08.2015
+- 
+  key: horaires
+  value: 10h-18h
+
 ----
 
 Description: 
+
+Nous avons le plaisir de vous inviter à l'inauguration de l'exposition "_BASTION COMMUN_" qui aura lieu le jeudi 25 juin à 18h, au Barrage Vauban à Strasbourg. Elle durera ensuite jusqu'au 26 juillet et sera ouverte tous les jours.
+
+> L'exposition rassemblera une trentaine d’artistes du Bastion 14\. Ils revendiquent l'identité d'une scène artistique régionale active et unie. L'initiative de cet évènement collectif vient d'une envie partagée de se rassembler le temps d'une exposition dans un lieu public pour affirmer une appartenance au territoire local et revendiquer un rôle actif dans la cité.
+
+L’exposition _BASTION COMMUN_ s'inscrit dans projet mené sur l’année 2014–2015 par Les Commissaires Anonymes accompagnés d'Adrien Metzger. Pensé comme un programme de travail collectif ponctué par différents temps forts (dont une semaine de résidence au [Frac Alsace](http://www.culture-alsace.org/art-contemporain/) en mars dernier), l’enjeu a été de développer une dynamique collaborative favorable au partage créatif et productif d’infor­mations, de compétences et de savoirs.

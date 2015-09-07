@@ -47,6 +47,8 @@ $(document).ready(function (){
 		form.on('submit', function(e){
 
 			e.preventDefault();
+			
+			console.log('smarties');
 
 			// clear previous response
 			if (responseDiv) responseDiv.html('');
@@ -86,6 +88,7 @@ $(document).ready(function (){
 		// detect form on page
 	$('form.smart-submit').each(function() {
 		initSmartSubmit($(this));
+		console.log($(this));
 	});
 	
 	/* HOME
@@ -228,7 +231,7 @@ $(document).ready(function (){
 			}
 		});
 		/* smart-submit */
-		initSmartSubmit($('#column-annonce .smart-submit'));
+		initSmartSubmit($('#column-content .smart-submit'));
 		/* geopicker */
 		function updateControls(addressComponents) {
 			$('#geopicker-street').val(addressComponents.addressLine1);
