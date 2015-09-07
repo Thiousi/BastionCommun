@@ -20,6 +20,7 @@ Categorie: categorie-1
 
 Informations: 
 
+<<<<<<< HEAD
 - 
   key: lieu
   value: Barrage Vauban
@@ -39,6 +40,8 @@ Informations:
   key: horaires
   value: 10h-18h
 
+=======
+>>>>>>> parent of 99668c9... yolo
 ----
 
 Description: 
