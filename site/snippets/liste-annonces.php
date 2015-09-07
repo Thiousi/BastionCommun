@@ -42,13 +42,13 @@
 					<div class="col-xs-12 elem">
 						<div class="container-fluid annonce-mini" data-uri="<?php echo $annonce->uri() ?>">
 							<div class="row">
-								<div class="col-xs-12 event-preview">
-									<?php if($image = $annonce->image()): ?>
-									<a href="<?php echo $annonce->url() ?>">
-										<img class="media-object" src="<?php echo thumb($image, array('width' => 500))->url(); ?>" alt="<?php echo $annonce->title() ?>">
-									</a>
-									<?php endif; ?>
-								</div>
+								<?php if($image = $annonce->image()): ?>
+									<div class="col-xs-12 event-preview">
+										<a href="<?php echo $annonce->url() ?>">
+											<img class="media-object" src="<?php echo thumb($image, array('width' => 500, 'height'=> 300, 'crop'=> true))->url(); ?>" alt="<?php echo $annonce->title() ?>">
+										</a>
+									</div>
+								<?php endif; ?>
 								<div class="col-xs-12">
 									<h3 class="media-heading"><a href="<?php echo $annonce->url() ?>" class="link-annonce" data-uri="<?php echo $annonce->uri() ?>"><?php echo $annonce->title() ?></a></h3>
 									<?php snippet('meta-mini', array( 'categorie' => $categorie, 'page'=>$annonce )) ?>

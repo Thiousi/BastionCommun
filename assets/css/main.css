@@ -106,7 +106,7 @@ a {
 	transition: color .3s, background .3s, border .3s;
 }
 a:hover {
-	color: #00F;
+	color: #000;
 }
 
 
@@ -145,7 +145,7 @@ body {
 main{
     background: white;
     padding: 3rem 2rem;
-    margin: 2rem;
+    margin: 2rem 3rem;
 }
 /* Main
 -------------------------------------------------- */
@@ -286,8 +286,8 @@ hr {
 .pac-container{z-index:2000 !important;}
 
 #controlButtons{
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
     position: absolute;
     margin-top: -70px;
     left: 70px;
@@ -414,11 +414,11 @@ a {
 /* Headings
 -------------------------------------------------- */
 h1 {
-	font-size: 6em;
+	font-size: 5rem;
 	line-height: 1.25em;
 	font-weight: 300;
 	margin: .5em 0;
-    font-family: pressuru;
+    font-family: "Autopia";
 }
 h1.title{
     text-transform: uppercase;
@@ -453,6 +453,16 @@ blockquote {
     margin: 20px 0px 20px 40px;
     border-left: 1px solid #355533;
 	border: 0;
+}
+.about{
+    padding: 0 100px;
+}
+.about p{
+    font-family: "Autopia";
+    font-size: 30px;
+    line-height: 1.35em;
+    color: #4285f4;
+
 }
 
 /* Forms
@@ -574,7 +584,7 @@ nav {
 
 .event-preview{
     overflow: hidden;
-    height: 200px;
+    height: 300px;
     padding: 15px;
 }
 .event-preview img{
@@ -624,9 +634,11 @@ nav {
 #liste-annonces .container-fluid {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     padding: 15px;
+    cursor: pointer;
 }
 #liste-annonces .container-fluid:hover {
-	background-color: #FBFF4E;
+	background-color: #DDD;
+;
 }
 #liste-annonces .row img {
 }
