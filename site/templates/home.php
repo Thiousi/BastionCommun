@@ -72,4 +72,6 @@ if(get('username')) {
 
   <?php endif ?>
 
+<?php snippet('modal-geopicker') ?>
+<?php snippet('modal-delete') ?>
 <?php snippet('footer') ?>

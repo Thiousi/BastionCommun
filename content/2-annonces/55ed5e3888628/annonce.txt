@@ -22,11 +22,15 @@ Informations:
 
 - 
   key: annees
-  value:
+  value: 2012
 - 
   key: pratique
-  value:
+  value: Pédale wa-wa
 
 ----
 
 Description: 
+
+En anglais, John Doe (version féminine : Jane Doe) est une expression pouvant désigner une personne non-identifiée ou un homme de la rue : « Monsieur X », « Monsieur Untel », « Monsieur Durand », « Monsieur Tout-le-monde », « un citoyen Lambda ».
+
+Dans de nombreux pays, on constate que le nom employé comme nom générique n'est pas le nom réellement le plus répandu. Dans les pays anglophones, le nom le plus courant est généralement considéré comme étant John Smith ou M. Smith, tandis qu'en France et en Espagne le nom le plus courant est Martin, et au Québec il s'agit de Tremblay1.
