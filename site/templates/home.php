@@ -19,17 +19,6 @@ if(get('username')) {
   go($page->url());
 }
 ?>
-			<!--
-			<div id="column-home" class="column">
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col-xs-10">
-				  <h1 class="title"><?php echo page('home')->title() ?></h1>
-								<?php echo page('home')->text()->kirbytext() ?>
-							</div>
-						</div>
-					</div>
-			</div>-->
 
 	<div id="megabloc">
 		<div id="column-annonces" class="column">
@@ -52,14 +41,15 @@ if(get('username')) {
 					<h4>Bastion 14</h4>
 			</header>
 			<?php snippet('annonces') ?>
-	</div>
-		
-	<div id="column-content" class="column">
-	</div>
 
-<!-- MODALS -->
-<?php snippet('modal-delete') ?>
-<?php snippet('modal-geopicker') ?>
+		</div>
+		<div id="column-content" class="column">
+			<div class="col-xs-12">
+  				<h1 class="title"><?php echo page('home')->title() ?></h1>
+				<?php echo page('home')->text()->kirbytext() ?>
+			</div>
+		</div>
+	</div>
 
   <?php if($user = $site->user() and $user->hasRole('admin')): ?>
 
