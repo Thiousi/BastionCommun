@@ -1,0 +1,32 @@
+Title: John Doe
+
+----
+
+Author: samuel
+
+----
+
+Date: 20150907
+
+----
+
+Private: true
+
+----
+
+Categorie: artiste-resident
+
+----
+
+Informations: 
+
+- 
+  key: annees
+  value:
+- 
+  key: pratique
+  value:
+
+----
+
+Description: 

@@ -10,7 +10,7 @@ Date: 20150904
 
 ----
 
-Categorie: 
+Categorie: artiste-resident
 
 ----
 
@@ -19,13 +19,6 @@ Private: true
 ----
 
 Informations: 
-
-- 
-  key: annees
-  value: 1999999
-- 
-  key: pratique
-  value: Yolo
 
 ----
 

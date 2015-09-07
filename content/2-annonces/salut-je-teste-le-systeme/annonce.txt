@@ -1,4 +1,4 @@
-Title: Salut je teste le système
+Title: Salut je déteste le système
 
 ----
 
@@ -15,3 +15,15 @@ Author: samuel
 ----
 
 Date: 2015-06-10
+
+----
+
+Private: false
+
+----
+
+Informations: 
+
+- 
+  key: prix
+  value:

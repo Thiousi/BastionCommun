@@ -14,7 +14,7 @@ Private: true
 
 ----
 
-Categorie: 
+Categorie: categorie-1
 
 ----
 

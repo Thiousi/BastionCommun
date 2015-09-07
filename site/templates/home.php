@@ -61,6 +61,7 @@ if(get('username')) {
 			<div class="column-header"><h4>Annonces</h4></div>
 		</div>
     <div id="megabloc">
+      <!--
       <div id="column-home" class="column">
 				<div class="container-fluid">
 					<div class="row">
@@ -70,7 +71,7 @@ if(get('username')) {
 						</div>
 					</div>
 				</div>
-      </div>
+      </div>-->
       <div id="column-annonces" class="column">
 				<?php snippet('annonces') ?>
       </div>
