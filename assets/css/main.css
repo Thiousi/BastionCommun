@@ -644,13 +644,13 @@ nav {
     right: 0;
 }
 #liste-annonces .container-fluid:hover {
-	background-color: #DDD;
-;
+	background-color: #F8F8F8;
 }
 #liste-annonces .row img {
 }
 #liste-annonces .annonce-mini.active {
-	border: .5rem solid rgb(77,250,137);
+	/*border-right: .5rem solid #00C6EF;*/
+    background: #FBFBFB;
 }
 #btn-new {
     width: 100%;
