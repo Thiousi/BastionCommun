@@ -4,29 +4,38 @@ $currentCategorieTitle = page('categories/'.$currentCategorie)->title();
 ?>
 
 <main class="main viewMode" id="annonce" data-uri="<?php echo $page->uri() ?>" role="main">
-  <div class="container-fluid">
 		
-		<!-- VALIDATION BUTTON -->
+<!-- VALIDATION BUTTON -->
+	<div id="controlButtons" class="row usersOnly">
+		<div class="text-left left">
+			<?php $page->private()->bool() ? $checked = "checked" : $checked = false ; ?>
+			<input id="toggle-public" <?php echo $checked ?> data-toggle="toggle" data-on="Privé" data-off="Publique" data-onstyle="default" data-size="mini" type="checkbox" data-populate="private" disabled>
+		</div>
+		<div class="text-right right">
+			<?php snippet('annonce-editor', array('page' => $page)) ?>
+		</div>
+	</div>			
+
+
+  <div class="container-fluid">
 		<div class="row">
 			<div class="col-sm-8">				
 				<!-- TITLE -->
 				<div id="title">
 					<h2 id="field-title">
 						<span class="simpleEdit" data-populate="title"><?php echo $page->title() ?></span>
-						<?php $page->private()->bool() ? $checked = "checked" : $checked = false ; ?>
-						<input id="toggle-public" <?php echo $checked ?> data-toggle="toggle" data-on="Privé" data-off="Publique" data-onstyle="default" data-size="mini" type="checkbox" data-populate="private" disabled>
 					</h2>
 				</div>
-				<div class="col-sm-4">
+				<div class="">
 					<div>
 						<h3 class="viewOnly"><?php echo $currentCategorieTitle ?></h3>
 						<h3>
 							<ul class="editOnly" role="tablist">
-								<li role="presentation" class="dropdown btn-block active" data-populate="categorie">
+								<li role="presentation" class="dropdown active" data-populate="categorie">
 									<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
 										<span class="current">—</span> <span class="caret"></span>
 									</a>
-									<ul class="dropdown-menu btn-block" role="menu" data-populate="categorie">
+									<ul class="dropdown-menu" role="menu" data-populate="categorie">
 										<?php
 										$currentCategorie = $page->categorie();
 										$currentCategorieTitle = page('categories/'.$currentCategorie)->title();
@@ -43,9 +52,6 @@ $currentCategorieTitle = page('categories/'.$currentCategorie)->title();
 						</h3>
 					</div>
 				</div>
-			</div>
-			<div id="controlButtons" class="row col-sm-4 usersOnly">
-				<?php snippet('annonce-editor', array('page' => $page)) ?>
 			</div>
 		</div>
 			

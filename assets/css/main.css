@@ -108,9 +108,6 @@ a:hover {
 .hidden {
   display: none;
 }
-.flexible {
-	display: flex;
-}
 
 /* Site
 -------------------------------------------------- */
@@ -127,9 +124,14 @@ html {
 body {
 	margin: 0 auto;
 	color: #222;
-  font-family: "propcouriersansregular", sans-serif;
+    font-family: "propcouriersansregular", sans-serif;
+    background: #F2F2F2;
 }
-
+main{
+    background: white;
+    padding: 3rem 2rem;
+    margin: 2rem;
+}
 /* Main
 -------------------------------------------------- */
 p {
@@ -147,19 +149,12 @@ hr {
 
 /* Home
 -------------------------------------------------- */
-#megabloc-wrapper {
-  position: fixed;
+
+#megabloc {
+  width: 100%;
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-#megabloc {
-  width: 100%;
-  top: 2.5rem;
-  left: 0%;
   bottom: 0;
   position: absolute;
 }
@@ -268,6 +263,20 @@ hr {
 }
 .pac-container{z-index:2000 !important;}
 
+#controlButtons{
+    padding-right: 15px;
+    padding-left: 15px;
+    position: absolute;
+    margin-top: -70px;
+    left: 70px;
+    right: 70px;
+}
+.right{
+    float: right;
+}
+.left{
+    float: left;
+}
 .btn {
 	border-radius: 0;
 }
@@ -328,17 +337,23 @@ hr {
 }
 .btn-primary {
   background-color: transparent;
-	color: darkblue;
+    color: darkblue;
+    border-color: black; 
+}
+.btn-primary:hover {
+  background-color: transparent;
+    color: black;
+    background-color: #5CA6FF; 
 }
 .btn-danger {
 	background: transparent;
-	color: black;
+	color: #FF3838;
 	border-color: black;
 }
 .btn-danger:hover {
   background-color: #FF3838;
-	border-color: #FF3838;
-	color: white;
+	border-color: black;
+	color: black;
 }
 .btn-warning {
     color: orange;
@@ -346,13 +361,12 @@ hr {
 }
 .btn-success {
 	background: transparent;
-	color: black;
 	border-color: black;
+    color: #5cb85c;
 }
 .btn-success:hover {
 	background-color: rgb(77,250,137);
 	color: black;
-	
 }
 .btn-group-xs > .btn, .btn-xs {
     border-radius: 0;

@@ -26,7 +26,7 @@
 								<div class="col-xs-9">
 									<h3 class="media-heading"><a href="<?php echo $annonce->url() ?>" class="link-annonce" data-uri="<?php echo $annonce->uri() ?>"><?php echo $annonce->title() ?></a></h3>
 									<?php if ($private=='false') : ?>
-										<span class="glyphicon glyphicon-eye-close" data-toggle="tooltip" data-placement="bottom" title="Public"></span>
+										<span class="glyphicon glyphicon-pushpin" data-toggle="tooltip" data-placement="bottom" title="Public"></span>
 									<?php endif; ?>
 									<p><?php echo $currentCategorieTitle?></p>
 									<!--<?php snippet('meta-mini', array( 'categorie' => $categorie, 'page'=>$annonce )) ?> -->
@@ -59,7 +59,7 @@
 								<div class="col-xs-12">
 									<p><small>Déposée par <?php echo $author->firstName()." ".$author->lastName() ?> le <?php echo $annonce->date('d/m/Y') ?></small> </p>
 									<?php if ($private=='false') : ?>
-										<p class="glyphicon glyphicon-eye-close" data-toggle="tooltip" data-placement="bottom" title="Public"></p>
+										<p class="glyphicon glyphicon-pushpin" data-toggle="tooltip" data-placement="bottom" title="Public"></p>
 									<?php endif; ?>
 								</div>
 							</div>
@@ -89,7 +89,7 @@
 								<div class="col-xs-12">
 									<p><small>Déposée par <?php echo $author->firstName()." ".$author->lastName() ?> le <?php echo $annonce->date('d/m/Y') ?></small> </p>
 									<?php if ($private=='false') : ?>
-										<p class="glyphicon glyphicon-eye-close" data-toggle="tooltip" data-placement="bottom" title="Public"></p>
+										<p class="glyphicon glyphicon-pushpin" data-toggle="tooltip" data-placement="bottom" title="Public"></p>
 									<?php endif; ?>
 								</div>
 							</div>
@@ -121,7 +121,7 @@
 								<div class="col-xs-12">
 									<p><small>Déposée par <?php echo $author->firstName()." ".$author->lastName() ?> le <?php echo $annonce->date('d/m/Y') ?></small> </p>
 									<?php if ($private=='false') : ?>
-										<p class="glyphicon glyphicon-eye-close" data-toggle="tooltip" data-placement="bottom" title="Public"></p>
+										<p class="glyphicon glyphicon-pushpin" data-toggle="tooltip" data-placement="bottom" title="Public"></p>
 									<?php endif; ?>
 								</div>
 							</div>
