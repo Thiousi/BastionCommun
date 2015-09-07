@@ -1,4 +1,4 @@
-Title: Hello world
+Title: Bastion commun
 
 ----
 
@@ -22,15 +22,6 @@ Informations:
 
 <<<<<<< HEAD
 - 
-  key: lieu
-  value: Barrage Vauban
-- 
-  key: adresse
-  value: '{"latitude":"46.9425669","longitude":"-2.178588999999988","street":"13 Rue des Sapeurs Pompiers","city":"Barbâtre","zip":"85630","country":"FR"}'
-- 
-  key: avec
-  value: 'Fantine Andrès, Clothilde Anty, Marie-Anne Baccichet, Léa Barbazanges, Virginie Bergeret, Alexia Bretaudeau, Vincent Broquaire, Mathilde Caylou, Vincent Chevillon, Clémence Choquet & Mickaël Gamio, Myriam Colin, Caroline De Grandpré, Ahmet Dogan, Camille Fischer, Emmanuelle Giora, Lucie Guillemin, Joséphine Kaeppelin, Thomas Lasbouygues, Zahra Poonawala, Ingrid Rodewald; Letizia Romanini, Mélody Seiwert, Capucine Vanderbrouck & Gaëlle Cressent, Yiumsiri Vantanapindu, Gretel Weger et Young Hee Hong'
-- 
   key: debut
   value: 02.07.2015
 - 
@@ -39,6 +30,15 @@ Informations:
 - 
   key: horaires
   value: 10h-18h
+- 
+  key: lieu
+  value: Barrage Vauban
+- 
+  key: adresse
+  value: '{"latitude":"46.9425669","longitude":"-2.178588999999988","street":"13 Rue des Sapeurs Pompiers","city":"Barbâtre","zip":"85630","country":"FR"}'
+- 
+  key: avec
+  value: 'Fantine Andrès, Clothilde Anty, Marie-Anne Baccichet, Léa Barbazanges, Virginie Bergeret, Alexia Bretaudeau, Vincent Broquaire, Mathilde Caylou, Vincent Chevillon, Clémence Choquet & Mickaël Gamio, Myriam Colin, Caroline De Grandpré, Ahmet Dogan, Camille Fischer, Emmanuelle Giora, Lucie Guillemin, Joséphine Kaeppelin, Thomas Lasbouygues, Zahra Poonawala, Ingrid Rodewald; Letizia Romanini, Mélody Seiwert, Capucine Vanderbrouck & Gaëlle Cressent, Yiumsiri Vantanapindu, Gretel Weger et Young Hee Hong'
 
 =======
 >>>>>>> parent of 99668c9... yolo
