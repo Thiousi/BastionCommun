@@ -74,6 +74,17 @@ Email:  support@getkirby.com
 	font-style: normal;
 }
 
+@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../fonts/glyphicons-halflings-regular.eot');
+    src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/glyphicons-halflings-regular.woff') format('woff'),
+        url('../fonts/glyphicons-halflings-regular.ttf')  format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
 /* Reset
 -------------------------------------------------- */
 *, *:before, *:after {
@@ -638,6 +649,12 @@ nav {
     position: absolute;
     top: 0;
     right: 0;
+    border-radius: 50%;
+    background-color: #FFF;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
 }
 #liste-annonces .container-fluid:hover {
 	background-color: #F8F8F8;
@@ -957,4 +974,6 @@ nav {
 	top: -9999px;
 	left: -9999px;
 }
-
+body.modal-open {
+  margin: 0 !important;
+}
