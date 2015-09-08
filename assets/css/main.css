@@ -207,10 +207,11 @@ hr {
   height: 100%;
 }
 #column-annonces{
-    max-width: 450px;
-    border-left: 1px solid;
-    background-color: #fff;
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 450px;
+	border-left: 1px solid;
+	background-color: #fff;
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 #column-annonces .elem{
     padding: 0;
@@ -254,7 +255,7 @@ hr {
 }
 #connect-left {
 	position: absolute;
-	top: 15px;
+	top: 14px;
 	line-height: 2.5rem;
 	left: 1rem;
 }
@@ -265,7 +266,8 @@ hr {
 	right: 1rem;
 }
 #connect-right a.dropdown-toggle, #connect-left	a.dropdown-toggle {
-	color: white;
+	text-decoration: none;
+	color: rgba(0,0,0,.5);
 }
 #connect-right a.dropdown-toggle:hover, #connect-left	a.dropdown-toggle:hover {
 	text-decoration: none;
@@ -668,10 +670,15 @@ nav {
 #btn-new {
     width: 100%;
     margin-bottom: .5rem;
-    background: #00C6EF;
+    background-color: rgba(0,0,0,0.5);
+	color: white;
 }
 #filters-buttons {
 	margin: 0.5em 0px;
+}
+#filters-buttons .dropdown-toggle, #filters-buttons .form-control {
+	background: #fff;
+	border: 1px solid rgba(0,0,0,.3);
 }
 .small-content{
     position: absolute;

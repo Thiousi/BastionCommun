@@ -90,4 +90,4 @@ Informations:
 
 - 
   key: prix
-  value:
+  value: 99F

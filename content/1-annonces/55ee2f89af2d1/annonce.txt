@@ -1,0 +1,54 @@
+Title: Harry Potter
+
+----
+
+Author: samuel
+
+----
+
+Date: 20150908
+
+----
+
+Categorie: categorie-1
+
+----
+
+Private: false
+
+----
+
+Informations: 
+
+- 
+  key: debut
+  value: 10.09.2015
+- 
+  key: fin
+  value: 24.09.2015
+- 
+  key: horaires
+  value: 11h-18h TLJ
+- 
+  key: lieu
+  value: Cité du cinéma
+- 
+  key: adresse
+  value: '{"latitude":"48.922046","longitude":"2.336488000000031","street":"20 Rue Ampère","city":"Saint-Denis","zip":"93200","country":"FR"}'
+- 
+  key: avec
+  value: 'Lord Voldemort & Rubeus Hagrid'
+
+----
+
+Description: 
+
+Des centaines d’accessoires, de costumes, de créatures et de décors issus de la série de films à succès s’installent à Paris. Tous sont présentés dans un décor authentique de Poudlard™, notamment la Grande Salle, la cabane de Rubeus Hagrid™ ou la salle commune de Gryffondor™.
+
+Parmi les objets exposés figurent de nombreuses pièces adorées des fans telles que la baguette magique et les lunettes d’Harry, les Horcruxes de Lord Voldemort™, les Reliques de la Mort et les accessoires de Défense contre les forces du Mal, et la classe des Potions de Severus Rogue.
+
+Visitez le terrain de Quidditch™ et passez un Souafle, tirez sur une mandragore dans le décor de la Serre botanique ou rencontrez la créature magique Buckbeak™, l’hippogriffe, dans la Forêt Interdite.
+
+Les billets sont en vente alors réservez le jour et l’heure qui vous conviennent dès aujourd’hui pour découvrir la magie d’Harry Potter : L’Exposition !
+
+Pour plus d’Informations sur l’exposition, appelez le 0 892 780 220

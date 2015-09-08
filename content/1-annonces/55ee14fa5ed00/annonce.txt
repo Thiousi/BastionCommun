@@ -28,10 +28,10 @@ Informations:
   value:
 - 
   key: horaires
-  value:
+  value: 6h-16h
 - 
   key: telephone
-  value:
+  value: 06 06 06 99 99
 
 ----
 

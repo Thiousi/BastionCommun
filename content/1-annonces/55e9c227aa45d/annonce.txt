@@ -1,4 +1,4 @@
-Title: Samuel Rivers-Moore
+Title: René de Gonzague
 
 ----
 
@@ -20,6 +20,19 @@ Private: true
 
 Informations: 
 
+- 
+  key: annees
+  value: 2010
+- 
+  key: pratique
+  value: Sculpture
+
 ----
 
-Description: Hello Hello
+Description: 
+
+René Higuita, né le 28 août 1966 à Medellín (Colombie), est un ancien footballeur colombien, qui évoluait au poste de gardien de but à Millonarios, à l'Atlético Nacional, au Real Valladolid, à Veracruz, à l'Independiente Medellín, au Real Cartagena, à l'Atlético Junior, à Aucas, à Bajo Cauca, au Guaros de Lara, au Deportivo Rionegro et au Deportiva Pereira ainsi qu'en équipe de Colombie.
+
+Higuita marque huit buts lors de ses soixante-huit sélections avec l'équipe de Colombie entre 1987 et 1999.
+
+Il participe à la coupe du monde de football en 1990 et à la Copa América en 1987, 1989, 1993 et 1995 avec la Colombie.

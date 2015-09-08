@@ -26,7 +26,7 @@ if(get('username')) {
 				<div id="connect-left">
 					<li class="dropdown">
 						 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-							 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> <span class="caret"></span>
+							 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
 						</a>
 						<ul class="dropdown-menu" role="menu">
 							<?php if($user = $site->user()):
@@ -47,16 +47,6 @@ if(get('username')) {
 									<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> 
 									<span class='name'> Nouvelle annonce</span>
 								</button>
-
-							<!--
-								<select id="btn-new" class="selectpicker btn btn-lg" data-style="btn-lg btn-default" data-width="100%" name="cat" title="Nouvelle annonce">
-									<?php foreach ( page('categories')->children() as $categorie ) : ?>
-										<option value="<?php echo $categorie->uid(); ?>" <?php e($categorie->uid() == $cat, "selected") ?>><?php echo $categorie->title(); ?></option>
-									<?php endforeach ?>
-								</select>
-								<input type="submit" class="btn btn-default btn-lg hidden" value="Go !" />
-							-->
-
 							</div>
 						</div>
 					</div>
