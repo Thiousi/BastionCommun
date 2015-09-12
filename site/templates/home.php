@@ -39,6 +39,7 @@ if(get('username')) {
 					</li>
 				</div>
 				<h4>PETITES ANNONCES</h4>
+				<div id="hide-menu" class="glyphicon glyphicon-remove"></div>
 				<?php if( $site->user() ): ?>
 					<div class="container-fluid toolbox usersOnly">
 						<div class="row">
@@ -58,6 +59,7 @@ if(get('username')) {
 			</div>
 		</div>
 		<div id="column-content" class="column">
+			<div id="show-menu" class="glyphicon glyphicon-chevron-left"></div>
 			<div class="col-xs-12">
   				<h1 class="title"><?php echo page('home')->title() ?></h1>
   				<div class="about">

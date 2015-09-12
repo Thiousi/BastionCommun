@@ -419,6 +419,14 @@ $(document).ready(function (){
 	
 	$('.column').perfectScrollbar();
 
+
+	/* SHOW - HIDE > menu 
+	------------------------------------ */
+
+	$('#hide-menu, #show-menu').click(function(){
+		$('#hide-menu, #show-menu, #column-annonces, #column-content').toggleClass('fullWidth');
+	})
+
 });
 
 
