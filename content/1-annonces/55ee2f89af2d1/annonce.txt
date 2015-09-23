@@ -1,4 +1,4 @@
-Title: Harry Potter
+Title: Harry Poster
 
 ----
 
@@ -22,19 +22,19 @@ Informations:
 
 - 
   key: debut
-  value: 10.09.2015
+  value: 04.02.2015
 - 
   key: fin
-  value: 24.09.2015
+  value:
 - 
   key: horaires
-  value: 11h-18h TLJ
+  value: 10h-18h Ouvert tous les jours
 - 
   key: lieu
   value: Cité du cinéma
 - 
   key: adresse
-  value: '{"latitude":"48.922046","longitude":"2.336488000000031","street":"20 Rue Ampère","city":"Saint-Denis","zip":"93200","country":"FR"}'
+  value: '{"latitude":"43.86077656656178","longitude":"5.233603423278737","street":"D60","city":"Goult","zip":"84220","country":"FR"}'
 - 
   key: avec
   value: 'Lord Voldemort & Rubeus Hagrid'

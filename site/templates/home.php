@@ -1,5 +1,41 @@
 <?php snippet('header') ?>
 
+<svg class="defs-only">
+  <filter id="monochrome" color-interpolation-filters="sRGB"
+          x="0" y="0" height="100%" width="100%">
+    <feColorMatrix type="matrix"
+      values="0.95	0 0 0 1 
+              0.85	0 0 0 0.13  
+              1		0 0 0 0 
+              0		0 0 0.7 0" />
+  </filter>
+</svg>
+
+<?php
+/*--------------------------------
+           FUNCTIONS
+---------------------------------*/
+
+function get_Date($date, $besoin) {
+	setlocale (LC_TIME, 'fr_FR','fra');
+	$hour = strftime("%k" ,strtotime($date)).'h'.strftime("%M" ,strtotime($date)); 
+	$day = strftime("%A" ,strtotime($date)); 
+	$dayNum = strftime("%d" ,strtotime($date)); 
+	$month = strftime("%B" ,strtotime($date)); 
+	$monthAbv = strftime("%b" ,strtotime($date)); 
+	$monthNum = strftime("%m" ,strtotime($date)); 
+	$year = strftime("%Y" ,strtotime($date)); 
+
+	if($besoin == 'rdv'){
+		return $dayNum.' '.$month;
+	} else if($besoin == 'periode') {
+		return $dayNum.' '.$month;
+	}
+}
+
+?>
+
+
 <?php
 if(get('username')) {
   // fetch the user by username and run the 
@@ -21,45 +57,34 @@ if(get('username')) {
 ?>
 
 	<div id="megabloc">
+
 		<div id="column-annonces" class="column">
 			<header class="column-header" role="banner">
-				<div id="connect-left">
-					<li class="dropdown">
-						 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-							 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-						</a>
-						<ul class="dropdown-menu" role="menu">
-							<?php if($user = $site->user()):
-								snippet('param');
-							else :
-								snippet('signin');
-							endif;
-							?>
-						</ul>
-					</li>
-				</div>
-				<h4>PETITES ANNONCES</h4>
-				<div id="hide-menu" class="glyphicon glyphicon-remove"></div>
-				<?php if( $site->user() ): ?>
-					<div class="container-fluid toolbox usersOnly">
-						<div class="row">
-							<div class="col-xs-12">
-								<button id="btn-new" class='btn btn-lg' data-width='100%'>
-									<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> 
-									<span class='name'> Nouvelle annonce</span>
-								</button>
-							</div>
+				<!-- <div id="hide-menu" class="glyphicon glyphicon-remove"></div> -->
+				<?php snippet('admin') ?>
+				<?php snippet('menu') ?>
+			</header>
+
+			<?php if( $site->user() ): ?>
+				<div id="addNew" class="container-fluid toolbox usersOnly">
+					<div class="row">
+						<div class="col-xs-12 elem">
+							<button id="btn-new" class='btn btn-lg' data-width='100%'>
+								<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> 
+								<span class='name'> Nouvelle annonce</span>
+							</button>
 						</div>
 					</div>
-				<?php endif; ?>
-				<?php snippet('annonces') ?>
-			</header>
+				</div>
+			<?php endif;?>
+
 			<div id="liste-annonces" class="container-fluid">
 				<?php snippet('liste-annonces', array ('results'=>$results)); ?>
 			</div>
+
 		</div>
+
 		<div id="column-content" class="column">
-			<div id="show-menu" class="glyphicon glyphicon-chevron-left"></div>
 			<div class="col-xs-12">
   				<h1 class="title"><?php echo page('home')->title() ?></h1>
   				<div class="about">
@@ -67,12 +92,17 @@ if(get('username')) {
 				</div>
 			</div>
 		</div>
+
+
+		
 	</div>
 
   <?php if($user = $site->user() and $user->hasRole('admin')): ?>
-
   <?php endif ?>
 
 <?php snippet('modal-geopicker') ?>
 <?php snippet('modal-delete') ?>
 <?php snippet('footer') ?>
+
+
+

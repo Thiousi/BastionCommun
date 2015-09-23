@@ -100,7 +100,7 @@ $(document).ready(function (){
   /*  Annonce
   -------------------------------------------- */
 	/* functions */
-	function inputsGroupToField(group, field) {
+function inputsGroupToField(group, field) {
     var fields = {};
     group.find('.input').each(function(i) {
       fields[$(this).attr("data-slug")] = $(this).val();
@@ -135,7 +135,7 @@ $(document).ready(function (){
 				$( "#hidden-" + $(this).attr('data-populate') ).val($(this).prop('checked'));
 			});
 
-			$(".inputsGroup .input").on('input', function() {
+			$(".inputsGroup .input").on('input change', function() {
 				var inputsGroup = $(this).parents('.inputsGroup');
 				inputsGroupToField( inputsGroup , "#hidden-" + inputsGroup.attr('data-populate') );
 			});
@@ -203,7 +203,7 @@ $(document).ready(function (){
 		});
 		$(".dropdown-menu li.active a").click();
 		/* datepicker */
-		$('.datepicker').datepicker({ autoclose:true, weekStart:1, language:'fr' })
+		$('.datepicker').datepicker({ autoclose:true, weekStart:1, language:'fr' });
 		/* toggle */
 		$('#toggle-public').bootstrapToggle();
 	  /* gallery */
@@ -287,6 +287,8 @@ $(document).ready(function (){
 				$('#modal-geopicker').modal('hide');
 				button.find('.name').text($('#geopicker-address').val());
 				input.val( JSON.stringify({ latitude: $('#geopicker-lat').val(), longitude: $('#geopicker-lon').val(), street: $('#geopicker-street').val(), city: $('#geopicker-city').val(), zip: $('#geopicker-zip').val(), country: $('#geopicker-country').val() }) );
+				var inputsGroup = input.parents('.inputsGroup');
+				inputsGroupToField( inputsGroup , "#hidden-" + inputsGroup.attr('data-populate') );
 			});
 		});
 		// AUTOCOMPLETE
@@ -390,6 +392,44 @@ $(document).ready(function (){
 	
 	// search fields
 	$('.selectpicker').selectpicker();
+
+
+	var empty;
+	function searchToggle(){
+		if( $('#searchbar').hasClass('active') ){
+			$('#searchbar').removeClass('active').find('#search').blur();
+			$('#searchbutton').removeClass('glyphicon-remove').addClass('glyphicon-search');
+		} else {
+			$('#searchbar').addClass('active').find('#search').focus();
+			$('#searchbutton').removeClass('glyphicon-search').addClass('glyphicon-remove');
+			$('#searchbar input').val('')
+			empty = true;
+		}
+	}
+	$(document).on('click', '#searchbutton', function(){
+		searchToggle();
+	});
+	$('#searchbar input').keydown(function(e){
+	    if(e.keyCode == 8 && empty) {
+	        $('.scope').remove();
+	    }
+	});
+	$('html').keydown(function(e){
+	    if(e.keyCode == 27 && $('#searchbar').hasClass('active')) {
+	        searchToggle();
+	    }
+	});
+	$('#searchbar').on('input', function() {
+		var inputValue = $('#searchbar input').val();
+    	if (inputValue){
+    		empty = false;
+    	} else {
+    		empty = true;
+    	}
+	});
+
+
+
 	
 	$("#form-annonces select").change(function() { $(this.form).find('input[type="submit"]').click() });
 	
@@ -417,7 +457,7 @@ $(document).ready(function (){
 	/* SLIDE
 	------------------------------------ */
 	
-	$('.column').perfectScrollbar();
+	$('.column').perfectScrollbar({ suppressScrollX: true });
 
 
 	/* SHOW - HIDE > menu 

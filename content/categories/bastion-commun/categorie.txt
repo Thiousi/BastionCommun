@@ -1,0 +1,12 @@
+Title: Bastion Commun
+
+----
+
+Criteres: 
+
+- 
+  nom:
+  slug:
+  important: on
+  type: text
+  values:

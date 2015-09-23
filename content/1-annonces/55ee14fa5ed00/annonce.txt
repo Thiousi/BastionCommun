@@ -25,7 +25,7 @@ Informations:
   value: Métal-mania
 - 
   key: adresse
-  value:
+  value: '{"latitude":"43.2954881610296","longitude":"5.390940164526228","street":"77 Boulevard Eugène Pierre","city":"Marseille","zip":"13005","country":"FR"}'
 - 
   key: horaires
   value: 6h-16h

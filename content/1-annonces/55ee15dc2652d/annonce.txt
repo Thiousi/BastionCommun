@@ -25,7 +25,7 @@ Informations:
   value:
 - 
   key: adresse
-  value:
+  value: '{"latitude":"46.15242437752303","longitude":"2.7470703125","street":"D524","city":"La Crouzille","zip":"63700","country":"FR"}'
 - 
   key: horaires
   value:
