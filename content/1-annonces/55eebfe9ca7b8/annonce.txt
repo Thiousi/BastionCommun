@@ -1,0 +1,70 @@
+Title: Rezoprospec
+
+----
+
+Author: samuel
+
+----
+
+Date: 20150908
+
+----
+
+Categorie: fournisseur
+
+----
+
+Private: false
+
+----
+
+Informations: 
+
+- 
+  key: society_name
+  value:
+- 
+  key: adresse
+  value:
+- 
+  key: horaires
+  value:
+- 
+  key: telephone
+  value:
+
+----
+
+Description: 
+
+rezopropec signifie : RESeau PROfessionnel du SPECtacle
+
+Cest une plateforme gratuite de mutualisation de moyens, déchange de services, de partage de savoir pour aider à la production, la diffusion de l'art, au développement culturel en Région PACA.
+
+Linscription et lutilisation du rezo sont libres et gratuites.
+
+Le simple fait de sinscrire constitue un engagement à respecter cette charte http://rezoprospec.over-blog.com/la-charte
+
+Lobjectif est de faciliter la circulation de linformation sur les thèmes suivants :
+
+-> L'offre, la demande et la recherche, d'emplois dans le secteur culturel, CDD, CDI, de stage
+
+-> La mise en place de projets : créations, événements, programmations à thèmes
+
+-> La mutualisation de moyens : locaux de répétions, logements d'artistes en résidence, coloc, moyens de transport, covoiturage, dons, échanges, prêts de matériel
+
+-> Le partage de compétences : formation, transmission, stages
+
+-> Léchange de savoirs : techniques, administratives, infos légales
+
+-> La recherche de partenaires : coproduction, personnes ressources, appels à projets
+
+-> Annoncer des événements exceptionnels : création, sortie dateliers, répétitions publiques et gratuites, sortie de CD
+
+Ce groupe n'est pas destinée à rechercher du public pour des spectacles à entrée payante même pas chère. Merci donc de ne pas envoyer de messages publicitaires, promotionnels.
+
+Il a été crée par Pascale et Gilbert Ceccaldi
+
+de l'Association Rezo Evénementiel-secrétariat d'artistes
+
+Illustration : Joan CECCALDI

@@ -1,0 +1,65 @@
+Title: Par rapport au site
+
+----
+
+Author: samuel
+
+----
+
+Date: 20150908
+
+----
+
+Categorie: petites-annonces
+
+----
+
+Private: true
+
+----
+
+Informations: 
+
+- 
+  key: prix
+  value:
+
+----
+
+Description: 
+
+*   Ouvrir l'utilisation du site à des gens qui ne sont pas du Bastion
+
+*   Système de permissions // comptes utilisateurs
+
+*   Hébergement ? Cotisation annuelle de 5 euros?
+
+*   Entre Rézoprospec et Documents d'artistes
+
+Mettre une date d'expiration pour les annonces temporaires
+
+Utilisateur curateur = possibilité d'inviter des personnes extérieures à faire quelque chose sur le site.
+
+Système de commentaires (en interne?)
+
+Logs modifications
+
+Catégorie artistes en résidence
+
+Système d'invitation
+
+Mettre des vidéos
+
+BASTIONCOMMUN.alsace
+
+.eu ?
+
+.org ?
+
+Annonces importantes épeinglées en haut de la liste.
+
+Si on modifie la page elle remonte
+
+Espace EDITO en page d'accueil
+
+Chaque article a un niveau de permission propre défini par celui qui l'a créé

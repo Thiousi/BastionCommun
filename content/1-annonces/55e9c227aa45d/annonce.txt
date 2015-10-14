@@ -14,7 +14,7 @@ Categorie: artiste-resident
 
 ----
 
-Private: true
+Private: false
 
 ----
 
