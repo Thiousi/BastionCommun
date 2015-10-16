@@ -133,7 +133,7 @@
 									<?php endif; ?>
 									<h3 class="media-heading"><a href="<?php echo $annonce->url() ?>" class="link-annonce" data-uri="<?php echo $annonce->uri() ?>"><?php echo $annonce->title() ?></a></h3>
 									<?php snippet('meta-mini', array( 'categorie' => $categorie, 'page'=>$annonce )) ?>
-									<p><small>Déposée par <?php echo $author->firstName()." ".$author->lastName() ?> le <?php echo $annonce->date('d/m/Y') ?></small> </p>
+									<p><small>Déposée par <?php //echo $author->firstName()." ".$author->lastName() ?> le <?php echo $annonce->date('d/m/Y') ?></small> </p>
 								</div>
 							</div>
 						</div>

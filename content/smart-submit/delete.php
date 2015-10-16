@@ -4,8 +4,7 @@ header('Content-type: application/json');
 
 if($user = $site->user()):
   if(get('page') && get('file') && get('type') == 'file'):
-    $root = page(get('page'))->file(get('file'))->root();
-    unlink($root);
+    page(get('page'))->file(get('file'))->delete();
 		die('{"success": "'.get('file').' a bien été supprimé"}');
 	elseif (get('page') && get('type') == 'page'):
 		try {

@@ -1,38 +1,36 @@
-<div id="viewer" class="fieldsGroup">
+<div id="viewer" class="fieldsGroup cf">
   <!-- SWIPER -->
-  <div id="slider" class="swiper-container" data-pageuri="<?php echo $page->uri() ?>" data-pageurl="<?php echo $page->url() ?>">
-      <div class="swiper-wrapper">
-        <?php 
-        if($images = $page->images()->sortBy('sort', 'asc')):
-          foreach($images as $image): ?>
-            <figure class="swiper-slide" data-filename="<?php echo $image->filename() ?>">
-              <div class="swiper-image" style="background-image:url(<?php echo thumb($image, array('width' => 800, 'crop' => false))->url(); ?>)"></div>              
-              <?php $caption = $image->caption();
-              if ($caption != ""): ?>
-                <figcaption><?php echo $caption ?></figcaption>
-              <?php endif ?>
-            </figure>
-          <?php endforeach ?>
-        <?php endif ?>
-      </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-next swiper-button-black"></div>
-      <div class="swiper-button-prev swiper-button-black"></div>
-  </div>
-  <!-- UPLOADER -->
-  <div id="uploadImages" class="editOnly btn-group">
-    <span class="btn btn-primary fileinput-button">
-			<div id="progress" class="progress editOnly">
-				<div class="progress-bar progress-bar-success"></div>
+  <?php snippet('slider', array('page'=>$page)); ?>
+	
+	<!-- MANAGE MEDIA -->
+	<div class="btn-group" id="manageDiapo">
+		<!-- UPDATE -->
+		<button class='btn btn-default'><span class='glyphicon glyphicon-th-list' aria-hidden='true'></span> Modifier le diaporama</button>
+	</div>
+	<div id="diapo-manager">
+		<!-- ADD -->
+		<div class="media-add cf">
+			<!-- ADD IMAGES -->
+			<div id="uploadImages" class="btn-group">
+				<span class="btn btn-default fileinput-button">
+					<div id="progress" class="progress editOnly">
+						<div class="progress-bar progress-bar-success"></div>
+					</div>
+					<i class="glyphicon glyphicon-plus"></i> <span>Image</span>
+					<input id="fileupload" type="file" name="files[]" value="Select files..." data-url="<?php echo page('upload')->url().'?annonce='.$page->uid() ?>" multiple>
+				</span>
+				<!-- ADD VIDEOS -->
+				<button class='btn btn-default' data-toggle='modal' data-target='#modal-add-video'>
+					<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Vidéo
+				</button>
 			</div>
-      <i class="glyphicon glyphicon-plus"></i>
-      <span>Envoyer des images</span>
-      <input id="fileupload" type="file" name="files[]" value="Select files..." data-url="<?php echo page('upload')->url().'?annonce='.$page->uid() ?>" multiple>
-			
-    </span>
-		<div id="swiper-button-delete" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></div>
-    <!--<div id="uploader-message"></div>
-    <div id="files" class="files"></div>-->
-  </div>
-  
+			<div id="updateMedia-button" class="btn-group">
+				<!-- UPDATE -->
+				<button id="updateMedia" class='btn btn-default' data-annonce-uri="<?php echo $page->uri() ?>"><span class='glyphicon glyphicon-ok-sign' aria-hidden='true'></span> Enregistrer</button>
+			</div>
+		</div>
+		
+		<!-- LISTE -->
+		<div class="media-list" data-annonce="<?php echo $page->uri() ?>"><?php snippet("liste-media", array('page'=>$page)) ?></div>
+	</div>
 </div>

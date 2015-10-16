@@ -29,6 +29,8 @@ of the system, please check out assert_options(what)
 
 */
 
+
+
 c::set('roles', array(
   array(
     'id'      => 'admin',
@@ -48,4 +50,11 @@ c::set('roles', array(
   )
 ));
 
-
+c::set('routes', array(
+  array(
+    'pattern' => 'annonces/(:any)',
+    'action' => function () {
+			return page('/home');
+    }
+  )
+));

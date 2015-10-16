@@ -10,17 +10,18 @@
 	<meta name="keywords" content="<?php echo $site->keywords()->html() ?>">
 
 	<?php echo css(array(
-		'assets/css/datepicker.css',
-    	'assets/css/bootstrap.min.css',
-		'assets/css/bootstrap-select.min.css',
-		'assets/css/bootstrap-toggle.min.css',
-		'assets/css/medium-editor.min.css',
-		'assets/css/flat.min.css',
-	    'assets/css/font-awesome.min.css',
-		'assets/css/entypo.css',
-	    'assets/css/swiper.min.css',
-    	'assets/css/main.css',
-    	'assets/css/perfect-scrollbar.css'
+			'assets/css/datepicker.css',
+			'assets/css/bootstrap.min.css',
+			'assets/css/bootstrap-select.min.css',
+			'assets/css/bootstrap-toggle.min.css',
+			'assets/css/medium-editor.min.css',
+			'assets/css/flat.min.css',
+			'assets/css/font-awesome.min.css',
+			'assets/css/entypo.css',
+			'assets/css/swiper.min.css',
+			'assets/css/main.css',
+			'assets/css/perfect-scrollbar.css',
+			'assets/oembed/oembed.css'
 	)) ?>
 
 	<?php echo js(array(
@@ -28,25 +29,28 @@
 		'assets/js/smart-submit.js',
 		'assets/js/script.js',
 		'assets/js/medium-editor.min.js',
-    	'assets/js/swiper.jquery.min.js',
-    	'assets/js/bootstrap.min.js',
-    	'http://maps.google.com/maps/api/js?sensor=false&libraries=places',
+		'assets/js/swiper.jquery.min.js',
+		'assets/js/bootstrap.min.js',
+		'http://maps.google.com/maps/api/js?sensor=false&libraries=places',
 		'assets/js/me-markdown.standalone.min.js',
-    	'assets/js/jquery.ui.widget.js',
-	    'assets/js/jquery.iframe-transport.js',
-    	'assets/js/jquery.fileupload.js',
-	    'assets/js/jquery.autocomplete.min.js',
-	    'assets/js/locationpicker.jquery.min.js',
-	    'assets/js/bootstrap-select.min.js',
-	    'assets/js/bootstrap-toggle.min.js',
-	    'assets/js/perfect-scrollbar.jquery.min.js',
+		'assets/js/jquery.ui.widget.js',
+		'assets/js/html.sortable.min.js',
+		'assets/js/jquery.iframe-transport.js',
+		'assets/js/jquery.fileupload.js',
+		'assets/js/jquery.autocomplete.min.js',
+		'assets/js/locationpicker.jquery.min.js',
+		'assets/js/bootstrap-select.min.js',
+		'assets/js/bootstrap-toggle.min.js',
+		'assets/js/perfect-scrollbar.jquery.min.js',
 		'assets/js/bootstrap-datepicker.js'
 	)) ?>
 	
 	<script>
 		var BASTION = {};
 		BASTION.smartSubmitUrl = "<?php echo page('smart-submit')->url() ?>";
+		BASTION.siteUrl = "<?php echo $site->url() ?>";
 	</script>
 
 </head>
 <body class="template-<?php echo $page->intendedTemplate() ?>">
+<?php snippet('functions') ?>

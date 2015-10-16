@@ -1,4 +1,38 @@
-<!-- Map -->
+<!-- ADD VIDEO -->
+<div class="modal fade" id="modal-add-video" tabindex="-1" role="dialog" aria-labelledby="delete">
+  <div class="modal-dialog">
+	<div class="modal-content">
+	  <div class="modal-body">
+			<p>Adresse url de la vidéo (Youtube ou Vimeo) :</p>
+			<div class="input-group">
+				<span class="input-group-addon" id="basic-addon1"><span class='glyphicon glyphicon-link' aria-hidden='true'></span></span>
+				<input type="text" id="add-video-url" class="form-control" placeholder="https://vimeo.com/121048385">
+			</div>
+	  </div>
+	  <div class="modal-footer">
+		<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+		<button id="button-add-video" class="btn btn-default"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span>  Ajouter</button> 
+	  </div>
+	</div>
+  </div>
+</div>
+
+<!-- DELETE -->
+<div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-labelledby="delete">
+  <div class="modal-dialog">
+	<div class="modal-content">
+	  <div class="modal-body">
+		Voulez-vous vraiment supprimer cette annonce ?
+	  </div>
+	  <div class="modal-footer">
+		<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+		<button id="button-delete-annonce" class="btn btn-danger"><span class='glyphicon glyphicon-trash' aria-hidden='true'></span>  Supprimer</button> 
+	  </div>
+	</div>
+  </div>
+</div>
+
+<!-- GEOPICKER -->
 <div class="modal fade" id="modal-geopicker" tabindex="-1" role="dialog" aria-labelledby="Geopicker" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

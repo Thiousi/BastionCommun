@@ -11,29 +11,7 @@
   </filter>
 </svg>
 
-<?php
-/*--------------------------------
-           FUNCTIONS
----------------------------------*/
 
-function get_Date($date, $besoin) {
-	setlocale (LC_TIME, 'fr_FR','fra');
-	$hour = strftime("%k" ,strtotime($date)).'h'.strftime("%M" ,strtotime($date)); 
-	$day = strftime("%A" ,strtotime($date)); 
-	$dayNum = strftime("%d" ,strtotime($date)); 
-	$month = strftime("%B" ,strtotime($date)); 
-	$monthAbv = strftime("%b" ,strtotime($date)); 
-	$monthNum = strftime("%m" ,strtotime($date)); 
-	$year = strftime("%Y" ,strtotime($date)); 
-
-	if($besoin == 'rdv'){
-		return $dayNum.' '.$month;
-	} else if($besoin == 'periode') {
-		return $dayNum.' '.$month;
-	}
-}
-
-?>
 
 
 <?php
@@ -86,9 +64,17 @@ if(get('username')) {
 
 		<div id="column-content" class="column">
 			<div class="col-xs-12">
-  				<h1 class="title"><?php echo page('home')->title() ?></h1>
-  				<div class="about">
-					<?php echo page('home')->text()->kirbytext() ?>
+				<?php
+				if ( kirby()->request()->path()->nth(0) == "annonces" ):
+					snippet('annonce', array('page'=>page("annonces/".kirby()->request()->path()->nth(1))));
+				else :
+					?>
+						<h1 class="title"><?php echo page('home')->title() ?></h1>
+  					<div class="about">
+					<?php 
+					echo page('home')->text()->kirbytext();
+				endif;
+  			?>
 				</div>
 			</div>
 		</div>
@@ -100,8 +86,7 @@ if(get('username')) {
   <?php if($user = $site->user() and $user->hasRole('admin')): ?>
   <?php endif ?>
 
-<?php snippet('modal-geopicker') ?>
-<?php snippet('modal-delete') ?>
+<?php snippet('modals') ?>
 <?php snippet('footer') ?>
 
 

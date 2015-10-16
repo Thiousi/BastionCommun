@@ -61,6 +61,8 @@ $currentCategorieTitle = page('categories/'.$currentCategorie)->title();
 				<div id="description" class="col-xs-9">
 					<?php snippet('viewer', array('page' => $page)); ?>
 					<div id="field-description" class="fullEdit" data-placeholder="Texte de l'annonce"><?php echo $page->description()->kirbytext() ?></div>
+					<?php commentForm(); ?>
+        	<?php comments(); ?>
 				</div>
 
 				<!-- META -->

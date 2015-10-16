@@ -100,7 +100,7 @@ $(document).ready(function (){
   /*  Annonce
   -------------------------------------------- */
 	/* functions */
-function inputsGroupToField(group, field) {
+	function inputsGroupToField(group, field) {
     var fields = {};
     group.find('.input').each(function(i) {
       fields[$(this).attr("data-slug")] = $(this).val();
@@ -109,10 +109,37 @@ function inputsGroupToField(group, field) {
   }
 	
 	/* update */
+	function updateSwiperVisibility(swiper) {
+		if (!swiper.slides.length) {
+			swiper.container.hide();
+		} else if (swiper.slides.length <= 3) {
+			swiper.container.show();
+			$('.swiper-pagination, .swiper-button-next, .swiper-button-prev').hide();
+		} else {
+			swiper.container.show();
+			$('.swiper-pagination, .swiper-button-next, .swiper-button-prev').show();
+		}
+	}
+	
+	function initSwiper(){
+		var gallery = new Swiper('.swiper-container', {
+			pagination: '.swiper-pagination',
+			nextButton: '.swiper-button-next',
+			prevButton: '.swiper-button-prev',
+			slidesPerView: 1,
+			paginationClickable: true,
+			spaceBetween: 30,
+			loop: true,
+			grabCursor: true,
+			onInit: function (swiper) {
+				updateSwiperVisibility(swiper);
+			}
+		});
+		return gallery;
+	}
+	
 	function annonceUpdate() {
 		
-		//editors.forEach( function(editor){ editor.destroy() });
-		//gallery.destroy()
 		var editors=[];
 		
 		// Mode édition
@@ -207,30 +234,7 @@ function inputsGroupToField(group, field) {
 		/* toggle */
 		$('#toggle-public').bootstrapToggle();
 	  /* gallery */
-		function updateSwiperVisibility(swiper) {
-			if (!swiper.slides.length) {
-				swiper.container.hide();
-			} else if (swiper.slides.length <= 3) {
-				swiper.container.show();
-				$('.swiper-pagination, .swiper-button-next, .swiper-button-prev').hide();
-			} else {
-				swiper.container.show();
-				$('.swiper-pagination, .swiper-button-next, .swiper-button-prev').show();
-			}
-		}
-		var gallery = new Swiper('.swiper-container', {
-			pagination: '.swiper-pagination',
-			nextButton: '.swiper-button-next',
-			prevButton: '.swiper-button-prev',
-			slidesPerView: 1,
-			paginationClickable: true,
-			spaceBetween: 30,
-			loop: true,
-			grabCursor: true,
-			onInit: function (swiper) {
-				updateSwiperVisibility(swiper);
-			}
-		});
+		gallery = initSwiper();
 		/* smart-submit */
 		initSmartSubmit($('#column-content .smart-submit'));
 		/* geopicker */
@@ -315,11 +319,7 @@ function inputsGroupToField(group, field) {
 				$('#uploader-message').text('Images ajoutés : ');
 				$('#progress').fadeOut();
 				$.each(data.result.files, function (index, file) {
-					$('<p/>').text(file.name).appendTo('#files').addClass('label label-success');
-					gallery.prependSlide('<figure class="swiper-slide" data-pageuri="' + $('#slider').data('pageuri') + '" data-filename="' + file.name + '"><div class="swiper-image" style="background-image:url(' + $('#slider').data('pageurl') + '/' + file.name + ')"></div></figure>');
-					gallery.update();
-					updateSwiperVisibility(gallery);
-					setTimeout(function(){ gallery.slideTo(1); }, 300);
+					updateMediaList()
 				});
 			},
 			progressall: function (e, data) {
@@ -371,7 +371,6 @@ function inputsGroupToField(group, field) {
 	------------------------------------ */
 	
 	function loadAnnonce(uri) {
-		//$('#column-content').fadeOut(200, function() { $(this).html('') });
 		$('.annonce-mini').removeClass('active');
 		$('.annonce-mini[data-uri="'+uri+'"]').addClass('active');
 		$.ajax({
@@ -381,6 +380,9 @@ function inputsGroupToField(group, field) {
 				success: function(data) {
 					if(data) {
 						$('#column-content').fadeIn(100, function() { $(this).html(data); annonceUpdate(); });
+						if(history.pushState) {
+							history.pushState(null, null, BASTION.siteUrl+"/"+uri);
+						}
 					}
 				}
 			});
@@ -428,9 +430,6 @@ function inputsGroupToField(group, field) {
     	}
 	});
 
-
-
-	
 	$("#form-annonces select").change(function() { $(this.form).find('input[type="submit"]').click() });
 	
 	$(document).on('click', '#liste-annonces .annonce-mini', function(e){
@@ -453,6 +452,92 @@ function inputsGroupToField(group, field) {
 				}
 			);
 	});
+	
+	/* ADD VIDEO
+	------------------------------------ */
+	$(document).on('click', '#button-add-video', function(e) {
+
+		var videoUrl = $(this).parent().siblings('.modal-body').find('#add-video-url').val(), annonceUri = $('main#annonce').attr('data-uri');
+		console.log(videoUrl);
+		console.log(annonceUri);
+		$('#modal-add-video').modal('hide');
+		$.ajax({
+			url: BASTION.smartSubmitUrl + "?handler=add-video",
+			data: { annonceUri: annonceUri, videoUrl: videoUrl  },
+			type: 'post',
+			success: function(data) {
+				updateMediaList();
+			}
+		})
+	})
+	
+	/* MANAGE MEDIAS
+	------------------------------------ */
+	function saveMedia() {
+		var elements = [], annonce = $('main#annonce').attr('data-uri');
+		$('#diapo-manager .media-list figure').each(function() {
+			elements.push({ filename : $(this).attr('data-filename'), caption : $(this).find('.media-caption input').val() });
+		});
+		$.ajax({
+			url: BASTION.smartSubmitUrl + "?handler=order-diapo",
+			data: { annonce: annonce, elements: JSON.stringify(elements)  },
+			type: 'post',
+			success: function(data) {
+			}
+		})
+	}
+	function updateMediaList() {
+		var mediaList = $('#diapo-manager .media-list');
+		$.ajax({
+			url: BASTION.smartSubmitUrl + "?handler=get-snippet",
+			data: { snippet: 'liste-media', page: $('main#annonce').attr('data-uri') },
+			type: 'post',
+			success: function(data) {
+				$('#diapo-manager .media-list').html(data);
+				mediaList.sortable({forcePlaceholderSize: true}).on('sortupdate', function() {saveMedia()});
+				mediaList.find('.media-delete').click(function() {
+					$.post(BASTION.smartSubmitUrl + "?handler=delete", 
+						{
+							type : 'file',
+							file : $(this).parent('figure').attr('data-filename'),
+							page : $('main#annonce').attr('data-uri')
+						},
+						function() {
+							updateMediaList();
+						}
+					);
+				});
+			}
+		});
+	}
+	updateMediaList();
+	
+	$(document).on('click', '#updateMedia', function(e) {
+		saveMedia();
+		$.ajax({
+			url: BASTION.smartSubmitUrl + "?handler=get-snippet",
+			data: { snippet: 'slider', page: $('main#annonce').attr('data-uri') },
+			type: 'post',
+			success: function(data) {
+				$('#slider').replaceWith(data);
+				initSwiper();
+				$('#diapo-manager').slideUp();
+				$('#slider').slideDown();
+				$('#manageDiapo').show();
+			}
+		});
+		
+	});
+	
+	$(document).on('click', '#manageDiapo .btn', function(e) {
+		$('#manageDiapo').hide();
+		$('#diapo-manager').slideDown();
+		$('#slider').slideUp();
+	});
+	
+
+	
+	
 	
 	/* SLIDE
 	------------------------------------ */

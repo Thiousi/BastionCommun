@@ -440,7 +440,7 @@ class UploadHandler
     protected function upcount_name_callback($matches) {
         $index = isset($matches[1]) ? ((int)$matches[1]) + 1 : 1;
         $ext = isset($matches[2]) ? $matches[2] : '';
-        return ' ('.$index.')'.$ext;
+        return '('.$index.')'.$ext;
     }
 
     protected function upcount_name($name) {
@@ -454,6 +454,7 @@ class UploadHandler
 
     protected function get_unique_filename($file_path, $name, $size, $type, $error,
             $index, $content_range) {
+				$name = preg_replace("/[^a-zA-Z0-9\.]/", "", $name);
         while(is_dir($this->get_upload_path($name))) {
             $name = $this->upcount_name($name);
         }

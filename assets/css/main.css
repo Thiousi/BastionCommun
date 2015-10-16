@@ -971,9 +971,7 @@ nav {
 
 /* File Upload */
 #uploadImages {
-	padding: 0;
-	margin: 1rem 0;
-	width: 100%;
+	float: left;
 }
 #progress {
 	border-radius: 0px;
@@ -1119,6 +1117,61 @@ nav {
 }
 .datepicker td, .datepicker th {
 	line-height: 20px;
+}
+
+/* Media Manager
+-------------------------------------------------- */
+#diapo-manager {
+	border: 1px solid;
+	padding: .5rem;
+	display: none;
+}
+#manageDiapo {
+	width: 100%;
+}
+#manageDiapo .btn {
+	float: right;
+}
+#diapo-manager .media-list figure {
+	margin: .5rem 0;
+	background-color: #eee;
+}
+#diapo-manager .swiper-image {
+	background-size: cover;
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	float: left;
+	cursor: ns-resize;
+	cursor: grab;
+}
+#diapo-manager .media-list .media-caption {
+	position: absolute;
+	left: 140px;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 40px;
+}
+#diapo-manager .media-list .media-caption input {
+	width: 100%;
+}
+#diapo-manager .media-list .media-delete {
+	float: right;
+}
+#diapo-manager .media-list figure {
+	margin: .5rem 0;
+	background-color: #eee;
+	position: relative;
+}
+.sortable-placeholder {
+	height: 2rem;
+	background-color: #aaa;
+}
+#diapo-manager .media-add {
+
+}
+#updateMedia-button {
+	float: right;
 }
 
 /* post meta
