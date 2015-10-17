@@ -39,10 +39,12 @@ class Walker {
   public function walk( $comments ) {
 
     $output = '';
-
-    foreach ( $comments as $comment ) {
-      $this->render( $output, $comment );
-    }
+		
+		if ($comments) {
+			foreach ( $comments as $comment ) {
+      	$this->render( $output, $comment );
+    	}
+		}
 
     return $output;
 
