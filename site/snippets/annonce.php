@@ -1,6 +1,7 @@
 <?php
 $currentCategorie = $page->categorie();
 $currentCategorieTitle = page('categories/'.$currentCategorie)->title();
+$user = ($site->user()) ? $site->user()->username() : '' ;
 ?>
 
 <?php if($currentCategorie == 'bastion-commun'): ?>
@@ -9,13 +10,13 @@ $currentCategorieTitle = page('categories/'.$currentCategorie)->title();
 	</div>
 <?php else : ?>
 
-	<main class="main viewMode" id="annonce" data-uri="<?php echo $page->uri() ?>" role="main">
+	<main class="main viewMode" id="annonce" data-user="<?= $user ?>" data-uri="<?= $page->uri() ?>" role="main">
 			
 	<!-- VALIDATION BUTTON -->
 		<div id="controlButtons" class="usersOnly">
 			<div class="text-left pull-left">
 				<?php $page->private()->bool() ? $checked = "checked" : $checked = false ; ?>
-				<input id="toggle-public" <?php echo $checked ?> data-toggle="toggle" data-on="Privé" data-off="Public" data-onstyle="default" type="checkbox" data-populate="private" disabled>
+				<input id="toggle-public" class="bootstrap-toggle" <?php echo $checked ?> data-toggle="toggle" data-on="Privé" data-off="Public" data-onstyle="default" type="checkbox" data-populate="private" disabled>
 			</div>
 			<div class="text-right pull-right">
 				<?php snippet('annonce-editor', array('page' => $page)) ?>
@@ -61,8 +62,8 @@ $currentCategorieTitle = page('categories/'.$currentCategorie)->title();
 				<div id="description" class="col-xs-9">
 					<?php snippet('viewer', array('page' => $page)); ?>
 					<div id="field-description" class="fullEdit" data-placeholder="Texte de l'annonce"><?php echo $page->description()->kirbytext() ?></div>
-					<?php commentForm(); ?>
-        	<?php comments(); ?>
+					<?php snippet('comments.list', array('page'=>$page)) ?>
+					<?php snippet('comments.add.form', array('page'=>$page)) ?>
 				</div>
 
 				<!-- META -->

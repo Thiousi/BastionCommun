@@ -28,10 +28,14 @@ $(document).ready(function (){
 	
 	// init
 	initSmartSubmit = function(form) {
+		
+		console.log(form);
 
 		//find response div
 		if (form.attr('data-response-div')) {
 			var responseDiv = $('#' + form.attr('data-response-div'));
+		} else if (form.attr('data-reload') == "1") {
+			var reloadPage = true;
 		} else {
 			var responseDiv = false;
 		}
@@ -48,7 +52,7 @@ $(document).ready(function (){
 
 			e.preventDefault();
 			
-			console.log('smarties');
+			
 
 			// clear previous response
 			if (responseDiv) responseDiv.html('');
@@ -61,22 +65,22 @@ $(document).ready(function (){
 				success: function(data) {
 					if(data) {
 						if (responseDiv) {
-							if (form.attr('data-response-div') == 'annonce') {
+							if (responseDiv == '#annonce') {
 								loadAnnonce($('#annonce').attr('data-uri'));
 								reloadAnnoncesList();
 							} else {
 								responseDiv.html(data);
 							}
 						}
-
-					}
-					if (data.success)
-					{
-						$('main').addClass('viewMode').removeClass('editMode');
-					}
-					else if (data.redirect)
-					{
-						window.location = data.redirect;
+						if(reloadPage) {
+							loadAnnonce($('#annonce').attr('data-uri'));
+						}
+						if (data.success) {
+							$('main').addClass('viewMode').removeClass('editMode');
+						}
+						else if (data.redirect)	{
+							window.location = data.redirect;
+						}
 					}
 				}
 			});
@@ -84,12 +88,6 @@ $(document).ready(function (){
 			return false;
 		});
 	}
-	
-		// detect form on page
-	$('form.smart-submit').each(function() {
-		initSmartSubmit($(this));
-		console.log($(this));
-	});
 	
 	/* HOME
 	-------------------------------------------- */
@@ -232,11 +230,13 @@ $(document).ready(function (){
 		/* datepicker */
 		$('.datepicker').datepicker({ autoclose:true, weekStart:1, language:'fr' });
 		/* toggle */
-		$('#toggle-public').bootstrapToggle();
+		$('.bootstrap-toggle').bootstrapToggle();
 	  /* gallery */
 		gallery = initSwiper();
 		/* smart-submit */
-		initSmartSubmit($('#column-content .smart-submit'));
+		$('form.smart-submit').each(function() {
+			initSmartSubmit($(this));
+		});
 		/* geopicker */
 		function updateControls(addressComponents) {
 			$('#geopicker-street').val(addressComponents.addressLine1);
@@ -364,6 +364,18 @@ $(document).ready(function (){
 		
 		$('.column').perfectScrollbar('update');
 		
+		// FOLLOW COMMENTS
+		$('#toggle-follow').change(function(){
+			$.ajax({
+				url: BASTION.smartSubmitUrl + "?handler=follow-comment",
+				data: { user: $('main#annonce').attr('data-user'), page: $('main#annonce').attr('data-uri'), follow: $(this).prop('checked') },
+				type: 'post',
+				success: function(data) {
+					console.log(data);
+				}
+			});
+		})
+		
 	}
 	annonceUpdate();
 
@@ -458,8 +470,6 @@ $(document).ready(function (){
 	$(document).on('click', '#button-add-video', function(e) {
 
 		var videoUrl = $(this).parent().siblings('.modal-body').find('#add-video-url').val(), annonceUri = $('main#annonce').attr('data-uri');
-		console.log(videoUrl);
-		console.log(annonceUri);
 		$('#modal-add-video').modal('hide');
 		$.ajax({
 			url: BASTION.smartSubmitUrl + "?handler=add-video",
@@ -491,6 +501,7 @@ $(document).ready(function (){
 		$.ajax({
 			url: BASTION.smartSubmitUrl + "?handler=get-snippet",
 			data: { snippet: 'liste-media', page: $('main#annonce').attr('data-uri') },
+			dataType: "text/html",
 			type: 'post',
 			success: function(data) {
 				$('#diapo-manager .media-list').html(data);
@@ -517,7 +528,7 @@ $(document).ready(function (){
 		$.ajax({
 			url: BASTION.smartSubmitUrl + "?handler=get-snippet",
 			data: { snippet: 'slider', page: $('main#annonce').attr('data-uri') },
-			type: 'post',
+			dataType: "text/html",
 			success: function(data) {
 				$('#slider').replaceWith(data);
 				initSwiper();

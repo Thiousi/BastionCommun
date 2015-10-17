@@ -1,5 +1,7 @@
 <?php
 
+header('Content-type: text/html');
+
 $query = $cat = false;
 
 if (get('q')):

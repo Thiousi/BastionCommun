@@ -1181,6 +1181,29 @@ nav {
 	border-top: 1px solid;
 	color: #800;
 }
+
+/* COMMENTS
+-------------------------------------------------- */
+.add-comment-form textarea {
+	width: 100%;
+	border: 1px solid;
+	height: 5rem;
+	margin: 1rem 0;
+	padding: .1rem .5rem;
+}
+.add-comment-form .comment-field-name, .add-comment-form .comment-field-mail {
+	width: 50%;
+}
+.add-comment-form .comment-field-name {
+	padding-right: .5rem;
+	float: left;
+}
+.add-comment-form .comment-field-mail {
+	padding-left: .5rem;
+}
+
+
+
 /* Buttons
 -------------------------------------------------- */
 .toolbox {

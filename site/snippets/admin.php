@@ -13,6 +13,21 @@
 				</li>
 			</ul>
 		</span>
+		<span class="new-comments dropdown left">
+			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+				<span class="glyphicon glyphicon-comment"></span>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+				<?php
+				$newcoms = unserialize($user->newComments());
+				foreach($newcoms as $comment => $num):
+				?>
+				<li>
+					<a href="<?php echo page($comment)->url() ?>"><?php echo page($comment)->title().' ('.$num.')' ?></a>			
+				</li>
+				<?php endforeach; ?>
+			</ul>
+		</span>
 	<?php else : ?>
 		<span class="dropdown right">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
