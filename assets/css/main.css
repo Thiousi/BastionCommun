@@ -282,7 +282,6 @@ blockquote {
     background-color: #F5F3EF;
 	border-bottom: 1px solid #CAC7BF;
 	color: #7A7874;
-	position: relative;
 }
 #column-content{
 	width: calc(100% - 500px);
@@ -975,7 +974,7 @@ nav {
 	height: 500px;
 }
 figure.swiper-slide{
-	background-color: #FFF7D0;
+	background-color: #444; /* FFF7D0 */
 	margin-bottom: 20px;
 }
 .swiper-slide figcaption{

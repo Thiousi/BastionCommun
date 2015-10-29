@@ -1,0 +1,9 @@
+Bgcolor: 
+
+----
+
+Title: Annonce d'accueil
+
+----
+
+Criteres: 

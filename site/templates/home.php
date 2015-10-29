@@ -60,6 +60,7 @@ if(get('username')) {
 		</div>
 
 		<div id="column-content" class="column">
+			<div id="show-menu" class="glyphicon glyphicon-chevron-left"></div>
 			<div class="col-xs-12">
 				<?php
 				if ( kirby()->request()->path()->nth(0) == "annonces" ):
