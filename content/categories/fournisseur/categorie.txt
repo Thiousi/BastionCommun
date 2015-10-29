@@ -1,4 +1,4 @@
-Title: Fournisseur
+Title: Fournisseurs
 
 ----
 
@@ -12,7 +12,7 @@ Criteres:
 - 
   nom: Adresse
   slug: adresse
-  important: on
+  important: true
   type: map
   values:
 - 
@@ -25,3 +25,7 @@ Criteres:
   slug: telephone
   type: text
   values:
+
+----
+
+Bgcolor: #28eba7

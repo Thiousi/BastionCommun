@@ -21,17 +21,8 @@ Private: true
 Informations: 
 
 - 
-  key: society_name
-  value: Métal-mania
-- 
   key: adresse
-  value: '{"latitude":"43.2954881610296","longitude":"5.390940164526228","street":"77 Boulevard Eugène Pierre","city":"Marseille","zip":"13005","country":"FR"}'
-- 
-  key: horaires
-  value: 6h-16h
-- 
-  key: telephone
-  value: 06 06 06 99 99
+  value: '{"latitude":35.0077519,"longitude":-97.09287699999999,"street":"","city":"Wanette","zip":"","country":"US"}'
 
 ----
 

@@ -5,6 +5,8 @@ pages:
   template: categorie
 files: false
 fields:
-  title:
-    label: Title
-    type:  text
+    title:
+        label: Title
+        type:  text
+
+

@@ -22,22 +22,22 @@ Informations:
 
 - 
   key: debut
-  value: 23.07.2015
+  value: 20.10.2015
 - 
   key: fin
-  value: 13.08.2015
+  value: 08.10.2015
 - 
   key: horaires
   value: 10h-18h
 - 
   key: lieu
-  value: Barrage Vauban
+  value: passerelle vauban
 - 
   key: adresse
   value: '{"latitude":"46.9425669","longitude":"-2.178588999999988","street":"13 Rue des Sapeurs Pompiers","city":"Barbâtre","zip":"85630","country":"FR"}'
 - 
   key: avec
-  value: 'Fantine Andrès, Clothilde Anty, Marie-Anne Baccichet, Léa Barbazanges, Virginie Bergeret, Alexia Bretaudeau, Vincent Broquaire, Mathilde Caylou, Vincent Chevillon, Clémence Choquet & Mickaël Gamio, Myriam Colin, Caroline De Grandpré, Ahmet Dogan, Camille Fischer, Emmanuelle Giora, Lucie Guillemin, Joséphine Kaeppelin, Thomas Lasbouygues, Zahra Poonawala, Ingrid Rodewald; Letizia Romanini, Mélody Seiwert, Capucine Vanderbrouck & Gaëlle Cressent, Yiumsiri Vantanapindu, Gretel Weger et Young Hee Hong'
+  value: coucou
 
 ----
 

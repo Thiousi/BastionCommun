@@ -22,7 +22,7 @@ Informations:
 
 - 
   key: debut
-  value: 04.02.2015
+  value:
 - 
   key: fin
   value:
@@ -31,13 +31,13 @@ Informations:
   value: 10h-18h Ouvert tous les jours
 - 
   key: lieu
-  value: Cité du cinéma
+  value:
 - 
   key: adresse
   value: '{"latitude":"43.86077656656178","longitude":"5.233603423278737","street":"D60","city":"Goult","zip":"84220","country":"FR"}'
 - 
   key: avec
-  value: 'Lord Voldemort & Rubeus Hagrid'
+  value:
 
 ----
 
@@ -45,7 +45,7 @@ Description:
 
 Des centaines d’accessoires, de costumes, de créatures et de décors issus de la série de films à succès s’installent à Paris. Tous sont présentés dans un décor authentique de Poudlard™, notamment la Grande Salle, la cabane de Rubeus Hagrid™ ou la salle commune de Gryffondor™.
 
-Parmi les objets exposés figurent de nombreuses pièces adorées des fans telles que la baguette magique et les lunettes d’Harry, les Horcruxes de Lord Voldemort™, les Reliques de la Mort et les accessoires de Défense contre les forces du Mal, et la classe des Potions de Severus Rogue.
+Parmi les objets exposés figurent de nombreuses pièces adorées des fans telles que la baguette magique et les lunettes d’Harry, les Horcruxes de Lord Voldemort™, les _Reliques_ de la Mort et les accessoires de Défense contre les forces du Mal, et la classe des Potions de Severus Rogue.
 
 Visitez le terrain de Quidditch™ et passez un Souafle, tirez sur une mandragore dans le décor de la Serre botanique ou rencontrez la créature magique Buckbeak™, l’hippogriffe, dans la Forêt Interdite.
 
@@ -55,4 +55,4 @@ Pour plus d’Informations sur l’exposition, appelez le 0 892 780 220
 
 ----
 
-Followers: ["samuel"]
+Followers: ["samuel","samuel"]

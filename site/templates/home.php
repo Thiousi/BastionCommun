@@ -1,5 +1,6 @@
 <?php snippet('header') ?>
 
+<!--
 <svg class="defs-only">
   <filter id="monochrome" color-interpolation-filters="sRGB"
           x="0" y="0" height="100%" width="100%">
@@ -10,7 +11,7 @@
               0		0 0 0.7 0" />
   </filter>
 </svg>
-
+-->
 
 
 
@@ -38,27 +39,23 @@ if(get('username')) {
 
 		<div id="column-annonces" class="column">
 			<header class="column-header" role="banner">
-				<!-- <div id="hide-menu" class="glyphicon glyphicon-remove"></div> -->
+				<div id="hide-menu" class="glyphicon glyphicon-remove"></div>
 				<?php snippet('admin') ?>
 				<?php snippet('menu') ?>
 			</header>
 
 			<?php if( $site->user() ): ?>
-				<div id="addNew" class="container-fluid toolbox usersOnly">
-					<div class="row">
-						<div class="col-xs-12 elem">
-							<button id="btn-new" class='btn btn-lg' data-width='100%'>
-								<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> 
-								<span class='name'> Nouvelle annonce</span>
-							</button>
-						</div>
+				<div id="addNew" class="toolbox usersOnly">
+					<div class="elem">
+						<button id="btn-new" class='btn btn-lg' data-width='100%'>
+							<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> 
+							<span class='name'> Nouvelle annonce</span>
+						</button>
 					</div>
 				</div>
 			<?php endif;?>
 
-			<div id="liste-annonces" class="container-fluid">
-				<?php snippet('liste-annonces', array ('results'=>$results)); ?>
-			</div>
+			<?php snippet('liste-annonces', array ('results'=>$results)); ?>
 
 		</div>
 
@@ -74,8 +71,8 @@ if(get('username')) {
 					<?php 
 					echo page('home')->text()->kirbytext();
 				endif;
-  			?>
-				</div>
+  					?>
+					</div>
 			</div>
 		</div>
 
