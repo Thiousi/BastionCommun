@@ -9,3 +9,7 @@ Criteres:
   slug: prix
   type: number
   values:
+
+----
+
+Bgcolor: #fff954

@@ -28,9 +28,6 @@ $(document).ready(function (){
 	
 	// init
 	initSmartSubmit = function(form) {
-		
-		console.log(form);
-
 		//find response div
 		if (form.attr('data-response-div')) {
 			var responseDiv = $('#' + form.attr('data-response-div'));
@@ -46,14 +43,11 @@ $(document).ready(function (){
 		// start honeypot
 		smart_submit_honeypot(); 
 
-
 		// catch form submission
 		form.on('submit', function(e){
-
+			console.log($(this).serialize());
 			e.preventDefault();
 			
-			
-
 			// clear previous response
 			if (responseDiv) responseDiv.html('');
 
@@ -99,12 +93,12 @@ $(document).ready(function (){
   -------------------------------------------- */
 	/* functions */
 	function inputsGroupToField(group, field) {
-    var fields = {};
-    group.find('.input').each(function(i) {
-      fields[$(this).attr("data-slug")] = $(this).val();
-    });
-    $( field ).val( JSON.stringify(fields) );
-  }
+		var fields = {};
+		group.find('.input').each(function(i) {
+			fields[$(this).attr("data-slug")] = $(this).val();
+		});
+		$( field ).val( JSON.stringify(fields) );
+	}
 	
 	/* update */
 	function updateSwiperVisibility(swiper) {
@@ -193,6 +187,7 @@ $(document).ready(function (){
 					}
 				}));
 			});
+			geopicker();
 		});
 		/* cancel */
 		$('.cancelButton').click(function() {
@@ -237,64 +232,84 @@ $(document).ready(function (){
 		$('form.smart-submit').each(function() {
 			initSmartSubmit($(this));
 		});
-		/* geopicker */
-		function updateControls(addressComponents) {
-			$('#geopicker-street').val(addressComponents.addressLine1);
-			$('#geopicker-city').val(addressComponents.city);
-			//$('#us5-state').val(addressComponents.stateOrProvince);
-			$('#geopicker-zip').val(addressComponents.postalCode);
-			$('#geopicker-country').val(addressComponents.country);
-		}
-		$('#geopicker').locationpicker({
-			location: {latitude: 46.15242437752303, longitude: 2.7470703125},	
-			radius: 300,
-			enableAutocomplete: true,
-			//enableReverseGeocode: false,
-			inputBinding: {
-					latitudeInput: $('#geopicker-lat'),
-					longitudeInput: $('#geopicker-lon'),
-					locationNameInput: $('#geopicker-address')
-			},
-			onchanged: function (currentLocation, radius, isMarkerDropped) {
-					var addressComponents = $(this).locationpicker('map').location.addressComponents;
-					updateControls(addressComponents);
-			},
-			oninitialized: function(component) {
-					var addressComponents = $(component).locationpicker('map').location.addressComponents;
-					updateControls(addressComponents);
-			}
-		});
-		$('#modal-geopicker').on('shown.bs.modal', function (event) {
-			var button = $(event.relatedTarget) // Button that triggered the modal
-			var input = button.siblings('.input');
-			var location;
-			try {
-					var data = JSON.parse( input.val() );
-					if (data && typeof data === "object" && data !== null) {
-						location = data;
-					}
-			}
-			catch (e) { }
-			var modal = $(this);
-			$('#geopicker').locationpicker('autosize');
-			if(typeof location !== "undefined") {
-				var mapContext = $('#geopicker').locationpicker('map');
-				$('#geopicker').locationpicker('location', { latitude: location.latitude, longitude: location.longitude });
-				$('#geopicker-street').val(location.street);
-				$('#geopicker-city').val(location.city);
-				$('#geopicker-zip').val(location.zip);
-				$('#geopicker-country').val(location.country);
-			}
 
-			$('#confirm-geolocation').off();
-			$('#confirm-geolocation').click(function() {
-				$('#modal-geopicker').modal('hide');
-				button.find('.name').text($('#geopicker-address').val());
-				input.val( JSON.stringify({ latitude: $('#geopicker-lat').val(), longitude: $('#geopicker-lon').val(), street: $('#geopicker-street').val(), city: $('#geopicker-city').val(), zip: $('#geopicker-zip').val(), country: $('#geopicker-country').val() }) );
-				var inputsGroup = input.parents('.inputsGroup');
-				inputsGroupToField( inputsGroup , "#hidden-" + inputsGroup.attr('data-populate') );
-			});
-		});
+
+		/* geopicker */
+		function geopicker(){
+			if( $('main').find('input#geopicker-address-buffer').length ){
+				var input = $('#geopicker-address-buffer');
+				var location = {'latitude' : 48.573392, 'longitude': 7.752353}; // default
+			    var setZoom = 2, setScroll = false;
+				try {
+					var data = JSON.parse( input.attr('data-gps') );
+					if (data && typeof data === "object" && data.longitude !== 'undefined' && data.latitude !== undefined) {
+						console.log(data);
+						location = data;
+						setZoom = 15;
+					} 
+				}
+				catch (e) { }
+				function updateControls(addressComponents, currentLocation) {
+					$('#geopicker').locationpicker('autosize');
+					$('#geopicker-street').val(addressComponents.addressLine1);
+					$('#geopicker-city').val(addressComponents.city);
+					$('#geopicker-zip').val(addressComponents.postalCode);
+					$('#geopicker-country').val(addressComponents.country);
+
+					var geoJson = JSON.stringify({ latitude: currentLocation.latitude, longitude: currentLocation.longitude, street: $('#geopicker-street').val(), city: $('#geopicker-city').val(), zip: $('#geopicker-zip').val(), country: $('#geopicker-country').val() });
+					console.log($('#geopicker-address-buffer').val());
+					$('#geopicker-address').val( geoJson ).attr('value', geoJson);
+					var inputsGroup = $('#geopicker-address').parents('.inputsGroup');
+					inputsGroupToField( inputsGroup , "#hidden-" + inputsGroup.attr('data-populate') );
+					console.log('updated');
+
+				}
+				$('#geopicker').locationpicker({
+					location: {latitude: location.latitude, longitude: location.longitude},	
+					radius: 0,
+					enableAutocomplete: true,
+				    scrollwheel: setScroll,
+				    zoom: setZoom,
+					//enableReverseGeocode: false,
+					inputBinding: {
+							latitudeInput: $('#geopicker-lat'),
+							longitudeInput: $('#geopicker-lon'),
+							locationNameInput: $('#geopicker-address-buffer')
+					},
+					onchanged: function (currentLocation, radius, isMarkerDropped) {
+							var addressComponents = $(this).locationpicker('map').location.addressComponents;
+							updateControls(addressComponents, currentLocation);
+							console.log('changed');
+					},
+					oninitialized: function(component) {
+							var addressComponents = $(component).locationpicker('map').location.addressComponents;
+							var currentLocation = {'latitude': $(component).locationpicker('map').location.latitude, 'longitude': $(component).locationpicker('map').location.longitude};
+							updateControls(addressComponents, currentLocation);
+					}
+				});
+				$('#geopicker').click(function(e) {
+					console.log('yo');
+					setScroll = true;
+				});
+
+				if(typeof location !== "undefined") {
+					var mapContext = $('#geopicker').locationpicker('map');
+					if(location.city == undefined){
+						$('#geopicker-address-buffer').val('')
+					}
+					$('#geopicker-street').val(location.street);
+					$('#geopicker-city').val(location.city);
+					$('#geopicker-zip').val(location.zip);
+					$('#geopicker-country').val(location.country);
+					var currentLocation = {'latitude': location.latitude, 'longitude': location.longitude};
+					updateControls(location, currentLocation);
+				}
+			}
+		};
+		geopicker();
+
+
+
 		// AUTOCOMPLETE
 		$('.autocomplete').each(function() {
 			$(this).autocomplete({

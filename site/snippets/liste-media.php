@@ -1,5 +1,6 @@
 <?php
 $files = $page->files()->sortBy('sort', 'asc');
+
 foreach ($files as $file) :
 ?>
 	<figure class="cf" data-filename="<?php echo $file->filename() ?>">

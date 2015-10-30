@@ -88,10 +88,12 @@ c::set('comments.gravatar', false);
 c::set('comments.data.filename', 'comments.json');
 
 // format for post date: see http://php.net/date
-c::set('comments.date.format', 'Y-m-d');
+c::set('comments.date.format', 'l d F Y');
 
 // install Amazon SES plugin and provide your email for notifications
 c::set('comments.notify.email', '');
 
 // when someone posts a comment, save name/email in cookie?
 c::set('comments.save_author_in_cookie', true);
+
+

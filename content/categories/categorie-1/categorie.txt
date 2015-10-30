@@ -1,4 +1,4 @@
-Title: Expositions
+Title: Événements
 
 ----
 
@@ -7,7 +7,7 @@ Criteres:
 - 
   nom: Date de début
   slug: debut
-  important: on
+  important: true
   type: date
   values:
 - 
@@ -36,3 +36,7 @@ Criteres:
   slug: avec
   type: text
   values:
+
+----
+
+Bgcolor: #ffbc63

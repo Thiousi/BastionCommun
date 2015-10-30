@@ -40,4 +40,3 @@
 	<?php endif; ?>
 </div>
 
-<span id="show-menu" class="glyphicon glyphicon-chevron-left"></span>

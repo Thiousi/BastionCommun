@@ -16,3 +16,7 @@ Criteres:
   important: true
   type: text
   values:
+
+----
+
+Bgcolor: #59bdff
