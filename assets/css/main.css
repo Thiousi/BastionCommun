@@ -276,15 +276,18 @@ blockquote {
 }
 #column-annonces{
 	width: 100%;
-	max-width: 500px;
+	max-width: 450px;
 }
 .elem{
-    background-color: #F5F3EF;
-	border-bottom: 1px solid #CAC7BF;
-	color: #7A7874;
+	background-color: #F5F3EF;
+    border-bottom: 1px solid #CAC7BF;
+    border-right: 1px solid #CAC7BF;
+    color: #7A7874;
+    position: relative;
+    margin-bottom: 20px;
 }
 #column-content{
-	width: calc(100% - 500px);
+	width: calc(100% - 450px);
 }
 #column-annonces.fullWidth{
 	margin-left: -500px;
@@ -326,9 +329,8 @@ blockquote {
 
 header {
 	width: 100%;
-	float: left;
 	position: relative;
-	margin-bottom: 0;
+	margin-bottom: 20px;
 }
 header h4{
 	font-size: 1.5rem;
@@ -613,7 +615,7 @@ nav {
 }
 #menu{
 	max-width: 500px;
-	margin: 27px 0 70px;
+	margin: 30px 0;
 	float: left;
 	width: 100%;
 }
@@ -707,18 +709,17 @@ nav {
 }
 
 .avatar{
-	font-size: 3rem;
-	text-align: center;
-	width: 150px;
-	height: 100%;
-	float: left;
-	height: 170px;
-	line-height: 120px;
-	background-color: transparent;
-	color: rgb(255,107,107);
-	overflow: hidden;
-	margin-top: -30px;
-	margin-bottom: -30px;
+    font-size: 2.5rem;
+    text-align: center;
+    width: 60px;
+    height: 100%;
+    float: left;
+    height: 60px;
+    line-height: 70px;
+    background-color: #fff;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0px 20px 6px -10px;
 }
 .avatarImg{
 	float: left;
@@ -792,24 +793,14 @@ nav {
 
 /* Annonces
 -------------------------------------------------- */
-#liste-annonces .container-fluid {
-	padding: 30px 15px;
+
+#liste-annonces .elem{
 	cursor: pointer;
 }
-#liste-annonces .container-fluid .pushpin{
-	color: orange;
-	position: absolute;
-	top: 0;
-	right: 10px;
-	border-radius: 50%;
-	background-color: #FFF;
-	height: 30px;
-	width: 30px;
-	text-align: center;
-	line-height: 30px;
+#liste-annonces .container-fluid {
+	padding: 40px 25px 10px;
 }
 #liste-annonces .container-fluid:hover {
-	background-color: #FFF;
 }
 #liste-annonces .row img {
 }
@@ -826,18 +817,44 @@ nav {
 	border-right: 13px solid rgb(255,107,107);
 	background: #FBFBFB;
 }
-.annonce-mini .label-mini{
+.label-mini{
 	float: left;
-	background-color: rgba(255,240,240,1);
+	background-color: #DEDEDE;
 	height: 25px;
 	line-height: 25px;
-	padding: 0 5px;
+	padding: 0 25px;
+	width: 100%;
 	z-index: 9;
 	top: 0;
+	color: #666;
+}
+.label-mini .gommette{
+	border-radius: 50%;
+	height: 11px;
+	width: 11px;
+    margin: 7px;
+    position: absolute;
+    left: 0;
+}
+.publicOrNot{
+	position: absolute;
+    top: 0;
+    right: 15px;
+    opacity: .45;
+    height: 25px;
+    width: auto;
+    text-align: center;
+    line-height: 27px;
+}
+.publicOrNot.white{
+	color:#fff;
+	opacity:.75;
 }
 #btn-new {
-	width: 100%;
-	background-color: rgb(255,240,240);
+    width: 100%;
+    background-color: rgb(77, 250, 137);
+    border-bottom: 1px solid #CAC7BF;
+    border-right: 1px solid #CAC7BF;
 }
 #btn-new:hover {
 	background-color: rgb(255,107,107);
@@ -909,12 +926,8 @@ nav {
 	cursor: pointer;
 }
 .small-content{
-	position: absolute;
-	right: 15px;
-	left: 165px;
 }
 .regular-content{
-	margin: 0 15px;
 	position: relative;
 }
 /* Annonce
@@ -993,7 +1006,7 @@ figure.swiper-slide{
 #viewer .swiper-button-next, #viewer .swiper-button-prev {
 	background-size: 20px 25px;
 	background-color: rgba(255,255,255,.5);;
-    border-radius: 22px;
+    border-radius: 50%;
     width: 44px;
 }
 #viewer .swiper-button-prev{
@@ -1319,7 +1332,7 @@ figure.swiper-slide{
 	min-height: auto;
 	width: 40px !important;
 	height: 22px !important;
-	border-radius: 11px;
+	border-radius: 50%;
     border-color: rgba(0,0,0,.65);
 }
 .toggle.btn.rounded-button .toggle-group{
@@ -1335,7 +1348,7 @@ figure.swiper-slide{
 	background: #FFCECE;
 }
 .toggle.btn.rounded-button .toggle-handle{
-    border-radius: 11px;
+    border-radius: 50%;
     width: 24px;
     height: 20px;
     margin-top: -2px;

@@ -37,23 +37,18 @@ if(get('username')) {
 
 	<div id="megabloc">
 
-		<div id="column-annonces" class="column">
+		<div id="column-annonces" class="column  container-fluid">
 			<header class="column-header" role="banner">
 				<div id="hide-menu" class="glyphicon glyphicon-remove"></div>
 				<?php snippet('admin') ?>
 				<?php snippet('menu') ?>
+				<?php if( $site->user() ): ?>
+					<button id="btn-new" class='btn btn-lg toolbox usersOnly' data-width='100%'>
+						<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> 
+						<span class='name'> Nouvelle annonce</span>
+					</button>
+				<?php endif;?>
 			</header>
-
-			<?php if( $site->user() ): ?>
-				<div id="addNew" class="toolbox usersOnly">
-					<div class="elem">
-						<button id="btn-new" class='btn btn-lg' data-width='100%'>
-							<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> 
-							<span class='name'> Nouvelle annonce</span>
-						</button>
-					</div>
-				</div>
-			<?php endif;?>
 
 			<?php snippet('liste-annonces', array ('results'=>$results)); ?>
 
