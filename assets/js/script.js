@@ -400,13 +400,17 @@ $(document).ready(function (){
 	function loadAnnonce(uri) {
 		$('.annonce-mini').removeClass('active');
 		$('.annonce-mini[data-uri="'+uri+'"]').addClass('active');
+		$('#loadingContainer').removeClass('hidden');
+		$('#content').addClass('loading');
 		$.ajax({
 				url: BASTION.smartSubmitUrl + "?handler=view",
 				data: { uri : uri },
 				type: 'post',
 				success: function(data) {
 					if(data) {
-						$('#column-content').fadeIn(100, function() { $(this).html(data); annonceUpdate(); });
+						$('#content').fadeIn(100, function() { $(this).html(data); annonceUpdate(); }).removeClass('loading');
+						$('#loadingContainer').addClass('hidden');
+
 						if(history.pushState) {
 							history.pushState(null, null, BASTION.siteUrl+"/"+uri);
 						}

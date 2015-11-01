@@ -15,7 +15,7 @@
 				}
 				$currentCategorieTitle = implode(' ', $splited);
 			?>
-			<div class="elem">
+			<div class="elem annonce-mini" data-uri="<?php echo $annonce->uri() ?>">
 
 				<?php if ($private=='false' && $user = $site->user()) : ?>
 					<div class="glyphicon glyphicon-eye-open publicOrNot" data-toggle="tooltip" data-placement="bottom" title="annonce externe"></div>
@@ -23,7 +23,7 @@
 					<div class="glyphicon glyphicon-eye-close publicOrNot white" data-toggle="tooltip" data-placement="bottom" title="annonce interne"></div>
 				<?php endif; ?>
 				<div class="label-mini"><span class="gommette" style="background-color:<?php echo $categoryColor; ?>"></span><?php echo $currentCategorieTitle?></div>
-				<div class="container-fluid annonce-mini" data-uri="<?php echo $annonce->uri() ?>">
+				<div class="container-fluid">
 
 					<?php 
 					if ($currentCategorieTitle == "Artistes résidents") : ?>
@@ -94,6 +94,8 @@
 							<p><small>Déposée par <?php echo $author->firstName()." ".$author->lastName() ?> le <?php echo $annonce->date('d/m/Y') ?></small> </p>
 						</div>
 					<?php endif; ?>
+
+					<div class="barreActive"></div>
 				</div>
 			</div>
 

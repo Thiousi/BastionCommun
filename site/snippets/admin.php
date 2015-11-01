@@ -1,6 +1,6 @@
-<div id="admin">
+<div id="admin" class="row">
 	<?php if($user = $site->user()): ?>
-		<span class="signin dropdown right">
+		<span class="signin dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 				<span class="glyphicon glyphicon-user"></span>
 			</a>
@@ -13,7 +13,7 @@
 				</li>
 			</ul>
 		</span>
-		<span class="new-comments dropdown left">
+		<span class="new-comments dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 				<span class="glyphicon glyphicon-comment"></span>
 			</a>
@@ -38,5 +38,6 @@
 			</ul>
 		</span>
 	<?php endif; ?>
+	<span id="hide-menu" class="glyphicon glyphicon-remove"></span>
 </div>
 
