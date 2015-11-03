@@ -1,0 +1,33 @@
+Title: Ginette Mathieu
+
+----
+
+Author: samuel
+
+----
+
+Date: 20151103
+
+----
+
+Categorie: petites-annonces
+
+----
+
+Private: false
+
+----
+
+Informations: 
+
+- 
+  key: prix
+  value: 999999€
+
+----
+
+Description: Pas cher
+
+----
+
+Followers: ["samuel","samuel","samuel","samuel","samuel","samuel","samuel"]

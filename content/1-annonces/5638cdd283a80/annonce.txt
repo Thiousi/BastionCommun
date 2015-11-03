@@ -1,0 +1,32 @@
+Title: Samuel Rivers-Moore
+
+----
+
+Author: samuel
+
+----
+
+Date: 20151103
+
+----
+
+Categorie: artiste-resident
+
+----
+
+Private: false
+
+----
+
+Informations: 
+
+- 
+  key: annees
+  value: 2015
+- 
+  key: pratique
+  value: Surf
+
+----
+
+Description: J'aime la vague
