@@ -480,10 +480,8 @@ $(document).ready(function (){
 	$(document).on('click', '#liste-annonces .annonce-mini', function(e){
 		e.preventDefault();
 		loadAnnonce($(this).attr('data-uri'));
-		if($(document).width()<900){
-			$('#hide-menu, #show-menu, #column-annonces, #column-content').toggleClass('fullWidth');
-		}
-
+		console.log($(document).width());
+		$('#megabloc').toggleClass('showContent');
 	});
 	
 	$(document).on('click', '#btn-new', function(e) {
@@ -619,6 +617,7 @@ $(document).ready(function (){
 
 	$('#hide-menu, #show-menu').click(function(){
 		$('#hide-menu, #show-menu, #column-annonces, #column-content').toggleClass('fullWidth');
+		$('#megabloc').toggleClass('showContent');
 	})
 
 });
