@@ -34,10 +34,10 @@ endif;
 		<input type="hidden" name="userName" value="<?= $userName ?>">
 		<?php 
 		if ($site->user()):
-			$checked = false;
+			$checked = true;
 			if ($page->followers() != ''):
 				$followers = json_decode($page->followers());
-				in_array($site->user()->uid(), $followers) ? $checked = "checked" : $checked = false ; 
+				in_array($site->user()->username(), $followers) ? $checked = "checked" : $checked = false ; 
 			endif;
 			?>
 			<span class="text-right pull-right">

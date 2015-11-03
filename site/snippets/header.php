@@ -34,7 +34,7 @@
 		'http://maps.google.com/maps/api/js?sensor=false&libraries=places',
 		'assets/js/me-markdown.standalone.min.js',
 		'assets/js/jquery.ui.widget.js',
-		'assets/js/html.sortable.min.js',
+		'assets/js/jquery-sortable-min.js',
 		'assets/js/jquery.iframe-transport.js',
 		'assets/js/jquery.fileupload.js',
 		'assets/js/jquery.autocomplete.min.js',

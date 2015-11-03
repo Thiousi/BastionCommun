@@ -96,6 +96,24 @@ input[type="button"]::-moz-focus-inner {
 	 border: 0;
 }
 textarea:focus, a:focus, input:focus, button:focus, #megabloc .bootstrap-select .dropdown-toggle:focus { outline: none !important; }
+
+body.dragging, body.dragging * {
+  cursor: move !important;
+}
+.dragged {
+  position: absolute !important;
+  opacity: 0.5;
+  z-index: 2000;
+}
+.medialist li.placeholder {
+  position: relative;
+  /** More li styles **/
+}
+.medialist li.placeholder:before {
+  position: absolute;
+  /** Define arrowhead **/
+}
+
 /* Pix
 -------------------------------------------------- */
 img {
@@ -564,8 +582,9 @@ button.btn.glyphicon{
 	position: relative;
 	padding:0;
 }
-#menu .dropdown-menu>li>a {
+.dropdown-menu>li>a {
 	padding-left: 25px;
+	white-space: normal;
 }
 .dropdown-menu {
 	margin: 0px;
@@ -580,6 +599,24 @@ button.btn.glyphicon{
 }
 .dropdown-menu.open {
 	border-top: 1px dashed #f00;
+}
+.new-comments .dropdown-menu {
+	position: relative;
+	width: 100%;
+	margin: 0rem 0px 0px;
+	border: 0px none;
+}
+.new-comments .glyphicons {
+	position: relative;
+}
+.new-comments-num {
+	position: absolute;
+	font-family: propcouriersansregular;
+	font-size: 9px;
+	top: 2px;
+	left: 0px;
+	color: rgb(221, 221, 221);
+	width: 100%;
 }
 .form-control {
 	color: #444;
@@ -1321,10 +1358,6 @@ figure.swiper-slide{
 #manageDiapo .btn {
 	float: right;
 }
-#diapo-manager .media-list figure {
-	margin: .5rem 0;
-	background-color: #eee;
-}
 #diapo-manager .swiper-image {
 	background-size: cover;
 	width: 100px;
@@ -1347,12 +1380,12 @@ figure.swiper-slide{
 #diapo-manager .media-list .media-delete {
 	float: right;
 }
-#diapo-manager .media-list figure {
+#diapo-manager .media-list li {
 	margin: .5rem 0;
 	background-color: #eee;
 	position: relative;
 }
-.sortable-placeholder {
+#diapo-manager .placeholder {
 	height: 2rem;
 	background-color: #aaa;
 }

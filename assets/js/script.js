@@ -391,7 +391,7 @@ $(document).ready(function (){
 				}
 			});
 		})
-		
+		$('#toggle-follow').trigger('change');
 	}
 	annonceUpdate();
 
@@ -502,6 +502,22 @@ $(document).ready(function (){
 			);
 	});
 	
+	
+	
+	/* LISTE DES NOUVEAUX COMMENTAIRES
+	------------------------------------ */	
+	$("#column-annonces .new-comments li").click(function(e) {
+		$this = $(this).attr('data-uri');
+		$.post(BASTION.smartSubmitUrl + "?handler=reset-comments", 
+				{
+					uri : $(this).attr('data-uri'),
+				},
+				function(response) {
+					$this.fadeOut();
+				}
+			);
+	});
+	
 	/* ADD VIDEO
 	------------------------------------ */
 	$(document).on('click', '#button-add-video', function(e) {
@@ -522,7 +538,7 @@ $(document).ready(function (){
 	------------------------------------ */
 	function saveMedia() {
 		var elements = [], annonce = $('main#annonce').attr('data-uri');
-		$('#diapo-manager .media-list figure').each(function() {
+		$('#diapo-manager .media-list li').each(function() {
 			elements.push({ filename : $(this).attr('data-filename'), caption : $(this).find('.media-caption input').val() });
 		});
 		$.ajax({
@@ -534,15 +550,20 @@ $(document).ready(function (){
 		})
 	}
 	function updateMediaList() {
-		var mediaList = $('#diapo-manager .media-list');
 		$.ajax({
 			url: BASTION.smartSubmitUrl + "?handler=get-snippet",
 			data: { snippet: 'liste-media', page: $('main#annonce').attr('data-uri') },
-			dataType: "text/html",
-			type: 'post',
+			dataType: "html",
+			type: 'GET',
 			success: function(data) {
-				$('#diapo-manager .media-list').html(data);
-				mediaList.sortable({forcePlaceholderSize: true}).on('sortupdate', function() {saveMedia()});
+				var mediaList = $('#diapo-manager .media-list').html(data);
+				mediaList.sortable({ 
+					onDrop: function() { 
+						$item.removeClass(container.group.options.draggedClass).removeAttr("style");
+						$("body").removeClass(container.group.options.bodyClass);
+						saveMedia();
+					} 
+				});
 				mediaList.find('.media-delete').click(function() {
 					$.post(BASTION.smartSubmitUrl + "?handler=delete", 
 						{

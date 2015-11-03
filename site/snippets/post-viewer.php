@@ -35,7 +35,7 @@
 			</div>
 			
 			<!-- LISTE -->
-			<div class="media-list" data-annonce="<?php echo $page->uri() ?>"><?php snippet("liste-media", array('page'=>$page)) ?></div>
+			<ol class="media-list" data-annonce="<?php echo $page->uri() ?>"><?php //snippet("liste-media", array('page'=>$page)) ?></ol>
 		</div>
 	</div>
 </div>

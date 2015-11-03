@@ -12,14 +12,33 @@
 			</ul>
 		</span>
 		<span class="new-comments dropdown">
-			<a href="#" class="dropdown-toggle glyphicon glyphicon-comment" data-toggle="dropdown" role="button" aria-expanded="false"></a>
+			<?php 
+			$newcoms = array_reverse(unserialize($user->newComments())); 
+			$comNum = 0;
+			foreach($newcoms as $comment => $num):
+				$comNum += $num;
+			endforeach; ?>
+			<a href="#" class="dropdown-toggle glyphicon glyphicon-comment" data-toggle="dropdown" role="button" aria-expanded="false"><span class="new-comments-num"><?= $comNum ?></span></a>
 			<ul class="dropdown-menu" role="menu">
 				<?php
-				$newcoms = unserialize($user->newComments());
 				foreach($newcoms as $comment => $num):
 				?>
-				<li>
-					<a href="<?php echo page($comment)->url() ?>"><?php echo page($comment)->title().' ('.$num.')' ?></a>			
+				<li data-uri="<?= $comment ?>">
+					<?php
+					$url = page($comment)->url();
+					$titre = page($comment)->title();
+					switch ($num):
+						case 0 :
+							//echo "<a href='$url'>$titre</a>";
+							break;
+						case 1 :
+							echo "<a href='$url'>Un nouveau sur <strong>$titre</strong></a>";
+							break;
+						default :
+							echo "<a href='$url'>$num nouveaux sur <strong>$titre</strong></a>";
+							break;
+					endswitch;		
+					?>
 				</li>
 				<?php endforeach; ?>
 			</ul>

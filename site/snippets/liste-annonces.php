@@ -5,15 +5,19 @@
 			$author = "".$annonce->author();
 			$author =  $site->users()->get( $author );
 			$private =  $annonce->private(); 
-				$categorie = $annonce->categorie();
-				$categoryColor = page('categories/'.$categorie)->bgcolor();
-				$currentCategorieTitle = page('categories/'.$categorie)->title();
-				# mise au singulier
-				$splited = explode(' ', $currentCategorieTitle);
-				foreach ($splited as $sKey => $sVal) {
-					$splited[$sKey] = rtrim($sVal, 's');
-				}
-				$currentCategorieTitle = implode(' ', $splited);
+			$categorie = $annonce->categorie();
+			$categoryColor = page('categories/'.$categorie)->bgcolor();
+			$currentCategorieTitle = page('categories/'.$categorie)->title();
+			# mise au singulier
+			$splited = explode(' ', $currentCategorieTitle);
+			foreach ($splited as $sKey => $sVal) {
+				$splited[$sKey] = rtrim($sVal, 's');
+			}
+			$currentCategorieTitle = implode(' ', $splited);
+			$follower = false;
+			if ($annonce->followers() != ''):
+				in_array($site->user()->username(), json_decode($annonce->followers())) ? $follower = true : $follower = false ; 
+			endif;
 			?>
 			<div class="elem annonce-mini" data-uri="<?php echo $annonce->uri() ?>">
 
@@ -22,6 +26,7 @@
 				<?php elseif ($private=='true' && $user = $site->user()) : ?>
 					<div class="glyphicon glyphicon-eye-close publicOrNot white" data-toggle="tooltip" data-placement="bottom" title="annonce interne"></div>
 				<?php endif; ?>
+				
 				<div class="label-mini"><span class="gommette" style="background-color:<?php echo $categoryColor; ?>"></span><?php echo $currentCategorieTitle?></div>
 				<div class="container-fluid">
 

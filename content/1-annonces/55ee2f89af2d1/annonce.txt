@@ -14,7 +14,7 @@ Categorie: categorie-1
 
 ----
 
-Private: false
+Private: true
 
 ----
 
@@ -55,4 +55,4 @@ Pour plus d’Informations sur l’exposition, appelez le 0 892 780 220
 
 ----
 
-Followers: ["samuel","samuel"]
+Followers: ["samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel"]

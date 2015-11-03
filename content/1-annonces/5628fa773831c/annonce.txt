@@ -30,4 +30,4 @@ Description: Parce que voila quoi.
 
 ----
 
-Followers: []
+Followers: ["samuel"]
