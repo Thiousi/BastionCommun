@@ -480,7 +480,8 @@ $(document).ready(function (){
 	$(document).on('click', '#liste-annonces .annonce-mini', function(e){
 		e.preventDefault();
 		loadAnnonce($(this).attr('data-uri'));
-		console.log($(document).width());
+		$('#column-content').animate({ scrollTop:0 }, 500);
+		$('#column-content').perfectScrollbar('update');  // Update
 		$('#megabloc').toggleClass('showContent');
 	});
 	
@@ -619,7 +620,6 @@ $(document).ready(function (){
 	------------------------------------ */
 
 	$('#hide-menu, #show-menu').click(function(){
-		$('#hide-menu, #show-menu, #column-annonces, #column-content').toggleClass('fullWidth');
 		$('#megabloc').toggleClass('showContent');
 	})
 

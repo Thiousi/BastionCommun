@@ -21,7 +21,7 @@ if(get('username')) {
 }
 ?>
 
-	<div id="megabloc">
+	<div id="megabloc" class="showContent">
 
 		<div id="column-annonces" class="column">
 			<div id="annonces-wrapper" class="container-fluid">

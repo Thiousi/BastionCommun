@@ -200,7 +200,7 @@ hr {
 /* Headings
 -------------------------------------------------- */
 h1 {
-	font-size: 5rem;
+	font-size: 4rem;
 	line-height: 1.25em;
 	font-weight: 300;
 	margin: .5em 0;
@@ -359,6 +359,7 @@ blockquote {
 	transition: margin-left .5s ease-in-out;
 }
 #column-annonces{
+    width: 450px;
 }
 #annonces-wrapper{
 	width: 100%;
@@ -398,6 +399,7 @@ header {
 	width: 100%;
 	position: relative;
 	margin-bottom: 20px;
+	padding-top: 5rem;
 }
 header h4{
 	font-size: 1.5rem;
@@ -572,25 +574,21 @@ button.btn.glyphicon{
 	position: relative;
 	padding:0;
 }
-.dropdown-menu>li>a {
+#menu .dropdown-menu.inner{
+	padding-bottom: 15px;
+}
+#menu .dropdown-menu>li>a {
 	padding-left: 25px;
 	white-space: normal;
 }
-.dropdown-menu {
-	margin: 0px;
-	border-radius: 0;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	border: 1px solid;
-	border-radius: 0;
-	right: 0;
-	left: 0;
+
+#menu .dropdown-menu.open {
 	border-top: 1px dashed #fff;
 }
 .dropdown-menu.open {
 	border-top: 1px dashed #f00;
 }
-.new-comments .dropdown-menu {
+/*.new-comments .dropdown-menu {
 	position: relative;
 	width: 100%;
 	margin: 0rem 0px 0px;
@@ -607,7 +605,7 @@ button.btn.glyphicon{
 	left: 0px;
 	color: rgb(221, 221, 221);
 	width: 100%;
-}
+}*/
 .form-control {
 	color: #444;
 	background-color: transparent;
@@ -683,9 +681,12 @@ a {
 /* Header
 -------------------------------------------------- */
 #admin{
-	position: relative;
-	margin-top: 30px;
-	padding: 0 15px;
+	position: absolute;
+	top: 0;
+	margin: 28px 5px;
+}
+#profileButton{
+    padding: 5px 7px;
 }
 #admin>span{
 	color: rgba(0,0,0,.5);
@@ -706,7 +707,7 @@ nav {
 }
 #menu{
 	max-width: 500px;
-	margin: 30px 0;
+	margin-bottom: 30px;
 	width: 100%;
 }
 .logo {
@@ -1409,6 +1410,20 @@ figure.swiper-slide{
 
 /* COMMENTS
 -------------------------------------------------- */
+#newComs{
+	font-size: 13px;
+    color: #fff;
+    background: #F51A1A;
+    border-radius: 10px;
+    padding: 2px 4px;
+    min-width: 20px;
+    height: 20px;
+    text-align: center;
+    letter-spacing: 0px;
+    position: absolute;
+    top: 3px;
+    left: 24px;
+}
 #comments-container{
 	padding: 3rem 2rem;
 	margin: -5rem auto 5rem auto;
