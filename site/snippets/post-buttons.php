@@ -26,7 +26,7 @@ $userCanEdit = ($site->user() && ( $site->user()->hasRole('admin') || $username 
 	</div>
 	<div id="buttons-right" class="text-right pull-right usersOnly">
 		<?php if ($userCanEdit): ?>
-		<form action="<?php echo page('smart-submit')->url().'?handler=edit' ?>" data-response-div="annonce" method="post" class="smart-submit">
+		<form action="<?php echo page('smart-submit')->url().'?handler=edit' ?>" method="post" class="smart-submit">
 
 			<div class="viewOnly">
 				<button class="btn btn-success button editButton glyphicon glyphicon-pencil" type="button"  aria-hidden='true' data-toggle="tooltip" data-placement="bottom" title="Modifier"></button> 

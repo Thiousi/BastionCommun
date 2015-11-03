@@ -1095,7 +1095,7 @@ nav {
 	position: relative;
 	border-radius: 0;
 }
-#slider, #image-alone{
+#slider {
     margin-bottom: 2.5rem;
 }
 .swiper-container-horizontal > .swiper-pagination {

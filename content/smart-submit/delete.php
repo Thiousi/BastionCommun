@@ -15,6 +15,7 @@ if($user = $site->user()):
 			die('{"success": "'.$message.'"}');
     }
   endif;
+	die('{"error": "params error"}');
 endif;
 
-die('{"error": "error"'.get('type').'}');
+die('{"error": "not logged ?"}');

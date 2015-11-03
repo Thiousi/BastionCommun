@@ -195,7 +195,7 @@ $(document).ready(function (){
 		});
 		/* submit */
 		$('.submitButton').click(function() {
-			
+			loadAnnonce($('#annonce').attr('data-uri'));
 		});
 		/* Delete */
 		$(document).on('click', '#button-delete-annonce', function(e) {
@@ -556,17 +556,17 @@ $(document).ready(function (){
 			success: function(data) {
 				var mediaList = $('#diapo-manager .media-list').html(data);
 				mediaList.sortable({ 
-					onDrop: function() { 
+					onDrop: function($item, container, _super) { 
 						$item.removeClass(container.group.options.draggedClass).removeAttr("style");
 						$("body").removeClass(container.group.options.bodyClass);
 						saveMedia();
 					} 
 				});
 				mediaList.find('.media-delete').click(function() {
-					$.post(BASTION.smartSubmitUrl + "?handler=delete", 
+					$.get(BASTION.smartSubmitUrl + "?handler=delete", 
 						{
 							type : 'file',
-							file : $(this).parent('figure').attr('data-filename'),
+							file : $(this).parent('li').attr('data-filename'),
 							page : $('main#annonce').attr('data-uri')
 						},
 						function() {
@@ -584,14 +584,17 @@ $(document).ready(function (){
 		$.ajax({
 			url: BASTION.smartSubmitUrl + "?handler=get-snippet",
 			data: { snippet: 'slider', page: $('main#annonce').attr('data-uri') },
-			dataType: "text/html",
+			dataType: "html",
 			success: function(data) {
 				$('#slider').replaceWith(data);
 				initSwiper();
 				$('#diapo-manager').slideUp();
 				$('#slider').slideDown();
 				$('#manageDiapo').show();
-			}
+				console.log("success");
+			},
+			error: function(){},
+			complete: function(){ console.log("complete") }
 		});
 		
 	});
