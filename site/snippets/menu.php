@@ -1,5 +1,5 @@
 
-<div id="menu" class="container-fluid">
+<div id="menu">
 
 	<form action="<?php echo page('smart-submit')->url().'?handler=list' ?>" data-response-div="liste-annonces" method="post" class="smart-submit" id="form-annonces">
 		<div id="filters-buttons">

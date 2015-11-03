@@ -1,19 +1,5 @@
 <?php snippet('header') ?>
 
-<!--
-<svg class="defs-only">
-  <filter id="monochrome" color-interpolation-filters="sRGB"
-          x="0" y="0" height="100%" width="100%">
-    <feColorMatrix type="matrix"
-      values="0.95	0 0 0 1 
-              0.85	0 0 0 0.13  
-              1		0 0 0 0 
-              0		0 0 0.7 0" />
-  </filter>
-</svg>
--->
-
-
 
 <?php
 if(get('username')) {
@@ -37,23 +23,17 @@ if(get('username')) {
 
 	<div id="megabloc">
 
-		<div id="column-annonces" class="column">
+		<div id="column-annonces" class="column  container-fluid">
 			<header class="column-header" role="banner">
-				<div id="hide-menu" class="glyphicon glyphicon-remove"></div>
 				<?php snippet('admin') ?>
 				<?php snippet('menu') ?>
+				<?php if( $site->user() ): ?>
+					<button id="btn-new" class='btn btn-lg toolbox usersOnly' data-width='100%'>
+						<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> 
+						<span class='name'> Nouvelle annonce</span>
+					</button>
+				<?php endif;?>
 			</header>
-
-			<?php if( $site->user() ): ?>
-				<div id="addNew" class="toolbox usersOnly">
-					<div class="elem">
-						<button id="btn-new" class='btn btn-lg' data-width='100%'>
-							<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> 
-							<span class='name'> Nouvelle annonce</span>
-						</button>
-					</div>
-				</div>
-			<?php endif;?>
 
 			<?php snippet('liste-annonces', array ('results'=>$results)); ?>
 
@@ -61,22 +41,21 @@ if(get('username')) {
 
 		<div id="column-content" class="column">
 			<div id="show-menu" class="glyphicon glyphicon-chevron-left"></div>
-			<div class="col-xs-12">
+			<div id="loadingContainer" class="hidden">
+				<div id="loading" class="glyphicon glyphicon-refresh"></div>
+			</div>
+			<div id="content" class="col-xs-12">
 				<?php
 				if ( kirby()->request()->path()->nth(0) == "annonces" ):
 					snippet('annonce', array('page'=>page("annonces/".kirby()->request()->path()->nth(1))));
-				else :
-					?>
-						<h1 class="title"><?php echo page('home')->title() ?></h1>
+				else : ?>
+					<h1 class="title"><?php echo page('home')->title() ?></h1>
   					<div class="about">
-					<?php 
-					echo page('home')->text()->kirbytext();
-				endif;
-  					?>
+						<?php echo page('home')->text()->kirbytext(); ?>
 					</div>
+				<?php endif; ?>
 			</div>
 		</div>
-
 
 		
 	</div>
