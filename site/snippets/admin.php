@@ -1,9 +1,7 @@
 <div id="admin" class="row">
 	<?php if($user = $site->user()): ?>
-		<span class="signin dropdown">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-				<span class="glyphicon glyphicon-user"></span>
-			</a>
+		<span class="dropdown">
+			<a href="#" class="dropdown-toggle glyphicon glyphicon-user" data-toggle="dropdown" role="button" aria-expanded="false"></a>
 			<ul class="dropdown-menu" role="menu">
 				<li>
 					<a href="<?php echo page('my-account')->url() ?>">Profile</a>			
@@ -14,9 +12,7 @@
 			</ul>
 		</span>
 		<span class="new-comments dropdown">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-				<span class="glyphicon glyphicon-comment"></span>
-			</a>
+			<a href="#" class="dropdown-toggle glyphicon glyphicon-comment" data-toggle="dropdown" role="button" aria-expanded="false"></a>
 			<ul class="dropdown-menu" role="menu">
 				<?php
 				$newcoms = unserialize($user->newComments());
@@ -29,10 +25,8 @@
 			</ul>
 		</span>
 	<?php else : ?>
-		<span class="dropdown right">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-				<span class="signin glyphicon glyphicon-cog"></span>
-			</a>
+		<span class="dropdown">
+			<a href="#" class="dropdown-toggle signin glyphicon glyphicon-cog" data-toggle="dropdown" role="button" aria-expanded="false"></a>
 			<ul class="dropdown-menu" role="menu">
 				<?php snippet('signin'); ?>
 			</ul>

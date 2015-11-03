@@ -214,6 +214,7 @@ $(document).ready(function (){
 		});
 		
 		/***** tools *****/
+
 		/* dropdowns */
 		$(".dropdown-menu li a").on('click', function(){
 			var fieldToPopulate = $(this).parents('.dropdown').attr('data-populate');
@@ -226,7 +227,7 @@ $(document).ready(function (){
 		$('.datepicker').datepicker({ autoclose:true, weekStart:1, language:'fr' });
 		/* toggle */
 		$('.bootstrap-toggle').bootstrapToggle();
-	  /* gallery */
+	  	/* gallery */
 		gallery = initSwiper();
 		/* smart-submit */
 		$('form.smart-submit').each(function() {
@@ -394,6 +395,19 @@ $(document).ready(function (){
 	}
 	annonceUpdate();
 
+	/* menu */
+	$("#categories, body").on('click', function(){
+		setTimeout(function() {
+			$this = $('#categories');
+			var menu = $this.children('.btn-group.bootstrap-select');
+			if(menu.hasClass('open')){
+				$this.addClass('open front');
+			} else {
+				$this.removeClass('open')
+				setTimeout(function() {$this.removeClass('front');}, 300);
+			}
+		}, 1);
+	})
 	/* ANNONCES
 	------------------------------------ */
 	
@@ -466,6 +480,10 @@ $(document).ready(function (){
 	$(document).on('click', '#liste-annonces .annonce-mini', function(e){
 		e.preventDefault();
 		loadAnnonce($(this).attr('data-uri'));
+		if($(document).width()<900){
+			$('#hide-menu, #show-menu, #column-annonces, #column-content').toggleClass('fullWidth');
+		}
+
 	});
 	
 	$(document).on('click', '#btn-new', function(e) {

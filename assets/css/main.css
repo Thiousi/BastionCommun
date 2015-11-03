@@ -339,7 +339,9 @@ blockquote {
 	width: 100%;
 	max-width: 450px;
 }
-#column-annonces a:focus, #column-annonces a:hover{
+#column-annonces a{
+}
+#column-annonces a, #column-annonces a:focus, #column-annonces a:hover{
 	text-decoration: none;
 }
 #column-content{
@@ -455,7 +457,7 @@ header h4{
 	position: absolute;
 	left: 0;
 	right: 0;
-	top: -34px;
+	top: 0;
 }
 #buttons-left{
 	float: left;
@@ -560,8 +562,11 @@ button.btn.glyphicon{
 	border-right: none ;
 	border-radius: 0;
 	position: relative;
+	padding:0;
 }
-
+#menu .dropdown-menu>li>a {
+	padding-left: 25px;
+}
 .dropdown-menu {
 	margin: 0px;
 	border-radius: 0;
@@ -653,11 +658,12 @@ a {
 #admin{
 	position: relative;
 	margin-top: 30px;
+	padding: 0 15px;
 }
 #admin>span{
 	color: rgba(0,0,0,.5);
-	padding: 15px;
 	text-align: center;
+	font-size: 1.2rem;
 }
 #admin span a{
 	color: rgba(0,0,0,.5);
@@ -674,7 +680,6 @@ nav {
 #menu{
 	max-width: 500px;
 	margin: 30px 0;
-	float: left;
 	width: 100%;
 }
 .logo {
@@ -715,7 +720,6 @@ nav {
 #signin {
 }
 .signin{
-	font-size: 1rem;
 	color: rgba(255,0,0,.6);
 }
 
@@ -843,7 +847,15 @@ nav {
 	margin-left: 0;
 	}
 }
+@media screen and (max-width: 500px ) {
+	main {
+		padding: 2rem 15px;
+	}
+	.swiper-image{
+	    height: 300px !important;
+	}
 
+}
 
 /* Annonces
 -------------------------------------------------- */
@@ -882,7 +894,7 @@ nav {
 	background-color: rgb(255,107,107);
 }
 #liste-annonces .annonce-mini.active{
-	background: #FBFBFB;
+	background: #fff;
 	color: #444;
 }
 .label-mini{
@@ -944,11 +956,19 @@ nav {
 	transition: width .3s ease-in-out;
 }
 #categories{
+	width: 371px;
 	width: calc(100% - 49px);
 	float: left;
 }
 #categories button{
 	height: 46px;
+	padding-left: 25px;
+}
+#categories.open{
+	width: 100%;
+}
+#categories.front button{
+	z-index: 9;
 }
 #searchbar{
 	position: absolute;
@@ -959,7 +979,7 @@ nav {
 	right: 0;
 }
 #searchbar.active{
-	width: calc(100%);
+	width: 100%;
 }
 #search-cont{
 	position: absolute;
@@ -968,7 +988,7 @@ nav {
 	overflow: hidden;
 }
 #search-wrap{
-	min-width: 470px;
+	min-width: 370px;
 	padding-left: 16px;
 }
 #searchbar input{
