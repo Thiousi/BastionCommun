@@ -59,6 +59,19 @@ c::set('routes', array(
   )
 ));
 
+
+/* Heures et dates */
+c::set('date.handler', 'strftime'); 
+
+c::set('timezone','Europe/Paris'); 
+setlocale (LC_TIME, 'fr_FR.utf8','fra'); 
+
+c::set('relativedate.threshold', 86400*30*12);
+c::set('relativedate.length', 2);
+c::set('relativedate.conjunction', 'et');
+c::set('relativedate.fuzzy', true);
+c::set('relativedate.lang', 'fr');
+
 /*
 
 ---------------------------------------
@@ -88,7 +101,7 @@ c::set('comments.gravatar', false);
 c::set('comments.data.filename', 'comments.json');
 
 // format for post date: see http://php.net/date
-c::set('comments.date.format', 'l d F Y');
+c::set('comments.date.format', '%A %d %B %Y');
 
 // install Amazon SES plugin and provide your email for notifications
 c::set('comments.notify.email', '');

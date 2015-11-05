@@ -30,4 +30,4 @@ Description: Pas cher
 
 ----
 
-Followers: ["samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel"]
+Followers: ["samuel"]

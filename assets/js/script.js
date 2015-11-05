@@ -505,14 +505,26 @@ $(document).ready(function (){
 	
 	/* LISTE DES NOUVEAUX COMMENTAIRES
 	------------------------------------ */	
-	$("#column-annonces .new-comments li").click(function(e) {
-		$this = $(this).attr('data-uri');
+	$("#column-annonces #profileButton li a").click(function(e) {
+		e.preventDefault();
+		var lien = $(this).parent();
+		var uri = lien.attr('data-uri');
+		loadAnnonce(uri);
 		$.post(BASTION.smartSubmitUrl + "?handler=reset-comments", 
 				{
-					uri : $(this).attr('data-uri'),
+					uri : uri,
 				},
 				function(response) {
-					$this.fadeOut();
+					lien.fadeOut();
+					var totalComsNum = parseInt( $('#newComs').html() );
+					var thisComsNum = parseInt( lien.attr('data-num') );
+					var totalComsNum = totalComsNum - thisComsNum;
+					if(totalComsNum>0) {
+						$('#newComs').html(totalComsNum) ;
+					} else {
+						$('#newComs').fadeOut() ;
+					}
+					
 				}
 			);
 	});

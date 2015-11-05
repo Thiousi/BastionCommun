@@ -588,6 +588,7 @@ button.btn.glyphicon{
 .dropdown-menu.open {
 	border-top: 1px dashed #f00;
 }
+
 /*.new-comments .dropdown-menu {
 	position: relative;
 	width: 100%;
@@ -695,6 +696,11 @@ a {
 }
 #admin span a{
 	color: rgba(0,0,0,.5);
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+#admin .dropdown-menu {
+	max-width: 410px;
 }
 .navbar-default {
 	background-color: #FFF;

@@ -1,15 +1,16 @@
 <div id="admin" class="row">
-	<?php if($user = $site->user()): 
-			$newcoms = array_reverse(unserialize($user->newComments())); 
-			$comNum = 0;
-			foreach($newcoms as $comment => $num):
-				$comNum += $num;
-			endforeach; 
-			?>
+	<?php 
+	if($user = $site->user()): 
+		$newcoms = array_reverse(unserialize($user->newComments())); 
+		$comsNum = 0;
+		foreach($newcoms as $comment => $num):
+			$comsNum += intval($num);
+		endforeach; 
+		?>
 		<span id="profileButton" class="dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 				<div class="glyphicon glyphicon-user"></div>
-				<?php if($comNum >= 1){ echo '<div id="newComs">'.$comNum.'</div>'; }?> 
+				<?php if($comsNum >= 1){ echo '<div id="newComs">'.$comsNum.'</div>'; }?> 
 			</a>
 			<ul class="dropdown-menu" role="menu">
 				<li>
@@ -19,11 +20,10 @@
 					<a href="<?php echo $page->url() ?>?logout=1">Déconnexion</a>			
 				</li>
 
-				<?php if($comNum >= 1): ?>
-	  				<li role="separator" class="divider"></li>
-					<?php foreach($newcoms as $comment => $num): ?>
-						<li data-uri="<?= $comment ?>">
-							<?php
+				<?php if($comsNum >= 1): ?>
+	  			<li role="separator" class="divider"></li>
+					<?php 
+					foreach($newcoms as $comment => $num):
 							$url = page($comment)->url();
 							$titre = page($comment)->title();
 							switch ($num):
@@ -31,17 +31,14 @@
 									//echo "<a href='$url'>$titre</a>";
 									break;
 								case 1 :
-									echo "<a href='$url'>Un nouveau sur <strong>$titre</strong></a>";
+									echo "<li data-uri='$comment' data-num='$num'><a href='$url'>Un nouveau sur <strong>$titre</strong></a><li>";
 									break;
 								default :
-									echo "<a href='$url'>$num nouveaux sur <strong>$titre</strong></a>";
+									echo "<li data-uri='$comment' data-num='$num'><a href='$url'>$num nouveaux sur <strong>$titre</strong></a></li>";
 									break;
 							endswitch;		
-							?>
-						</li>
-					<?php endforeach; ?>
-				<?php endif; ?>
-
+					endforeach;
+				endif; ?>
 			</ul>
 		</span>
 	<?php else : ?>

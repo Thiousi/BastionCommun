@@ -15,7 +15,7 @@
 			}
 			$currentCategorieTitle = implode(' ', $splited);
 			$follower = false;
-			if ($annonce->followers() != ''):
+			if ($annonce->followers() != '' && $site->user()):
 				in_array($site->user()->username(), json_decode($annonce->followers())) ? $follower = true : $follower = false ; 
 			endif;
 			?>
@@ -96,7 +96,7 @@
 						<div class="regular-content">
 							<h3 class="media-heading"><a href="<?php echo $annonce->url() ?>" class="link-annonce" data-uri="<?php echo $annonce->uri() ?>"><?php echo $annonce->title() ?></a></h3>
 							<?php snippet('meta-mini', array( 'categorie' => $categorie, 'page'=>$annonce )) ?>
-							<p><small>Déposée par <?php echo $author->firstName()." ".$author->lastName() ?> le <?php echo $annonce->date('d/m/Y') ?></small> </p>
+							<p><small>Déposée par <?php echo $author->firstName()." ".$author->lastName() ?> le <?php echo $annonce->date('%d/%m/%Y') ?></small> </p>
 						</div>
 					<?php endif; ?>
 

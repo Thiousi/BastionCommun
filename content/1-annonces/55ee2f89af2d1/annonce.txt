@@ -55,4 +55,4 @@ Pour plus d’Informations sur l’exposition, appelez le 0 892 780 220
 
 ----
 
-Followers: ["samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel","samuel"]
+Followers: ["samuel"]

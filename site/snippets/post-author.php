@@ -10,6 +10,6 @@
             <?php else: ?>
                 <span class="avatarImg"><?php echo strtoupper($authorInitial); ?></span>
             <?php endif; ?>
-        <span class="author-text">Posté par <?php echo $authorName ?> le <?php echo $page->date('d/m/Y') ?> à <?php echo $page->date('H:m') ?></span>
+        <span class="author-text">Posté par <?php echo $authorName ?> le <?php echo $page->date('%d %B %Y') ?></span>
     </div>
 </div>

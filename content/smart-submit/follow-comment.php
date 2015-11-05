@@ -14,7 +14,10 @@ if($user = $site->user()):
 			} else {
 				$followers = [];
 			}
-			$followers[] = $user;
+			if (!in_array('samuel', $followers)) {
+				$followers[] = $user;
+			}
+			array_unique ($followers);
 			page($annonce)->update(array(
 				"followers" => json_encode($followers)
 			));
