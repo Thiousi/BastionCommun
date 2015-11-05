@@ -5,10 +5,9 @@ header('Content-type: application/json');
 if($user = $site->user()):
   if(get('cat')) :
 		try {
-      
       $uid = uniqid();
       $newPage = page('annonces')->children()->create($uid, 'annonce', array(
-        'title' => 'Titre',
+        'title' => get('titre') ?: 'Titre',
         'author' => $site->user()->username(),
         'date' => date('Ymd'),
 				'categorie' => get('cat')

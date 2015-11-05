@@ -205,10 +205,10 @@ $(document).ready(function (){
 					page : $('#annonce').attr('data-uri')
 				},
 				function(response) {
-					$('#annonce').html('');
 					$('#modal-delete').modal('hide');
+					$('#content').html('');
 					reloadAnnoncesList();
-					$('#liste-annonces .annonce-mini').click();
+					//$('#liste-annonces .annonce-mini').first().click();
 				}
 			);
 		});
@@ -433,7 +433,6 @@ $(document).ready(function (){
 			});
 	}
 	function reloadAnnoncesList() {
-		//$('#form-annonces input[type="submit"]').click()
 		$('#form-annonces').submit()
 	}
 	
@@ -485,20 +484,21 @@ $(document).ready(function (){
 		$('#megabloc').toggleClass('showContent');
 	});
 	
-	$(document).on('click', '#btn-new', function(e) {
-        var catval = $('#cat-select').val();
-        if (catval == ""){ catval = "petites-annonces"}
+	$(document).on('click', '#button-create-annonce', function(e) {
+		var categorie = $('#nouvelle-annonce-categorie').val();
+		var titre = $('#nouvelle-annonce-titre').val();
 		$.post(BASTION.smartSubmitUrl + "?handler=create", 
-				{
-					cat : catval,
-				},
-				function(response) {
-					var uri = response.uri;
-					console.log(uri);
-					loadAnnonce(uri);
-                    $('.editButton').click();
-				}
-			);
+			{
+				cat : categorie,
+				titre : titre
+			},
+			function(response) {
+				$('#modal-create').modal('hide');
+				var uri = response.uri;
+				loadAnnonce(uri);
+				$('.editButton').trigger('click');
+			}
+		);
 	});
 	
 	

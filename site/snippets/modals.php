@@ -1,5 +1,5 @@
 <!-- ADD VIDEO -->
-<div class="modal fade" id="modal-add-video" tabindex="-1" role="dialog" aria-labelledby="delete">
+<div class="modal" id="modal-add-video" tabindex="-1" role="dialog" aria-labelledby="delete">
   <div class="modal-dialog">
 	<div class="modal-content">
 	  <div class="modal-body">
@@ -18,7 +18,7 @@
 </div>
 
 <!-- DELETE -->
-<div class="modal fade" id="modal-delete" tabindex="-1" role="dialog" aria-labelledby="delete">
+<div class="modal" id="modal-delete" tabindex="-1" role="dialog" aria-labelledby="delete">
   <div class="modal-dialog">
 	<div class="modal-content">
 	  <div class="modal-body">
@@ -32,8 +32,34 @@
   </div>
 </div>
 
+<!-- CREATE -->
+<div class="modal" id="modal-create" tabindex="-1" role="dialog" aria-labelledby="create">
+  <div class="modal-dialog">
+	<div class="modal-content">
+	  <div class="modal-body">
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Titre</label>
+				<div class="col-sm-10"><input placeholder="Titre" id="nouvelle-annonce-titre" class="form-control" type="text"></div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Catégorie</label>
+				<select class="selectpicker" id="nouvelle-annonce-categorie" data-style="btn-lg btn-default" name="cat" title="Catégorie">
+					<?php foreach ( page('categories')->children() as $categorie ) : ?>
+						<option value="<?php echo $categorie->uid(); ?>" <?php e($categorie->uid() == $cat, "selected") ?> > <?php echo $categorie->title(); ?> </option>
+					<?php endforeach ?>
+				</select>
+			</div>
+	  </div>
+	  <div class="modal-footer">
+		<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+		<button id="button-create-annonce" class="btn btn-default"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span>  Créer</button> 
+	  </div>
+	</div>
+  </div>
+</div>
+
 <!-- GEOPICKER -->
-<div class="modal fade" id="modal-geopicker" tabindex="-1" role="dialog" aria-labelledby="Geopicker" aria-hidden="true">
+<div class="modal" id="modal-geopicker" tabindex="-1" role="dialog" aria-labelledby="Geopicker" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <!--<div class="modal-header">

@@ -29,10 +29,10 @@ if(get('username')) {
 					<?php snippet('admin') ?>
 					<?php snippet('menu') ?>
 					<?php if( $site->user() ): ?>
-						<button id="btn-new" class='btn btn-lg toolbox usersOnly' data-width='100%'>
+						<button id="btn-new" class="btn btn-lg toolbox usersOnly" data-width='100%' data-toggle="modal" data-target="#modal-create" aria-hidden='true' title="Nouvelle annonce">
 							<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> 
 							<span class='name'> Nouvelle annonce</span>
-						</button>
+						</button>	
 					<?php endif;?>
 				</header>
 
