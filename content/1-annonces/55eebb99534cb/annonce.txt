@@ -26,4 +26,4 @@ Description: Je cherche à me retrouver, le ressourcer, vivre à fond, profondé
 
 ----
 
-Followers: ["samuel","samuel","samuel","samuel"]
+Followers: ["samuel"]

@@ -422,6 +422,7 @@ $(document).ready(function (){
 				type: 'post',
 				success: function(data) {
 					if(data) {
+						$('#megabloc').removeClass('homepage');
 						$('#content').fadeIn(100, function() { $(this).html(data); annonceUpdate(); }).removeClass('loading');
 						$('#loadingContainer').addClass('hidden');
 

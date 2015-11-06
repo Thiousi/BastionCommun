@@ -7,12 +7,15 @@
 			$comsNum += intval($num);
 		endforeach; 
 		?>
+		<span id="homeButton">
+			<a href="<?php echo url(); ?>" class="glyphicon glyphicon-home"></a>
+		</span>
 		<span id="profileButton" class="dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 				<div class="glyphicon glyphicon-user"></div>
 				<?php if($comsNum >= 1){ echo '<div id="newComs">'.$comsNum.'</div>'; }?> 
 			</a>
-			<ul class="dropdown-menu" role="menu">
+			<ul class="dropdown-menu tooltipUp" role="menu">
 				<li>
 					<a href="<?php echo page('my-account')->url() ?>">Profile</a>			
 				</li>
@@ -50,6 +53,6 @@
 		</span>
 	<?php endif; ?>
 	<!-- <span id="title"><h1><a href="<?php echo url(); ?>">Bastion Commun</a></h1></span> -->
-	<span id="hide-menu" class="glyphicon glyphicon-remove"></span>
 </div>
+<div id="hide-menu" class="glyphicon glyphicon-chevron-right"></div>
 

@@ -10,8 +10,8 @@
 			</div>
 	  </div>
 	  <div class="modal-footer">
-		<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-		<button id="button-add-video" class="btn btn-default"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span>  Ajouter</button> 
+		<button type="button" class="btn btn-info" data-dismiss="modal">Annuler</button>
+		<button id="button-add-video" class="btn btn-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span>  Ajouter</button> 
 	  </div>
 	</div>
   </div>
@@ -25,7 +25,7 @@
 		Voulez-vous vraiment supprimer cette annonce ?
 	  </div>
 	  <div class="modal-footer">
-		<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+		<button type="button" class="btn btn-info" data-dismiss="modal">Annuler</button>
 		<button id="button-delete-annonce" class="btn btn-danger"><span class='glyphicon glyphicon-trash' aria-hidden='true'></span>  Supprimer</button> 
 	  </div>
 	</div>
@@ -37,13 +37,13 @@
   <div class="modal-dialog">
 	<div class="modal-content">
 	  <div class="modal-body">
-			<div class="form-group">
-				<label class="col-sm-2 control-label">Titre</label>
-				<div class="col-sm-10"><input placeholder="Titre" id="nouvelle-annonce-titre" class="form-control" type="text"></div>
+			<div class="form-group row">
+            <label class="col-sm-2 control-label">Titre</label>
+            <div class="col-sm-10"><input placeholder="Titre" id="nouvelle-annonce-titre" class="form-control" type="text"></div>
 			</div>
-			<div class="form-group">
-				<label class="col-sm-2 control-label">Catégorie</label>
-				<select class="selectpicker" id="nouvelle-annonce-categorie" data-style="btn-lg btn-default" name="cat" title="Catégorie">
+			<div class="form-group row">
+                <label class="col-sm-2 control-label">Catégorie</label>
+				<select class="selectpicker col-sm-10" id="nouvelle-annonce-categorie" data-style="btn-lg btn-default" name="cat" title="Catégorie">
 					<?php foreach ( page('categories')->children() as $categorie ) : ?>
 						<option value="<?php echo $categorie->uid(); ?>" <?php e($categorie->uid() == $cat, "selected") ?> > <?php echo $categorie->title(); ?> </option>
 					<?php endforeach ?>
@@ -51,8 +51,8 @@
 			</div>
 	  </div>
 	  <div class="modal-footer">
-		<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-		<button id="button-create-annonce" class="btn btn-default"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span>  Créer</button> 
+		<button type="button" class="btn btn-info" data-dismiss="modal">Annuler</button>
+		<button id="button-create-annonce" class="btn btn-success"><span class='glyphicon glyphicon-plus' aria-hidden='true'></span>  Créer</button> 
 	  </div>
 	</div>
   </div>
@@ -96,8 +96,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-        <button type="button" class="btn btn-primary" id="confirm-geolocation">OK</button>
+        <button type="button" class="btn btn-info" data-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-success" id="confirm-geolocation">OK</button>
       </div>
     </div>
   </div>
