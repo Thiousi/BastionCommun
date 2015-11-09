@@ -379,24 +379,37 @@ blockquote {
 	color: rgba(0,0,0,.5);
 	cursor: pointer;
 	z-index: 99999;
+    visibility: hidden;
+    opacity: 0;
 }
 #hide-menu{
     position: absolute;
     right: 0px;
     width: 48px;
     height: 42px;
-    display: none;
     text-align: center;
     line-height: 40px;
-    top: 15px;
+	top: 17px;
+	font-size: 1.2rem;
+    -ms-filter: "prodig:DXImageTransform.Microsoft.Alpha(Opacity=100)"; /* Hack IE8 */
+    filter: alpha(opacity = 100); /* Hack IE 5-7 */
+    -webkit-transition: opacity 0.2s ease-in-out ;
+    -moz-transition: opacity 0.2s ease-in-out ;
+    -o-transition: opacity 0.2s ease-in-out ;
+    transition: opacity 0.2s ease-in-out ;
 }
 #show-menu{
 	position: absolute;
 	top: 20px;
 	left: 10px;    
 	padding: 5px;
-	display: none;
 	font-size: 24px;
+    -ms-filter: "prodig:DXImageTransform.Microsoft.Alpha(Opacity=100)"; /* Hack IE8 */
+    filter: alpha(opacity = 100); /* Hack IE 5-7 */
+    -webkit-transition: opacity 0.2s ease-in-out .5s;
+    -moz-transition: opacity 0.2s ease-in-out .5s;
+    -o-transition: opacity 0.2s ease-in-out .5s;
+    transition: opacity 0.2s ease-in-out .5s;
 }
 
 /* Headers */
@@ -479,12 +492,9 @@ header h4{
 	#megabloc.homepage.showContent #column-annonces{
 		margin-left: -450px;
 	}
-	#megabloc.homepage.showContent #show-menu{
-		display: block;
-	}
-	#megabloc.homepage #hide-menu{
-		top: 17px;
-		display: block;
+	#megabloc.homepage.showContent #show-menu, #megabloc.homepage #hide-menu{
+		visibility: visible;
+		opacity: 1;
 	}
 	#megabloc.homepage #hide-menu::before{
 		content: "\e014";
@@ -1013,7 +1023,9 @@ nav {
 		left:-100%;
 	}
 	#hide-menu, #show-menu{
-		display: block;
+		visibility: visible;
+		opacity: 1;
+
 	}
 }
 

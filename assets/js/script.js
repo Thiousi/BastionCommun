@@ -482,7 +482,11 @@ $(document).ready(function (){
 		loadAnnonce($(this).attr('data-uri'));
 		$('#column-content').animate({ scrollTop:0 }, 500);
 		$('#column-content').perfectScrollbar('update');  // Update
-		$('#megabloc').toggleClass('showContent');
+		if( $(window).width > 1000 ){
+			$('#megabloc:not(.homepage)').toggleClass('showContent');
+		} else {
+			$('#megabloc').toggleClass('showContent');
+		}
 	});
 	
 	$(document).on('click', '#button-create-annonce', function(e) {
