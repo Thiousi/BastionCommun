@@ -13,3 +13,7 @@ Criteres:
 ----
 
 Bgcolor: #fff954
+
+----
+
+Sections: post-title, post-meta, post-viewer, post-text, post-author, post-links, post-comments

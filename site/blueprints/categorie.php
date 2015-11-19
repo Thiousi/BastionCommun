@@ -4,15 +4,33 @@ title: Categorie
 pages: false
 files: false
 fields:
-    bgcolor:
-        label: Couleur de la catégorie 
-        type: color
-        default: #efefef
+  bgcolor:
+    label: Couleur de la catégorie 
+    type: color
+    default: #efefef
 	title:
 		label: Nom de la catégorie
 		type:  text
-
-
+	sections:
+		label: Sections visibles
+		type: checkboxes
+		columns: 3
+		default:
+			- post-title
+			- post-meta
+			- post-viewer
+			- post-text
+			- post-author
+			- post-links
+			- post-comments
+		options:
+			post-title: Titre
+			post-meta: Meta
+			post-viewer: Images
+			post-text: Texte
+			post-author: Auteur
+			post-links: Liens
+			post-comments: Commentaires
 	criteres:
 		label: Criteres
 		type:  structure
@@ -36,11 +54,8 @@ fields:
         				type: select
         				options:
         					text: Texte
-        					number: Nombre
+        					adresse: Adresse
         					date: Date
-        					select: Liste déroulante
-        					tag: Tag
-        					map: Carte
         			values:
         				label: Valeurs possibles de la liste déroulante (séparés par des virgules)
         				type: text

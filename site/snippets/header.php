@@ -53,4 +53,3 @@
 
 </head>
 <body class="template-<?php echo $page->intendedTemplate() ?>">
-<?php snippet('functions') ?>

@@ -1,7 +1,10 @@
 <div id="admin" class="row">
-	<?php 
+	<?php
 	if($user = $site->user()): 
-		$newcoms = array_reverse(unserialize($user->newComments())); 
+    $newcoms = array();
+    if ( unserialize($user->newComments()) ) :
+		  $newcoms = array_reverse(unserialize($user->newComments())); 
+    endif;
 		$comsNum = 0;
 		foreach($newcoms as $comment => $num):
 			$comsNum += intval($num);

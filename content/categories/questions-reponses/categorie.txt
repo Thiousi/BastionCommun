@@ -7,3 +7,7 @@ Criteres:
 ----
 
 Bgcolor: #ff7fd0
+
+----
+
+Sections: post-title, post-meta, post-viewer, post-text, post-author, post-links, post-comments

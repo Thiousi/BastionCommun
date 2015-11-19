@@ -28,34 +28,25 @@
 					<div>
 					<?php
 					
-					// MAP
-					if ($type == 'map') : 
-						$location = json_decode($value); 
-						$city = 'Adresse';
-						if ($location) {
-							$city = $location->street .", ". $location->zip ." ". $location->city;
-						} 
-						?>
-						<?php if ($value): ?>
-						<div class='name infoContent viewOnly'>
-							<?php echo $city ?>
-						</div>	
-						<div class='name infoContent viewOnly display-map'>
-							<button class='btn btn-default glyphicon glyphicon-globe' data-toggle='modal' data-target='#modal-geopicker' data-toggle="tooltip" data-placement="bottom" title="Afficher la carte"></button>
-						</div>
-						<?php endif; ?>
-						<input type='text' class='form-control input hidden'  data-slug='<?php echo $critere["slug"] ?>' value='<?php echo $value ?>' readonly/>
-
-					<?php 
-					elseif ($type == 'date') : 
-						echo "<input type='text' class='datepicker form-control input editOnly' data-date-format='dd.mm.yyyy' data-slug='{$critere['slug']}' value='{$value}' readonly/>";
-						if ($value){ echo "<div class='viewOnly infoContent'>{$value}</div>"; };
-						
-					// TEXT
-					else :
-						echo "<input type='text' class='autocomplete form-control input editOnly' data-slug='{$critere['slug']}' value='{$value}' readonly/>";
-						if ($value){ echo "<div class='viewOnly infoContent'>{$value}</div>"; };	
-					endif;
+          switch ($type):
+            case 'adresse':
+              ?>
+              <input type='text' class='form-control input editOnly' data-slug='<?= $critere['slug'] ?>' value='<?= $value ?>' readonly/>
+              <?php if ($value){ ?>
+                <div class='viewOnly infoContent'>
+                  <a href="https://www.google.com/maps/search/<?= $value ?>" target="_blank"><?= $value ?> <span class='glyphicon glyphicon-globe' title='Afficher la carte'></span></a>
+                </div>
+              <?php }
+              break;
+            case 'date':
+              echo "<input type='text' class='datepicker form-control input editOnly' data-date-format='dd.mm.yyyy' data-slug='{$critere['slug']}' value='{$value}' readonly/>";
+						  if ($value){ echo "<div class='viewOnly infoContent'>{$value}</div>"; };
+              break;
+            default:
+              echo "<input type='text' class='autocomplete form-control input editOnly' data-slug='{$critere['slug']}' value='{$value}' readonly/>";
+						  if ($value){ echo "<div class='viewOnly infoContent'>{$value}</div>"; }	
+              break;
+          endswitch;
 
 					echo "</div>";
 				echo "</div>";

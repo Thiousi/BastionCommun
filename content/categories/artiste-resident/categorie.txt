@@ -20,3 +20,7 @@ Criteres:
 ----
 
 Bgcolor: #59bdff
+
+----
+
+Sections: post-title, post-meta, post-viewer, post-text, post-links

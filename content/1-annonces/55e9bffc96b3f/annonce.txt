@@ -34,7 +34,9 @@ Informations:
   value: passerelle vauban
 - 
   key: adresse
-  value: '{"latitude":"46.9425669","longitude":"-2.178588999999988","street":"13 Rue des Sapeurs Pompiers","city":"Barbâtre","zip":"85630","country":"FR"}'
+  value: >
+    Barrage Vauban, Place Jean­ Hans Arp,
+    67000 Strasbourg
 - 
   key: avec
   value: coucou

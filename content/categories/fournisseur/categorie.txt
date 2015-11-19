@@ -13,7 +13,7 @@ Criteres:
   nom: Adresse
   slug: adresse
   important: true
-  type: map
+  type: adresse
   values:
 - 
   nom: Horaires
@@ -29,3 +29,7 @@ Criteres:
 ----
 
 Bgcolor: #28eba7
+
+----
+
+Sections: post-title, post-meta, post-viewer, post-text, post-author, post-links, post-comments

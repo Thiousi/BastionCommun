@@ -1,21 +1,26 @@
-
-
-<?php 
+<?php
 $currentCategorie = $page->categorie();
-	if($currentCategorie == 'bastion-commun'):
-		snippet('annonce-special', array('page' => $page));
-	elseif ($currentCategorie == 'artiste-resident') :
-		snippet('annonce-artiste', array('page' => $page));
-	elseif ($currentCategorie == 'categorie-1') : /* exposition */ 
-		snippet('annonce-evenement', array('page' => $page));
-	elseif ($currentCategorie == 'petites-annonces"') :
-		snippet('annonce-petite', array('page' => $page));
-	elseif ($currentCategorie == 'fournisseur') :
-		snippet('annonce-fournisseur', array('page' => $page)); 
-	else :
-		snippet('annonce-default', array('page' => $page));
-	endif; 
-
+$user = ($site->user()) ? $site->user()->username() : '' ;
+$sections = page('categories/'.$currentCategorie)->sections()->split();
 ?>
 
 
+<main class="main viewMode <?php echo strtolower($currentCategorie) ?>" id="annonce" data-user="<?= $user ?>" data-uri="<?= $page->uri() ?>" role="main">
+	<?php snippet('post-buttons', array('page' => $page)) ?>	
+	<div class="container-fluid">
+		<?php
+		foreach ( $sections as $section ) {
+			if ($section != 'post-comments') {
+				snippet($section, array('page' => $page));
+			}
+		}
+		?>
+		
+
+	</div>
+</main>
+
+<?php 
+if (in_array('post-comments', $sections)) :
+	snippet('post-comments', array('page' => $page)) ;
+endif; ?>

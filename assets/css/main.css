@@ -881,6 +881,10 @@ nav {
     background: #eee;
     padding: 23px 16px;
 }
+.modal-body input.form-control{
+    background: #eee;
+    padding: inherit;
+}
 .modal-body .bootstrap-select button{
 	background: #eee;
 }

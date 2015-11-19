@@ -21,8 +21,17 @@ Private: true
 Informations: 
 
 - 
+  key: society_name
+  value:
+- 
   key: adresse
-  value: '{"latitude":35.0077519,"longitude":-97.09287699999999,"street":"","city":"Wanette","zip":"","country":"US"}'
+  value: Wanette en brisgau
+- 
+  key: horaires
+  value:
+- 
+  key: telephone
+  value:
 
 ----
 

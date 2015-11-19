@@ -29,7 +29,7 @@ Criteres:
   nom: Adresse
   slug: adresse
   important: true
-  type: map
+  type: adresse
   values:
 - 
   nom: Avec
@@ -40,3 +40,7 @@ Criteres:
 ----
 
 Bgcolor: #ffbc63
+
+----
+
+Sections: post-title, post-meta, post-viewer, post-text, post-author, post-links, post-comments

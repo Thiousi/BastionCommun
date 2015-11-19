@@ -560,7 +560,7 @@ $(document).ready(function (){
 		$.ajax({
 			url: BASTION.smartSubmitUrl + "?handler=order-diapo",
 			data: { annonce: annonce, elements: JSON.stringify(elements)  },
-			type: 'post',
+			type: 'get',
 			success: function(data) {
 			}
 		})
@@ -638,10 +638,33 @@ $(document).ready(function (){
 
 	$('#hide-menu, #show-menu').click(function(){
 		$('#megabloc').toggleClass('showContent');
+    if($('#megabloc').hasClass('showContent')) {
+      setCookie('open_menu', false);
+    } else {
+      setCookie('open_menu', true);
+    }
 	})
-
+  console.log(getCookie('open_menu'));
+  if(getCookie('open_menu') == 'true') {
+    $('#megabloc').removeClass('showContent');
+  } else {
+    $('#megabloc').addClass('showContent');
+  }
 });
 
+
+/* GET / SET COOKIES
+	------------------------------------ */
+function setCookie(key, value) {
+    var expires = new Date();
+    expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
+    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+}
+
+function getCookie(key) {
+    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+    return keyValue ? keyValue[2] : null;
+}
 
 /*!
  * jquery.unevent.js 0.2

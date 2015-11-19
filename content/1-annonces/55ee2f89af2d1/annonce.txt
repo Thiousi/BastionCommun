@@ -34,7 +34,7 @@ Informations:
   value:
 - 
   key: adresse
-  value: '{"latitude":"43.86077656656178","longitude":"5.233603423278737","street":"D60","city":"Goult","zip":"84220","country":"FR"}'
+  value: Poudlard
 - 
   key: avec
   value:
