@@ -1,5 +1,9 @@
 <div id="admin" class="row">
-	<?php
+	<?php if( kirby()->request()->path()->nth(0) == 'annonces' ):  ?>
+		<span id="homeButton">
+			<a href="<?php echo url(); ?>" class="glyphicon glyphicon-home"></a>
+		</span>
+	<?php endif; 
 	if($user = $site->user()): 
     $newcoms = array();
     if ( unserialize($user->newComments()) ) :
@@ -10,9 +14,6 @@
 			$comsNum += intval($num);
 		endforeach; 
 		?>
-		<span id="homeButton">
-			<a href="<?php echo url(); ?>" class="glyphicon glyphicon-home"></a>
-		</span>
 		<span id="profileButton" class="dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 				<div class="glyphicon glyphicon-user"></div>
