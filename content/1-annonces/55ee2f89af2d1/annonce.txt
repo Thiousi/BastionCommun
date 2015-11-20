@@ -22,10 +22,10 @@ Informations:
 
 - 
   key: debut
-  value:
+  value: 12.11.2015
 - 
   key: fin
-  value:
+  value: 27.11.2015
 - 
   key: horaires
   value: 10h-18h Ouvert tous les jours
@@ -37,6 +37,9 @@ Informations:
   value: Poudlard
 - 
   key: avec
+  value:
+- 
+  key: complementaires
   value:
 
 ----

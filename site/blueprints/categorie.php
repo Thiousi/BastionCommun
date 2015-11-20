@@ -37,25 +37,25 @@ fields:
 		entry: >
 			{{nom}} ({{type}})
 		fields:
-            nom:
-                label: Nom
-                type: text
-                width: 1/2
-            slug:
-                label: Slug
-                type: text
-                width: 1/2
-        			important:
-        				label: Liste
-        				type: checkbox
-        				text: Faire apparaître sur la liste des annonces.
-        			type:
-        				label: Type
-        				type: select
-        				options:
-        					text: Texte
-        					adresse: Adresse
-        					date: Date
-        			values:
-        				label: Valeurs possibles de la liste déroulante (séparés par des virgules)
-        				type: text
+			nom:
+				label: Nom
+				type: text
+				width: 1/2
+			slug:
+				label: Slug
+				type: text
+				width: 1/2
+			type:
+				label: Type
+				type: select
+				width: 1/2
+				options:
+					text: Texte
+					adresse: Adresse
+					date: Date
+			important:
+				label: Liste
+				type: checkbox
+				text: Afficher
+				width: 1/2
+

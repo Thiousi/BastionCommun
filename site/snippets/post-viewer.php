@@ -9,14 +9,17 @@
 		<!-- MANAGE MEDIA -->
 		<div class="btn-group editOnly" id="manageDiapo">
 			<!-- UPDATE -->
-			<button class='btn btn-default'><span class='glyphicon glyphicon-th-list' aria-hidden='true'></span><?php echo $mediaCaption; ?></button>
+			<button class='btn btn-lg btn-default'><span class='glyphicon glyphicon-th-list' aria-hidden='true'></span><?php echo $mediaCaption; ?></button>
 		</div>
 		<div id="diapo-manager">
+			<!-- LISTE -->
+			<ol class="media-list cf" data-annonce="<?php echo $page->uri() ?>"><?php //snippet("liste-media", array('page'=>$page)) ?></ol>
+			
 			<!-- ADD -->
 			<div class="media-add cf">
 				<!-- ADD IMAGES -->
 				<div id="uploadImages" class="btn-group">
-					<span class="btn btn-default fileinput-button">
+					<span class="btn btn-success fileinput-button">
 						<div id="progress" class="progress editOnly">
 							<div class="progress-bar progress-bar-success"></div>
 						</div>
@@ -24,18 +27,16 @@
 						<input id="fileupload" type="file" name="files[]" value="Select files..." data-url="<?php echo page('upload')->url().'?annonce='.$page->uid() ?>" multiple>
 					</span>
 					<!-- ADD VIDEOS -->
-					<button class='btn btn-default' data-toggle='modal' data-target='#modal-add-video'>
+					<button class='btn btn-success' data-toggle='modal' data-target='#modal-add-video'>
 						<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> Vidéo
 					</button>
 				</div>
 				<div id="updateMedia-button" class="btn-group">
 					<!-- UPDATE -->
-					<button id="updateMedia" class='btn btn-default' data-annonce-uri="<?php echo $page->uri() ?>"><span class='glyphicon glyphicon-ok-sign' aria-hidden='true'></span> Enregistrer</button>
+					<button id="updateMedia" class='btn btn-success' data-annonce-uri="<?php echo $page->uri() ?>"><span class='glyphicon glyphicon-ok-sign' aria-hidden='true'></span> Enregistrer</button>
 				</div>
 			</div>
 			
-			<!-- LISTE -->
-			<ol class="media-list" data-annonce="<?php echo $page->uri() ?>"><?php //snippet("liste-media", array('page'=>$page)) ?></ol>
 		</div>
 	</div>
 </div>

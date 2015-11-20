@@ -42,6 +42,3 @@ fields:
       value:
         label: Contenu
         type: text
-	comments:
-		label: Comments
-		type: comments

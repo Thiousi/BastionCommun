@@ -200,6 +200,9 @@ hr {
 	font-size: 1rem;
 	line-height: 1.25em;
 }
+.small, small {
+	color: #BBB;
+}
 /* Headings
 -------------------------------------------------- */
 h1 {
@@ -725,7 +728,7 @@ button.btn.glyphicon{
 }
 .btn-success, .btn-success:hover {
 	background-color: rgb(77,250,137);
-	color: #555;
+	color: #333;
 }
 .btn-group-xs > .btn, .btn-xs {
 	border-radius: 0;
@@ -1218,8 +1221,6 @@ nav {
 	top: 0;
 	cursor: pointer;
 }
-.small-content{
-}
 .regular-content{
 	position: relative;
 }
@@ -1517,49 +1518,64 @@ figure.swiper-slide{
 /* Media Manager
 -------------------------------------------------- */
 #diapo-manager {
-	border: 1px solid;
-	padding: .5rem;
+	border: 1px dashed #666;
 	display: none;
+	background-color: #F1FFF1;
+	margin-bottom: 3rem;
 }
 #manageDiapo {
 	width: 100%;
 }
 #manageDiapo .btn {
-	float: right;
+	width: 100%;
+	border: 1px solid #333;
+	margin-bottom: 3rem;
 }
 #diapo-manager .swiper-image {
 	background-size: cover;
-	width: 100px;
-	height: 100px;
+	width: 200px;
+	height: 200px;
 	overflow: hidden;
 	float: left;
 	cursor: ns-resize;
 	cursor: grab;
 }
+#diapo-manager .swiper-image p {
+	padding: 1rem;
+	color: #666;
+}
 #diapo-manager .media-list .media-caption {
-	position: absolute;
-	left: 140px;
-	top: 50%;
-	transform: translateY(-50%);
-	right: 40px;
+	float: none;
+	clear: both;
+	padding: 1rem;
+	margin-right: 38px;
 }
 #diapo-manager .media-list .media-caption input {
 	width: 100%;
+	border: 1px solid #DDD;
 }
 #diapo-manager .media-list .media-delete {
-	float: right;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	height: 50px;
+	line-height: 43px;
 }
 #diapo-manager .media-list li {
-	margin: .5rem 0;
-	background-color: #eee;
+	background-color: #FFF;
 	position: relative;
+	float: left;
+	width: 200px;
+	height: 250px;
+	margin: 1rem;
+	box-shadow: 0 0 2px rgba(0,0,0,.2);
 }
 #diapo-manager .placeholder {
 	height: 2rem;
 	background-color: #aaa;
 }
 #diapo-manager .media-add {
-
+	padding: 1rem;
 }
 #updateMedia-button {
 	float: right;

@@ -24,18 +24,20 @@ Criteres:
   nom: Lieu
   slug: lieu
   type: text
-  values:
+  important: true
 - 
   nom: Adresse
   slug: adresse
-  important: true
   type: adresse
-  values:
 - 
   nom: Avec
   slug: avec
   type: text
   values:
+- 
+  nom: Infos complémentaires
+  slug: complementaires
+  type: text
 
 ----
 

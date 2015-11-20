@@ -196,6 +196,7 @@ $(document).ready(function (){
 		/* submit */
 		$('.submitButton').click(function() {
 			loadAnnonce($('#annonce').attr('data-uri'));
+			reloadAnnoncesList();
 		});
 		/* Delete */
 		$(document).on('click', '#button-delete-annonce', function(e) {
@@ -640,6 +641,7 @@ $(document).ready(function (){
 	
 	$(document).on('click', '#manageDiapo .btn', function(e) {
 		$('#manageDiapo').hide();
+		updateMediaList();
 		$('#diapo-manager').slideDown();
 		$('#slider').slideUp();
 	});
