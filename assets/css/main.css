@@ -85,7 +85,7 @@ Email:  support@getkirby.com
 			box-sizing: border-box;
 }
 article, aside, details, figcaption, figure,
-footer, header, hgroup, main, nav, section, summary {
+footer, header, hgroup, main, article, nav, section, summary {
 	display: block;
 }
 
@@ -164,16 +164,19 @@ body {
 	margin: 0 auto;
 	color: #222;
 	font-family: "propcouriersansregular", sans-serif;
-	background: #FFF;
+	background: rgb(242, 240, 234);
 }
 main{
-	background: #FFF;
-	padding: 3rem 2rem;
 	margin: 5rem auto;
 	position: relative;
 	min-width: 300px;
 	max-width: 900px;
 	/* box-shadow: 0px 0px 20px rgba(0,0,0,.5); */
+}
+article{
+	background: #FFF;
+	padding: 3rem 2rem;
+	margin-bottom: 5rem;
 }
 body, #megabloc{
 	overflow: hidden;
@@ -243,15 +246,21 @@ blockquote {
     padding-left: 30px;
 }
 .about{
-	padding: 0 100px;
+	padding: 0 30px;
 }
 .about p{
 	font-family: "Autopia";
 	font-size: 2rem;
 	line-height: 1.35em;
 	color: #F00;
-
 }
+#logo{
+    position: absolute;
+    width: 45%;
+    top: 70px;
+    left: 90px;
+}
+
 
 /* Home
 -------------------------------------------------- */
@@ -263,7 +272,6 @@ blockquote {
 	right: 0;
 	bottom: 0;
 	position: absolute;
-	background: rgb(234, 231, 222);
 }
 #megabloc.right-view {
 	left: -50%;
@@ -349,13 +357,9 @@ blockquote {
   animation: rotating 2s linear infinite;
 }
 #column-annonces, #column-content{
-	-webkit-transition: width .5s ease-in-out;
 	-webkit-transition: margin-left .5s ease-in-out;
-	-moz-transition: width .5s ease-in-out;
 	-moz-transition: margin-left .5s ease-in-out;
-	-o-transition: width .5s ease-in-out;
 	-o-transition: margin-left .5s ease-in-out;
-	transition: width .5s ease-in-out;
 	transition: margin-left .5s ease-in-out;
 }
 #column-annonces{
@@ -486,22 +490,38 @@ header h4{
 @media screen and (min-width: 1000px ) {
 
 	#megabloc.homepage #column-content{
-		width: 100%;
-		position: absolute;
+		/*width: 100%;
+		position: absolute;*/
 	}
 	#megabloc.homepage.showContent #column-annonces{
-		margin-left: -450px;
+		/* margin-left: -450px; */
 	}
+	/*
 	#megabloc.homepage.showContent #show-menu, #megabloc.homepage #hide-menu{
 		visibility: visible;
 		opacity: 1;
 	}
+	#megabloc.homepage #show-menu{
+		position: fixed;
+	}
 	#megabloc.homepage #hide-menu::before{
 		content: "\e014";
-	}
+	} */
 }
 
-
+#textaccueil {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    position: relative;
+}
+#closeText{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 15px;
+    cursor: pointer;
+}
 /* Article Top Bar
 -------------------------------------------------- */
 #top-bar{
@@ -896,7 +916,7 @@ nav {
 .modal-body .bootstrap-select button:hover{
 	background: #D5FFD5;
 }
-@media (min-width: 768px){
+@media screen and (min-width: 768px){
 	.modal-dialog {
 	    margin: 5rem auto !important;
 	}
@@ -1009,7 +1029,7 @@ nav {
 	}
 }
 @media screen and (max-width: 500px ) {
-	main {
+	article {
 		padding: 2rem 15px;
 	}
 	.swiper-image{

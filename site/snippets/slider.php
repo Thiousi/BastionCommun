@@ -17,7 +17,7 @@ if ($countFiles > 1): ?>
 						<?php
 						switch($file->type()):
 							case 'image' : ?>
-								<div class="swiper-image" style="background-image:url(<?php echo thumb($file, array('width' => 800, 'crop' => false))->url(); ?>)"></div>              
+								<div class="swiper-image" style="background-image:url(<?php echo thumb($file, array('width' => 840, 'height' => 500 ,'crop' => false))->url(); ?>)"></div>              
 								<?php $caption = $file->caption();
 								if ($caption != ""): ?>
 									<figcaption><?php echo $caption ?></figcaption>

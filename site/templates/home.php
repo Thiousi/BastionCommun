@@ -25,6 +25,14 @@ if ( kirby()->request()->path()->nth(0) == "annonces" ){ $modeAnnonce = true; } 
 				<header class="column-header" role="banner">
 					<?php snippet('admin') ?>
 					<?php snippet('menu') ?>
+					<?php if( $modeAnnonce == false ): ?>
+						<div id="textaccueil">
+							<?php echo $page->text()->kirbytext(); ?>
+							<div id="closeText" class="glyphicon glyphicon-remove"></div>
+						</div>
+					<?php endif;?>
+
+
 					<?php if( $site->user() ): ?>
 						<button id="btn-new" class="btn btn-lg toolbox usersOnly" data-width='100%' data-toggle="modal" data-target="#modal-create" aria-hidden='true' title="Nouvelle annonce">
 							<span class='glyphicon glyphicon-plus' aria-hidden='true'></span> 
@@ -32,7 +40,6 @@ if ( kirby()->request()->path()->nth(0) == "annonces" ){ $modeAnnonce = true; } 
 						</button>	
 					<?php endif;?>
 				</header>
-
 				<?php snippet('liste-annonces', array ('results'=>$results)); ?>
 			</div>
 		</div>
@@ -46,14 +53,9 @@ if ( kirby()->request()->path()->nth(0) == "annonces" ){ $modeAnnonce = true; } 
 				<?php
 				if ( $modeAnnonce ):
 					snippet('annonce', array('page'=>page("annonces/".kirby()->request()->path()->nth(1))));
-				else : ?>
-					<div id="homeBG">
-						<h1 class="title"><?php echo page('home')->title() ?></h1>
-	  					<div class="about">
-							<?php echo page('home')->text()->kirbytext(); ?>
-						</div>
-					</div>
-				<?php endif; ?>
+				else : 
+					snippet('homepage', array('page'=>page('home')));
+				endif; ?>
 			</div>
 		</div>
 

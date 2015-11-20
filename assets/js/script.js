@@ -70,7 +70,7 @@ $(document).ready(function (){
 							loadAnnonce($('#annonce').attr('data-uri'));
 						}
 						if (data.success) {
-							$('main').addClass('viewMode').removeClass('editMode');
+							$('article').addClass('viewMode').removeClass('editMode');
 						}
 						else if (data.redirect)	{
 							window.location = data.redirect;
@@ -86,8 +86,8 @@ $(document).ready(function (){
 	/* HOME
 	-------------------------------------------- */
 
-    // To do : Loader ?
 	setTimeout(function(){ $('#cover').fadeOut(200) }, 0);
+
 
   /*  Annonce
   -------------------------------------------- */
@@ -144,7 +144,7 @@ $(document).ready(function (){
 		
 		/* edit */
 		$('.editButton').click(function() {
-			$('main').removeClass('viewMode').addClass('editMode');
+			$('article').removeClass('viewMode').addClass('editMode');
 			$(this).parent().find('.submitButton').show();
 			$(".inputsGroup .input").attr('readonly', false);
 			$("#informations").removeClass('readonly');
@@ -239,7 +239,7 @@ $(document).ready(function (){
 
 		/* geopicker */
 		function geopicker(){
-			if( $('main').find('input#geopicker-address-buffer').length ){
+			if( $('article').find('input#geopicker-address-buffer').length ){
 				var input = $('#geopicker-address-buffer');
 				var location = {'latitude' : 48.573392, 'longitude': 7.752353}; // default
 			    var setZoom = 2, setScroll = false;
@@ -386,7 +386,7 @@ $(document).ready(function (){
 		$('#toggle-follow').change(function(){
 			$.ajax({
 				url: BASTION.smartSubmitUrl + "?handler=follow-comment",
-				data: { user: $('main#annonce').attr('data-user'), page: $('main#annonce').attr('data-uri'), follow: $(this).prop('checked') },
+				data: { user: $('article#annonce').attr('data-user'), page: $('article#annonce').attr('data-uri'), follow: $(this).prop('checked') },
 				type: 'post',
 				success: function(data) {
 					console.log(data);
@@ -412,28 +412,33 @@ $(document).ready(function (){
 	})
 	/* ANNONCES
 	------------------------------------ */
-	
+	// onLoad -> higlight annonce-mini
+	var uriMemory = $('article').attr('data-uri');
+	$('.annonce-mini[data-uri = "'+uriMemory+'"]').addClass('active');
+
 	function loadAnnonce(uri) {
+
 		$('.annonce-mini').removeClass('active');
 		$('.annonce-mini[data-uri="'+uri+'"]').addClass('active');
 		$('#loadingContainer').removeClass('hidden');
 		$('#content').addClass('loading');
+		$('#megabloc').removeClass('homepage');
 		$.ajax({
-				url: BASTION.smartSubmitUrl + "?handler=view",
-				data: { uri : uri },
-				type: 'post',
-				success: function(data) {
-					if(data) {
-						$('#megabloc').removeClass('homepage');
-						$('#content').fadeIn(100, function() { $(this).html(data); annonceUpdate(); }).removeClass('loading');
-						$('#loadingContainer').addClass('hidden');
-
-						if(history.pushState) {
-							history.pushState(null, null, BASTION.siteUrl+"/"+uri);
-						}
+			url: BASTION.smartSubmitUrl + "?handler=view",
+			data: { uri : uri },
+			type: 'post',
+			success: function(data) {
+				if(data) {
+					$('#content').fadeIn(100, function() { $(this).html(data); annonceUpdate(); }).removeClass('loading');
+					$('#loadingContainer').addClass('hidden');
+					uriMemory = uri;
+					if(history.pushState) {
+						history.pushState(null, null, BASTION.siteUrl+"/"+uri);
 					}
 				}
-			});
+			}
+		});
+		
 	}
 	
 	// Page Loader
@@ -491,6 +496,7 @@ $(document).ready(function (){
 	
 	$(document).on('click', '#liste-annonces .annonce-mini', function(e){
 		e.preventDefault();
+		$('#textaccueil').slideUp(200);
 		loadAnnonce($(this).attr('data-uri'));
 		$('#column-content').animate({ scrollTop:0 }, 500);
 		$('#column-content').perfectScrollbar('update');  // Update
@@ -501,6 +507,10 @@ $(document).ready(function (){
 		}
 	});
 	
+	$(document).on('click', '#closeText', function(event) {
+		$('#textaccueil').slideUp(200);
+	});
+
 	$(document).on('click', '#button-create-annonce', function(e) {
 		var categorie = $('#nouvelle-annonce-categorie').val();
 		var titre = $('#nouvelle-annonce-titre').val();
@@ -550,7 +560,7 @@ $(document).ready(function (){
 	------------------------------------ */
 	$(document).on('click', '#button-add-video', function(e) {
 
-		var videoUrl = $(this).parent().siblings('.modal-body').find('#add-video-url').val(), annonceUri = $('main#annonce').attr('data-uri');
+		var videoUrl = $(this).parent().siblings('.modal-body').find('#add-video-url').val(), annonceUri = $('article#annonce').attr('data-uri');
 		$('#modal-add-video').modal('hide');
 		$.ajax({
 			url: BASTION.smartSubmitUrl + "?handler=add-video",
@@ -565,7 +575,7 @@ $(document).ready(function (){
 	/* MANAGE MEDIAS
 	------------------------------------ */
 	function saveMedia() {
-		var elements = [], annonce = $('main#annonce').attr('data-uri');
+		var elements = [], annonce = $('article#annonce').attr('data-uri');
 		$('#diapo-manager .media-list li').each(function() {
 			elements.push({ filename : $(this).attr('data-filename'), caption : $(this).find('.media-caption input').val() });
 		});
@@ -580,7 +590,7 @@ $(document).ready(function (){
 	function updateMediaList() {
 		$.ajax({
 			url: BASTION.smartSubmitUrl + "?handler=get-snippet",
-			data: { snippet: 'liste-media', page: $('main#annonce').attr('data-uri') },
+			data: { snippet: 'liste-media', page: $('article#annonce').attr('data-uri') },
 			dataType: "html",
 			type: 'GET',
 			success: function(data) {
@@ -597,7 +607,7 @@ $(document).ready(function (){
 						{
 							type : 'file',
 							file : $(this).parent('li').attr('data-filename'),
-							page : $('main#annonce').attr('data-uri')
+							page : $('article#annonce').attr('data-uri')
 						},
 						function() {
 							updateMediaList();
@@ -612,7 +622,7 @@ $(document).ready(function (){
 		saveMedia();
 		$.ajax({
 			url: BASTION.smartSubmitUrl + "?handler=get-snippet",
-			data: { snippet: 'slider', page: $('main#annonce').attr('data-uri') },
+			data: { snippet: 'slider', page: $('article#annonce').attr('data-uri') },
 			dataType: "html",
 			success: function(data) {
 				$('#slider').replaceWith(data);
