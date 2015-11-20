@@ -1,24 +1,19 @@
-<?php snippet('header') ?>
+<?php snippet('header');
 
-
-<?php
+// CONNECTION
 if(get('username')) {
-  // fetch the user by username and run the 
-  // login method with the password
   if($user = $site->user(get('username')) and $user->login(get('password'))) {
-	// redirect to the homepage 
-	// if the login was successful
-	//go('/');
+		//go('/');
   } else {
-	// make sure the alert is being 
-	// displayed in the template
-	$error = true;
-  }
 
+  }
 } else if(get('logout')) {
   if($user = site()->user()) $user->logout();
   go($page->url());
 }
+
+// LISTE DES ANNONCES
+$results = page('annonces')->children()->sortBy('modified', 'desc');
 
 if ( kirby()->request()->path()->nth(0) == "annonces" ){ $modeAnnonce = true; } else { $modeAnnonce = false; }	
 ?>

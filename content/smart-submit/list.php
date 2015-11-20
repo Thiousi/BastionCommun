@@ -16,6 +16,8 @@ if (get('cat')):
 	$results = $results->filterBy('categorie', $cat);
 endif;
 
+$results = $results->sortBy('modified', 'desc');
+
 ?>
 
 <?php snippet('liste-annonces', array ('results'=>$results)); ?>

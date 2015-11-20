@@ -7,7 +7,7 @@
 				<select id="cat-select" class="selectpicker" data-style="btn-lg btn-default" data-width="100%" name="cat" title="Bastion Commun">
 					<option value="">Toutes</option>
 					<?php foreach ( page('categories')->children() as $categorie ) : ?>
-						<option value="<?php echo $categorie->uid(); ?>" <?php e($categorie->uid() == $cat, "selected") ?> > <?php echo $categorie->title(); ?> </option>
+						<option value="<?php echo $categorie->uid(); ?>"> <?php echo $categorie->title(); ?> </option>
 					<?php endforeach ?>
 				</select>
 				<input type="submit" class="btn btn-default btn-lg hidden" value="Go !" />

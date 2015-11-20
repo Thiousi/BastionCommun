@@ -227,8 +227,10 @@ $(document).ready(function (){
 		$('.datepicker').datepicker({ autoclose:true, weekStart:1, language:'fr' });
 		/* toggle */
 		$('.bootstrap-toggle').bootstrapToggle();
-	  	/* gallery */
+	  /* gallery */
 		gallery = initSwiper();
+		/* media list */
+		updateMediaList();
 		/* smart-submit */
 		$('form.smart-submit').each(function() {
 			initSmartSubmit($(this));
@@ -433,6 +435,26 @@ $(document).ready(function (){
 				}
 			});
 	}
+	
+	// Page Loader
+	function loadContent(uri) {
+		$('#loadingContainer').removeClass('hidden');
+		$('#content').addClass('loading');
+		$.ajax({
+			url: BASTION.smartSubmitUrl + "?handler=get-snippet",
+			data: { snippet: 'my-account', page: uri },
+			dataType: "html",
+			success: function(data) {
+				$('#megabloc').removeClass('homepage');
+				$('#content').fadeIn(100, function() { $(this).html(data); }).removeClass('loading');
+				$('#loadingContainer').addClass('hidden');
+				if(history.pushState) {
+					history.pushState(null, null, BASTION.siteUrl+"/"+uri);
+				}
+			}
+		});
+	}
+	
 	function reloadAnnoncesList() {
 		$('#form-annonces').submit()
 	}
@@ -441,41 +463,31 @@ $(document).ready(function (){
 	$('.selectpicker').selectpicker();
 
 
-	var empty;
 	function searchToggle(){
 		if( $('#searchbar').hasClass('active') ){
+			$('#searchbar .scope').html('');
+			$('#searchbar #search').val('');
 			$('#searchbar').removeClass('active').find('#search').blur();
 			$('#searchbutton').removeClass('glyphicon-remove').addClass('glyphicon-search');
+			$("#form-annonces select").trigger('change');
 		} else {
+			$('#searchbar .scope').html($('#categories .filter-option').html() + ':');
 			$('#searchbar').addClass('active').find('#search').focus();
 			$('#searchbutton').removeClass('glyphicon-search').addClass('glyphicon-remove');
-			$('#searchbar input').val('')
-			empty = true;
+			$('#searchbar input').val('');
 		}
 	}
 	$(document).on('click', '#searchbutton', function(){
 		searchToggle();
 	});
-	$('#searchbar input').keydown(function(e){
-	    if(e.keyCode == 8 && empty) {
-	        $('.scope').remove();
-	    }
-	});
-	$('html').keydown(function(e){
-	    if(e.keyCode == 27 && $('#searchbar').hasClass('active')) {
-	        searchToggle();
-	    }
-	});
-	$('#searchbar').on('input', function() {
-		var inputValue = $('#searchbar input').val();
-    	if (inputValue){
-    		empty = false;
-    	} else {
-    		empty = true;
-    	}
-	});
 
 	$("#form-annonces select").change(function() { $(this.form).find('input[type="submit"]').click() });
+	
+	$(document).on('click', 'a.ajaxed', function(e){
+		e.preventDefault();
+		var uri = $(this).attr('data-uri');
+		loadContent(uri);
+	});
 	
 	$(document).on('click', '#liste-annonces .annonce-mini', function(e){
 		e.preventDefault();
@@ -510,7 +522,7 @@ $(document).ready(function (){
 	
 	/* LISTE DES NOUVEAUX COMMENTAIRES
 	------------------------------------ */	
-	$("#column-annonces #profileButton li a").click(function(e) {
+	$("#column-annonces #profileButton li.commentaire-alert a").click(function(e) {
 		e.preventDefault();
 		var lien = $(this).parent();
 		var uri = lien.attr('data-uri');
@@ -595,7 +607,6 @@ $(document).ready(function (){
 			}
 		});
 	}
-	updateMediaList();
 	
 	$(document).on('click', '#updateMedia', function(e) {
 		saveMedia();

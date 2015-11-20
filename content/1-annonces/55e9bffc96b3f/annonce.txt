@@ -22,10 +22,10 @@ Informations:
 
 - 
   key: debut
-  value: 20.10.2015
+  value: 15.10.2015
 - 
   key: fin
-  value: 08.10.2015
+  value: 22.10.2015
 - 
   key: horaires
   value: 10h-18h
@@ -50,3 +50,7 @@ Nous avons le plaisir de vous inviter à l'inauguration de l'exposition "_BASTIO
 > L'exposition rassemblera une trentaine d’artistes du Bastion 14\. Ils revendiquent l'identité d'une scène artistique régionale active et unie. L'initiative de cet évènement collectif vient d'une envie partagée de se rassembler le temps d'une exposition dans un lieu public pour affirmer une appartenance au territoire local et revendiquer un rôle actif dans la cité.
 
 L’exposition _BASTION COMMUN_ s'inscrit dans projet mené sur l’année 2014–2015 par Les Commissaires Anonymes accompagnés d'Adrien Metzger. Pensé comme un programme de travail collectif ponctué par différents temps forts (dont une semaine de résidence au [Frac Alsace](http://www.culture-alsace.org/art-contemporain/) en mars dernier), l’enjeu a été de développer une dynamique collaborative favorable au partage créatif et productif d’infor­mations, de compétences et de savoirs.
+
+----
+
+Followers: ["samuel"]

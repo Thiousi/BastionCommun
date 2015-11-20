@@ -20,7 +20,7 @@
 			</a>
 			<ul class="dropdown-menu tooltipUp" role="menu">
 				<li>
-					<a href="<?php echo page('my-account')->url() ?>">Profile</a>			
+					<a class="ajaxed" data-uri="<?php echo page('my-account')->uri() ?>" href="<?php echo page('my-account')->url() ?>">Profile</a>	
 				</li>
 				<li>
 					<a href="<?php echo $page->url() ?>?logout=1">Déconnexion</a>			
@@ -37,10 +37,10 @@
 									//echo "<a href='$url'>$titre</a>";
 									break;
 								case 1 :
-									echo "<li data-uri='$comment' data-num='$num'><a href='$url'>Un nouveau sur <strong>$titre</strong></a><li>";
+									echo "<li class='commentaire-alert' data-uri='$comment' data-num='$num'><a href='$url'>Un nouveau sur <strong>$titre</strong></a><li>";
 									break;
 								default :
-									echo "<li data-uri='$comment' data-num='$num'><a href='$url'>$num nouveaux sur <strong>$titre</strong></a></li>";
+									echo "<li class='commentaire-alert' data-uri='$comment' data-num='$num'><a href='$url'>$num nouveaux sur <strong>$titre</strong></a></li>";
 									break;
 							endswitch;		
 					endforeach;
