@@ -42,7 +42,8 @@
 		'assets/js/bootstrap-select.min.js',
 		'assets/js/bootstrap-toggle.min.js',
 		'assets/js/perfect-scrollbar.jquery.min.js',
-		'assets/js/bootstrap-datepicker.js'
+		'assets/js/bootstrap-datepicker.js',
+		'assets/js/masonry.pkgd.min.js'
 	)) ?>
 	
 	<script>

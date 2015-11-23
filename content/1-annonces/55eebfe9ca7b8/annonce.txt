@@ -21,8 +21,17 @@ Private: false
 Informations: 
 
 - 
+  key: society_name
+  value:
+- 
   key: adresse
-  value: '{"latitude":46.818188,"longitude":8.227511999999933,"street":"Aelggi","city":"Sachseln","zip":"6072","country":"CH"}'
+  value: Marseille
+- 
+  key: horaires
+  value:
+- 
+  key: telephone
+  value:
 
 ----
 
@@ -34,7 +43,7 @@ Cest une plateforme gratuite de mutualisation de moyens, déchange de servic
 
 Linscription et lutilisation du rezo sont libres et gratuites.
 
-Le simple fait de sinscrire constitue un engagement à respecter cette charte [](http://rezoprospec.over-blog.com/la-charte)[](http://rezoprospec.over-blog.com/la-charte)[](http://rezoprospec.over-blog.com/la-charte)[](http://rezoprospec.over-blog.com/la-charte)[](http://rezoprospec.over-blog.com/la-charte)[](http://rezoprospec.over-blog.com/la-charte)[](http://rezoprospec.over-blog.com/la-charte)[](http://rezoprospec.over-blog.com/la-charte)[http://rezoprospec.over-blog.com/la-charte](http://rezoprospec.over-blog.com/la-charte)
+Le simple fait de sinscrire constitue un engagement à respecter cette charte [](http://rezoprospec.over-blog.com/la-charte)[](http://rezoprospec.over-blog.com/la-charte)[](http://rezoprospec.over-blog.com/la-charte)[](http://rezoprospec.over-blog.com/la-charte)[](http://rezoprospec.over-blog.com/la-charte)[](http://rezoprospec.over-blog.com/la-charte)[](http://rezoprospec.over-blog.com/la-charte)[](http://rezoprospec.over-blog.com/la-charte)[](http://rezoprospec.over-blog.com/la-charte)[http://rezoprospec.over-blog.com/la-charte](http://rezoprospec.over-blog.com/la-charte)
 
 Lobjectif est de faciliter la circulation de linformation sur les thèmes suivants :
 

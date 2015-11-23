@@ -4,8 +4,6 @@ $user = ($site->user()) ? $site->user()->username() : '' ;
 $sections = page('categories/'.$currentCategorie)->sections()->split();
 ?>
 
-
-
 <main>
 	<article class="main viewMode <?php echo strtolower($currentCategorie) ?>" id="annonce" data-user="<?= $user ?>" data-uri="<?= $page->uri() ?>" role="main">
 		<?php snippet('post-buttons', array('page' => $page)) ?>	

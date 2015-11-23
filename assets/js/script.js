@@ -86,7 +86,6 @@ $(document).ready(function (){
 	/* HOME
 	-------------------------------------------- */
 
-	setTimeout(function(){ $('#cover').fadeOut(200) }, 0);
 
 
   /*  Annonce
@@ -114,13 +113,12 @@ $(document).ready(function (){
 	}
 	
 	function initSwiper(){
-		var gallery = new Swiper('.swiper-container', {
+		var gallery = new Swiper('.swiper-container:not(#bigSlider)', {
 			pagination: '.swiper-pagination',
 			nextButton: '.swiper-button-next',
 			prevButton: '.swiper-button-prev',
 			slidesPerView: 1,
 			paginationClickable: true,
-			spaceBetween: 30,
 			loop: true,
 			grabCursor: true,
 			onInit: function (swiper) {
@@ -129,7 +127,19 @@ $(document).ready(function (){
 		});
 		return gallery;
 	}
-	
+	var bigSlider = new Swiper('#bigSlider.swiper-container', {
+		pagination: '.swiper-pagination',
+		nextButton: 'figure',
+		prevButton: '.swiper-button-prev',
+		slidesPerView: 1,
+		paginationClickable: true,
+		loop: true,
+		grabCursor: true,
+		autoplay: 5000,
+		speed: 800,
+		autoplayDisableOnInteraction: false,
+		keyboardControl: true
+	});
 	function annonceUpdate() {
 		
 		var editors=[];
@@ -429,6 +439,8 @@ $(document).ready(function (){
 			data: { uri : uri },
 			type: 'post',
 			success: function(data) {
+				$('#megabloc').removeClass('accueil')
+				$grid.masonry('layout').masonry('destroy');
 				if(data) {
 					$('#content').fadeIn(100, function() { $(this).html(data); annonceUpdate(); }).removeClass('loading');
 					$('#loadingContainer').addClass('hidden');
@@ -436,6 +448,7 @@ $(document).ready(function (){
 					if(history.pushState) {
 						history.pushState(null, null, BASTION.siteUrl+"/"+uri);
 					}
+
 				}
 			}
 		});
@@ -533,7 +546,7 @@ $(document).ready(function (){
 	
 	/* LISTE DES NOUVEAUX COMMENTAIRES
 	------------------------------------ */	
-	$("#column-annonces #profileButton li.commentaire-alert a").click(function(e) {
+	$("#column-gauche #profileButton li.commentaire-alert a").click(function(e) {
 		e.preventDefault();
 		var lien = $(this).parent();
 		var uri = lien.attr('data-uri');
@@ -646,9 +659,16 @@ $(document).ready(function (){
 		$('#slider').slideUp();
 	});
 	
+	/*----------  HOMEPAGE  ----------*/
 
+	var $grid = $('.accueil #liste-annonces').masonry({
+	  // options
+	  itemSelector: '.elem',
+	  columnWidth: 380,
+	  "gutter": 20
+	});
 	
-	
+
 	
 	/* SLIDE
 	------------------------------------ */

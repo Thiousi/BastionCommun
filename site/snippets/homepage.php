@@ -1,41 +1,45 @@
+<?php /*
+<div id="megabloc">
+	<div id="wrapper-accueil" class="column grid">
+		<div id="textaccueil" class="grid-item">
+			<?php echo $page->text()->kirbytext(); ?>
+		</div>
 
-<main>
-		<h1 id="logo"><img src="assets/images/logo.png" alt="<?php echo $site->title() ?>"/></h1>
-		<img class="home-bg" src="assets/images/bastion.jpg" alt="<?php echo $site->title() ?>"/>
 
-	<h3>Dernières annonces :</h3>
-	<?php foreach (page("annonces/")->children()->sortBy('date', 'desc') as $annonce) : ?>
-		<article class="main viewMode" id="annonce" data-uri="<?= $page->uri() ?>" role="main">
-			<?php if($files = $annonce->files()->filter(function($file) { return in_array($file->type(), array('image', 'document')); })->sortBy('sort', 'asc') ): 
-				foreach($files as $file): ?>
-					<figure class="homeImg" data-filename="<?php echo $file->filename() ?>">
-						<a href="<?php echo $annonce->url(); ?>">
-							<?php
-//								echo $annonce->date();
-							switch($file->type()):
-								case 'image' : ?>
-									<img src="<?php echo thumb($file, array('width' => 840 ,'crop' => false))->url(); ?>">           
-									<?php break 2;
-								case 'document' :
-									echo '<div class="swiper-image">';
-									$url = file_get_contents($file->root());
-									echo kirbytag(array(
-										'oembed'  => $url
-									));
-									echo '</div>';
-									break 2;
-							endswitch;
-							?>
-						</a>
-					</figure>
-				<?php endforeach; ?>
-			<?php endif ?>
-			<h2>
-				<a href="<?php echo $annonce->url(); ?>">
-					<?php echo $annonce->title(); ?>
-				</a>
-			</h2>
-		</article>
-	<?php endforeach; ?>
+		<?php foreach (page("annonces/")->children()->sortBy('date', 'desc') as $annonce) : ?>
+			<figure class="grid-item">
+	            <?php
+				if($files = $annonce->files()->filter(function($file) { return in_array($file->type(), array('image')); })->sortBy('sort', 'asc') ): 
+					foreach($files as $file): ?>
+						<img src="<?php echo thumb($file, array('width' => 320, 'crop' => false))->url(); ?>">
+					<?php break; endforeach ?>
+				<?php endif ?>
+	            <h3>
+	                <a href="<?php echo $annonce->url(); ?>">
+	                    <?php echo $annonce->title(); ?>
+	                </a>
+	            </h3>
+			</figure>
+		<?php endforeach; ?>
+	</div>
+</div>
 
-</main>
+*/ ?>
+
+<div id="megabloc" class="accueil">
+	<div id="column-gauche" class="column">
+		<div id="annonces-wrapper" class="container-fluid">
+			<div id="cover" class="row">THIS IS THE COVER THAT COVERS THE COVER</div>
+			<?php $results = page('annonces')->children()->sortBy('modified', 'desc'); ?>
+			<?php snippet('liste-annonces', array ('results'=>$results)); ?>
+		</div>
+	</div>
+	<div id="column-content" class="column">
+		<div id="show-menu" class="glyphicon glyphicon glyphicon-list"></div>
+		<div id="loadingContainer" class="hidden">
+			<div id="loading" class="glyphicon glyphicon-refresh"></div>
+		</div>
+		<div id="content" class="col-xs-12">
+		</div>
+	</div>
+</div>

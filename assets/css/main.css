@@ -267,7 +267,16 @@ blockquote {
 
 /* Home
 -------------------------------------------------- */
-
+#cover{
+	height: 100vh;
+	background: #93CDFF;
+	margin-bottom: 15px;
+	text-align: center;
+	line-height: 90vh;
+}
+.accueil #column-gauche{
+	width: 100%;
+}
 #megabloc {
 	width: 100%;
 	top: 0;
@@ -359,28 +368,28 @@ blockquote {
   -o-animation: rotating 2s linear infinite;
   animation: rotating 2s linear infinite;
 }
-#column-annonces, #column-content{
+#column-gauche, #column-content{
 	-webkit-transition: margin-left .5s ease-in-out;
 	-moz-transition: margin-left .5s ease-in-out;
 	-o-transition: margin-left .5s ease-in-out;
 	transition: margin-left .5s ease-in-out;
 }
-#column-annonces{
-    width: 450px;
+#column-gauche{
+    width: 410px;
     z-index: 9;
 }
 #annonces-wrapper{
 	width: 100%;
-	max-width: 450px;
-    margin: auto;
+	max-width: 410px;
+    margin: 0;
 }
-#column-annonces a{
+#column-gauche a{
 }
-#column-annonces a, #column-annonces a:focus, #column-annonces a:hover{
+#column-gauche a, #column-gauche a:focus, #column-gauche a:hover{
 	text-decoration: none;
 }
 #column-content{
-	width: calc(100% - 450px);
+	width: calc(100% - 410px);
 }
 #hide-menu, #show-menu{
 	color: rgba(0,0,0,.5);
@@ -464,7 +473,7 @@ header h4{
 }
 
 /*----------  Scrollbar  ----------*/
-#column-annonces .ps-scrollbar-y-rail{
+#column-gauche .ps-scrollbar-y-rail{
 	left: 0;
 	width: 3px;
 }
@@ -480,7 +489,7 @@ header h4{
 	border-radius: 0px;
 	width: 3px;
 }
-#column-annonces .ps-scrollbar-y-rail > .ps-scrollbar-y{
+#column-gauche .ps-scrollbar-y-rail > .ps-scrollbar-y{
 	left: 0;
 }
 #column-content .ps-scrollbar-y-rail > .ps-scrollbar-y{
@@ -496,8 +505,11 @@ header h4{
 		/*width: 100%;
 		position: absolute;*/
 	}
-	#megabloc.homepage.showContent #column-annonces{
+	#megabloc.homepage.showContent #column-gauche{
 		/* margin-left: -450px; */
+	}
+	.annonces-wrapper{
+		margin: auto;
 	}
 	/*
 	#megabloc.homepage.showContent #show-menu, #megabloc.homepage #hide-menu{
@@ -516,13 +528,37 @@ header h4{
     background: #fff;
     padding: 15px;
     margin-bottom: 20px;
-    position: relative;
+    overflow-y: auto;
+    box-shadow: 0 0 15px rgba(0,0,0,.5);
+}
+#column-gauche.accueil{
+	width: 450px;
+    z-index: 9;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    max-width: 450px;
+	padding: 30px;
 }
 #closeText{
     position: absolute;
     top: 0;
     right: 0;
     padding: 15px;
+    cursor: pointer;
+}
+#wrapper-accueil{
+	width: 100%;
+	height: 100% !important;
+}
+.grid-item {
+    width: 320px;
+    float: left;
+    background-color: rgb(252, 250, 243);
+    border-bottom: 1px solid #CAC7BF;
+    border-right: 1px solid #CAC7BF;
+    color: #7A7874;
+    margin-bottom: 20px;
     cursor: pointer;
 }
 /* Article Top Bar
@@ -822,16 +858,6 @@ nav {
 #prez{
 	height: 800px;
 }
-#cover{
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	position: fixed;
-	z-index: 1000;
-	background-color: white;
-	display: none;
-}
 #welcome {
 	background-color: #F00;
 	position: absolute;
@@ -1041,7 +1067,7 @@ nav {
 
 }
 @media screen and (max-width: 1000px ) {
-	#column-annonces, #column-content{
+	#column-gauche, #column-content{
 		width: 50%;
 	}
 	#megabloc{
@@ -1060,6 +1086,9 @@ nav {
 /* Annonces
 -------------------------------------------------- */
 
+#liste-annonces{
+    width: 100%;
+}
 #liste-annonces .container-fluid {
 	padding: 40px 25px 10px;
 }
@@ -1068,13 +1097,20 @@ nav {
 #liste-annonces .row img {
 }
 #liste-annonces .annonce-mini{
-	background-color: #F5F3EF;
+	background-color: rgb(252, 250, 243);
     border-bottom: 1px solid #CAC7BF;
     border-right: 1px solid #CAC7BF;
     color: #7A7874;
     position: relative;
     margin-bottom: 20px;
     cursor: pointer;
+    max-width: 380px;
+}
+.accueil .annonce-mini{
+	width: 380px;
+}
+.accueil #annonces-wrapper{
+	max-width: inherit;
 }
 #liste-annonces .annonce-mini .barreActive{
 	-webkit-transition: width .1s ease-in-out;
@@ -1263,6 +1299,9 @@ nav {
 #slider {
     margin-bottom: 2.5rem;
 }
+#bigSlider{
+
+}
 .swiper-container-horizontal > .swiper-pagination {
 	text-align: left;
 	line-height: 10px;
@@ -1293,9 +1332,25 @@ nav {
 	background-repeat: no-repeat;
 	height: 500px;
 }
-figure.swiper-slide{
+.swiper-container:not(#bigSlider) figure{
 	background-color: #444; /* FFF7D0 */
 	margin-bottom: 20px;
+}
+#bigSlider figure{
+	height: 100vh;
+	padding: 30px;
+    text-align: center;
+}
+#bigSlider figure>img{
+	max-height: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 auto;
+}
+#bigSlider figure>.center{
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
 }
 .swiper-slide figcaption{
 	position: absolute;
