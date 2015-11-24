@@ -10,13 +10,17 @@ if (count($comments['data'])):
 
 	<ul id="comments">
 		<?php foreach ($comments['data'] as $comment): ?>
-		<?php //$date = strftime(c::get('comments.date.format' ?: '%A %d %B %Y'), strtotime($comment['date'])) ?>
 			<li class="comment">
-				<div class="comment-meta">
-					<u><?= $comment['name'] ?></u> —
-					<?= relativeDate($comment['date']); ?>
+				<div class="comment-text">
+					<div class="comment-meta">
+						<small>
+							<?= $comment['name'] ?>,
+							<?= relativeDate($comment['date']); ?>
+						</small>
+					</div>
+					<?= kirbytext($comment['text']) ?>
 				</div>
-			<div class="comment-text"><?= kirbytext($comment['text']) ?></div>
+				
 			</li>
 		<?php endforeach; ?>
 	</ul>

@@ -13,23 +13,26 @@ else :
 endif;
 ?>
 
-<h3>Ajouter un commentaire :</h3>
 <div id="addComment">
 	<form class="add-comment-form smart-submit" data-reload="1" action="<?= url('smart-submit') ?>?handler=add-comment">
 
-		<div class="input-group comment-field-name">
-		  <span class="input-group-addon">Nom</span>
-		  <input type="text" class="text required form-control"  name="name" id="name" placeholder="Nom" value="<?= $userLongName ?>">
-		</div>
-			
-		<div class="input-group comment-field-mail">
-		  <span class="input-group-addon">@</span>
-		  <input type="email" class="text required email form-control"  name="email" id="email" placeholder="E-mail (ne sera pas affiché)" value="<?= $userMail ?>">
-		</div>
-			
-		<textarea rows="5" placeholder="Commentaire" name="text" class="required" id="text"></textarea>
+		<div class="cf">
+			<div class="input-group comment-field-name">
+				<span class="input-group-addon">Nom</span>
+				<input type="text" class="text required form-control"  name="name" id="name" placeholder="Nom" value="<?= $userLongName ?>">
+			</div>
 
-		<input type="submit" class="submit btn btn-success" value="<?= l::get('comments.send') ?: 'Envoyer' ?>">
+			<div class="input-group comment-field-mail">
+				<span class="input-group-addon">@</span>
+				<input type="email" class="text required email form-control"  name="email" id="email" placeholder="E-mail (ne sera pas affiché)" value="<?= $userMail ?>">
+			</div>
+		</div>
+			
+		<div><textarea rows="5" placeholder="Ajouter un commentaire" name="text" class="required form-control" id="text"></textarea></div>
+		
+		<div id="envoyerCommentaire">
+			<input type="submit" class="submit btn btn-success" value="<?= l::get('comments.send') ?: 'Envoyer' ?>">
+		</div>
 		<input type="hidden" name="diruri" value="<?= $page->uri() ?>">
 		<input type="hidden" name="userName" value="<?= $userName ?>">
 		<?php 
