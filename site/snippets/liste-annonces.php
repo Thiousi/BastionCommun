@@ -10,16 +10,16 @@
 			$currentCategorieTitle = page('categories/'.$categorie)->title();
 			# mise au singulier
 			$splited = explode(' ', $currentCategorieTitle);
-			foreach ($splited as $sKey => $sVal) {
+			foreach ($splited as $sKey => $sVal) :
 				$splited[$sKey] = rtrim($sVal, 's');
-			}
+			endforeach;
 			$currentCategorieTitle = implode(' ', $splited);
 			$follower = false;
 			if ($annonce->followers() != '' && $site->user()):
 				in_array($site->user()->username(), json_decode($annonce->followers())) ? $follower = true : $follower = false ; 
 			endif;
 			?>
-			<div class="elem annonce-mini" data-uri="<?php echo $annonce->uri() ?>">
+			<a class="elem annonce-mini" href="<?php echo $annonce->url() ?>" data-uri="<?php echo $annonce->uri() ?>">
 
 				<?php if ($private=='false' && $user = $site->user()) : ?>
 					<div class="glyphicon glyphicon-eye-open publicOrNot" data-toggle="tooltip" data-placement="bottom" title="annonce externe"></div>
@@ -34,31 +34,27 @@
 					if ($currentCategorieTitle == "Artistes résidents") : ?>
 						<div class="avatar">
 							<?php if($image = $annonce->image()): ?>
-							<a href="<?php echo $annonce->url() ?>">
 								<img class="media-object" src="<?php echo thumb($image, array('width' => 140, 'height' => 170, 'crop' => true))->url(); ?>" alt="<?php echo $annonce->title() ?>">
-							</a>
 							<?php else: ?>
 								<div class="user placeholder glyphicon glyphicon-user"></div>
 							<?php endif; ?>
 						</div>
 						<div class="small-content">
-							<h3 class="media-heading"><a href="<?php echo $annonce->url() ?>" class="link-annonce" data-uri="<?php echo $annonce->uri() ?>"><?php echo $annonce->title() ?></a></h3>
+							<h3 class="media-heading"><?php echo $annonce->title() ?></h3>
 						</div>
 
 
 					<?php elseif ($currentCategorieTitle == "Expositions") : ?>
 						<div class="avatar">
 							<?php if($image = $annonce->image()): ?>
-							<a href="<?php echo $annonce->url() ?>">
 								<img class="media-object" src="<?php echo thumb($image, array('width' => 150, 'height' => 170, 'crop' => true))->url(); ?>" alt="<?php echo $annonce->title() ?>">
-							</a>
 							<?php else: ?>
 								<div class="user placeholder glyphicon glyphicon-user"></div>
 							<?php endif; ?>
 
 						</div>
 						<div class="small-content">
-							<h3 class="media-heading"><a href="<?php echo $annonce->url() ?>" class="link-annonce" data-uri="<?php echo $annonce->uri() ?>"><?php echo $annonce->title() ?></a></h3>
+							<h3 class="media-heading"><?php echo $annonce->title() ?></h3>
 							<?php 
 								snippet('meta-mini', array( 'categorie' => $categorie, 'page'=>$annonce, 'key' => 'date' ));
 							?>
@@ -72,7 +68,7 @@
 							<div class="user placeholder glyphicon glyphicon-wrench"></div>
 						</div>
 						<div class="small-content">
-							<h3 class="media-heading"><a href="<?php echo $annonce->url() ?>" class="link-annonce" data-uri="<?php echo $annonce->uri() ?>"><?php echo $annonce->title() ?></a></h3>
+							<h3 class="media-heading"><?php echo $annonce->title() ?></h3>
 							<?php 
 								snippet('meta-mini', array( 'categorie' => $categorie, 'page'=>$annonce, 'key' => 'adresse' ));
 							?>
@@ -86,7 +82,7 @@
 							<div class="user placeholder glyphicon glyphicon-wrench"></div>
 						</div>
 						<div class="small-content">
-							<h3 class="media-heading"><a href="<?php echo $annonce->url() ?>" class="link-annonce" data-uri="<?php echo $annonce->uri() ?>"><?php echo $annonce->title() ?></a></h3>
+							<h3 class="media-heading"><?php echo $annonce->title() ?></h3>
 						</div>
 
 
@@ -94,7 +90,7 @@
 
 					<?php else : ?>
 						<div class="regular-content">
-							<h3 class="media-heading"><a href="<?php echo $annonce->url() ?>" class="link-annonce" data-uri="<?php echo $annonce->uri() ?>"><?php echo $annonce->title() ?></a></h3>
+							<h3 class="media-heading"><?php echo $annonce->title() ?></h3>
 							<?php snippet('meta-mini', array( 'page'=>$annonce )) ?>
 							<p><small>Le <?php echo $annonce->date('%d/%m/%Y') ?> par <?php echo $author->firstName()." ".$author->lastName() ?> </small> </p>
 						</div>
@@ -102,7 +98,8 @@
 
 					<div class="barreActive"></div>
 				</div>
-			</div>
+			</a>
+
 
 		<?php endif; ?>
 	<?php endforeach; ?>

@@ -35,22 +35,22 @@ endif;
 		</div>
 		<input type="hidden" name="diruri" value="<?= $page->uri() ?>">
 		<input type="hidden" name="userName" value="<?= $userName ?>">
-		<?php 
-		if ($site->user()):
-			$checked = true;
-			if ($page->followers() != ''):
-				$followers = json_decode($page->followers());
-				in_array($site->user()->username(), $followers) ? $checked = "checked" : $checked = false ; 
-			endif;
-			?>
-			<span class="text-right pull-right">
-				<label>Suivre la discussion </label>
-				<input id="toggle-follow" class="bootstrap-toggle" <?php echo $checked ?> data-toggle="toggle" data-on=" " data-off=" " data-style="rounded-button" data-onstyle="default" type="checkbox">
-			</span>
-		<?php endif; ?>
-
 	</form>
 </div>
+<?php 
+if ($site->user()):
+	$checked = true;
+	if ($page->followers() != ''):
+		$followers = json_decode($page->followers());
+		in_array($site->user()->username(), $followers) ? $checked = "checked" : $checked = false ; 
+	endif;
+	?>
+	<span class="text-right pull-right toggle-comments">
+		<label>Suivre la discussion </label>
+		<input id="toggle-follow" class="bootstrap-toggle" <?php echo $checked ?> data-toggle="toggle" data-on=" " data-off=" " data-style="rounded-button" data-onstyle="default" type="checkbox">
+	</span>
+<?php endif; ?>
+
 
 
 <?php endif; ?>

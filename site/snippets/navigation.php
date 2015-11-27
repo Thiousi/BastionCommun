@@ -1,11 +1,11 @@
-<div id="admin">
-<a href="<?php echo $site->url() ?>" class="title" alt="home link"><h1 class="site-name">Bastion Commun</h1></a>
+<header id="navbar" class="column-header" role="banner">
+	<a href="<?php echo $site->url() ?>" class="title" alt="home link"><h1 class="site-name">Bastion Commun</h1></a>
 	<?php  
 	if($user = $site->user()): 
-    $newcoms = array();
-    if ( unserialize($user->newComments()) ) :
+	$newcoms = array();
+	if ( unserialize($user->newComments()) ) :
 		  $newcoms = array_reverse(unserialize($user->newComments())); 
-    endif;
+	endif;
 		$comsNum = 0;
 		foreach($newcoms as $comment => $num):
 			$comsNum += intval($num);
@@ -18,14 +18,14 @@
 			</a>
 			<ul class="dropdown-menu tooltipUp" role="menu">
 				<li>
-					<a class="ajaxed" data-uri="<?php echo page('my-account')->uri() ?>" href="<?php echo page('my-account')->url() ?>">Profile</a>	
+					<a class="ajaxed" data-uri="<?php echo page('my-account')->uri() ?>" href="<?php echo page('my-account')->url() ?>">Profile</a> 
 				</li>
 				<li>
-					<a href="<?php echo $page->url() ?>?logout=1">Déconnexion</a>			
+					<a href="<?php echo $page->url() ?>?logout=1">Déconnexion</a>           
 				</li>
 
 				<?php if($comsNum >= 1): ?>
-	  			<li role="separator" class="divider"></li>
+				<li role="separator" class="divider"></li>
 					<?php 
 					foreach($newcoms as $comment => $num):
 							$url = page($comment)->url();
@@ -40,7 +40,7 @@
 								default :
 									echo "<li class='commentaire-alert' data-uri='$comment' data-num='$num'><a href='$url'>$num nouveaux sur <strong>$titre</strong></a></li>";
 									break;
-							endswitch;		
+							endswitch;      
 					endforeach;
 				endif; ?>
 			</ul>
@@ -54,5 +54,4 @@
 		</span>
 	<?php endif; ?>
 	<span id="hide-menu" class="glyphicon glyphicon-chevron-right"></span>
-</div>
-
+</header>
