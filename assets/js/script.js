@@ -480,6 +480,24 @@ $(document).ready(function (){
 		});
 	}
 	
+	function loadSnippet(uri, snippet) {
+		$('#loadingContainer').removeClass('hidden');
+		$('#content').addClass('loading');
+		$.ajax({
+			url: BASTION.smartSubmitUrl + "?handler=get-snippet",
+			data: { snippet: snippet, page: uri },
+			dataType: "html",
+			success: function(data) {
+				$('#megabloc').removeClass('accueil');
+				$('#content').fadeIn(100, function() { $(this).html(data); }).removeClass('loading');
+				$('#loadingContainer').addClass('hidden');
+				if(history.pushState) {
+					history.pushState(null, null, BASTION.siteUrl+"/"+uri);
+				}
+			}
+		});
+	}
+	
 	function reloadAnnoncesList() {
 		$('#form-annonces').submit()
 	}
@@ -511,7 +529,8 @@ $(document).ready(function (){
 	$(document).on('click', 'a.ajaxed', function(e){
 		e.preventDefault();
 		var uri = $(this).attr('data-uri');
-		loadContent(uri);
+		var snippet = $(this).attr('data-snippet');
+		loadSnippet(uri, snippet);
 	});
 	
 	$(document).on('click', '#megabloc:not(.accueil) #liste-annonces .annonce-mini', function(e){

@@ -1,10 +1,16 @@
 <div id="post-author" class="row">
     <div class="col-xs-12 col-lg-8">
         <?php 
-            $author = "".$page->author();
-            $author =  $site->users()->get( $author );
-            $authorName = $author->firstName().' '.$author->lastName();
-            $authorInitial = substr($author, 0,1);
+						$authorName = 'Anonyme';
+						if($page->author() != '') {
+							$author = "".$page->author();
+            	$author =  $site->users()->get( $author );
+							if($author) {
+								$authorName = $author->firstName().' '.$author->lastName();
+							}
+						}
+						$authorInitial = substr($authorName, 0,1);
+            
             if($avatar = $site->user($author)->avatar()): ?>
                 <img class="avatarImg" src="<?php echo thumb($avatar, array('width' => 30, 'height' => 30, 'crop' => true))->url() ?>" alt="avatar">
             <?php else: ?>

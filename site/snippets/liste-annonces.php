@@ -2,8 +2,12 @@
 	<?php foreach($results as $annonce): ?>
 		<?php 
 		if( $site->user() || $annonce->private() != 'true'  ) :
-			$author = "".$annonce->author();
-			$author =  $site->users()->get( $author );
+			$author = '';
+			if($annonce->author() != '') {
+				$author = ''.$annonce->author();
+				$author =  $site->users()->get( $author );
+			}
+			
 			$private =  $annonce->private(); 
 			$categorie = $annonce->categorie();
 			$categoryColor = page('categories/'.$categorie)->bgcolor();
@@ -92,7 +96,12 @@
 						<div class="regular-content">
 							<h3 class="media-heading"><?php echo $annonce->title() ?></h3>
 							<?php snippet('meta-mini', array( 'page'=>$annonce )) ?>
-							<p><small>Le <?php echo $annonce->date('%d/%m/%Y') ?> par <?php echo $author->firstName()." ".$author->lastName() ?> </small> </p>
+							<p><small>Le <?php echo $annonce->date('%d/%m/%Y') ?> 
+								<?php
+								if ($author) {
+									echo 'par'.$author->firstName()." ".$author->lastName();
+								} ?>
+								</small> </p>
 						</div>
 					<?php endif; ?>
 
