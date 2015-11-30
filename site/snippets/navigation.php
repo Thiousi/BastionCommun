@@ -49,8 +49,10 @@
 			</ul>
 		</span>
 	<?php else : ?>
-		<span class="dropdown">
-			<a href="#" class="dropdown-toggle signin glyphicon glyphicon-cog" data-toggle="dropdown" role="button" aria-expanded="false"></a>
+		<span id="profileButton" class="dropdown pull-left">
+			<a href="#" class="dropdown-toggle signin" data-toggle="dropdown" role="button" aria-expanded="false">
+				<div class="glyphicon glyphicon-cog"></div>
+			</a>
 			<ul class="dropdown-menu" role="menu">
 				<?php snippet('signin'); ?>
 			</ul>
