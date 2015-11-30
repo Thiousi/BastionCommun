@@ -1,9 +1,0 @@
-title: Login
-----
-alert: Invalid username or password
-----
-username: Pseudonyme : 
-----
-password: Mot de passe : 
-----
-button: Go!

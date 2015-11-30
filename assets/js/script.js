@@ -570,7 +570,7 @@ $(document).ready(function (){
 	
 	/* LISTE DES NOUVEAUX COMMENTAIRES
 	------------------------------------ */	
-	$("#column-gauche #profileButton li.commentaire-alert a").click(function(e) {
+	$("li.commentaire-alert a").click(function(e) {
 		e.preventDefault();
 		var lien = $(this).parent();
 		var uri = lien.attr('data-uri');

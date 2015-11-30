@@ -1,7 +1,8 @@
 <?php 
 snippet('header');
-?>
-default
-<?php
+
+snippet('homepage'); 
+
+snippet('modals');
 snippet('footer');
 ?>

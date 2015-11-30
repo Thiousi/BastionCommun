@@ -14,7 +14,7 @@ if($user = $site->user()):
 			} else {
 				$followers = [];
 			}
-			if (!in_array('samuel', $followers)) {
+			if (!in_array($user, $followers)) {
 				$followers[] = $user;
 			}
 			array_unique ($followers);

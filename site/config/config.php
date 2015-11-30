@@ -50,16 +50,6 @@ c::set('roles', array(
   )
 ));
 
-c::set('routes', array(
-  array(
-    'pattern' => 'annonces/(:any)',
-    'action' => function () {
-			return page('/home');
-    }
-  )
-));
-
-
 /* Heures et dates */
 c::set('date.handler', 'strftime'); 
 

@@ -39,4 +39,4 @@ Description: Ici, métal en tout genre, toutes catégories, excellent rapport qu
 
 ----
 
-Followers: ["pierre","pierre","pierre","pierre","pierre","pierre","pierre","pierre","pierre","pierre","pierre"]
+Followers: ["pierre"]

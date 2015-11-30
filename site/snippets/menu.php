@@ -15,21 +15,28 @@
 			</div>
 			
 		</div>
-	</form>
+	
 	<div id="searchbar">
-		<?php if ($query): ?>
-		<a href="<?php echo $page->url() ?>" role="button" class="btn btn-default btn-lg" aria-label="Voir tout">
-			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-		</a>&nbsp;
-		<?php endif ?>
+		<?php 
+		$question = "";
+		if (isset($query)):
+			if($query): 
+				$question = $query;
+				?>
+				<a href="<?php echo $page->url() ?>" role="button" class="btn btn-default btn-lg" aria-label="Voir tout">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				</a>&nbsp;
+		<?php endif; endif; ?>
 		<div id="search-cont">
 			<div id="search-wrap">
 				<!-- <span class="scope">Petites annonces:</span> -->
-				<input type="text" name="q" value="<?php echo esc($query) ?>" class="form-control btn-default input-lg" aria-label="rechercher" id="search" placeholder="Rechercher">
+				<input type="text" name="q" value="<?php echo $question ?>" class="form-control btn-default input-lg" aria-label="rechercher" id="search" placeholder="Rechercher">
 			</div>
 		</div>
 		<span id="searchbutton" class="glyphicon glyphicon-search" aria-hidden="true"></span>
 	</div>	
+		
+		</form>
 
 
 

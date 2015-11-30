@@ -821,6 +821,7 @@ header#navbar span{
 	text-align: center;
 	font-size: 1.2rem;
 	padding: 11px;
+	display: inline-block;
 }
 header#navbar>a.title{
     text-decoration: none;
@@ -852,7 +853,8 @@ nav {
 #menu{
 	width: 100%;
 	margin-bottom: 20px;
-	overflow: auto;
+	overflow: hidden;
+	position: relative;
 }
 #menu .prefix{
 	font-size: 1rem;
@@ -1267,17 +1269,17 @@ header#navbar .right ul.dropdown-menu{
 	background: #fff !important;
 }
 #searchbar{
-    position: absolute;
-    height: 42px;
-    width: 42px;
-    border-radius: 21px;
-    margin: 3px 15px;
-    overflow: hidden;
-    right: 0;
+	position: absolute;
+	height: 42px;
+	width: 42px;
+	border-radius: 21px;
+	margin: 3px 0;
+	overflow: hidden;
+	right: 0;
+	top: 0;
 }
 #searchbar.active{	
-	width: 388px;
-	width: calc(100% - 30px);
+	width: 100%;
 	border-radius: 0;
 }
 #searchbar:not(.active){

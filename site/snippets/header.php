@@ -54,3 +54,14 @@
 
 </head>
 <body class="template-<?php echo $page->intendedTemplate() ?>">
+	
+<?php 
+	// CONNECTION
+	if(get('username')) { if($user = $site->user(get('username')) and $user->login(get('password'))) {
+			//go('/');
+		} else { echo "Mot de passe ou utilisateur inconnu"; }
+	} else if(get('logout')) {
+		if($user = site()->user()) $user->logout();
+		go($page->url());
+	}
+?>
