@@ -30,9 +30,9 @@
 						case 'date' :
 							if ($critere['slug']=='debut') :
 								if(!$meta['fin']) :
-									echo "le ".$value;
+									echo "Le ".$value;
 								else :
-									echo "du ".$value;
+									echo "Du ".$value;
 									echo " au ".$meta['fin'];
 								endif;
 							else :
@@ -40,7 +40,9 @@
 							endif;
 							break;
 						default :
-							echo $value;
+							if($value):
+								echo $critere['nom'].' : '.$value;
+							endif;
 							break;
 					endswitch;
 

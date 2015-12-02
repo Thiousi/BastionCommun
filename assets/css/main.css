@@ -209,20 +209,18 @@ h1 {
 	line-height: 1.25em;
 	font-weight: 300;
 	margin: .5em 0;
-	font-family: "Autopia";
 }
 h1.site-name{
     width: 100%;
-    font-size: 20px;
+    font-size: 22px;
     text-transform: uppercase;
     text-align: center;
-    line-height: 42px;
+    line-height: 38px;
     padding-top: 2px;
     position: absolute;
     margin: 0;
     top: 0;
     height: 42px;
-    letter-spacing: 1px;
 }
 h2 {
 	/*font-family: "Autopia";*/
@@ -998,10 +996,15 @@ header#navbar .right ul.dropdown-menu{
     float: left;
     height: 60px;
     line-height: 70px;
-    background-color: #fff;
+    background-color: #E3E3E3;
     overflow: hidden;
     border-radius: 50%;
     margin: 0px 20px 6px -10px;
+}
+.annonce-mini:not(.active) .avatar img{
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	opacity: .75;
 }
 .avatarImg{
 	float: left;
@@ -1189,19 +1192,20 @@ header#navbar .right ul.dropdown-menu{
     position: absolute;
     left: 0;
 }
-.publicOrNot{
+.visibility{
 	position: absolute;
     top: 0;
     right: 15px;
-    opacity: .45;
     height: 25px;
     width: auto;
     text-align: center;
     line-height: 27px;
 }
-.publicOrNot.white{
-	color:#fff;
-	opacity:.75;
+.visibility.public{
+	color:#828282;
+}
+.visibility.private{
+	color:#B8B8B8;
 }
 #btn-new, .btn-big {
     width: 100%;
