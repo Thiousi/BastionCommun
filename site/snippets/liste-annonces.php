@@ -37,7 +37,6 @@
 					<?php 
 					if ($currentCategorieTitle == "Artiste résident") : ?>
 						<div class="avatar">
-							<?php if  ?>
 							<?php if($image = $annonce->image()): ?>
 								<img class="media-object" src="<?php echo thumb($image, array('width' => 140, 'height' => 170, 'crop' => true))->url(); ?>" alt="<?php echo $annonce->title() ?>">
 							<?php else: ?>

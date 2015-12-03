@@ -7,9 +7,7 @@ Criteres:
 - 
   nom: Années de résidence
   slug: annees
-  important: true
-  type: number
-  values:
+  type:
 - 
   nom: Pratique
   slug: pratique
