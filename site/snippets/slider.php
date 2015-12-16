@@ -38,10 +38,12 @@ if ($countFiles > 1): ?>
 		</div>
 
 	<?php if ($countFiles > 1): ?>
-		<div class="swiper-pagination"></div>
 		<div class="swiper-button-next swiper-button-black"></div>
 		<div class="swiper-button-prev swiper-button-black"></div>
 		</div>
 	<?php elseif ($countFiles == 1): ?>
 		</div>
 	<?php endif; ?>
+<?php if ($countFiles > 1): ?>
+	<div class="swiper-pagination"></div>
+<?php endif; ?>

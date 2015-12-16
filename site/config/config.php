@@ -77,7 +77,7 @@ c::set('comments.enabled', true);
 
 // patterns for pages with comments (required)
 // relative to "content/" folder, f.e.: array('blog/*')
-c::set('comments.include.pages', array('*') );
+c::set('comments.include.pages', array('annonces/*') );
 
 // patterns for pages without comments (optional)
 // relative to "content/", f.e.: array('blog/*')
@@ -100,3 +100,8 @@ c::set('comments.notify.email', '');
 c::set('comments.save_author_in_cookie', true);
 
 
+c::get('oembed.defaults.visual', 'true');
+c::get('oembed.defaults.artwork', 'true');
+c::get('oembed.defaults.size', 'compact');
+c::set('oembed.caching', true);
+c::set('oembed.cacheexpires', 3600*24);

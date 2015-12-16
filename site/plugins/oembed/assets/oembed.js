@@ -5,6 +5,8 @@ $(function() {
     embed.attr('src', embed.attr('data-src'));
     embed.css({'display' : 'block'});
     wrapper.find('.play, .thumb').remove();
+    console.log('yop');
+    $(this).parent('.oembed-video').toggleClass('playing');
   });
 });
 

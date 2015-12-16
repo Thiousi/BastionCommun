@@ -58,6 +58,7 @@ $(document).ready(function (){
 				data: $(this).serialize(),
 				type: 'post',
 				success: function(data) {
+					console.log(data);
 					if(data) {
 						if (responseDiv) {
 							if (responseDiv == '#annonce') {
@@ -121,6 +122,14 @@ $(document).ready(function (){
 			grabCursor: true,
 			onInit: function (swiper) {
 				updateSwiperVisibility(swiper);
+			},
+			onSlideChangeEnd: function(swiper){
+				var wrapper = $('figure .oembed-video.playing');
+				if (wrapper) {
+					wrapper.each(function(){
+						video.pause(wrapper);
+					});
+				};
 			}
 		});
 		return gallery;
@@ -407,13 +416,16 @@ $(document).ready(function (){
 
 	/*----------  HOMEPAGE  ----------*/
 
-	var $grid = $('.accueil #liste-annonces').masonry({
-	  // options
-	  itemSelector: '.annonce-mini',
-	  columnWidth: 380,
-	  "gutter": 20,
-	  isFitWidth: true
+	$('.accueil #liste-annonces').imagesLoaded( function() {
+		var $grid = $('.accueil #liste-annonces').masonry({
+		  // options
+		  itemSelector: '.annonce-mini',
+		  columnWidth: 380,
+		  "gutter": 20,
+		  isFitWidth: true
+		});
 	});
+
 
 
 	/* menu */
@@ -689,6 +701,29 @@ $(document).ready(function (){
 	
 	$('.column').perfectScrollbar({ suppressScrollX: true });
 
+
+	/*----------  slider -> video  ----------*/
+
+	$('.oembed-video .play').click(function(event) {
+		var wrapper = $(this).parents('.oembed-video');
+		if (wrapper.hasClass('playing')) {
+			video.pause(wrapper);
+		} else if($(event.target).hasClass('playButton')) {
+			video.play(wrapper);
+		};
+	});
+	var video = {
+		play : function(wrapper){
+			var embed = wrapper.find('iframe');
+			embed.attr('src', embed.attr('src').replace('autoplay=0', 'autoplay=1'));
+			wrapper.addClass('playing');
+		},
+		pause : function(wrapper){
+			var embed = wrapper.find('iframe');
+			embed.attr('src', embed.attr('src').replace('autoplay=1', 'autoplay=0'));
+			wrapper.removeClass('playing');
+		}
+	};
 
 	/* SHOW - HIDE > content 
 	------------------------------------ */

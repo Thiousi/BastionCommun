@@ -39,7 +39,7 @@ class OembedTemplate {
   public static function play() {
     $play = new Brick('div');
     $play->addClass('play');
-    $play->append('<img src="'.url('assets/oembed/oembed-play.png').'" alt="Play">');
+    $play->append('<div class="playButton glyphicon glyphicon-play" alt="Play"></div>');
     return $play;
   }
 

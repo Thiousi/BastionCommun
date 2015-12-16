@@ -25,7 +25,10 @@ class OembedThumb {
   protected function cache($url) {
     if($this->caching) {
 
-      $root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . DS . str_replace(kirby()->roots()->index() . DS, '', $this->dir);
+      //$root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . DS . str_replace(kirby()->roots()->index() . DS, '', $this->dir);
+      //print_r($root);
+
+      $root = kirby()->url().'/thumbs';
 
       $key  = array('high' => $this->key($url), 'low' => $this->key(self::lowRes($url)));
       $path = array('high' => $this->path($url), 'low' => $this->path(self::lowRes($url)));

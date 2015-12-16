@@ -43,8 +43,10 @@
 		'assets/js/bootstrap-toggle.min.js',
 		'assets/js/perfect-scrollbar.jquery.min.js',
 		'assets/js/bootstrap-datepicker.js',
-		'assets/js/masonry.pkgd.min.js'
+		'assets/js/masonry.pkgd.min.js',
+		'assets/js/imagesloaded.pkgd.min.js'
 	)) ?>
+
 	
 	<script>
 		var BASTION = {};

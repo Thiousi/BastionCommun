@@ -12,7 +12,7 @@ if (!get('text'))            	{ die('{"error":"'.(l::get('error.message-required
 $page = page(get('diruri'));
 $pageUri = get('diruri');
 
-$dir = $page->root().'\\';
+$dir = $page->root().DS; // probleme de backshlash ici
 $filename = c::get('comments.data.filename', 'comments.json');
 if (file_exists($dir.$filename)) {
 	$comments_file = $dir.$filename;
