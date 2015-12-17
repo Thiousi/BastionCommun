@@ -1250,9 +1250,14 @@ header#navbar .right ul.dropdown-menu{
 	position: relative;
 	right: initial;
 	display: inline;
-	border-width: 5px 5px 0;
-	border-bottom-width: 0;
-	border-top: 5px dashed;
+	border: none;
+	font-size: 10px;
+	line-height: 29px;
+	float: left;
+}
+#categories .bootstrap-select.btn-group .dropdown-toggle .caret::before{
+	font-family: "Glyphicons Halflings";
+	content: "\e252";
 }
 #categories .bootstrap-select.btn-group .dropdown-toggle .filter-option{
 	width: auto;
