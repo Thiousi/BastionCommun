@@ -16,4 +16,4 @@ Cover: bastion144.jpg
 
 ----
 
-Bgcolor: 
+Bgcolor: #fdffe4

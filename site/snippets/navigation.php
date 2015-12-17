@@ -67,7 +67,7 @@
 	<span id="aboutButton" class="">?</span>
 </header> 
 
-<div id="about" class="closed column">
+<div id="about" class="closed column" style="background-color:<?php echo page('about')->bgcolor();?>">
 	<div class="container">
 		<div class="col-left">
 			<img src="<?php echo thumb($page->image(page('about')->cover()), array('width' => 600, 'crop' => false))->url(); ?>">

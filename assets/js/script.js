@@ -570,9 +570,11 @@ $(document).ready(function (){
 	});
 	$(document).on('click', '#about .closeButton', function(event) {
 		$('#about').addClass('closed');
+		setTimeout(function() {$('#about').hide()}, 160);
 	});
 	$(document).on('click', '#aboutButton', function(event) {
-		$('#about').removeClass('closed');
+		$('#about').show();
+		setTimeout(function() { $('#about').removeClass('closed'); }, 10);
 	});
 
 	$(document).on('click', '#hideCover', function(event) {
