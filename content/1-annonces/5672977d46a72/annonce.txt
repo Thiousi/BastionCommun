@@ -1,0 +1,32 @@
+Title: test
+
+----
+
+Author: test
+
+----
+
+Date: 20151217
+
+----
+
+Categorie: artiste-resident
+
+----
+
+Private: false
+
+----
+
+Informations: 
+
+- 
+  key: annees
+  value: hoooo
+- 
+  key: pratique
+  value: haaa
+
+----
+
+Description: hééé
