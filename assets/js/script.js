@@ -147,8 +147,10 @@ $(document).ready(function (){
 		autoplayDisableOnInteraction: false,
 		keyboardControl: true
 	});
+
 	function annonceUpdate() {
 		
+
 		var editors=[];
 
 		// Mode édition
@@ -253,6 +255,18 @@ $(document).ready(function (){
 		/* smart-submit */
 		$('form.smart-submit').each(function() {
 			initSmartSubmit($(this));
+		});
+
+
+		/*----------  slider -> video  ----------*/
+
+		$('.oembed-video .play').click(function(event) {
+			var wrapper = $(this).parents('.oembed-video');
+			if (wrapper.hasClass('playing')) {
+				video.pause(wrapper);
+			} else if($(event.target).hasClass('playButton')) {
+				video.play(wrapper);
+			};
 		});
 
 
@@ -718,17 +732,6 @@ $(document).ready(function (){
 	
 	$('.column').perfectScrollbar({ suppressScrollX: true });
 
-
-	/*----------  slider -> video  ----------*/
-
-	$('.oembed-video .play').click(function(event) {
-		var wrapper = $(this).parents('.oembed-video');
-		if (wrapper.hasClass('playing')) {
-			video.pause(wrapper);
-		} else if($(event.target).hasClass('playButton')) {
-			video.play(wrapper);
-		};
-	});
 
 	var video = {
 		play : function(wrapper){

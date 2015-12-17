@@ -248,9 +248,8 @@ h1 a, h2 a, h3 a, h4 a {
 blockquote {
     padding: 0;
     margin: 20px 0px 20px 0px;
-    color: #6E86A1;
-    border-left: 1px solid #fff;
-    padding-left: 30px;
+    border-left: 2px solid rgb(77,250,137);
+    padding-left: 26px;
 }
 .about{
 	padding: 0 30px;
@@ -1583,8 +1582,12 @@ header#navbar .right ul.dropdown-menu{
 	margin-bottom: 2.3rem;
 }
 #field-description a {
-	text-decoration: underline;
-	transition: background .3s;
+	-webkit-transition: background .1s;
+	-moz-transition: background .1s;
+	-o-transition: background .1s;
+	transition: background .1s;
+    border-bottom: 2px solid rgb(77,250,137);
+    text-decoration: none;
 }
 #field-description a:hover {
 	color: black;
