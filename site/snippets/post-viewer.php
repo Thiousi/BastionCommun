@@ -13,7 +13,7 @@
 		</div>
 		<div id="diapo-manager">
 			<!-- LISTE -->
-			<ol class="media-list cf" data-annonce="<?php echo $page->uri() ?>"><?php //snippet("liste-media", array('page'=>$page)) ?></ol>
+			<ol class="media-list cf" data-annonce="<?php echo $page->uri() ?>"><?php snippet("liste-media", array('page'=>$page)) ?></ol>
 			
 			<!-- ADD -->
 			<div class="media-add cf">

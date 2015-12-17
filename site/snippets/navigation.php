@@ -20,9 +20,11 @@
 				<li>
 					<a class="" data-uri="<?php echo page('my-account')->uri() ?>" data-snippet="my-account" href="<?php echo page('my-account')->url() ?>">Mon profil</a>	
 				</li>
-				<li>
-					<a class="" data-uri="<?php echo page('add-user')->uri() ?>" data-snippet="add-user" href="<?php echo page('add-user')->url() ?>">Ajouter un membre</a>	
-				</li>
+				<?php if($user->hasRole('admin')): ?>
+					<li>
+						<a class="" data-uri="<?php echo page('add-user')->uri() ?>" data-snippet="add-user" href="<?php echo page('add-user')->url() ?>">Ajouter un membre</a>
+					</li>
+				<?php endif; ?>
 				<li>
 					<a href="<?php echo $page->url() ?>?logout=1">Déconnexion</a>           
 				</li>

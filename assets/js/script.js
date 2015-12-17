@@ -150,7 +150,7 @@ $(document).ready(function (){
 	function annonceUpdate() {
 		
 		var editors=[];
-		
+
 		// Mode édition
 		if(window.location.hash.substring(1)=='edit') {
 			$('.editButton').click();
@@ -161,6 +161,7 @@ $(document).ready(function (){
 		
 		/* edit */
 		$('.editButton').click(function() {
+			console.log('yolo');
 			$('article').removeClass('viewMode').addClass('editMode');
 			$(this).parent().find('.submitButton').show();
 			$(".inputsGroup .input").attr('readonly', false);
@@ -577,6 +578,22 @@ $(document).ready(function (){
 			}
 		);
 	});
+
+	$(document).on('click', '#button-create-user-page', function(e) {
+		var categorie = "artiste-resident";
+		var titre = $(this).attr('data-username');
+		$.post(BASTION.smartSubmitUrl + "?handler=create", 
+			{
+				cat : categorie,
+				titre : titre
+			},
+			function(response) {
+				var uri = response.uri;
+				loadAnnonce(uri);
+				$('.editButton').trigger('click');
+			}
+		);
+	});
 	
 	
 	
@@ -712,6 +729,7 @@ $(document).ready(function (){
 			video.play(wrapper);
 		};
 	});
+
 	var video = {
 		play : function(wrapper){
 			var embed = wrapper.find('iframe');
@@ -728,7 +746,6 @@ $(document).ready(function (){
 	/* SHOW - HIDE > content 
 	------------------------------------ */
 	function showHideContent(action){
-		console.log(action);
 		if(action == 'show'){
 			$('#megabloc').addClass('showContent');
 			$('#hide-menu').addClass('glyphicon-chevron-left').removeClass('glyphicon-chevron-right');

@@ -1,0 +1,32 @@
+Title: Gérard 666
+
+----
+
+Author: test
+
+----
+
+Date: 20151216
+
+----
+
+Categorie: artiste-resident
+
+----
+
+Private: false
+
+----
+
+Informations: 
+
+- 
+  key: annees
+  value: 2015
+- 
+  key: pratique
+  value: 2016
+
+----
+
+Description: Coucou les flammes qui lèchent

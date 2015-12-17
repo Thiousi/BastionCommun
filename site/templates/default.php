@@ -1,7 +1,9 @@
 <?php 
 snippet('header');
 ?>
-default
+
+<?php go('home'); ?>
+
 <?php
 snippet('footer');
 ?>

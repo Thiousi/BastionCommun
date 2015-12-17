@@ -2,7 +2,7 @@
 
 <div id="megabloc" class="accueil large">
 	<div id="column-content" class="column">
-		<div id="cover" style="background:url(<?php echo page('home')->images()->first()->url() ?>)">
+		<div id="cover" style="background:url(<?php echo page('home')->images()->shuffle()->first()->url() ?>)">
 			<div id="textAccueil" class="column">
 				<?php echo page('home')->text()->kirbytext() ?>
 			</div>

@@ -4,7 +4,7 @@ $countFiles = $page->files()->filter(function($file) { return in_array($file->ty
 if ($countFiles > 1): ?>
 	<div id="slider" class="swiper-container" data-pageuri="<?php echo $page->uri() ?>" data-pageurl="<?php echo $page->url() ?>">
 <?php elseif ($countFiles == 1) :?>
-	<div id="slider" data-pageuri="<?php echo $page->uri() ?>" data-pageurl="<?php echo $page->url() ?>">
+	<div id="slider" class="single-image" data-pageuri="<?php echo $page->uri() ?>" data-pageurl="<?php echo $page->url() ?>">
 <?php endif; ?>
 
 		<div class="swiper-wrapper">
@@ -38,12 +38,10 @@ if ($countFiles > 1): ?>
 		</div>
 
 	<?php if ($countFiles > 1): ?>
+		<div class="swiper-pagination"></div>
 		<div class="swiper-button-next swiper-button-black"></div>
 		<div class="swiper-button-prev swiper-button-black"></div>
 		</div>
 	<?php elseif ($countFiles == 1): ?>
 		</div>
 	<?php endif; ?>
-<?php if ($countFiles > 1): ?>
-	<div class="swiper-pagination"></div>
-<?php endif; ?>

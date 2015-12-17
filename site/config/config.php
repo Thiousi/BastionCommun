@@ -35,18 +35,13 @@ c::set('roles', array(
   array(
     'id'      => 'admin',
     'name'    => 'Admin',
-    'default' => true,
     'panel'   => true
   ),
   array(
     'id'      => 'membre',
     'name'    => 'Membre',
-    'panel'   => false
-  ),
-  array(
-    'id'      => 'visiteur',
-    'name'    => 'Visiteur',
-    'panel'   => false
+    'default' => true,
+    'panel'   => true
   )
 ));
 
