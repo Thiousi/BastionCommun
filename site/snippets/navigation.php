@@ -60,5 +60,24 @@
 			</ul>
 		</span>
 	<?php endif; ?>
-	<span id="hide-menu" class="glyphicon glyphicon-chevron-right"></span>
-</header>
+	
+	<?php if(! $page->isHomePage()): ?>
+		<span id="hide-menu" class="glyphicon glyphicon-chevron-right"></span>
+	<?php endif; ?>
+	<span id="aboutButton" class="">?</span>
+</header> 
+
+<div id="about" class="closed column">
+	<div class="container">
+		<div class="col-left">
+			<img src="<?php echo thumb($page->image(page('about')->cover()), array('width' => 600, 'crop' => false))->url(); ?>">
+		</div>
+		<div class="col-right">
+			<h2><?php echo page('about')->title() ?></h2>
+			<?php echo page('about')->text()->kirbytext() ?>
+		</div>
+	</div>
+	<div class="closeButton glyphicon glyphicon-remove"></div>
+</div>
+
+

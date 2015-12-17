@@ -568,12 +568,15 @@ $(document).ready(function (){
 		$('#column-content').perfectScrollbar('update');  // Update
 		showHideContent('toggle');
 	});
-	
-	$(document).on('click', '#closeText', function(event) {
-		$('#textaccueil').slideUp(200);
+	$(document).on('click', '#about .closeButton', function(event) {
+		$('#about').addClass('closed');
 	});
+	$(document).on('click', '#aboutButton', function(event) {
+		$('#about').removeClass('closed');
+	});
+
 	$(document).on('click', '#hideCover', function(event) {
-		$('#cover').addClass('out');
+		$('#about').addClass('out');
 	});
 
 	$(document).on('click', '#button-create-annonce', function(e) {

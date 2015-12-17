@@ -4,10 +4,10 @@ title: Categorie
 pages: false
 files: false
 fields:
-  bgcolor:
-    label: Couleur de la catégorie 
-    type: color
-    default: #efefef
+	bgcolor:
+    	label: Couleur de la catégorie 
+    	type: color
+    	default: #efefef
 	title:
 		label: Nom de la catégorie
 		type:  text

@@ -6,12 +6,8 @@ fields:
 	title:
 		label: Title
 		type:  text
-	text:
-		label: Text
-		type:  textarea
-		size:  large
-	cover:
-		label: Image de fond
-		type: select
-		options: images
-		width: 1/4
+	info:
+	    label: Instructions
+	    type: info
+	    text: Placer des images dans la colonne de gauche pour qu'elles se retrouvent sur la page d'accueil du site.
+	    width: 1/2
