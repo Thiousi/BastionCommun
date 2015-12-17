@@ -1244,17 +1244,26 @@ header#navbar .right ul.dropdown-menu{
 #categories>.btn-group{
 	width: 100%;
 }
+#categories>.btn-group .btn{
+	white-space: normal;
+}
 #categories .bootstrap-select.btn-group .dropdown-toggle .caret{
-	margin: 10px;
+	top: auto;
+	margin: 9px 10px;
+	width: 10px;
+	height: 10px;
 	position: relative;
 	right: initial;
 	display: inline;
 	border: none;
 	font-size: 10px;
-	line-height: 29px;
+	line-height: 10px;
 	float: left;
 }
 #categories .bootstrap-select.btn-group .dropdown-toggle .caret::before{
+	position: absolute;
+	top: 0;
+	left: 0;
 	font-family: "Glyphicons Halflings";
 	content: "\e252";
 }
