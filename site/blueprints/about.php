@@ -6,17 +6,15 @@ fields:
     title:
         label: Titre
         type:  text
-    text:
-        label: Texte
+    bastion:
+        label: À propos du Bastion 14
         type:  textarea
         size:  large
-    cover:
-        label: Image
-        type: select
-        options: images
-        width: 1/4
-    bgcolor:
-        label: Couleur de fond  
-        type: color
-        default: #efefef
-        width: 1/4
+    bastionCommun:
+        label: À propos du site
+        type:  textarea
+        size:  large
+    colophon:
+        label: Colophon
+        type:  textarea
+        size:  large

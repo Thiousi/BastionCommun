@@ -1,0 +1,29 @@
+Title: Notice d'utilisation du site
+
+----
+
+Bienvenue: 
+
+###Bienvenue
+Bienvenue cher membre du Bastion.
+Ce site est fait pour publier des annonces.
+
+----
+
+Utilisation: ###Créer sa page de membre
+
+----
+
+Pourlesadmins: ###Pour les administrateurs du site
+
+----
+
+Articles: ###Annonces
+
+----
+
+Commentaires: 
+
+###Commentaires
+
+(image: com2.png)

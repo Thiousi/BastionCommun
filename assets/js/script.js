@@ -112,42 +112,99 @@ $(document).ready(function (){
 	}
 	
 	function initSwiper(){
-		var gallery = new Swiper('.swiper-container:not(#bigSlider)', {
-			pagination: '.swiper-pagination',
-			nextButton: '.swiper-button-next',
-			prevButton: '.swiper-button-prev',
-			slidesPerView: 1,
-			paginationClickable: true,
-			loop: true,
-			keyboardControl: true,
-			grabCursor: true,
-			onInit: function (swiper) {
-				updateSwiperVisibility(swiper);
-			},
-			onSlideChangeEnd: function(swiper){
-				var wrapper = $('figure .oembed-video.playing');
-				if (wrapper) {
-					wrapper.each(function(){
-						video.pause(wrapper);
-					});
-				};
-			}
-		});
-		return gallery;
-	}
-	var bigSlider = new Swiper('#bigSlider.swiper-container', {
-		pagination: '.swiper-pagination',
-		nextButton: 'figure',
-		prevButton: '.swiper-button-prev',
-		slidesPerView: 1,
-		paginationClickable: true,
-		loop: true,
-		grabCursor: true,
-		autoplay: 5000,
-		speed: 800,
-		autoplayDisableOnInteraction: false,
-		keyboardControl: true
-	});
+		if ($('#slider')) {
+			var gallery = new Swiper('#slider.swiper-container', {
+				pagination: '.swiper-pagination',
+				nextButton: '.swiper-button-next',
+				prevButton: '.swiper-button-prev',
+				slidesPerView: 1,
+				paginationClickable: true,
+				loop: true,
+				keyboardControl: true,
+				grabCursor: true,
+				onInit: function (swiper) {
+					updateSwiperVisibility(swiper);
+				},
+				onSlideChangeEnd: function(swiper){
+					var wrapper = $('figure .oembed-video.playing');
+					if (wrapper) {
+						wrapper.each(function(){
+							video.pause(wrapper);
+						});
+					};
+				}
+			});
+			return gallery;
+		};
+	};
+	function initHomeSwiper(){
+		if ($(document).find('#home-slider')) {
+			console.log('yolo');
+			var homeGallery = new Swiper('#home-slider.swiper-container', {
+				pagination: '.swiper-pagination',
+				nextButton: $(this).find('.swiper-button-next'),
+				prevButton: $(this).find('.swiper-button-prev'),
+				slidesPerView: 1,
+				paginationClickable: true,
+				loop: true,
+				autoplay: 5000,
+				speed: 800,
+				autoplayDisableOnInteraction: true,
+				keyboardControl: true,
+				grabCursor: true,
+				onInit: function (swiper) {
+					updateSwiperVisibility(swiper);
+				},
+				onSlideChangeEnd: function(swiper){
+					var wrapper = $('figure .oembed-video.playing');
+					if (wrapper) {
+						wrapper.each(function(){
+							video.pause(wrapper);
+						});
+					};
+				}
+			});
+			return homeGallery;
+		};
+	};
+	function initAboutSwiper(){
+		if ($(document).find('#about-slider')) {
+			console.log('yay');
+			var aboutGallery = new Swiper('#about-slider.swiper-container', {
+				slideClass: 'about-slide',
+				pagination: '.about-pagination',
+				nextButton: 'figure',
+				spaceBetween: 30,
+				slidePrevClass: 'about-prev',
+				slideNextClass: 'about-next',
+				slideActiveClass: 'about-active',
+				slideVisibleClass: 'about-visible',
+				slideDuplicateClass: 'about-duplicate',
+				wrapperClass: 'about-swiper-wrapper',
+				bulletClass: 'about-bullet',
+				bulletActiveClass: 'about-bullet-active',
+				slidesPerView: 1,
+				paginationClickable: true,
+				loop: true,
+				keyboardControl: true,
+				onInit: function (swiper) {
+					updateSwiperVisibility(swiper);
+				},
+				onSlideChangeEnd: function(swiper){
+					var wrapper = $('figure .oembed-video.playing');
+					if (wrapper) {
+						wrapper.each(function(){
+							video.pause(wrapper);
+						});
+					};
+				}
+			});
+			return aboutGallery;
+		};
+	};
+
+	initHomeSwiper();
+	initAboutSwiper();
 
 	function annonceUpdate() {
 		
@@ -276,7 +333,7 @@ $(document).ready(function (){
 			if( $('article').find('input#geopicker-address-buffer').length ){
 				var input = $('#geopicker-address-buffer');
 				var location = {'latitude' : 48.573392, 'longitude': 7.752353}; // default
-			    var setZoom = 2, setScroll = false;
+				var setZoom = 2, setScroll = false;
 				try {
 					var data = JSON.parse( input.attr('data-gps') );
 					if (data && typeof data === "object" && data.longitude !== 'undefined' && data.latitude !== undefined) {
@@ -305,8 +362,8 @@ $(document).ready(function (){
 					location: {latitude: location.latitude, longitude: location.longitude},	
 					radius: 0,
 					enableAutocomplete: true,
-				    scrollwheel: setScroll,
-				    zoom: setZoom,
+					scrollwheel: setScroll,
+					zoom: setZoom,
 					//enableReverseGeocode: false,
 					inputBinding: {
 							latitudeInput: $('#geopicker-lat'),
@@ -574,13 +631,14 @@ $(document).ready(function (){
 		setTimeout(function() {$('#about').hide()}, 160);
 	});
 	$(document).keyup(function(e) {
-    	if (e.keyCode == 27 && $('#about').hasClass('closed') == false) { // escape key maps to keycode `27`
+		if (e.keyCode == 27 && $('#about').hasClass('closed') == false) { // escape key maps to keycode `27`
 			$('#about').addClass('closed');
 			setTimeout(function() {$('#about').hide()}, 160);
-    	}
+		}
 	});
 	$(document).on('click', '#aboutButton', function(event) {
 		$('#about').show();
+		initAboutSwiper();
 		setTimeout(function() { $('#about').removeClass('closed'); }, 10);
 	});
 
@@ -773,11 +831,11 @@ $(document).ready(function (){
 			$('#megabloc').toggleClass('showContent');
 			$('#hide-menu').toggleClass('glyphicon-chevron-left glyphicon-chevron-right');
 		}
-	    if($('#megabloc').hasClass('showContent')) {
-	    	setCookie('open_menu', false);
-	    } else {
-	    	setCookie('open_menu', true);
-	    }
+		if($('#megabloc').hasClass('showContent')) {
+			setCookie('open_menu', false);
+		} else {
+			setCookie('open_menu', true);
+		}
 	}
 
 	$('#hide-menu').click(function(){
@@ -797,14 +855,14 @@ $(document).ready(function (){
 /* GET / SET COOKIES
 	------------------------------------ */
 function setCookie(key, value) {
-    var expires = new Date();
-    expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
-    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+	var expires = new Date();
+	expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
+	document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
 }
 
 function getCookie(key) {
-    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
-    return keyValue ? keyValue[2] : null;
+	var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+	return keyValue ? keyValue[2] : null;
 }
 
 /*!
@@ -816,24 +874,24 @@ function getCookie(key) {
  * 2013/07/26
 **/
 ;(function ($) {
-    var on = $.fn.on, timer;
-    $.fn.on = function () {
-        var args = Array.apply(null, arguments);
-        var last = args[args.length - 1];
+	var on = $.fn.on, timer;
+	$.fn.on = function () {
+		var args = Array.apply(null, arguments);
+		var last = args[args.length - 1];
 
-        if (isNaN(last) || (last === 1 && args.pop())) return on.apply(this, args);
+		if (isNaN(last) || (last === 1 && args.pop())) return on.apply(this, args);
 
-        var delay = args.pop();
-        var fn = args.pop();
+		var delay = args.pop();
+		var fn = args.pop();
 
-        args.push(function () {
-            var self = this, params = arguments;
-            clearTimeout(timer);
-            timer = setTimeout(function () {
-                fn.apply(self, params);
-            }, delay);
-        });
+		args.push(function () {
+			var self = this, params = arguments;
+			clearTimeout(timer);
+			timer = setTimeout(function () {
+				fn.apply(self, params);
+			}, delay);
+		});
 
-        return on.apply(this, args);
-    };
+		return on.apply(this, args);
+	};
 }(this.jQuery || this.Zepto));

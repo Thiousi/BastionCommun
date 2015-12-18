@@ -8,7 +8,7 @@
 
 		?>
 
-		<div class='inputsGroup col-xs-12 meta-bloc <?php echo $active ?>' id='cat-<?php echo $categorie->uid() ?>' data-populate='informations'>
+		<div class='inputsGroup meta-bloc <?php echo $active ?>' id='cat-<?php echo $categorie->uid() ?>' data-populate='informations'>
 			<?php
 			foreach ($categorie->criteres()->yaml() as $critere):
 				$informations = $page->informations()->yaml();
