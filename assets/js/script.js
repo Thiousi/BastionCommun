@@ -119,6 +119,7 @@ $(document).ready(function (){
 			slidesPerView: 1,
 			paginationClickable: true,
 			loop: true,
+			keyboardControl: true,
 			grabCursor: true,
 			onInit: function (swiper) {
 				updateSwiperVisibility(swiper);
@@ -571,6 +572,12 @@ $(document).ready(function (){
 	$(document).on('click', '#about .closeButton', function(event) {
 		$('#about').addClass('closed');
 		setTimeout(function() {$('#about').hide()}, 160);
+	});
+	$(document).keyup(function(e) {
+    	if (e.keyCode == 27 && $('#about').hasClass('closed') == false) { // escape key maps to keycode `27`
+			$('#about').addClass('closed');
+			setTimeout(function() {$('#about').hide()}, 160);
+    	}
 	});
 	$(document).on('click', '#aboutButton', function(event) {
 		$('#about').show();

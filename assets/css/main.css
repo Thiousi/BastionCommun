@@ -583,7 +583,7 @@ header#navbar h4{
 }
 #about .col-left{
 	float: left;
-    max-width: 47%;
+    max-width: 49%;
     margin: 0 30px 30px 0;
     min-width: 400px;
 }
@@ -758,6 +758,28 @@ article .form-control:focus {
     border-width: 0 7px 10px;
     border-bottom-color: #FFF;
 }
+.tooltipUp button{
+	margin-left: 8px;
+	margin-bottom: 4px;
+	background: #4DFA89;
+	box-shadow: 0px 1px 1px rgba(0, 0, 0, .25);
+	border-radius: 5px;
+}
+.tooltipUp button:hover{
+	background: #eee;
+	border-radius: 5px;
+}
+.tooltipUp .form-group{
+	margin: 2px 8px 8px;
+}
+.tooltipUp .form-control{
+	color: #686868;
+	background-color: #f7f7f7;
+	background-image: none;
+	border: none;
+	border-radius: 3px;
+	padding: 5px 7px;
+}
 #menu .dropdown-menu {
 	margin: 0px;
 	border-radius: 0;
@@ -857,6 +879,29 @@ a {
 -------------------------------------------------- */
 .medium-editor-placeholder::after {
 	color: #000 !important;
+}
+.medium-editor-toolbar {
+    background-color: #555;
+}
+.medium-editor-toolbar li button:hover{
+	background-color: #333;
+}
+.medium-editor-toolbar li .medium-editor-button-active {
+    background-color: #797979;
+}
+.medium-editor-toolbar-form .medium-editor-toolbar-input {
+    background: #757575;
+    font-family: 'propcouriersansregular';
+    font-size: 18px;
+}
+.medium-editor-toolbar-form a{
+	padding: 8px;
+}
+.medium-toolbar-arrow-under::after{
+	border-color: #555 transparent transparent;
+}
+.medium-editor-toolbar li button{
+	border-right: 1px solid #C5C5C5;
 }
 .editMode .simpleEdit {
 	border-bottom: 1px dashed;

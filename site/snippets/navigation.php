@@ -2,10 +2,10 @@
 	<a href="<?php echo $site->url() ?>" class="title" alt="home link"><h1 class="site-name">Bastion Commun</h1></a>
 	<?php  
 	if($user = $site->user()): 
-	$newcoms = array();
-	if ( unserialize($user->newComments()) ) :
-		  $newcoms = array_reverse(unserialize($user->newComments())); 
-	endif;
+		$newcoms = array();
+		if ( unserialize($user->newComments()) ) :
+			  $newcoms = array_reverse(unserialize($user->newComments())); 
+		endif;
 		$comsNum = 0;
 		foreach($newcoms as $comment => $num):
 			$comsNum += intval($num);
@@ -55,7 +55,7 @@
 			<a href="#" class="dropdown-toggle signin" data-toggle="dropdown" role="button" aria-expanded="false">
 				<div class="glyphicon glyphicon-cog"></div>
 			</a>
-			<ul class="dropdown-menu" role="menu">
+			<ul class="dropdown-menu tooltipUp" role="menu">
 				<?php snippet('signin'); ?>
 			</ul>
 		</span>
