@@ -27,7 +27,7 @@ $user = ($site->user()) ? $site->user()->username() : '' ;
 					<?php
 				else:
 										?>
-					<a href="#" id="button-create-user-page" class="btn btn-lg btn-big toolbox" data-username="<?= $site->user() ?>" data-width="100%">
+					<a href="#" id="button-create-user-page" class="btn btn-lg btn-big toolbox" data-user="<?= $site->user() ?>" data-username="<?= $site->user()->firstName().' '.$site->user()->lastName() ?>" data-width="100%">
 						<span class='glyphicon glyphicon-user' aria-hidden='true'></span>
 						<span class="name">Créer ma page</span>
 					</a>

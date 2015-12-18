@@ -154,12 +154,6 @@ $(document).ready(function (){
 
 		var editors=[];
 
-		// Mode édition
-		if(window.location.hash.substring(1)=='edit') {
-			$('.editButton').click();
-			window.location.hash = '';
-		}
-		
 		/***** buttons *****/
 		
 		/* edit */
@@ -234,6 +228,12 @@ $(document).ready(function (){
 				}
 			);
 		});
+		
+		// Mode édition
+		if(window.location.hash.substring(1)=='edit') {
+			$('.editButton').click();
+			window.location.hash = '';
+		}
 		
 		/***** tools *****/
 
@@ -607,12 +607,13 @@ $(document).ready(function (){
 	});
 
 	$(document).on('click', '#button-create-user-page', function(e) {
-		var categorie = "artiste-resident";
 		var titre = $(this).attr('data-username');
+		var user = $(this).attr('data-user');
 		$.post(BASTION.smartSubmitUrl + "?handler=create", 
 			{
-				cat : categorie,
-				titre : titre
+				cat : "artiste-resident",
+				titre : titre,
+				user : user
 			},
 			function(response) {
 				var uri = response.uri;

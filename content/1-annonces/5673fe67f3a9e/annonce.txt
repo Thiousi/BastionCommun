@@ -1,0 +1,36 @@
+Title: Pierre Tandille
+
+----
+
+Author: pierre
+
+----
+
+Date: 20151218
+
+----
+
+Lastupdate: 1450442499
+
+----
+
+Categorie: artiste-resident
+
+----
+
+Private: false
+
+----
+
+Informations: 
+
+- 
+  key: annees
+  value:
+- 
+  key: pratique
+  value:
+
+----
+
+Description: 

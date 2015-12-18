@@ -1,0 +1,4 @@
+fields:
+	page:
+		label: Page personnelle
+		type: hidden
