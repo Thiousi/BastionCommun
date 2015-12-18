@@ -48,7 +48,7 @@
 				</div>
 			</div>
 		</section>
-		<?php/* if($user = $site->user()): ?>
+		<?php /* if($user = $site->user()): ?>
 			<section>
 				<div class="row">
 					<div class="col-xs-12">
@@ -88,7 +88,7 @@
 					</div>
 				</div>
 			</section>
-		<?php endif; */?>
+		<?php endif; */ ?>
 	</div>
 	<div class="closeButton glyphicon glyphicon-remove"></div>
 </div>
