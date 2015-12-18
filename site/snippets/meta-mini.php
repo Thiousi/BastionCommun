@@ -8,27 +8,24 @@
 		$meta[ $information['key'] ] = $information['value'];
 	}
 
-	foreach ($categorie->criteres()->yaml() as $critere):
-		if( array_key_exists ( $critere['slug'] , $meta) ){
-			$value = $meta[$critere['slug']];
+	foreach ($categorie->criteres()->yaml() as $label):
+		$value = '';
+		// est-ce que ce label existe dans la liste des informations de cette page
+		if( array_key_exists ( $label['slug'] , $meta) ){
+			// $value contient la valeur de ce label
+			$value = $meta[$label['slug']];
 		}
-	
-		if( array_key_exists ( 'important' , $critere) ){
+		
+		// est-ce que ce label doit être affiché dans le résumé des infos de cette annonce ?
+		if( array_key_exists ( 'important' , $label) ){
 			echo "<li>";
-			//echo "<span>{$critere['nom']} : </span>";
+			//echo "<span>{$label['nom']} : </span>";
 				echo "<span>";
 
-					$type = $critere['type'];
+					$type = $label['type'];
 					switch ($type) :
-						case 'map' : 
-							$location = json_decode($value); 
-							if ($location) :
-								$city = $location->city . ' (' . $location->zip . ')';
-								echo $city; 
-							endif; 
-							break;
 						case 'date' :
-							if ($critere['slug']=='debut') :
+							if ($label['slug']=='debut') :
 								if(!$meta['fin']) :
 									echo "Le ".$value;
 								else :
@@ -41,7 +38,7 @@
 							break;
 						default :
 							if($value):
-								echo $critere['nom'].' : '.$value;
+								echo $label['nom'].' : '.$value;
 							endif;
 							break;
 					endswitch;
@@ -53,21 +50,3 @@
 	endforeach;
 	?>
 </ul>
-<?php
-/*
-if (isset($key)) {
-	if ($key == "date"){
-		if ( strlen($meta['fin']) <= 1 || $meta['debut'] == $meta['fin']){
-			echo 'Le '.get_Date($meta['debut'], 'rdv');
-		} else {
-			echo 'Du '.get_Date($meta['debut'], 'periode').' au '.get_Date($meta['fin'], 'periode');
-		}
-	} else if ($key == "adresse" && strlen($meta['adresse']) > 1){
-		$adresse = json_decode($meta['adresse']);
-		echo $adresse->street.', '.$adresse->zip.' '.$adresse->city;
-	} else {
-		echo 'yolo';
-	}
-}
-*/
-?>

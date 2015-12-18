@@ -1,0 +1,33 @@
+Title: Bon fromage à vendre
+
+----
+
+Author: pierre
+
+----
+
+Date: 20151218
+
+----
+
+Categorie: petites-annonces
+
+----
+
+Lastupdate: 1450440892
+
+----
+
+Private: false
+
+----
+
+Informations: 
+
+- 
+  key: prix
+  value:
+
+----
+
+Description: 

@@ -18,6 +18,7 @@ if($user = $site->user()):
       }
       $request[$key]= $value;
     }
+		$request['lastupdate']= time();
   }
   page(get('uri'))->update($request);
   die('{"success":"Form has been submitted to '.get('uri').'!"}');

@@ -1,0 +1,36 @@
+Title: Pierre Tandille
+
+----
+
+Author: pierre
+
+----
+
+Date: 20151218
+
+----
+
+Categorie: artiste-resident
+
+----
+
+Private: false
+
+----
+
+Informations: 
+
+- 
+  key: annees
+  value: 1990
+- 
+  key: pratique
+  value: Surf
+
+----
+
+Description: Tell est la question
+
+----
+
+Lastupdate: 1450440820

@@ -42,7 +42,7 @@ if ($page->followers() != '') {
 	$followers = json_decode($page->followers());
 }
 foreach($followers as $user) :
-	if( $user != $currentUser ):
+	if( $user != $currentUser && $site->user($user) ):
 		$newComments = ($site->user($user)->newComments()) ? unserialize($site->user($user)->newComments()) : array();
 		if (array_key_exists($pageUri, $newComments)):
 			$newComments[$pageUri] ++;

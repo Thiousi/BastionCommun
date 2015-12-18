@@ -8,6 +8,9 @@ fields:
   title:
     label: Title
     type:  text
+	lastupdate:
+		label: Dernière mise à jour
+		type: hidden
   author:
     label: Auteur
     type:  user

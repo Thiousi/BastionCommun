@@ -48,9 +48,14 @@ c::set('roles', array(
 /* Heures et dates */
 c::set('date.handler', 'strftime'); 
 
+/* Langage */
 c::set('timezone','Europe/Paris'); 
 setlocale (LC_TIME, 'fr_FR.utf8','fra'); 
 
+/* Safe name for thumbs */
+c::set('thumbs.filename', '{safeName}-{hash}-{width}.{extension}');
+
+/* Dates relatives pour les commentaires */
 c::set('relativedate.threshold', 86400*30*12);
 c::set('relativedate.length', 2);
 c::set('relativedate.conjunction', 'et');

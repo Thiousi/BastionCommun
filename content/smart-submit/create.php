@@ -10,6 +10,7 @@ if($user = $site->user()):
         'title' => get('titre') ?: 'Titre',
         'author' => $site->user()->username(),
         'date' => date('Ymd'),
+				'lastupdate' => time(),
 				'categorie' => get('cat')
       ));
 			

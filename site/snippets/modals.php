@@ -45,7 +45,9 @@
                 <label class="col-sm-2 control-label">Catégorie</label>
 				<select class="selectpicker col-sm-10" id="nouvelle-annonce-categorie" data-style="btn-lg btn-default" name="cat" title="Catégorie">
 					<?php foreach ( page('categories')->children() as $categorie ) : ?>
-						<option value="<?php echo $categorie->uid(); ?>" <?php e($categorie->uid() == $cat, "selected") ?> > <?php echo $categorie->title(); ?> </option>
+						<?php if($categorie->uid() != "artiste-resident") : ?>
+							<option value="<?php echo $categorie->uid(); ?>"> <?php echo $categorie->title(); ?> </option>
+						<?php endif ?>
 					<?php endforeach ?>
 				</select>
 			</div>

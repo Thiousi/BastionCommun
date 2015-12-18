@@ -1,5 +1,6 @@
 <div id="liste-annonces">
 	<?php foreach($results as $annonce): ?>
+	
 		<?php 
 		if( $site->user() || $annonce->private() != 'true'  ) :
 			$author = '';

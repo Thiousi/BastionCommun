@@ -1,5 +1,5 @@
 <?php snippet('header'); ?>
-<?php $results = page('annonces')->children()->sortBy('modified', 'desc'); ?>
+<?php $results = page('annonces')->children()->sortBy('lastupdate', 'desc'); ?>
 
 
 <?php snippet('navigation'); ?>

@@ -591,7 +591,8 @@ $(document).ready(function (){
 	$(document).on('click', '#button-create-annonce', function(e) {
 		var categorie = $('#nouvelle-annonce-categorie').val();
 		var titre = $('#nouvelle-annonce-titre').val();
-		$.post(BASTION.smartSubmitUrl + "?handler=create", 
+		console.log();
+		$.get(BASTION.smartSubmitUrl + "?handler=create", 
 			{
 				cat : categorie,
 				titre : titre
