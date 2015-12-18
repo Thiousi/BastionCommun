@@ -263,6 +263,10 @@ blockquote {
     background: #D1D1CE;
     cursor: pointer;
 }
+#aboutButton:hover{
+	background: #4DFA89;
+	box-shadow: 0px 1px 1px rgba(0,0,0,.25);
+}
 #about{
 	padding: 80px 20px;
     width: 100%;

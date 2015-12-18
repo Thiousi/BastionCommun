@@ -70,7 +70,7 @@
 <div id="about" class="closed column" style="background-color:<?php echo page('about')->bgcolor();?>">
 	<div class="container">
 		<div class="col-left">
-			<img src="<?php echo thumb($page->image(page('about')->cover()), array('width' => 600, 'crop' => false))->url(); ?>">
+			<img src="<?php echo thumb(page('about')->image(page('about')->cover()), array('width' => 600, 'crop' => false))->url(); ?>">
 		</div>
 		<div class="col-right">
 			<h2><?php echo page('about')->title() ?></h2>
